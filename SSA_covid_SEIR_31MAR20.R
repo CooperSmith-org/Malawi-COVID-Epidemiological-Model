@@ -34,6 +34,8 @@ eta_range <- combined_data$Hospitalization #estimated age-standardized hospitali
 eta2_range <- combined_data$`Crit of Hosp` #estimated age-standardized ICU rate AMONG those hospitalized
 ep_range <-  combined_data$`CFR of Crit` #estimated age-standardized fatality rate AMONG ICU patients
 lvl3 <-   combined_data$`Lvl3` # name of TA
+lvl2 <-   combined_data$`Lvl2` # adding in a check on country
+UID <- combined_data$UID
 
 #creating lists that data will go into
 P.List = list() #population
@@ -67,7 +69,7 @@ for(i in 1:length(pop_range)) {
   times <- seq(0,365)
   sim <- as.data.table(lsoda(init, times, model, parms))
   
-  write.csv(sim,paste0("epi_csvs/",lvl3[i],"_epi.csv")) #save each simulation
+  write.csv(sim, paste0("epi_csvs/",UID[i],"_epi.csv"))
   
   P.List[[length(P.List)+1]] = pop_range[i]
   S.List[[length(S.List)+1]] = min(sim$S)  #number susceptible at end of simulation
