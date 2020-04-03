@@ -1,0 +1,44 @@
+---
+title: "epiChart"
+author: "Allison Collins"
+date: "4/2/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(reshape2)
+```
+
+## Load data from the simulations
+
+```{r load data, warning=FALSE}
+#load + concatenate the csvs
+df <- list.files(path = "epi_csvs",full.names = TRUE) %>% 
+  lapply(read_csv) %>% 
+  bind_rows 
+
+#create summary dataframe
+new_df <- df %>% 
+  group_by(X1) %>% 
+  summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R))
+```
+
+## Make chart
+
+```{r pressure, fig.height=8, fig.width=12}
+longData <- melt(new_df, id = c("X1"))
+
+longData$variable <- factor(longData$variable,
+                            levels = c("Susceptible", "Exposed", "Infected", "Recovered"))
+
+ggplot(data=longData %>% arrange(variable),
+       aes(x=X1, y=value, fill=variable, color=variable, alpha=variable)) +
+  geom_bar(stat="identity", position = "identity") +
+  scale_colour_manual(values=c("lightblue4", "red", "gray94", "indianred4", "lightslateblue")) + 
+  scale_fill_manual(values=c("lightblue4", "red", "gray94", "indianred4", "lightslateblue")) + 
+  scale_alpha_manual(values=c(.3, .4, .5, .6, .7, .8)) 
+```

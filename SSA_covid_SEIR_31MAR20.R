@@ -1,6 +1,6 @@
 set.seed(1234)
 
-setwd("C:/Users/dylan/Dropbox (Cooper Smith)/CS_Team/Projects/COVID-19 Response/Malawi/Analytics/EPI Modeling")
+#setwd("C:/Users/dylan/Dropbox (Cooper Smith)/CS_Team/Projects/COVID-19 Response/Malawi/Analytics/EPI Modeling")
 library(deSolve)
 library(data.table)
 library(ggplot2)
@@ -25,8 +25,8 @@ model <- function(times, init, parms) {
 }
 
 #bring in Malawi-specific TA data and SSA data
-MW_TA_COVID_Inputs <- read_csv("C:/Users/dylan/Dropbox (Cooper Smith)/CS_Team/Projects/COVID-19 Response/Malawi/Analytics/EPI Modeling/Model/MW TA COVID Inputs.csv")
-SSA_COVID_Inputs <- read_csv("C:/Users/dylan/Dropbox (Cooper Smith)/CS_Team/Projects/COVID-19 Response/Malawi/Analytics/EPI Modeling/Model/SSA COVID Inputs.csv")
+MW_TA_COVID_Inputs <- read_csv("MW TA COVID Inputs.csv")
+SSA_COVID_Inputs <- read_csv("SSA COVID Inputs.csv")
 combined_data <- rbind(MW_TA_COVID_Inputs, SSA_COVID_Inputs)
 
 pop_range <- combined_data$Population #TA population total estimate
@@ -34,6 +34,8 @@ eta_range <- combined_data$Hospitalization #estimated age-standardized hospitali
 eta2_range <- combined_data$`Crit of Hosp` #estimated age-standardized ICU rate AMONG those hospitalized
 ep_range <-  combined_data$`CFR of Crit` #estimated age-standardized fatality rate AMONG ICU patients
 lvl3 <-   combined_data$`Lvl3` # name of TA
+lvl2 <-   combined_data$`Lvl2` # adding in a check on country
+UID <- combined_data$UID
 
 #creating lists that data will go into
 P.List = list() #population
@@ -66,6 +68,8 @@ for(i in 1:length(pop_range)) {
   init <- c(S = pop_range[i] - 1, E = 0, I = 1, H = 0, C = 0, R = 0, D = 0, hosp = 0, crits = 0)
   times <- seq(0,365)
   sim <- as.data.table(lsoda(init, times, model, parms))
+  
+  write.csv(sim, paste0("epi_csvs/",UID[i],"_epi.csv"))
   
   P.List[[length(P.List)+1]] = pop_range[i]
   S.List[[length(S.List)+1]] = min(sim$S)  #number susceptible at end of simulation
