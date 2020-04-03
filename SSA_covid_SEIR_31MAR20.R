@@ -1,6 +1,5 @@
 set.seed(1234)
 
-#setwd("C:/Users/dylan/Dropbox (Cooper Smith)/CS_Team/Projects/COVID-19 Response/Malawi/Analytics/EPI Modeling")
 library(deSolve)
 library(data.table)
 library(ggplot2)
