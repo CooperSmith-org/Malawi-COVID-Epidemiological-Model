@@ -15,7 +15,7 @@ library(reshape2)
 
 ## Load data from the simulations
 
-```{r load data, warning=FALSE}
+```{r load data, warning=FALSE, message=FALSE}
 #load + concatenate the csvs
 df <- list.files(path = "epi_csvs",full.names = TRUE) %>% 
   lapply(read_csv) %>% 
@@ -27,18 +27,42 @@ new_df <- df %>%
   summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R))
 ```
 
+##Cross-check some total figures
+
+```{r grab some summary stats}
+#Check num susceptible at beginning and end
+print(paste0("The number of susceptible individuals at t = 0 was: ", new_df$Susceptible[1]))
+print(paste0("The number of susceptible individuals after one year was: ", new_df$Susceptible[366]))
+print(paste0("The total number of incidences was: ", new_df$Susceptible[1] - new_df$Susceptible[366]))
+
+
+#Check num exposed at beginning and end
+print(paste0("The number of exposed individuals at t = 0 was: ", new_df$Exposed[1]))
+print(paste0("The number of exposed individuals at the end of one year was: ", new_df$Exposed[366]))
+
+#Check num infected at beginning and end
+print(paste0("The number of infected individuals at t = 0 was: ", new_df$Infected[1]))
+print(paste0("The number of infected individuals at the end of one year was: ", new_df$Infected[366]))
+```
+
+
 ## Make chart
 
-```{r pressure, fig.height=8, fig.width=12}
+```{r pressure, fig.height=6, fig.width=9}
 longData <- melt(new_df, id = c("X1"))
 
 longData$variable <- factor(longData$variable,
-                            levels = c("Susceptible", "Exposed", "Infected", "Recovered"))
+                            levels = c("Susceptible", "Recovered","Exposed", "Infected"))
 
+options(scipen=10000)
 ggplot(data=longData %>% arrange(variable),
        aes(x=X1, y=value, fill=variable, color=variable, alpha=variable)) +
   geom_bar(stat="identity", position = "identity") +
-  scale_colour_manual(values=c("lightblue4", "red", "gray94", "indianred4", "lightslateblue")) + 
-  scale_fill_manual(values=c("lightblue4", "red", "gray94", "indianred4", "lightslateblue")) + 
-  scale_alpha_manual(values=c(.3, .4, .5, .6, .7, .8)) 
+  scale_colour_manual(values=c("lightblue4", "red", "gray94", "indianred4")) + 
+  scale_fill_manual(values=c("lightblue4", "red", "gray94", "indianred4")) + 
+  scale_alpha_manual(values=c(.4, .5, .6, .7, .8)) +
+  xlab("Day (from t=0)") +
+  ylab("Number of people") +
+  ggtitle("Number of susceptible, exposed, infected, and recovered individuals over time in current scenario")
+  
 ```

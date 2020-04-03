@@ -69,7 +69,8 @@ for(i in 1:length(pop_range)) {
   times <- seq(0,365)
   sim <- as.data.table(lsoda(init, times, model, parms))
   
-  write.csv(sim, paste0("epi_csvs/",UID[i],"_epi.csv"))
+  if (UID[i] != "N/A"){
+    write.csv(sim, paste0("epi_csvs/",UID[i],"_epi.csv"))}
   
   P.List[[length(P.List)+1]] = pop_range[i]
   S.List[[length(S.List)+1]] = min(sim$S)  #number susceptible at end of simulation
