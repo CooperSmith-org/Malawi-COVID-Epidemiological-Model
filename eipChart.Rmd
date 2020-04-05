@@ -24,7 +24,13 @@ df <- list.files(path = "epi_csvs",full.names = TRUE) %>%
 #create summary dataframe
 new_df <- df %>% 
   group_by(X1) %>% 
-  summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R))
+  summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
+
+#generate the TA-level summaries
+summary_df <- df %>%
+  group_by(TA, ID) %>%
+  summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
+write.csv(summary_df, "new_summary.csv")
 ```
 
 ##Cross-check some total figures
@@ -34,28 +40,48 @@ new_df <- df %>%
 print(paste0("The number of susceptible individuals at t = 0 was: ", new_df$Susceptible[1]))
 print(paste0("The number of susceptible individuals after one year was: ", new_df$Susceptible[366]))
 print(paste0("The total number of incidences was: ", new_df$Susceptible[1] - new_df$Susceptible[366]))
-
+print(paste0("As a check, this should match: ", new_df$Deaths[366] + new_df$Recovered[366]))
 
 #Check num exposed at beginning and end
 print(paste0("The number of exposed individuals at t = 0 was: ", new_df$Exposed[1]))
 print(paste0("The number of exposed individuals at the end of one year was: ", new_df$Exposed[366]))
+print(paste0("The max. number of exposed individuals at one time was: ", max(new_df$Exposed)))
 
 #Check num infected at beginning and end
 print(paste0("The number of infected individuals at t = 0 was: ", new_df$Infected[1]))
 print(paste0("The number of infected individuals at the end of one year was: ", new_df$Infected[366]))
+print(paste0("The max. number of infected individuals at one time was: ", max(new_df$Infected)))
+
+#Check num hospitalized at beginning and end
+print(paste0("The number of hospitalized individuals at t = 0 was: ", new_df$Hospitalized[1]))
+print(paste0("The number of hospitalized individuals at the end of one year was: ", new_df$Hospitalized[366]))
+print(paste0("The max. number of hospitalized individuals at one time was: ", max(new_df$Hospitalized)))
+
+#Check num in critical care at beginning and end
+print(paste0("The number of individuals in critical care at t = 0 was: ", new_df$Critical[1]))
+print(paste0("The number of individuals in critical care at the end of one year was: ", new_df$Critical[366]))
+print(paste0("The max. number of individuals in critical care at one time was: ", max(new_df$Critical)))
+
+#Check num infected
 ```
 
 
-## Make chart
+## Make charts
 
-```{r pressure, fig.height=6, fig.width=9}
+First, include all states of interest
+
+```{r SEIR, fig.height=6, fig.width=9}
 longData <- melt(new_df, id = c("X1"))
 
+#Order for purposes of chart
 longData$variable <- factor(longData$variable,
-                            levels = c("Susceptible", "Recovered","Exposed", "Infected"))
+                            levels = c("Susceptible", "Recovered","Exposed", "Infected", "Hospitalized", "Critical"))
 
+#Override scientific notation default
 options(scipen=10000)
-ggplot(data=longData %>% arrange(variable),
+
+# First chart - SEIR
+ggplot(data=subset(longData, longData$variable %in% c("Susceptible", "Recovered","Exposed", "Infected")) %>% arrange(variable),
        aes(x=X1, y=value, fill=variable, color=variable, alpha=variable)) +
   geom_bar(stat="identity", position = "identity") +
   scale_colour_manual(values=c("lightblue4", "red", "gray94", "indianred4")) + 
@@ -65,4 +91,52 @@ ggplot(data=longData %>% arrange(variable),
   ylab("Number of people") +
   ggtitle("Number of susceptible, exposed, infected, and recovered individuals over time in current scenario")
   
+```
+
+Curve for solely those infected
+
+```{r infected, fig.height=4, fig.width=6}
+
+options(scipen=10000)
+
+# Second chart - Infected
+ggplot(data=subset(longData, longData$variable =="Infected"),
+       aes(x=X1, y=value, fill="indianred4", color="indianred4", alpha=.8)) +
+  geom_bar(stat="identity", position = "identity") +
+  xlab("Day (from t=0)") +
+  ylab("Number of people") +
+  ggtitle("Number of infected individuals over time in current scenario")+
+  theme(legend.position="none")
+```
+
+Curve for solely those hospitalized
+
+```{r hospitalized, fig.height=4, fig.width=6}
+
+options(scipen=10000)
+
+# Second chart - Hospitalized
+ggplot(data=subset(longData, longData$variable =="Hospitalized"),
+       aes(x=X1, y=value, fill=variable, color=variable, alpha=.8)) +
+  geom_bar(stat="identity", position = "identity") +
+  xlab("Day (from t=0)") +
+  ylab("Number of people") +
+  ggtitle("Number of hospitalized individuals over time in current scenario")+
+  theme(legend.position="none")
+```
+
+Curve for solely those in critical care
+
+```{r crit care, fig.height=4, fig.width=6}
+
+options(scipen=10000)
+
+# Third chart - critical care
+ggplot(data=subset(longData, longData$variable =="Critical"),
+       aes(x=X1, y=value, fill=variable, color=variable, alpha=.8)) +
+  geom_bar(stat="identity", position = "identity") +
+  xlab("Day (from t=0)") +
+  ylab("Number of people") +
+  ggtitle("Number of individuals in critical care over time in current scenario")+
+  theme(legend.position="none")
 ```
