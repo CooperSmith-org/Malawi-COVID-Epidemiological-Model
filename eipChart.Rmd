@@ -13,40 +13,7 @@ library(ggplot2)
 library(reshape2)
 ```
 
-## Load data from the simulations
-
-```{r load data, warning=FALSE, message=FALSE}
-#load + concatenate the csvs for each scenario
-df_0_.25 <- list.files(path = "epi_csvs/0-0.25",full.names = TRUE) %>% 
-  lapply(read_csv) %>% 
-  bind_rows 
-
-df_30_.75 <- list.files(path = "epi_csvs/0-0.75",full.names = TRUE) %>% 
-  lapply(read_csv) %>% 
-  bind_rows 
-
-#create summary dataframe
-new_df_0_.25 <- df_0_.25 %>% 
-  group_by(X1) %>% 
-  summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
-
-new_df_30_.75 <- df_30_.75 %>% 
-  group_by(X1) %>% 
-  summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
-
-# #generate the TA-level summaries
-# summary_df_0_.25 <- df_0_.25 %>%
-#   group_by(TA, ID) %>%
-#   summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
-# write.csv(summary_df_0_.25, "new_summary_0-.25.csv")
-# 
-# summary_df_30_.8 <- df_30_.75 %>%
-#   group_by(TA, ID) %>%
-#   summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
-# write.csv(summary_df_30_.8, "new_summary_30-.8.csv")
-```
-
-##Cross-check some total figures for first reduction set
+##Cross-check some total figures - maybe add back in
 
 ```{r grab some summary stats}
 #Check figures for num susceptible
@@ -79,7 +46,7 @@ new_df_30_.75 <- df_30_.75 %>%
 
 ## Make charts
 
-First, include all states of interest
+First, include all states of interest for the baseline
 
 ```{r SEIR, fig.height=3, fig.width=6}
 
@@ -111,19 +78,23 @@ ggsave("images/baseline.png")
 
 ## Make charts
 
-```{r SEIR v2, fig.height=6, fig.width=9}
+```{r SEIR v2, fig.height=3, fig.width=6}
 
 #Load the files for holding rate constant
 df_45_25 <- read.csv('summary_csv_day/new_summary_45-.25.csv')
-df_45_25$pct <- "25 percent"
+df_45_25$pct <- "75 percent"
 df_45_50 <- read.csv('summary_csv_day/new_summary_45-.5.csv')
 df_45_50$pct <- "50 percent"
 df_45_75 <- read.csv('summary_csv_day/new_summary_45-.75.csv')
-df_45_75$pct <- "75 percent"
+df_45_75$pct <- "25 percent"
 
 df_45 <- bind_rows(df_45_25, df_45_50, df_45_75)
-
 df_45 <- select(df_45, -c("X"))
+
+#add in baseline
+baseline$pct <- "No change"
+df_45 <- bind_rows(df_45, baseline)
+
 longData2 <- melt(df_45, id = c("X1", "pct"))
 
 #Order for purposes of chart
@@ -135,7 +106,7 @@ names(longData2)[names(longData2)=="variable"] <- "State"
 #Override scientific notation default
 options(scipen=10000)
 
-# First chart - SEIR
+# First chart - infections
 ggplot(data=subset(longData2, longData2$State %in% c("Infected")) %>% arrange(State),
        aes(x=X1, y=value, fill=pct, color=pct)) +
   geom_line(stat="identity", position = "identity") +
@@ -146,7 +117,49 @@ ggplot(data=subset(longData2, longData2$State %in% c("Infected")) %>% arrange(St
   ggtitle("Number of individuals infected based on a policy of social distancing implemented at day 45, with varying adherence") +
   scale_y_continuous(label=comma) +
   theme_minimal()
-ggsave("images/reduc_variation.png")
+ggsave("images/reduc_variation_infections.png")
+
+#Override scientific notation default
+options(scipen=10000)
+
+# Second chart - hospitalizations
+ggplot(data=subset(longData2, longData2$State %in% c("Hospitalizations")) %>% arrange(State),
+       aes(x=X1, y=value, fill=pct, color=pct)) +
+  geom_line(stat="identity", position = "identity") +
+  scale_colour_manual(values=c("lightblue4", "red", "blue", "indianred4")) + 
+  scale_fill_manual(values=c("lightblue4", "red", "blue", "indianred4")) + 
+  xlab("Day (from t=0)") +
+  ylab("Number of people") +
+  ggtitle("Number of individuals hospitalized based on a policy of social distancing implemented at day 45, with varying adherence") +
+  scale_y_continuous(label=comma) +
+  theme_minimal()
+ggsave("images/reduc_variation_hospitalization.png")
+
+# Third chart - critical care
+ggplot(data=subset(longData2, longData2$State %in% c("Critical")) %>% arrange(State),
+       aes(x=X1, y=value, fill=pct, color=pct)) +
+  geom_line(stat="identity", position = "identity") +
+  scale_colour_manual(values=c("lightblue4", "red", "blue", "indianred4")) + 
+  scale_fill_manual(values=c("lightblue4", "red", "blue", "indianred4")) + 
+  xlab("Day (from t=0)") +
+  ylab("Number of people") +
+  ggtitle("Number of individuals in critical care based on a policy of social distancing implemented at day 45, with varying adherence") +
+  scale_y_continuous(label=comma) +
+  theme_minimal()
+ggsave("images/reduc_variation_critical.png")
+
+# Fourth chart - deaths
+ggplot(data=subset(longData2, longData2$State %in% c("Deaths")) %>% arrange(State),
+       aes(x=X1, y=value, fill=pct, color=pct)) +
+  geom_line(stat="identity", position = "identity") +
+  scale_colour_manual(values=c("lightblue4", "red", "blue", "indianred4")) + 
+  scale_fill_manual(values=c("lightblue4", "red", "blue", "indianred4")) + 
+  xlab("Day (from t=0)") +
+  ylab("Number of people") +
+  ggtitle("Number of deaths based on a policy of social distancing implemented at day 45, with varying adherence") +
+  scale_y_continuous(label=comma) +
+  theme_minimal()
+ggsave("images/reduc_variation_death.png")
 ```
 
 ## Make charts
@@ -162,6 +175,11 @@ df_60_50 <- read.csv('summary_csv_day/new_summary_60-.75.csv')
 df_60_50$start <- "Day 60"
 
 df_start <- bind_rows(df_30_50, df_45_50, df_60_50)
+
+#add in baseline
+baseline$start <- "No policy"
+baselineStart <- select(baseline, -c("pct"))
+df_start <- bind_rows(df_start, baselineStart)
 
 df_start <- select(df_start, -c("X"))
 longData3 <- melt(df_start, id = c("X1", "start"))
