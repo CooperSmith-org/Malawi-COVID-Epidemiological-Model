@@ -26,8 +26,8 @@ model <- function(times, init, parms) {
 }
 
 #bring in Malawi-specific TA data and SSA data
-MW_TA_COVID_Inputs <- read_csv("MW TA COVID Inputs.csv")
-SSA_COVID_Inputs <- read_csv("SSA COVID Inputs.csv")
+MW_TA_COVID_Inputs <- read_csv("inputs/MW TA COVID Inputs.csv")
+SSA_COVID_Inputs <- read_csv("inputs/SSA COVID Inputs.csv")
 combined_data <- rbind(MW_TA_COVID_Inputs, SSA_COVID_Inputs)
 
 pop_range <- combined_data$Population #TA population total estimate
@@ -44,32 +44,32 @@ reductionList <- list(.25, .5, .75) #potential reductions we are evaluating - no
 for (s in 1:length(startList)){
   for (r in 1:length(reductionList)){
     for(i in 1:length(pop_range)) {
-          parms <- c(population = 0, #population size
-                     eta = 0, #proportion of cases who are hospitalized
-                     eta2 = 0, #ICU rate of hospitalized cases
-                     epsilon = 0, #death rate of ICU cases
-                     kappa = 1 / 2.6, #time to infectiousness
-                     kappa2 = 1 / 2.6, #rest of infectious time and time to symptomatic
-                     tau = 1 / 8, #recovery rate for hospitalized cases
-                     tau2 = 1 / 16, #recovery rate for ICU cases
-                     R0 = 2.2, #basic reproductive number
-                     start = 0, #start date for the model
-                     reduction = .5) #baseline reduction
-          parms["population"] <- pop_range[i]
-          parms["eta"] <- eta_range[i]
-          parms["eta2"] <- eta2_range[i]
-          parms["epsilon"] <- ep_range[i]
-          parms["start"] <- startList[s]
-          parms["reduction"] <- reductionList[r]
-          init <- c(S = pop_range[i] - 1, E = 0, I = 1, H = 0, C = 0, R = 0, D = 0, hosp = 0, crits = 0)
-          times <- seq(0,365)
-          sim <- as.data.table(lsoda(init, times, model, parms))
-          sim$TA <- lvl3[i]
-          sim$ID <- UID[i]
-          sim$POP <- pop_range[i]
-            
-          if (UID[i] != "N/A"){
-            write.csv(sim, paste0("epi_csvs/",startList[s],"-",reductionList[r],"/",UID[i],".csv"))}
+      parms <- c(population = 0, #population size
+                 eta = 0, #proportion of cases who are hospitalized
+                 eta2 = 0, #ICU rate of hospitalized cases
+                 epsilon = 0, #death rate of ICU cases
+                 kappa = 1 / 2.6, #time to infectiousness
+                 kappa2 = 1 / 2.6, #rest of infectious time and time to symptomatic
+                 tau = 1 / 8, #recovery rate for hospitalized cases
+                 tau2 = 1 / 16, #recovery rate for ICU cases
+                 R0 = 2.2, #basic reproductive number
+                 start = 0, #start date for the model
+                 reduction = .5) #baseline reduction
+      parms["population"] <- pop_range[i]
+      parms["eta"] <- eta_range[i]
+      parms["eta2"] <- eta2_range[i]
+      parms["epsilon"] <- ep_range[i]
+      parms["start"] <- startList[s]
+      parms["reduction"] <- reductionList[r]
+      init <- c(S = pop_range[i] - 1, E = 0, I = 1, H = 0, C = 0, R = 0, D = 0, hosp = 0, crits = 0)
+      times <- seq(0,365)
+      sim <- as.data.table(lsoda(init, times, model, parms))
+      sim$TA <- lvl3[i]
+      sim$ID <- UID[i]
+      sim$POP <- pop_range[i]
+      
+      if (UID[i] != "N/A"){
+        write.csv(sim, paste0("epi_csvs/",startList[s],"-",reductionList[r],"/",UID[i],".csv"))}
     }
   }
 }
