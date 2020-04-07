@@ -11,7 +11,9 @@ library(readr)
 #SEIR Model of Differential Equations
 model <- function(times, init, parms) {
   with(as.list(c(parms, init)), {
-    ifelse(times < start, beta <- R0*kappa/population, beta <- reduction*R0*kappa/population) # time-dependent R0 if social distancing is implemented. 50% reduction but can be anything
+    ifelse(times < start0, beta <- R0*kappa/population, 
+           ifelse(times < start, beta <- (1-reduction0)*R0*kappa/population, 
+                  beta <- (1 - reduction0*reduction)*R0*kappa/population)) # time-dependent R0 if social distancing is implemented. 50% reduction but can be anything
     dS <- -beta * S * I #susceptible
     dE <- beta * S * I -  E * kappa #exposed but asymptomatic
     dI <- E * kappa - I * kappa2 #infectious, but mild severity
@@ -37,8 +39,8 @@ ep_range <-  combined_data$`CFR of Crit` #estimated age-standardized fatality ra
 lvl3 <-   combined_data$`Lvl3` # name of TA
 lvl2 <-   combined_data$`Lvl2` # adding in a check on country
 UID <- combined_data$UID
-startList <- list(30, 45, 60) #start dates we are evaluating
-reductionList <- list(.25, .5, .75) #potential reductions we are evaluating - note: 1 is baseline
+startList <- list(35) #start dates we are evaluating
+reductionList <- list(1, 1.25, 1.75) #potential reductions we are evaluating - note: 1 is baseline
 
 #loop through each TA, using the TA-specific estimates of population size, hospitalization, ICU, and death
 for (s in 1:length(startList)){
@@ -54,7 +56,9 @@ for (s in 1:length(startList)){
                  tau2 = 1 / 16, #recovery rate for ICU cases
                  R0 = 2.2, #basic reproductive number
                  start = 0, #start date for the model
-                 reduction = .5) #baseline reduction
+                 start0 = 15,
+                 reduction0 = .2,
+                 reduction = 1) #baseline reduction
       parms["population"] <- pop_range[i]
       parms["eta"] <- eta_range[i]
       parms["eta2"] <- eta2_range[i]
@@ -74,181 +78,230 @@ for (s in 1:length(startList)){
   }
 }
 
-#grab the baseline
-for(i in 1:length(pop_range)) {
-  parms <- c(population = 0, #population size
-             eta = 0, #proportion of cases who are hospitalized
-             eta2 = 0, #ICU rate of hospitalized cases
-             epsilon = 0, #death rate of ICU cases
-             kappa = 1 / 2.6, #time to infectiousness
-             kappa2 = 1 / 2.6, #rest of infectious time and time to symptomatic
-             tau = 1 / 8, #recovery rate for hospitalized cases
-             tau2 = 1 / 16, #recovery rate for ICU cases
-             R0 = 2.2, #basic reproductive number
-             start = 0, #start date for the model
-             reduction = .5) #baseline reduction
-  parms["population"] <- pop_range[i]
-  parms["eta"] <- eta_range[i]
-  parms["eta2"] <- eta2_range[i]
-  parms["epsilon"] <- ep_range[i]
-  parms["start"] <- 0
-  parms["reduction"] <- 1.0
-  init <- c(S = pop_range[i] - 1, E = 0, I = 1, H = 0, C = 0, R = 0, D = 0, hosp = 0, crits = 0)
-  times <- seq(0,365)
-  sim <- as.data.table(lsoda(init, times, model, parms))
-  sim$TA <- lvl3[i]
-  sim$ID <- UID[i]
-  sim$POP <- pop_range[i]
-  
-  if (UID[i] != "N/A"){
-    write.csv(sim, paste0("epi_csvs/baseline/",UID[i],".csv"))}
-}
+# #grab the baseline
+# for(i in 1:length(pop_range)) {
+#   parms <- c(population = 0, #population size
+#              eta = 0, #proportion of cases who are hospitalized
+#              eta2 = 0, #ICU rate of hospitalized cases
+#              epsilon = 0, #death rate of ICU cases
+#              kappa = 1 / 2.6, #time to infectiousness
+#              kappa2 = 1 / 2.6, #rest of infectious time and time to symptomatic
+#              tau = 1 / 8, #recovery rate for hospitalized cases
+#              tau2 = 1 / 16, #recovery rate for ICU cases
+#              R0 = 2.2, #basic reproductive number
+#              start = 0, #start date for the model
+#              reduction = .5) #baseline reduction
+#   parms["population"] <- pop_range[i]
+#   parms["eta"] <- eta_range[i]
+#   parms["eta2"] <- eta2_range[i]
+#   parms["epsilon"] <- ep_range[i]
+#   parms["start"] <- 0
+#   parms["reduction"] <- 1.0
+#   init <- c(S = pop_range[i] - 1, E = 0, I = 1, H = 0, C = 0, R = 0, D = 0, hosp = 0, crits = 0)
+#   times <- seq(0,365)
+#   sim <- as.data.table(lsoda(init, times, model, parms))
+#   sim$TA <- lvl3[i]
+#   sim$ID <- UID[i]
+#   sim$POP <- pop_range[i]
+#   
+#   if (UID[i] != "N/A"){
+#     write.csv(sim, paste0("epi_csvs/baseline/",UID[i],".csv"))}
+# }
 
 #Write csvs
 #load + concatenate the csvs for each scenario
-df_30_.25 <- list.files(path = "epi_csvs/30-0.25",full.names = TRUE) %>% 
+# df_30_.25 <- list.files(path = "epi_csvs/30-0.25",full.names = TRUE) %>% 
+#   lapply(read_csv) %>% 
+#   bind_rows 
+# 
+# df_30_.5 <- list.files(path = "epi_csvs/30-0.5",full.names = TRUE) %>% 
+#   lapply(read_csv) %>% 
+#   bind_rows 
+# 
+# df_30_.75 <- list.files(path = "epi_csvs/30-0.75",full.names = TRUE) %>% 
+#   lapply(read_csv) %>% 
+#   bind_rows 
+# 
+# df_45_.25 <- list.files(path = "epi_csvs/45-0.25",full.names = TRUE) %>% 
+#   lapply(read_csv) %>% 
+#   bind_rows 
+# 
+# df_45_.5 <- list.files(path = "epi_csvs/45-0.5",full.names = TRUE) %>% 
+#   lapply(read_csv) %>% 
+#   bind_rows 
+# 
+# df_45_.75 <- list.files(path = "epi_csvs/45-0.75",full.names = TRUE) %>% 
+#   lapply(read_csv) %>% 
+#   bind_rows 
+# 
+# df_60_.25 <- list.files(path = "epi_csvs/60-0.25",full.names = TRUE) %>% 
+#   lapply(read_csv) %>% 
+#   bind_rows 
+# 
+# df_60_.5 <- list.files(path = "epi_csvs/60-0.5",full.names = TRUE) %>% 
+#   lapply(read_csv) %>% 
+#   bind_rows
+# 
+# df_60_.75 <- list.files(path = "epi_csvs/60-0.75",full.names = TRUE) %>% 
+#   lapply(read_csv) %>% 
+#   bind_rows
+# 
+# df_baseline <- list.files(path = "epi_csvs/baseline",full.names = TRUE) %>% 
+#   lapply(read_csv) %>% 
+#   bind_rows
+
+df_35_.25 <- list.files(path = "epi_csvs/35-1.25",full.names = TRUE) %>% 
   lapply(read_csv) %>% 
   bind_rows 
 
-df_30_.5 <- list.files(path = "epi_csvs/30-0.5",full.names = TRUE) %>% 
-  lapply(read_csv) %>% 
-  bind_rows 
-
-df_30_.75 <- list.files(path = "epi_csvs/30-0.75",full.names = TRUE) %>% 
-  lapply(read_csv) %>% 
-  bind_rows 
-
-df_45_.25 <- list.files(path = "epi_csvs/45-0.25",full.names = TRUE) %>% 
-  lapply(read_csv) %>% 
-  bind_rows 
-
-df_45_.5 <- list.files(path = "epi_csvs/45-0.5",full.names = TRUE) %>% 
-  lapply(read_csv) %>% 
-  bind_rows 
-
-df_45_.75 <- list.files(path = "epi_csvs/45-0.75",full.names = TRUE) %>% 
-  lapply(read_csv) %>% 
-  bind_rows 
-
-df_60_.25 <- list.files(path = "epi_csvs/60-0.25",full.names = TRUE) %>% 
-  lapply(read_csv) %>% 
-  bind_rows 
-
-df_60_.5 <- list.files(path = "epi_csvs/60-0.5",full.names = TRUE) %>% 
+df_35_.75 <- list.files(path = "epi_csvs/35-1.75",full.names = TRUE) %>% 
   lapply(read_csv) %>% 
   bind_rows
 
-df_60_.75 <- list.files(path = "epi_csvs/60-0.75",full.names = TRUE) %>% 
-  lapply(read_csv) %>% 
-  bind_rows
-
-df_baseline <- list.files(path = "epi_csvs/baseline",full.names = TRUE) %>% 
+df_35_1 <- list.files(path = "epi_csvs/35-1",full.names = TRUE) %>% 
   lapply(read_csv) %>% 
   bind_rows
 
 #create summary dataframe
-new_df_30_.25 <- df_30_.25 %>% 
+# new_df_30_.25 <- df_30_.25 %>% 
+#   group_by(X1) %>% 
+#   summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
+# 
+# new_df_30_.5 <- df_30_.5 %>% 
+#   group_by(X1) %>% 
+#   summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
+# 
+# new_df_30_.75 <- df_30_.75 %>% 
+#   group_by(X1) %>% 
+#   summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
+# 
+# new_df_45_.25 <- df_45_.25 %>% 
+#   group_by(X1) %>% 
+#   summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
+# 
+# new_df_45_.5 <- df_45_.5 %>% 
+#   group_by(X1) %>% 
+#   summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
+# 
+# new_df_45_.75 <- df_60_.75 %>% 
+#   group_by(X1) %>% 
+#   summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
+# 
+# new_df_60_.25 <- df_60_.25 %>% 
+#   group_by(X1) %>% 
+#   summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
+# 
+# new_df_60_.5 <- df_60_.5 %>% 
+#   group_by(X1) %>% 
+#   summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
+# 
+# new_df_60_.75 <- df_60_.75 %>% 
+#   group_by(X1) %>% 
+#   summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
+# 
+# new_df_baseline <- df_baseline %>% 
+#   group_by(X1) %>% 
+#   summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
+
+################**********NEW SCENARIOS - NOTE: 35-1 is new baseline*******##########################
+
+new_df_35_.25 <- df_35_.25 %>% 
   group_by(X1) %>% 
   summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
 
-new_df_30_.5 <- df_30_.5 %>% 
+new_df_35_.75 <- df_35_.75 %>% 
   group_by(X1) %>% 
   summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
 
-new_df_30_.75 <- df_30_.75 %>% 
-  group_by(X1) %>% 
-  summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
-
-new_df_45_.25 <- df_45_.25 %>% 
-  group_by(X1) %>% 
-  summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
-
-new_df_45_.5 <- df_45_.5 %>% 
-  group_by(X1) %>% 
-  summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
-
-new_df_45_.75 <- df_60_.75 %>% 
-  group_by(X1) %>% 
-  summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
-
-new_df_60_.25 <- df_60_.25 %>% 
-  group_by(X1) %>% 
-  summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
-
-new_df_60_.5 <- df_60_.5 %>% 
-  group_by(X1) %>% 
-  summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
-
-new_df_60_.75 <- df_60_.75 %>% 
-  group_by(X1) %>% 
-  summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
-
-new_df_baseline <- df_baseline %>% 
+new_df_35_1 <- df_35_1 %>% 
   group_by(X1) %>% 
   summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
 
 #write summaries to csvs
-write.csv(new_df_30_.25, "summary_csv_day/new_summary_30-.25.csv")
-write.csv(new_df_30_.5, "summary_csv_day/new_summary_30-.5.csv")
-write.csv(new_df_30_.75, "summary_csv_day/new_summary_30-.75.csv")
+# write.csv(new_df_30_.25, "summary_csv_day/new_summary_30-.25.csv")
+# write.csv(new_df_30_.5, "summary_csv_day/new_summary_30-.5.csv")
+# write.csv(new_df_30_.75, "summary_csv_day/new_summary_30-.75.csv")
+# 
+# write.csv(new_df_45_.25, "summary_csv_day/new_summary_45-.25.csv")
+# write.csv(new_df_45_.5, "summary_csv_day/new_summary_45-.5.csv")
+# write.csv(new_df_45_.75, "summary_csv_day/new_summary_45-.75.csv")
+# 
+# write.csv(new_df_60_.25, "summary_csv_day/new_summary_60-.25.csv")
+# write.csv(new_df_60_.5, "summary_csv_day/new_summary_60-.5.csv")
+# write.csv(new_df_60_.75, "summary_csv_day/new_summary_60-.75.csv")
+# 
+# write.csv(new_df_baseline, "summary_csv_day/new_summary_baseline.csv")
 
-write.csv(new_df_45_.25, "summary_csv_day/new_summary_45-.25.csv")
-write.csv(new_df_45_.5, "summary_csv_day/new_summary_45-.5.csv")
-write.csv(new_df_45_.75, "summary_csv_day/new_summary_45-.75.csv")
+#########################********NEW SCENARIOS*******########################################################
 
-write.csv(new_df_60_.25, "summary_csv_day/new_summary_60-.25.csv")
-write.csv(new_df_60_.5, "summary_csv_day/new_summary_60-.5.csv")
-write.csv(new_df_60_.75, "summary_csv_day/new_summary_60-.75.csv")
-
-write.csv(new_df_baseline, "summary_csv_day/new_summary_baseline.csv")
+write.csv(new_df_35_.25, "summary_csv_day/new_summary_35-.25.csv")
+write.csv(new_df_35_1, "summary_csv_day/new_summary_35-1.csv")
+write.csv(new_df_35_.75, "summary_csv_day/new_summary_35-.75.csv")
 
 #generate the TA-level summaries
-summary_df_30_.25 <- df_30_.25 %>%
-  group_by(TA, ID) %>%
-  summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
-write.csv(summary_df_30_.25, "summary_by_TA/30-.25.csv")
+# summary_df_30_.25 <- df_30_.25 %>%
+#   group_by(TA, ID) %>%
+#   summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
+# write.csv(summary_df_30_.25, "summary_by_TA/30-.25.csv")
+# 
+# summary_df_30_.5 <- df_30_.5 %>%
+#   group_by(TA, ID) %>%
+#   summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
+# write.csv(summary_df_30_.5, "summary_by_TA/30-.5.csv")
+# 
+# summary_df_30_.75 <- df_30_.75 %>%
+#   group_by(TA, ID) %>%
+#   summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
+# write.csv(summary_df_30_.75, "summary_by_TA/30-.75.csv")
+# 
+# summary_df_45_.25 <- df_45_.25 %>%
+#   group_by(TA, ID) %>%
+#   summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
+# write.csv(summary_df_45_.25, "summary_by_TA/45-.25.csv")
+# 
+# summary_df_45_.5 <- df_45_.5 %>%
+#   group_by(TA, ID) %>%
+#   summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
+# write.csv(summary_df_45_.5, "summary_by_TA/45-.5.csv")
+# 
+# summary_df_45_.75 <- df_45_.75 %>%
+#   group_by(TA, ID) %>%
+#   summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
+# write.csv(summary_df_45_.75, "summary_by_TA/45-.75.csv")
+# 
+# summary_df_60_.25 <- df_60_.25 %>%
+#   group_by(TA, ID) %>%
+#   summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
+# write.csv(summary_df_60_.25, "summary_by_TA/60-.25.csv")
+# 
+# summary_df_60_.5 <- df_60_.5 %>%
+#   group_by(TA, ID) %>%
+#   summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
+# write.csv(summary_df_60_.5, "summary_by_TA/60-.5.csv")
+# 
+# summary_df_60_.75 <- df_60_.75 %>%
+#   group_by(TA, ID) %>%
+#   summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
+# write.csv(summary_df_60_.75, "summary_by_TA/60-.75.csv")
+# 
+# summary_df_baseline <- df_baseline %>%
+#   group_by(TA, ID) %>%
+#   summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
+# write.csv(summary_df_baseline, "summary_by_TA/baseline.csv")
 
-summary_df_30_.5 <- df_30_.5 %>%
-  group_by(TA, ID) %>%
-  summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
-write.csv(summary_df_30_.5, "summary_by_TA/30-.5.csv")
+##################***********NEW EXAMPLES***********##########################
 
-summary_df_30_.75 <- df_30_.75 %>%
+summary_df_35_.25 <- df_35_.25 %>%
   group_by(TA, ID) %>%
   summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
-write.csv(summary_df_30_.75, "summary_by_TA/30-.75.csv")
+write.csv(summary_df_35_.25, "summary_by_TA/35-.25.csv")
 
-summary_df_45_.25 <- df_45_.25 %>%
+summary_df_35_1 <- df_35_1 %>%
   group_by(TA, ID) %>%
   summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
-write.csv(summary_df_45_.25, "summary_by_TA/45-.25.csv")
+write.csv(summary_df_35_1, "summary_by_TA/35-1.csv")
 
-summary_df_45_.5 <- df_45_.5 %>%
+summary_df_35_.75 <- df_35_.75 %>%
   group_by(TA, ID) %>%
   summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
-write.csv(summary_df_45_.5, "summary_by_TA/45-.5.csv")
-
-summary_df_45_.75 <- df_45_.75 %>%
-  group_by(TA, ID) %>%
-  summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
-write.csv(summary_df_45_.75, "summary_by_TA/45-.75.csv")
-
-summary_df_60_.25 <- df_60_.25 %>%
-  group_by(TA, ID) %>%
-  summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
-write.csv(summary_df_60_.25, "summary_by_TA/60-.25.csv")
-
-summary_df_60_.5 <- df_60_.5 %>%
-  group_by(TA, ID) %>%
-  summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
-write.csv(summary_df_60_.5, "summary_by_TA/60-.5.csv")
-
-summary_df_60_.75 <- df_60_.75 %>%
-  group_by(TA, ID) %>%
-  summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
-write.csv(summary_df_60_.75, "summary_by_TA/60-.75.csv")
-
-summary_df_baseline <- df_baseline %>%
-  group_by(TA, ID) %>%
-  summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C))
-write.csv(summary_df_baseline, "summary_by_TA/baseline.csv")
+write.csv(summary_df_35_.75, "summary_by_TA/35-.75.csv")
