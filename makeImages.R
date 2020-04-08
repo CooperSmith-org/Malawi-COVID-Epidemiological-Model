@@ -122,13 +122,13 @@ df_45_50$Reduction <- "Enforced population restrictions (40-60% reduction in mob
 df_45_75 <- read.csv('summary_csv_day/new_summary_45-.75.csv')
 df_45_75$Reduction <- "Strict enforcement of lockdown (75% mobility reduction)"
 
-df_new_reduction <- bind_rows(df_45_35, df_45_50, df_45_75)
-df_new_reduction <- select(df_new_reduction, -c("X"))
+df_temp <- bind_rows(df_45_35, df_45_50, df_45_75)
+df_temp <- select(df_new_reduction, -c("X"))
 
 #add in baseline
 baseline2$Reduction <- "No further reduction from current"
 baseline$Reduction <- "No mitigation"
-df_new_reduction <- bind_rows(df_new_reduction, baseline, baseline2)
+df_new_reduction <- bind_rows(baseline, baseline2, df_temp)
 
 longData5 <- melt(df_new_reduction, id = c("X1", "Reduction"))
 names(longData5)[names(longData5)=="variable"] <- "State"

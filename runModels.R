@@ -134,25 +134,25 @@ write.csv(summary_baseline, "summary_csv_day/baseline.csv")
 
 summary_df_45_.35 <- df_45_.35 %>%
   group_by(TA, ID) %>%
-  summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
+  summarise(Population = max(POP), Incidents = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
 write.csv(summary_df_45_.35, "summary_by_TA/45-.35.csv")
 
 summary_df_45_.15 <- df_45_.15 %>%
   group_by(TA, ID) %>%
-  summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
+  summarise(Population = max(POP), Incidents = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
 write.csv(summary_df_45_.15, "summary_by_TA/45-.15.csv")
 
 summary_df_45_.75 <- df_45_.75 %>%
   group_by(TA, ID) %>%
-  summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
+  summarise(Population = max(POP), Incidents = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
 write.csv(summary_df_45_.75, "summary_by_TA/45-.75.csv")
 
 summary_df_45_.50 <- df_45_.50 %>%
   group_by(TA, ID) %>%
-  summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
+  summarise(Population = max(POP), Incidents = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
 write.csv(summary_df_45_.50, "summary_by_TA/45-.50.csv")
 
 summary_baseline <- baseline %>%
   group_by(TA, ID) %>%
-  summarise(Population = max(POP), Incidences = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
+  summarise(Population = max(POP), Incidents = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
 write.csv(summary_baseline, "summary_by_TA/baseline.csv")
