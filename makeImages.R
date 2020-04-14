@@ -3,7 +3,7 @@ library(readr)
 library(ggplot2)
 library(reshape2)
 
-###################################################*******BASELINE********#############################################################
+###################################################*******BASELINE********##########################################################
 
 #First, generate baseline charts
 baseline <- read.csv('summary_csv_day/baseline.csv')
@@ -116,18 +116,18 @@ ggsave("images/new_scenarios/new_baseline_deaths.png", height=4 , width =8)
 
 #Load the files for new run
 df_45_35 <- read.csv('summary_csv_day/new_summary_45-.35.csv')
-df_45_35$Reduction <- "Additional guidelines (30-40% reduction in mobility)"
+df_45_35$Reduction <- "3. Additional guidelines (30-40% reduction in mobility)"
 df_45_50 <- read.csv('summary_csv_day/new_summary_45-.50.csv')
-df_45_50$Reduction <- "Enforced population restrictions (40-60% reduction in mobility)"
+df_45_50$Reduction <- "4. Enforced population restrictions (40-60% reduction in mobility)"
 df_45_75 <- read.csv('summary_csv_day/new_summary_45-.75.csv')
-df_45_75$Reduction <- "Strict enforcement of lockdown (75% mobility reduction)"
+df_45_75$Reduction <- "5. Strict enforcement of lockdown (75% mobility reduction)"
 
 df_temp <- bind_rows(df_45_35, df_45_50, df_45_75)
 df_temp <- select(df_new_reduction, -c("X"))
 
 #add in baseline
-baseline2$Reduction <- "No further reduction from current"
-baseline$Reduction <- "No mitigation"
+baseline2$Reduction <- "2. No further reduction from current"
+baseline$Reduction <- "1. No mitigation"
 df_new_reduction <- bind_rows(baseline, baseline2, df_temp)
 
 longData5 <- melt(df_new_reduction, id = c("X1", "Reduction"))
