@@ -123,7 +123,7 @@ df_45_75 <- read.csv('summary_csv_day/new_summary_45-.75.csv')
 df_45_75$Reduction <- "5. Strict enforcement of lockdown (75% mobility reduction)"
 
 df_temp <- bind_rows(df_45_35, df_45_50, df_45_75)
-df_temp <- select(df_new_reduction, -c("X"))
+df_temp <- select(df_temp, -c("X"))
 
 #add in baseline
 baseline2$Reduction <- "2. No further reduction from current"
