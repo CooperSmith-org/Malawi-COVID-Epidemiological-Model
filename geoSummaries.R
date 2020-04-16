@@ -4,27 +4,15 @@ library(ggplot2)
 library(scales)
 library(readr)
 
-df_45_.35G <- list.files(path = "epi_csvs/45-0.35",full.names = TRUE) %>% 
-  lapply(read_csv) %>% 
-  bind_rows 
+#################################*******FUNCTION TO COMBINE CSVS + MAKE DF*******###########################################
 
-df_45_.75G <- list.files(path = "epi_csvs/45-0.75",full.names = TRUE) %>% 
-  lapply(read_csv) %>% 
-  bind_rows
-
-df_45_.15G <- list.files(path = "epi_csvs/45-0.15",full.names = TRUE) %>% 
-  lapply(read_csv) %>% 
-  bind_rows
-
-df_45_.50G <- list.files(path = "epi_csvs/45-0.5",full.names = TRUE) %>% 
-  lapply(read_csv) %>% 
-  bind_rows
-
-baselineG <- list.files(path = "epi_csvs/baseline",full.names = TRUE) %>% 
-  lapply(read_csv) %>% 
-  bind_rows
-
-#################################FUNCTION TO COMBINE DIFF SCENARRIOS BY TA ###########################################
+makeCombinedDF <-function(location) {
+  df <- list.files(path = location,full.names = TRUE) %>% 
+    lapply(read_csv) %>% 
+    bind_rows
+  return(df)
+}
+#################################******FUNCTION TO COMBINE DIFF SCENARIOS BY TA*******######################################
 
 makeCombinedScenario <-function(base_df, scenario_df, TAList) {
   scenario_df$scenario <- "reduction"
@@ -35,11 +23,10 @@ makeCombinedScenario <-function(base_df, scenario_df, TAList) {
   return(bind_rows(use1,use2)) 
   }
 
-#################################FUNCTION TO MAKE A GRAPH FOR A TA ###########################################
+#################################*******FUNCTION TO MAKE A GRAPH FOR A TA********###########################################
 
 makeSummaryGraph <- function(df, TAName, title, filename) {
   names(df)[names(df)=="time"] <- "Day"
-  
   df <- df %>%
     filter(df$TA==TAName) %>%
     group_by(Day) %>%
@@ -50,10 +37,8 @@ makeSummaryGraph <- function(df, TAName, title, filename) {
                               levels = c("Susceptible", "Recovered","Exposed", "Infected", "Hospitalized", "Critical","Deaths"))
   
   names(longData)[names(longData)=="variable"] <- "State"
-  #Override scientific notation default
-  options(scipen=10000)
+  options(scipen=10000)#Override scientific notation default
   
-  ####Create summary immage for each TA
   ggplot(data=subset(longData, longData$State %in% c("Infected", "Hospitalized","Critical","Deaths")) %>% arrange(State),
          aes(x=Day, y=value, fill=State, color=State)) +
     geom_line(stat="identity", position = "identity") +
@@ -67,7 +52,8 @@ makeSummaryGraph <- function(df, TAName, title, filename) {
   ggsave(filename, height=4, width=8)
   }
 
-##################*******FUNCTIONS FOR ALL DISTRICTS*******##############################
+####################################*******FUNCTION FOR SUMMARY FOR ALL DISTRICTS*******####################################
+
 makeSummaryGraphAll <- function(df, title, filename) {
   names(df)[names(df)=="X1"] <- "Day"
   
@@ -80,10 +66,8 @@ makeSummaryGraphAll <- function(df, title, filename) {
                               levels = c("Susceptible", "Recovered","Exposed", "Infected", "Hospitalized", "Critical","Deaths"))
   
   names(longData)[names(longData)=="variable"] <- "State"
-  #Override scientific notation default
-  options(scipen=10000)
+  options(scipen=10000) #Override scientific notation default
   
-  ####Create summary immage for each TA
   ggplot(data=subset(longData, longData$State %in% c("Infected", "Hospitalized","Critical","Deaths")) %>% arrange(State),
          aes(x=Day, y=value, fill=State, color=State)) +
     geom_line(stat="identity", position = "identity") +
@@ -96,9 +80,32 @@ makeSummaryGraphAll <- function(df, title, filename) {
     theme_minimal()
   ggsave(filename, height=4, width=8)
 }
-#################################FUNCTION TO COMBINE DIFF SCENARIOS BY TA ###########################################
 
-##Run test scenario
+###############################*******FUNCTION TO COMPARE SCENARIOS IN ONE CHART******#####################################
+
+makeComparisonGraph <- function(df, diseaseState, title, fileName) {
+  ggplot(data=subset(df, df$State %in% c(diseaseState)) %>% arrange(State),
+         aes(x=X1, y=value, fill=Reduction, color=Reduction)) +
+    geom_line(stat="identity", position = "identity") +
+    scale_colour_manual(values=c("lightblue4", "red", "blue", "indianred4", "gray")) + 
+    scale_fill_manual(values=c("lightblue4", "red", "blue", "indianred4", "gray")) + 
+    xlab("Day (from t=0)") +
+    ylab("Number of people") +
+    ggtitle(title) +
+    scale_y_continuous(label=comma) +
+    theme_minimal() #+
+  #theme(legend.position = "none") #turn on and off for legend
+  ggsave(fileName, height=4 , width =8)
+}
+
+##########################~~~~~~~~~~~~~~~~~~~~~~~~~~~CREATE THE DATAFRAMES + OUTPUTS~~~~~~~~~~~~~~~~~~##################
+df_45_.35G <- makeCombinedDF("epi_csvs/45-0.35")
+df_45_.75G <- makeCombinedDF("epi_csvs/45-0.75") 
+df_45_.15G <- makeCombinedDF("epi_csvs/45-0.15") 
+df_45_.50G <- makeCombinedDF("epi_csvs/45-0.5")
+baselineG <- makeCombinedDF("epi_csvs/baseline")
+
+#***Current scenarios for Malawi
 scenario1 <- makeCombinedScenario(df_45_.15G, df_45_.50G, c("Lilongwe City", "Lilongwe", "Blantyre", "Blantyre City", "Chikwawa", "Nkhotakota"))
 scenario2 <- makeCombinedScenario(df_45_.15G, df_45_.50G, c("Lilongwe City", "Lilongwe", "Blantyre", "Blantyre City", "Chikwawa", "Nkhotakota", "Salima", "Mzuzu City", "Zomba City", "Zomba", "Mzimba", "Mangochi"))
 
@@ -147,7 +154,8 @@ ggplot(data=subset(meltedDF, meltedDF$State %in% c("Infected")) %>% arrange(Stat
   ylab("Number of people") +
   ggtitle("Number of individuals infected based on a policy of social distancing implemented ...") +
   scale_y_continuous(label=comma) +
-  theme_minimal()
+  theme_minimal() #+
+  #theme(legend.position = "none") #turn on and off for leegend
 ggsave("images/new_scenarios/geovariation_infected.png", height=4 , width =8)
 
 # Second chart - Hospitalizations
@@ -160,8 +168,9 @@ ggplot(data=subset(meltedDF, meltedDF$State %in% c("Hospitalized")) %>% arrange(
   ylab("Number of people") +
   ggtitle("Number of individuals hospitalized based on a policy of social distancing implemented ...") +
   scale_y_continuous(label=comma) +
-  theme_minimal()
-ggsave("images/new_scenarios/geovariation_hospitalizations.png", height=4 , width =8)
+  theme_minimal()+
+  theme(legend.position = "none") #turn on and off for leegend
+ggsave("images/new_scenarios/geovariation_hospitalizations_NOLegend.png", height=4 , width =8)
 
 # Third chart - Critical care
 ggplot(data=subset(meltedDF, meltedDF$State %in% c("Critical")) %>% arrange(State),
@@ -173,8 +182,9 @@ ggplot(data=subset(meltedDF, meltedDF$State %in% c("Critical")) %>% arrange(Stat
   ylab("Number of people") +
   ggtitle("Number of individuals in critical care based on a policy of social distancing implemented [....ADD VERBIAGE AS DESIRED]") +
   scale_y_continuous(label=comma) +
-  theme_minimal()
-ggsave("images/new_scenarios/geovariation_critical.png", height=4 , width =8)
+  theme_minimal()+
+  theme(legend.position = "none") #turn on and off for leegend
+ggsave("images/new_scenarios/geovariation_critical_NOLegend.png", height=4 , width =8)
 
 # Fourth chart
 ggplot(data=subset(meltedDF, meltedDF$State %in% c("Deaths")) %>% arrange(State),
@@ -186,5 +196,6 @@ ggplot(data=subset(meltedDF, meltedDF$State %in% c("Deaths")) %>% arrange(State)
   ylab("Number of people") +
   ggtitle("Number of deaths based on a policy of social distancing implemented[....ADD VERBIAGE AS DESIRED]") +
   scale_y_continuous(label=comma) +
-  theme_minimal()
-ggsave("images/new_scenarios/geovariation_deaths.png", height=4 , width =8)
+  theme_minimal()+
+  theme(legend.position = "none") #turn on and off for leegend
+ggsave("images/new_scenarios/geovariation_deaths_NOLegend.png", height=4 , width =8)
