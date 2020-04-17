@@ -9,6 +9,8 @@ library(reshape2)
 library(deSolve)
 library(data.table)
 
+#This file contains functions to use in the other scripts to run analysis
+
 #Function to run model - SEIR Model of Differential Equations
 
 model <- function(times, init, parms) {
