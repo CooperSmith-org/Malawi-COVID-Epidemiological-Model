@@ -13,10 +13,8 @@ library(data.table)
 #Function to run model - SEIR Model of Differential Equations
 
 model <- function(times, init, parms) {
-  with(as.list(c(parms, init)), {
-    ifelse(times < start0, beta <- R0*kappa/population, 
-           ifelse(times < start, beta <- (1-reduction0)*R0*kappa/population, 
-                  beta <- (1-reduction)*R0*kappa/population)) # time-dependent R0 if social distancing is implemented. 50% reduction but can be anything
+  with(as.list(c(init, parms)), {
+    beta <- (1-reductionList[times])*R0*kappa/population
     dS <- -beta * S * I #susceptible
     dE <- beta * S * I -  E * kappa #exposed but asymptomatic
     dI <- E * kappa - I * kappa2 #infectious, but mild severity
@@ -133,4 +131,11 @@ makeSummaryCSV <- function(df, fileName) {
     group_by(X1) %>% 
     summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
   write.csv(df1, fileName)
+}
+
+makeSummaryCSVGeo <- function(df, filename, col1, col2) {
+dftocsv <- df %>%
+  group_by(col1, col2) %>%
+  summarise(Population = max(POP), Incidents = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
+write.csv(dftocsv, filename)
 }
