@@ -30,7 +30,7 @@ SSA_COVID_Inputs$Run <- "SSA"
 combined_data <- rbind(MW_TA_COVID_Inputs, BK_TA_COVID_Inputs, SSA_COVID_Inputs)
 
 #Modify based on scenario in question
-countryList <- list("Burkina", "Malawi")
+#countryList <- list("Burkina", "Malawi")
 countryList <- list("SSA")
 
 #loop through each TA, using the TA-specific estimates of population size, hospitalization, ICU, and death
@@ -68,8 +68,15 @@ for (c in countryList){
       sim$TA <- lvl3[i]
       sim$ID <- UID[i]
       sim$POP <- pop_range[i]
-      if (UID[i] != "N/A"){
-        write.csv(sim, paste0("epi_csvs/",c,"/",names(reductions[r]),"/",UID[i],".csv"))}
+      
+      #For SSA analysis
+      if (names(reductions[r]) == lvl3[i]){
+        write.csv(sim, paste0("epi_csvs/",c,"/",names(reductions[r]),"-",lvl3[i],".csv"))
+        }
+      
+      #Use below for in-country
+      # if (UID[i] != "N/A"){
+      #   write.csv(sim, paste0("epi_csvs/",c,"/",names(reductions[r]),"/",lvl3[i],".csv"))}
     }
   }
 }
