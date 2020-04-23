@@ -15,10 +15,12 @@ BK_TA_COVID_Inputs <- read_csv("inputs/BFA TA COVID Inputs.csv")
 SSA_COVID_Inputs <- read_csv("inputs/SSA COVID Inputs.csv")
 
 #Grab the reduction scenarios
-files <- list.files("inputs/reductionScenarios", full.names = TRUE)
+#files <- list.files("inputs/reductionScenarios", full.names = TRUE) #For within countries
+files <- list.files("inputs/SSA", full.names = TRUE) #For SSA
 reductions <- lapply(files, read_csv)
 names(reductions) <-gsub(".csv","",
-                      list.files("inputs/reductionScenarios", full.names = FALSE),
+                      #list.files("inputs/reductionScenarios", full.names = FALSE), #For within countries
+                      list.files("inputs/SSA", full.names = FALSE), #For SSA
                       fixed = TRUE)
 
 #Add in col to identify the data source
@@ -29,6 +31,7 @@ combined_data <- rbind(MW_TA_COVID_Inputs, BK_TA_COVID_Inputs, SSA_COVID_Inputs)
 
 #Modify based on scenario in question
 countryList <- list("Burkina", "Malawi")
+countryList <- list("SSA")
 
 #loop through each TA, using the TA-specific estimates of population size, hospitalization, ICU, and death
 for (c in countryList){
@@ -40,6 +43,8 @@ for (c in countryList){
     ep_range <-  data_use$`CFR of Crit` #estimated age-standardized fatality rate AMONG ICU patients
     lvl3 <-   data_use$`Lvl3` # name of TA
     UID <- data_use$UID
+    
+    names(reductions[[r]])[names(reductions[[r]])=="x"] <- "reduc"
     
     for(i in 1:length(pop_range)) {
       parms <- c(population = 0, #population size
