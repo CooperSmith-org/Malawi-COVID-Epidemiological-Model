@@ -25,7 +25,6 @@ class TA(object):
 		adm3_to_adm2 (dict): dict mapping name to adjacent districts
 		adm3_to_adm2 (dict): dict mapping name to adjacent TAs
 		CI (int): number of current infections
-
 		'''
 
 		self.name = adm3
@@ -71,9 +70,6 @@ def go():
 
 	TA_dict = build_TAs(df, adm3_to_adm2_dict, adm3_to_adm3_dict)
 
-
-
-
 	return output
 
 
@@ -96,8 +92,7 @@ def build_TAs(df, adm3_to_adm2_dict, adm3_to_adm3_dict, CI):
 
 	for amd2, adm3, CI in df.itertuples(index=False, name=None):
 
-		num_infected = CI.loc[adm2].item()
-		t = TA(adm3, adm3_to_adm2_dict, adm3_to_adm3_dict, num_infected)
+		t = TA(adm3, adm3_to_adm2_dict, adm3_to_adm3_dict, CI)
 		TA_dict[adm3] = t
 
 	return TA_dict 
