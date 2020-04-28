@@ -15,12 +15,12 @@ BK_TA_COVID_Inputs <- read_csv("inputs/BFA TA COVID Inputs.csv")
 SSA_COVID_Inputs <- read_csv("inputs/SSA COVID Inputs.csv")
 
 #Grab the reduction scenarios
-#files <- list.files("inputs/reductionScenarios", full.names = TRUE) #For within countries
-files <- list.files("inputs/SSA", full.names = TRUE) #For SSA
+files <- list.files("inputs/reductionScenarios_new", full.names = TRUE) #For within countries
+#files <- list.files("inputs/SSA", full.names = TRUE) #For SSA
 reductions <- lapply(files, read_csv)
 names(reductions) <-gsub(".csv","",
-                      #list.files("inputs/reductionScenarios", full.names = FALSE), #For within countries
-                      list.files("inputs/SSA", full.names = FALSE), #For SSA
+                      list.files("inputs/reductionScenarios_new", full.names = FALSE), #For within countries
+                      #list.files("inputs/SSA", full.names = FALSE), #For SSA
                       fixed = TRUE)
 
 #Add in col to identify the data source
@@ -31,7 +31,8 @@ combined_data <- rbind(MW_TA_COVID_Inputs, BK_TA_COVID_Inputs, SSA_COVID_Inputs)
 
 #Modify based on scenario in question
 #countryList <- list("Burkina", "Malawi")
-countryList <- list("SSA")
+#countryList <- list("SSA")
+countryList <- list("Malawi")
 
 #loop through each TA, using the TA-specific estimates of population size, hospitalization, ICU, and death
 for (c in countryList){
@@ -71,13 +72,13 @@ for (c in countryList){
       
       #For SSA analysis
 
-      if (paste0(lvl3[i],"-",names(reductions[r])) %in% crosswalk$Match){
-        write.csv(sim, paste0("epi_csvs/",c,"/",names(reductions[r]),"-",lvl3[i],".csv"))
-        }
+      # if (paste0(lvl3[i],"-",names(reductions[r])) %in% crosswalk$Match){
+      #   write.csv(sim, paste0("epi_csvs/",c,"/",names(reductions[r]),"-",lvl3[i],".csv"))
+      #   }
       
       #Use below for in-country
-      # if (UID[i] != "N/A"){
-      #   write.csv(sim, paste0("epi_csvs/",c,"/",names(reductions[r]),"/",lvl3[i],".csv"))}
+      if (UID[i] != "N/A"){
+        write.csv(sim, paste0("epi_csvs/",c,"/new_",names(reductions[r]),"/",lvl3[i],".csv"))}
     }
   }
 }
