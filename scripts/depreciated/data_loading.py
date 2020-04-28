@@ -1,66 +1,27 @@
 from os.path import join, dirname, abspath
 import pandas as pd
 import geopandas as gpd
-import json
 
 ### fancy way of setting working directory
 DATA_FOLDER = join(dirname(abspath(dirname(__file__))), "data")
+
 SHAPE_FILES = ["mwi_admbnda_adm2_nso_20181016.shp", "mwi_admbnda_adm3_nso_20181016.shp"]
 CURRENT_INFECTIONS = "CurrentInfectionLocation.csv"
 
-INPUTS_FOLDER = join(join(dirname(abspath(dirname(__file__))), "inputs"), "cleaned_data")
 
 
 def go():
-	"""
-	Calls all functions that create data structures for population decay model
-	"""
 
 	adm3_homes, adm3_to_adm2_dict, adm3_to_adm3_dict = create_relations()
 	CI = import_current_infections()
-	return CI, adm3_homes, adm3_to_adm2_dict, adm3_to_adm3_dict
 
+	output = adm3_homes.copy(deep=True)
+	output = output.merge(CI, how='left', left_on="ADM2", right_index=True)
 
-def load_inputs():
-	"""
-	Loads input files from cleaned data folder
-	"""
-
-	CI = pd.read_json(join(INPUTS_FOLDER, "CI.json"))
-	TA_Districts = pd.read_json(join(INPUTS_FOLDER, "TA_Districts.json"))
-
-	with open(join(INPUTS_FOLDER, "TA_adj_Dist.json")) as json_file: 
-		TA_adj_Dist = json.load(json_file)
-
-	with open(join(INPUTS_FOLDER, "TA_adj_TA.json")) as json_file: 
-		TA_adj_TA = json.load(json_file)
-
-	return CI, TA_Districts, TA_adj_Dist, TA_adj_TA
-
-
-
-def populate_inputs_folders():
-	"""
-
-	"""
-
-	print("preparing data...")
-	CI, adm3_homes, adm3_to_adm2_dict, adm3_to_adm3_dict = go()
-
-	print("outputting files...")
-	CI.to_json(join(INPUTS_FOLDER, "CI.json"))
-	adm3_homes.to_json(join(INPUTS_FOLDER, "TA_Districts.json"))
-
-	with open(join(INPUTS_FOLDER, "TA_adj_Dist.json"), 'w') as json_file:
-		json.dump(adm3_to_adm2_dict, json_file)
-
-	with open(join(INPUTS_FOLDER, "TA_adj_TA.json"), 'w') as json_file:
-		json.dump(adm3_to_adm3_dict, json_file)
+	return output, adm3_homes, adm3_to_adm2_dict, adm3_to_adm3_dict
 
 
 def create_relations():
-	"""
-	"""
 
 	### adm2 file
 	adm2 = gpd.read_file(join(DATA_FOLDER, SHAPE_FILES[0]))  ## load file
@@ -111,43 +72,3 @@ def df_to_dict(df):
 		d[k] = d.get(k, []) + [v]
 
 	return d
-
-
-def get_params():
-
-	while True:
-		val = input("How many adjacent TAs away should be searched: ")
-
-		try:
-			degree = int(val)
-			if degree < 1:  
-				print("Sorry, input must be 1 or greater, try again")
-				continue
-			break
-		except ValueError:
-			print("That is not a positive integer")
-
-	i = 1
-	multiplier_dict = {}
-
-	while i < degree + 1:
-		val = input("Enter the weight of adjacent TA {}: ".format(i))
-
-		try:
-			weight = float(val)
-			if weight > 1 or weight < 0:
-				print("Sorry, between 1 and 0, try again")
-				continue
-			multiplier_dict[i] = weight	
-			i += 1
-			
-		except ValueError:
-			print("That is not between 0 and 1")
-
-	print("Executing analysis for {} degrees".format(degree))
-	print("Here are the weights:")
-	for k, v in multiplier_dict.items():
-		print("TA {}: {}".format(k, v))
-	print()
-
-	return degree, multiplier_dict
