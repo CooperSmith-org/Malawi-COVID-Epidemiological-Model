@@ -70,7 +70,8 @@ for (c in countryList){
       sim$POP <- pop_range[i]
       
       #For SSA analysis
-      if (names(reductions[r]) == lvl3[i]){
+
+      if (paste0(lvl3[i],"-",names(reductions[r])) %in% crosswalk$Match){
         write.csv(sim, paste0("epi_csvs/",c,"/",names(reductions[r]),"-",lvl3[i],".csv"))
         }
       
