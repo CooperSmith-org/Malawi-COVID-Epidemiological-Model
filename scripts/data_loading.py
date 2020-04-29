@@ -143,11 +143,14 @@ def get_params():
 			
 		except ValueError:
 			print("That is not between 0 and 1")
+	print()
 
 	print("Executing analysis for {} degrees".format(degree))
 	print("Here are the weights:")
 	for k, v in multiplier_dict.items():
 		print("TA {}: {}".format(k, v))
 	print()
+	outfile = input("Enter the name of the file you'd like to output.\n" +
+		"Do not include '.csv.' or any other file extension:")
 
-	return degree, multiplier_dict
+	return degree, multiplier_dict, outfile
