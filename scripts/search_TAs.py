@@ -46,18 +46,19 @@ def check_for_CI(row, CI, adm3_homes):
 
 def get_connections(adm3_list, adm3_to_adm2, adm3_to_adm3, CI, degree):
 	"""
-	adm3_list (list): list of unique adm3s
-	adm3_to_adm2 (dict): maps TA to list of adjacent Districts
-	adm3_to_adm3 (dict): maps TA to list of adjacent TAs
-	CI (pd.Series): index is District and value is number of current infections
-	degree (int): maximum degree of connections desired.  For example, enter one if
-	only interested in infections in adjacent TAs.  Enter 2 if interested in TAs that
-	border adjacent TAs, etc.
+	Calls find_connections for each TA then products a df of the union of all
+	connections with CI data merged on
+	Inputs:
+		adm3_list (list): list of unique adm3s
+		adm3_to_adm2 (dict): maps TA to list of adjacent Districts
+		adm3_to_adm3 (dict): maps TA to list of adjacent TAs
+		CI (pd.Series): index is District and value is number of current infections
+		degree (int): maximum degree of connections desired.  For example, enter one if
+		only interested in infections in adjacent TAs.  Enter 2 if interested in TAs that
+		border adjacent TAs, etc.
 	Returns pd.DataFrame that lists all connections and their degree
 	"""
 
-	# print("building connections...")
-	# print("in get connections")
 	total_cs = pd.DataFrame(columns=["ADM2", "Degree", "ADM3", "Current Infections"])
 
 	for adm3 in adm3_list:
@@ -74,8 +75,15 @@ def get_connections(adm3_list, adm3_to_adm2, adm3_to_adm3, CI, degree):
 
 
 def find_connections(adm3, adm3_to_adm2, adm3_to_adm3, degree, iteration=1):
-
-	## base case
+	'''
+	Recursively builds list of connections to the nth degree
+	Inputs:
+		adm3 (string):  TA for which connections are being searched
+		adm3_to_adm2 (dict): keys - list of adm3s, values - list of adj adm2s
+		adm3_to_adm3 (dict): keys - list of adm3s, values - list of adj adm3s
+		degree (int): maximum number of adj TAs we are searching
+		interation (int): tracks which degree is being calculated
+	'''
 
 	adm2_list = adm3_to_adm2.get(adm3, [])
 
@@ -83,7 +91,6 @@ def find_connections(adm3, adm3_to_adm2, adm3_to_adm3, degree, iteration=1):
 		return [(adm2, iteration) for adm2 in adm2_list]
 
 	else:
-		### take last
 		connections = [(adm2, iteration) for adm2 in adm2_list]
 
 		for adm3 in adm3_to_adm3.get(adm3, []):
