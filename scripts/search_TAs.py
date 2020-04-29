@@ -44,7 +44,7 @@ def check_for_CI(row, CI, adm3_homes):
 		return row["Score"]
 
 
-def get_connections(adm3_list, adm3_to_adm2, adm3_to_adm3, CI, degree):
+def get_connections(adm3_list, adm3_to_adm3, CI, degree):
 	"""
 	Calls find_connections for each TA then products a df of the union of all
 	connections with CI data merged on
@@ -63,9 +63,9 @@ def get_connections(adm3_list, adm3_to_adm2, adm3_to_adm3, CI, degree):
 
 	for adm3 in adm3_list:
 
-		c = find_connections(adm3, adm3_to_adm2, adm3_to_adm3, degree)
-		c_df = pd.DataFrame(c, columns=["ADM2", "Degree"])
-		min_c = c_df.groupby("ADM2").min()
+		c = find_connections(adm3, adm3_to_adm3, degree)
+		c_df = pd.DataFrame(c, columns=["adj_ADM3", "Degree"])
+		min_c = c_df.groupby("adj_ADM3").min()
 		min_c["ADM3"] = adm3
 
 		merged = min_c.merge(CI, how="left", left_index=True, right_index=True)
@@ -89,14 +89,14 @@ def find_connections(adm3, adm3_to_adm3, degree, iteration=1):
 	adm3_list = adm3_to_adm3.get(adm3, [])
 
 	if iteration == degree:
-		return [(adj_adm3, iteration) for adj_adm3 in adj_adm3]
+		return [(adj_adm3, iteration) for adj_adm3 in adm3_list]
 
 	else:
 
 		connections = []
 		for adj_adm3 in adm3_to_adm3.get(adm3, []):
 			connections += [(adj_adm3, iteration)]
-			connections += find_connections(adm3, adm3_to_adm2, adm3_to_adm3, degree, iteration=iteration+1)
+			connections += find_connections(adm3, adm3_to_adm3, degree, iteration=iteration+1)
 
 		return connections
 

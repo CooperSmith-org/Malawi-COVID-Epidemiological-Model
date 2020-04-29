@@ -22,7 +22,7 @@ def go():
 	CI, TA_Districts, TA_adj_Dist, TA_adj_TA = data_loading.load_inputs()
 	TA_list = list(TA_Districts["ADM3"].unique())
 	print("building connections...")
-	total_cs = search_TAs.get_connections(TA_list, TA_adj_Dist, TA_adj_TA, CI, degree)
+	total_cs = search_TAs.get_connections(TA_list, TA_adj_TA, CI, degree)
 
 	print("calculating scores...")
 	scores = search_TAs.calc_scores(total_cs, CI, TA_Districts, multiplier_dict)
