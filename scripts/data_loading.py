@@ -93,10 +93,11 @@ def create_relations():
 def import_current_infections():
 
 	tmp = pd.read_csv(join(DATA_FOLDER, CURRENT_INFECTIONS))
-	CI = tmp[["ADM2_PCODE", "Current Infections"]].rename({"ADM2_PCODE": "ADM2"}, axis=1)
-	CI["ADM2"] = CI["ADM2"].str.strip()
+	loc_var = "ADM3_PCODE" if "ADM3_PCODE" in tmp.columns else "ADM2_PCODE" 
+	CI = tmp[[loc_var, "Current Infections"]]
+	CI[loc_var] = CI[loc_var].str.strip() 	
 
-	return CI.set_index("ADM2")
+	return CI.set_index(loc_var)
 
 
 def df_to_dict(df):

@@ -74,7 +74,7 @@ def get_connections(adm3_list, adm3_to_adm2, adm3_to_adm3, CI, degree):
 	return total_cs
 
 
-def find_connections(adm3, adm3_to_adm2, adm3_to_adm3, degree, iteration=1):
+def find_connections(adm3, adm3_to_adm3, degree, iteration=1):
 	'''
 	Recursively builds list of connections to the nth degree
 	Inputs:
@@ -85,15 +85,17 @@ def find_connections(adm3, adm3_to_adm2, adm3_to_adm3, degree, iteration=1):
 		interation (int): tracks which degree is being calculated
 	'''
 
-	adm2_list = adm3_to_adm2.get(adm3, [])
+
+	adm3_list = adm3_to_adm3.get(adm3, [])
 
 	if iteration == degree:
-		return [(adm2, iteration) for adm2 in adm2_list]
+		return [(adj_adm3, iteration) for adj_adm3 in adj_adm3]
 
 	else:
-		connections = [(adm2, iteration) for adm2 in adm2_list]
 
-		for adm3 in adm3_to_adm3.get(adm3, []):
+		connections = []
+		for adj_adm3 in adm3_to_adm3.get(adm3, []):
+			connections += [(adj_adm3, iteration)]
 			connections += find_connections(adm3, adm3_to_adm2, adm3_to_adm3, degree, iteration=iteration+1)
 
 		return connections
