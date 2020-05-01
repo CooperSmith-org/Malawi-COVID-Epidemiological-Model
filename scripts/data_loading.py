@@ -8,7 +8,7 @@ BUNDLED_CITIES = ["MW210", "MW315", "MW314", "MW107"]
 ### fancy way of setting working directory
 DATA_FOLDER = join(dirname(abspath(dirname(__file__))), "data")
 SHAPE_FILES = ["mwi_admbnda_adm2_nso_20181016.shp", "mwi_admbnda_adm3_nso_20181016.shp"]
-CURRENT_INFECTIONS = "CurrentInfectionLocation_28April20.csv"
+CURRENT_INFECTIONS = "CurrentInfectionLocation_30April20.csv"
 
 INPUTS_FOLDER = join(join(dirname(abspath(dirname(__file__))), "inputs"), "cleaned_data")
 

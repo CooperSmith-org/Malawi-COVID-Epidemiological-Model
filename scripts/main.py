@@ -24,6 +24,7 @@ def go(bundled=True):
 
 	print("loading files...")
 	CI, TA_Districts, TA_adj_Dist, TA_adj_TA = data_loading.load_inputs(bundled)
+	TA_list = list(TA_Districts['ADM3'].unique())
 
 	print("building connections...")
 	total_cs = search_TAs.get_connections(TA_list, TA_adj_TA, CI, degree)
