@@ -6,12 +6,15 @@ source("utils.R")
 
 ####Create summary files####
 
-#Load individual csvs -NOTE, just change names of source folder too update
-additionalGuidelines <- makeCombinedDF("epi_csvs/Malawi/new_additionalGuidelines")
-enforcedRestrictions<- makeCombinedDF("epi_csvs/Malawi/new_enforcedRestrictions")
-current <- makeCombinedDF("epi_csvs/Malawi/current")
+#Load individual csvs -NOTE, just change names of source folder to update
 unmitigated <- makeCombinedDF("epi_csvs/Malawi/unmitigated")
-enforcedLockdown <- makeCombinedDF("epi_csvs/Malawi/new_enforcedLockdown")
+current <- makeCombinedDF("epi_csvs/Malawi/current")
+additionalGuidelines <- makeCombinedDF("epi_csvs/Malawi/additionalGuidelines")
+enforcedRestrictions <- makeCombinedDF("epi_csvs/Malawi/enforcedRestrictions")
+enforcedLockdown <- makeCombinedDF("epi_csvs/Malawi/enforcedLockdown")
+additionalGuidelines21day <- makeCombinedDF("epi_csvs/Malawi/additionalGuidelines21day")
+enforcedRestrictions21day <- makeCombinedDF("epi_csvs/Malawi/enforcedRestrictions21day")
+enforcedLockdown21day <- makeCombinedDF("epi_csvs/Malawi/enforcedLockdown21day")
 
 #Create the current scenarios - 1: 4 major urban centers; 2: 4 + few otherrs
 
@@ -22,30 +25,39 @@ scenario2 <- makeCombinedScenario(current, enforcedRestrictions, c("Lilongwe Cit
 #Create the daily summary
 makeSummaryCSV(unmitigated, "summary_csv_day/unmitigated.csv")
 makeSummaryCSV(current, "summary_csv_day/current.csv")
-makeSummaryCSV(enforcedLockdown, "summary_csv_day/new_enforcedLockdown.csv")
-makeSummaryCSV(enforcedRestrictions, "summary_csv_day/new_enforcedRestrictions.csv")
-makeSummaryCSV(additionalGuidelines, "summary_csv_day/new_additionalGuideline.csv")
+makeSummaryCSV(additionalGuidelines, "summary_csv_day/additionalGuideline.csv")
+makeSummaryCSV(enforcedRestrictions, "summary_csv_day/enforcedRestrictions.csv")
+makeSummaryCSV(enforcedLockdown, "summary_csv_day/enforcedLockdown.csv")
 makeSummaryCSV(scenario1, "summary_csv_day/scenario1.csv")
 makeSummaryCSV(scenario2, "summary_csv_day/scenario2.csv")
+makeSummaryCSV(additionalGuidelines21day, "summary_csv_day/additionalGuideline21day.csv")
+makeSummaryCSV(enforcedRestrictions21day, "summary_csv_day/enforcedRestrictions21day.csv")
+makeSummaryCSV(enforcedLockdown21day, "summary_csv_day/enforcedLockdown21day.csv")
 
-#Create the TA level summary
-makeSummaryCSVGeo(unmitigated, "summary_by_TA/unmitigated.csv")
-makeSummaryCSVGeo(current, "summary_by_TA/current.csv")
-makeSummaryCSVGeo(enforcedLockdown, "summary_by_TA/new_enforcedLockdown.csv")
-makeSummaryCSVGeo(enforcedRestrictions, "summary_by_TA/new_enforcedRestrictions.csv")
-makeSummaryCSVGeo(additionalGuidelines, "summary_by_TA/new_additionalGuideline.csv")
-makeSummaryCSVGeo(scenario1, "summary_by_TA/scenario1.csv")
-makeSummaryCSVGeo(scenario2, "summary_by_TA/scenario2.csv")
+#Create the district level summary
+makeSummaryCSVGeo(unmitigated, "summary_by_district/unmitigated.csv")
+makeSummaryCSVGeo(current, "summary_by_district/current.csv")
+makeSummaryCSVGeo(additionalGuidelines, "summary_by_district/additionalGuideline.csv")
+makeSummaryCSVGeo(enforcedRestrictions, "summary_by_district/enforcedRestrictions.csv")
+makeSummaryCSVGeo(enforcedLockdown, "summary_by_district/enforcedLockdown.csv")
+makeSummaryCSVGeo(scenario1, "summary_by_district/scenario1.csv")
+makeSummaryCSVGeo(scenario2, "summary_by_district/scenario2.csv")
+makeSummaryCSVGeo(additionalGuidelines21day, "summary_by_district/additionalGuideline21day.csv")
+makeSummaryCSVGeo(enforcedRestrictions21day, "summary_by_district/enforcedRestrictions21day.csv")
+makeSummaryCSVGeo(enforcedLockdown21day, "summary_by_district/enforcedLockdown21day.csv")
 
 ####Create Graphs####
 
 unmitigatedGraph <- read_csv("summary_csv_day/unmitigated.csv")
 currentGraph <- read_csv("summary_csv_day/current.csv")
-enforcedLockdownGraph <- read_csv("summary_csv_day/new_enforcedLockdown.csv")
-enforcedRestrictionsGraph <- read_csv("summary_csv_day/new_enforcedRestrictions.csv")
-additionalGuidelinesGraph <- read_csv("summary_csv_day/new_additionalGuideline.csv")
+additionalGuidelinesGraph <- read_csv("summary_csv_day/additionalGuideline.csv")
+enforcedRestrictionsGraph <- read_csv("summary_csv_day/enforcedRestrictions.csv")
+enforcedLockdownGraph <- read_csv("summary_csv_day/enforcedLockdown.csv")
 scenario1Graph <- read_csv("summary_csv_day/scenario1.csv")
 scenario2Graph <-read_csv("summary_csv_day/scenario2.csv")
+additionalGuidelines21dayGraph <- read_csv("summary_csv_day/additionalGuideline21day.csv")
+enforcedRestrictions21dayGraph <- read_csv("summary_csv_day/enforcedRestrictions21day.csv")
+enforcedLockdown21dayGraph <- read_csv("summary_csv_day/enforcedLockdown21day.csv")
 
 #Add label column
 unmitigatedGraph$Reduction <- "1. Unmitigated scenario"
