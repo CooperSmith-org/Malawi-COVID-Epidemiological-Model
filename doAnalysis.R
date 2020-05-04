@@ -28,14 +28,14 @@ makeSummaryCSV(additionalGuidelines, "summary_csv_day/new_additionalGuideline.cs
 makeSummaryCSV(scenario1, "summary_csv_day/scenario1.csv")
 makeSummaryCSV(scenario2, "summary_csv_day/scenario2.csv")
 
-#Create the TA level summary
-makeSummaryCSVGeo(unmitigated, "summary_by_TA/unmitigated.csv")
-makeSummaryCSVGeo(current, "summary_by_TA/current.csv")
-makeSummaryCSVGeo(enforcedLockdown, "summary_by_TA/new_enforcedLockdown.csv")
-makeSummaryCSVGeo(enforcedRestrictions, "summary_by_TA/new_enforcedRestrictions.csv")
-makeSummaryCSVGeo(additionalGuidelines, "summary_by_TA/new_additionalGuideline.csv")
-makeSummaryCSVGeo(scenario1, "summary_by_TA/scenario1.csv")
-makeSummaryCSVGeo(scenario2, "summary_by_TA/scenario2.csv")
+#Create the district level summary
+makeSummaryCSVGeo(unmitigated, "summary_by_district/unmitigated.csv")
+makeSummaryCSVGeo(current, "summary_by_district/current.csv")
+makeSummaryCSVGeo(enforcedLockdown, "summary_by_district/new_enforcedLockdown.csv")
+makeSummaryCSVGeo(enforcedRestrictions, "summary_by_district/new_enforcedRestrictions.csv")
+makeSummaryCSVGeo(additionalGuidelines, "summary_by_district/new_additionalGuideline.csv")
+makeSummaryCSVGeo(scenario1, "summary_by_district/scenario1.csv")
+makeSummaryCSVGeo(scenario2, "summary_by_district/scenario2.csv")
 
 ####Create Graphs####
 
