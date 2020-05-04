@@ -42,7 +42,9 @@ for (runNum in seq(1,1000)){
       eta_range <- data_use$Hospitalization #estimated age-standardized hospitalization rate
       eta2_range <- data_use$`Crit of Hosp` #estimated age-standardized ICU rate AMONG those hospitalized
       ep_range <-  data_use$`CFR of Crit` #estimated age-standardized fatality rate AMONG ICU patients
-      lvl3 <-   data_use$`Lvl3` # name of TA
+      lvl2 <-   data_use$`Lvl2` # name of country
+      lvl3 <-   data_use$`Lvl3` # name of region
+      lvl4 <-   data_use$`Lvl4` # name of district
       UID <- data_use$UID
       
       names(reductions[[r]])[names(reductions[[r]])=="x"] <- "reduc"
@@ -67,17 +69,19 @@ for (runNum in seq(1,1000)){
         parms["eta2"] <- eta2_range[i] * rnorm(1, mean=mean(data_use$`Crit of Hosp`), sd=sd(data_use$`Crit of Hosp`))
         parms["epsilon"] <- ep_range[i] * rnorm(1, mean=mean(data_use$`CFR of Crit`), sd=sd(data_use$`CFR of Crit`))
         parms["reductionList"] <- list(reductions[[r]]$reduc)
-        init <- c(S = pop_range[i] - 1, E = 0, I = 1, H = 0, C = 0, R = 0, D = 0, hosp = 0, crits = 0)
+        init <- c(S = pop_range[i] - 1, E = 0, I = 1, H = 0, C = 0, R = 0, D = 0, inci = 0, hosp = 0, crits = 0)
         times <- seq(1,365)
         sim <- as.data.table(lsoda(init, times, model, parms))
-        sim$TA <- lvl3[i]
+        sim$lvl2 <- lvl2[i]
+        sim$lvl3 <- lvl3[i]
+        sim$lvl4 <- lvl4[i]
         sim$ID <- UID[i]
         sim$POP <- pop_range[i]
         sim$runNum <- runNum
 
         #Use below for in-country
         if (UID[i] != "N/A"){
-        write.csv(sim, paste0("epi_csvs/Sensitivity/",runNum,"/",lvl3[i],".csv"))}
+        write.csv(sim, paste0("epi_csvs/Sensitivity/",runNum,"/",lvl4[i],".csv"))}
       }
     }
   }
