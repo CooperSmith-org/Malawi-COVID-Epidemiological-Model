@@ -22,9 +22,10 @@ model <- function(times, init, parms) {
     dC <- eta2 * tau * H  - tau2 * C #critical care
     dR <- (1 - eta) * I * kappa2 + (1 - eta2) * tau * H + (1 - epsilon) * tau2 * C #recovered
     dD <- epsilon * tau2 * C #dead
+    inci <- beta * S * I #incident infections
     hosp <- eta * I  * kappa2 # incident hospitalizations
     crits <- eta2 * tau * H # incident ICUs
-    list(c(dS, dE, dI, dH, dC, dR, dD, hosp, crits))
+    list(c(dS, dE, dI, dH, dC, dR, dD, inci, hosp, crits))
   })
 }
 
@@ -38,23 +39,23 @@ makeCombinedDF <-function(location) {
   return(df)
 }
 
-#Function to combine different scenarios by TA
+#Function to combine different scenarios by district
 
-makeCombinedScenario <-function(base_df, scenario_df, TAList) {
+makeCombinedScenario <-function(base_df, scenario_df, districtList) {
   scenario_df$scenario <- "reduction"
   base_df$scenario <- "baseline"
   
-  use1 <- subset(scenario_df, scenario_df$TA %in% TAList)
-  use2 <- subset(base_df, base_df$TA %in% setdiff(unique(base_df$TA), TAList))
+  use1 <- subset(scenario_df, scenario_df$lvl3 %in% districtList)
+  use2 <- subset(base_df, base_df$lvl3 %in% setdiff(unique(base_df$lvl3), districtList))
   return(bind_rows(use1,use2)) 
 }
 
-#Function to make a summary graph for a TA
+#Function to make a summary graph for a district
 
-makeSummaryGraph <- function(df, TAName, title, filename) {
+makeSummaryGraph <- function(df, districtName, title, filename) {
   names(df)[names(df)=="time"] <- "Day"
   df <- df %>%
-    filter(df$TA==TAName) %>%
+    filter(df$lvl3==districtName) %>%
     group_by(Day) %>%
     summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
   
@@ -135,7 +136,7 @@ makeSummaryCSV <- function(df, fileName) {
 
 makeSummaryCSVGeo <- function(df, filename) {
   dftocsv <- df %>%
-    group_by(TA, ID) %>%
-    summarise(Population = max(POP), Incidents = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
+    group_by(lvl3, ID) %>%
+    summarise(Population = max(POP), Incidence = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
   write.csv(dftocsv, filename)
 }
