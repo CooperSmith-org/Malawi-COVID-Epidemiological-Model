@@ -63,7 +63,7 @@ for (c in countryList){
       parms["eta2"] <- eta2_range[i]
       parms["epsilon"] <- ep_range[i]
       parms["reductionList"] <- list(reductions[[r]]$reduc)
-      init <- c(S = pop_range[i] - 1, E = 0, I = 1, H = 0, C = 0, R = 0, D = 0, hosp = 0, crits = 0)
+      init <- c(S = pop_range[i] - 1, E = 0, I = 1, H = 0, C = 0, R = 0, D = 0, inci = 0, hosp = 0, crits = 0)
       times <- seq(1,365)
       sim <- as.data.table(lsoda(init, times, model, parms))
       sim$TA <- lvl3[i]
