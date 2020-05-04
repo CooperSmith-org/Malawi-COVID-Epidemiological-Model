@@ -10,8 +10,8 @@ library(readr)
 source("utils.R")
 
 #Bring in inputs - add additional files in this format here!
-MW_TA_COVID_Inputs <- read_csv("inputs/MW TA COVID Inputs.csv")
-BK_TA_COVID_Inputs <- read_csv("inputs/BFA TA COVID Inputs.csv")
+MW_COVID_Inputs <- read_csv("inputs/MW COVID Inputs.csv")
+BK_COVID_Inputs <- read_csv("inputs/BFA COVID Inputs.csv")
 SSA_COVID_Inputs <- read_csv("inputs/SSA COVID Inputs.csv")
 
 #Grab the reduction scenarios
@@ -24,25 +24,27 @@ names(reductions) <-gsub(".csv","",
                       fixed = TRUE)
 
 #Add in col to identify the data source
-MW_TA_COVID_Inputs$Run <- "Malawi"
-BK_TA_COVID_Inputs$Run <- "Burkina"
+MW_COVID_Inputs$Run <- "Malawi"
+BK_COVID_Inputs$Run <- "Burkina"
 SSA_COVID_Inputs$Run <- "SSA"
-combined_data <- rbind(MW_TA_COVID_Inputs, BK_TA_COVID_Inputs, SSA_COVID_Inputs)
+combined_data <- rbind(MW_COVID_Inputs, BK_COVID_Inputs, SSA_COVID_Inputs)
 
 #Modify based on scenario in question
 #countryList <- list("Burkina", "Malawi")
 #countryList <- list("SSA")
 countryList <- list("Malawi")
 
-#loop through each TA, using the TA-specific estimates of population size, hospitalization, ICU, and death
+#loop through each district, using the district-specific estimates of population size, hospitalization, ICU, and death
 for (c in countryList){
   for (r in 1:length(reductions)){
     data_use <- filter(combined_data, combined_data$Run == c)
-    pop_range <- data_use$Population #TA population total estimate
+    pop_range <- data_use$Population #district population total estimate
     eta_range <- data_use$Hospitalization #estimated age-standardized hospitalization rate
     eta2_range <- data_use$`Crit of Hosp` #estimated age-standardized ICU rate AMONG those hospitalized
     ep_range <-  data_use$`CFR of Crit` #estimated age-standardized fatality rate AMONG ICU patients
-    lvl3 <-   data_use$`Lvl3` # name of TA
+    lvl2 <-   data_use$`Lvl2` # name of country
+    lvl3 <-   data_use$`Lvl3` # name of region
+    lvl4 <-   data_use$`Lvl4` # name of district
     UID <- data_use$UID
     
     names(reductions[[r]])[names(reductions[[r]])=="x"] <- "reduc"
@@ -66,19 +68,21 @@ for (c in countryList){
       init <- c(S = pop_range[i] - 1, E = 0, I = 1, H = 0, C = 0, R = 0, D = 0, inci = 0, hosp = 0, crits = 0)
       times <- seq(1,365)
       sim <- as.data.table(lsoda(init, times, model, parms))
-      sim$TA <- lvl3[i]
+      sim$lvl2 <- lvl2[i]
+      sim$lvl3 <- lvl3[i]
+      sim$lvl4 <- lvl4[i]
       sim$ID <- UID[i]
       sim$POP <- pop_range[i]
       
       #For SSA analysis
 
-      # if (paste0(lvl3[i],"-",names(reductions[r])) %in% crosswalk$Match){
-      #   write.csv(sim, paste0("epi_csvs/",c,"/",names(reductions[r]),"-",lvl3[i],".csv"))
+      # if (paste0(lvl2[i],"-",names(reductions[r])) %in% crosswalk$Match){
+      #   write.csv(sim, paste0("epi_csvs/",c,"/",names(reductions[r]),"-",lvl2[i],".csv"))
       #   }
       
       #Use below for in-country
       if (UID[i] != "N/A"){
-        write.csv(sim, paste0("epi_csvs/",c,"/new_",names(reductions[r]),"/",lvl3[i],".csv"))}
+        write.csv(sim, paste0("epi_csvs/",c,"/new_",names(reductions[r]),"/",lvl4[i],".csv"))}
     }
   }
 }
