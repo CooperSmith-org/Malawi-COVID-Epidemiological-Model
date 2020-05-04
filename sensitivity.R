@@ -13,8 +13,8 @@ library(readr)
 source("utils.R")
 
 #Bring in inputs - add additional files in this format here!
-MW_TA_COVID_Inputs <- read_csv("inputs/MW TA COVID Inputs.csv")
-BK_TA_COVID_Inputs <- read_csv("inputs/BFA TA COVID Inputs.csv")
+MW_COVID_Inputs <- read_csv("inputs/MW COVID Inputs.csv")
+BK_COVID_Inputs <- read_csv("inputs/BFA COVID Inputs.csv")
 SSA_COVID_Inputs <- read_csv("inputs/SSA COVID Inputs.csv")
 
 #Grab the reduction scenarios
@@ -25,8 +25,8 @@ names(reductions) <-gsub(".csv","",
                          fixed = TRUE)
 
 #Add in col to identify the data source
-MW_TA_COVID_Inputs$Run <- "Malawi"
-BK_TA_COVID_Inputs$Run <- "Burkina"
+MW_COVID_Inputs$Run <- "Malawi"
+BK_COVID_Inputs$Run <- "Burkina"
 SSA_COVID_Inputs$Run <- "SSA"
 combined_data <- rbind(MW_COVID_Inputs, BK_COVID_Inputs, SSA_COVID_Inputs)
 
