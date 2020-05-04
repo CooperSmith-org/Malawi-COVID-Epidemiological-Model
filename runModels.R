@@ -15,11 +15,11 @@ BK_COVID_Inputs <- read_csv("inputs/BFA COVID Inputs.csv")
 SSA_COVID_Inputs <- read_csv("inputs/SSA COVID Inputs.csv")
 
 #Grab the reduction scenarios
-files <- list.files("inputs/reductionScenarios_new", full.names = TRUE) #For within countries
+files <- list.files("inputs/reductionScenarios", full.names = TRUE) #For within countries
 #files <- list.files("inputs/SSA", full.names = TRUE) #For SSA
 reductions <- lapply(files, read_csv)
 names(reductions) <-gsub(".csv","",
-                      list.files("inputs/reductionScenarios_new", full.names = FALSE), #For within countries
+                      list.files("inputs/reductionScenarios", full.names = FALSE), #For within countries
                       #list.files("inputs/SSA", full.names = FALSE), #For SSA
                       fixed = TRUE)
 
@@ -82,7 +82,7 @@ for (c in countryList){
       
       #Use below for in-country
       if (UID[i] != "N/A"){
-        write.csv(sim, paste0("epi_csvs/",c,"/new_",names(reductions[r]),"/",lvl4[i],".csv"))}
+        write.csv(sim, paste0("epi_csvs/",c,"/",names(reductions[r]),"/",lvl4[i],".csv"))}
     }
   }
 }
