@@ -28,7 +28,7 @@ names(reductions) <-gsub(".csv","",
 MW_TA_COVID_Inputs$Run <- "Malawi"
 BK_TA_COVID_Inputs$Run <- "Burkina"
 SSA_COVID_Inputs$Run <- "SSA"
-combined_data <- rbind(MW_TA_COVID_Inputs, BK_TA_COVID_Inputs, SSA_COVID_Inputs)
+combined_data <- rbind(MW_COVID_Inputs, BK_COVID_Inputs, SSA_COVID_Inputs)
 
 #Modify based on scenario in question
 countryList <- list("Malawi")
