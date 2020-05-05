@@ -1,6 +1,6 @@
 from os.path import join, dirname, abspath
 import pandas as pd
-import geopandas as gpd
+# import geopandas as gpd
 import json
 
 BUNDLED_CITIES = ["MW210", "MW315", "MW314", "MW107"]
