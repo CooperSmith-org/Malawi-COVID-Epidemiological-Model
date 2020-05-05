@@ -1,7 +1,7 @@
 ######DO NOT RUN WIP ############
 
 
-set.seed(1234)
+set.seed(12)
 
 library(dplyr)
 library(reshape2)
@@ -11,11 +11,11 @@ library(ggplot2)
 library(scales)
 library(readr)
 source("utils.R")
+library(icesTAF)
+library(radiant.data)
 
 #Bring in inputs - add additional files in this format here!
 MW_COVID_Inputs <- read_csv("inputs/MW COVID Inputs.csv")
-BK_COVID_Inputs <- read_csv("inputs/BFA COVID Inputs.csv")
-SSA_COVID_Inputs <- read_csv("inputs/SSA COVID Inputs.csv")
 
 #Grab the reduction scenarios
 files <- list.files("inputs/currentTest", full.names = TRUE) #For within countries
@@ -24,11 +24,16 @@ names(reductions) <-gsub(".csv","",
                          list.files("inputs/currrentTest", full.names = FALSE), #For within countries
                          fixed = TRUE)
 
-#Add in col to identify the data source
-MW_COVID_Inputs$Run <- "Malawi"
-BK_COVID_Inputs$Run <- "Burkina"
-SSA_COVID_Inputs$Run <- "SSA"
-combined_data <- rbind(MW_COVID_Inputs, BK_COVID_Inputs, SSA_COVID_Inputs)
+combined_data <- MW_COVID_Inputs %>% 
+  summarise(Hospitalization = weighted.mean(Hospitalization, Population), `Critical Care` = weighted.mean(`Critical Care`, Population),
+            `Crit of Hosp` = weighted.mean(`Crit of Hosp`, Population), CFR = weighted.mean(CFR, Population), `CFR of Crit` = weighted.mean(`CFR of Crit`, Population),
+            `CFR of Hosp` = weighted.mean(`CFR of Hosp`, Population), Population = sum(Population))
+combined_data$UID <- 1
+combined_data$Lvl1 <- "Sub-Saharan Africa"
+combined_data$Lvl2 <- "Malawi"
+combined_data$Lvl3 <- "All"
+combined_data$Lvl4 <- "All"
+combined_data$Run <- "Malawi"
 
 #Modify based on scenario in question
 countryList <- list("Malawi")
@@ -39,14 +44,14 @@ for (runNum in seq(1,1000)){
     for (r in 1:length(reductions)){
       data_use <- filter(combined_data, combined_data$Run == c)
       pop_range <- data_use$Population #TA population total estimate
-      eta_range <- data_use$Hospitalization #estimated age-standardized hospitalization rate
-      eta2_range <- data_use$`Crit of Hosp` #estimated age-standardized ICU rate AMONG those hospitalized
-      ep_range <-  data_use$`CFR of Crit` #estimated age-standardized fatality rate AMONG ICU patients
+      # eta_range <- list(data_use$Hospitalization) #estimated age-standardized hospitalization rate
+      # eta2_range <- list(data_use$`Crit of Hosp`) #estimated age-standardized ICU rate AMONG those hospitalized
+      # ep_range <-  list(data_use$`CFR of Crit`) #estimated age-standardized fatality rate AMONG ICU patients
       lvl2 <-   data_use$`Lvl2` # name of country
       lvl3 <-   data_use$`Lvl3` # name of region
       lvl4 <-   data_use$`Lvl4` # name of district
       UID <- data_use$UID
-      
+
       names(reductions[[r]])[names(reductions[[r]])=="x"] <- "reduc"
       
       for(i in 1:length(pop_range)) {
@@ -65,9 +70,9 @@ for (runNum in seq(1,1000)){
         parms["tau"] <- 1 / rnorm(1, 8, 1.5) #recovery rate for hospitalized cases
         parms["tau2"] <- 1 / rnorm(1, 16, 2.0) #recovery rate for ICU cases
         parms["population"] <- pop_range[i]
-        parms["eta"] <- eta_range[i] * rnorm(1, mean=mean(data_use$Hospitalization), sd=sd(data_use$Hospitalization))
-        parms["eta2"] <- eta2_range[i] * rnorm(1, mean=mean(data_use$`Crit of Hosp`), sd=sd(data_use$`Crit of Hosp`))
-        parms["epsilon"] <- ep_range[i] * rnorm(1, mean=mean(data_use$`CFR of Crit`), sd=sd(data_use$`CFR of Crit`))
+        parms["eta"] <- rnorm(1, mean=data_use$Hospitalization, sd=weighted.sd(MW_COVID_Inputs$Hospitalization, MW_COVID_Inputs$Population))
+        parms["eta2"] <- rnorm(1, mean=data_use$`Crit of Hosp`, sd=weighted.sd(MW_COVID_Inputs$`Crit of Hosp`, MW_COVID_Inputs$Population))
+        parms["epsilon"] <- rnorm(1, mean=data_use$`CFR of Crit`, sd=weighted.sd(MW_COVID_Inputs$`CFR of Crit`, MW_COVID_Inputs$Population))
         parms["reductionList"] <- list(reductions[[r]]$reduc)
         init <- c(S = pop_range[i] - 1, E = 0, I = 1, H = 0, C = 0, R = 0, D = 0, inci = 0, hosp = 0, crits = 0)
         times <- seq(1,365)
@@ -81,8 +86,36 @@ for (runNum in seq(1,1000)){
 
         #Use below for in-country
         if (UID[i] != "N/A"){
-        write.csv(sim, paste0("epi_csvs/Sensitivity/",runNum,"/",lvl4[i],".csv"))}
+        write.csv(sim, paste0("epi_csvs/Sensitivity/",runNum,".csv"))}
       }
     }
   }
 }
+
+sensitivity <- makeCombinedDF("epi_csvs/Sensitivity")
+
+makeComparisonGraphSensitivity <- function(df, diseaseState, title, fileName) {
+  ggplot(data=subset(df, df$State %in% c(diseaseState)) %>% arrange(State),
+         aes(x=time, y=value)) +
+    geom_line(stat="identity", position = "identity") +
+    xlab("Day (from t=0)") +
+    ylab("Number of people") +
+    ggtitle(title) +
+    scale_y_continuous(label=comma) +
+    theme_minimal() #+
+  #theme(legend.position = "none") #turn on and off for legend
+  ggsave(fileName, height=4 , width =8)
+}
+
+sensitivity <- sensitivity %>%
+  group_by(time, runNum) %>%
+  summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
+
+longDataS <- melt(sensitivity, id = c("time", "runNum"))
+longDataS$variable <- factor(longData$variable,
+                            levels = c("Susceptible", "Recovered","Exposed", "Infected", "Hospitalized", "Critical","Deaths"))
+
+names(longDataS)[names(longDataS)=="variable"] <- "State"
+options(scipen=10000) #Override scientific notation default
+
+makeComparisonGraphSensitivity(longDataS, "Infected", "xxx", "images/test.png")
