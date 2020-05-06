@@ -13,15 +13,6 @@ CURRENT_INFECTIONS = "CurrentInfectionLocation_30April20.csv"
 INPUTS_FOLDER = join(join(dirname(abspath(dirname(__file__))), "inputs"), "cleaned_data")
 
 
-def go():
-	"""
-	Calls all functions that create data structures for population decay model
-	"""
-
-	adm3_homes, adm3_to_adm2_dict, adm3_to_adm3_dict = create_relations()
-	CI = import_current_infections(adm3_homes)
-	return CI, adm3_homes, adm3_to_adm2_dict, adm3_to_adm3_dict
-
 
 def load_inputs(bundled=True):
 	"""
@@ -102,17 +93,21 @@ def create_relations(bundled=True):
 	adm3["ADM3"] = adm3["ADM3"].str.strip()
 	# adm3.drop_duplicates(ignore_index=True, inplace=True)
 
+
+	### executes bundling
 	if bundled:
 		adm3.loc[adm3["ADM2"].isin(BUNDLED_CITIES), "ADM3"] = \
 			adm3.loc[adm3["ADM2"].isin(BUNDLED_CITIES), "ADM2"]
 		adm3.loc[adm3["ADM2"].isin(BUNDLED_CITIES), "ADM3_EN"] = \
 			adm3.loc[adm3["ADM2"].isin(BUNDLED_CITIES), "ADM2_EN"]
 
-	print(adm3)
+	# print(adm3)
 
+
+	### builds homes
 	adm3_homes = adm3[["ADM2", "ADM3", "ADM2_EN", "ADM3_EN"]]
 	adm3_homes.drop_duplicates(ignore_index=True, inplace=True)
-	# print(adm3_homes)
+
 	### connect adm3s to 2s
 	tmp = gpd.sjoin(adm3, adm2, how='left', op='intersects')
 	adm3_to_adm2 = tmp[tmp["ADM2_left"] != tmp["ADM2_right"]] 
@@ -137,13 +132,7 @@ def import_current_infections(adm3_homes):
 
 	tmp = pd.read_csv(join(DATA_FOLDER, CURRENT_INFECTIONS))
 
-	# if "ADM3_PCODE" in tmp.columns:
-	# 	loc_var = "ADM3_PCODE"
-
-	# elif "ADM2_PCODE" in tmp.columns:
-	# 	loc_var = "ADM2_PCODE"
 	loc_var = "ADM3_PCODE" if "ADM3_PCODE" in tmp.columns else "ADM2_PCODE" 
-	# CI["ADM3_PCODE"] = CI["ADM3_PCODE"].str.strip() 	
 
 	if loc_var == "ADM2_PCODE":
 		tmp = adm3_homes.merge(tmp, how="left", 
