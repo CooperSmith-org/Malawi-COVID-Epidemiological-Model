@@ -23,6 +23,9 @@ names(reductions) <-gsub(".csv","",
                       #list.files("inputs/SSA", full.names = FALSE), #For SSA
                       fixed = TRUE)
 
+#read in crosswalk match for SSA analysis
+crosswalk <- read.csv("~/GitHub/africa-covid-work/inputs/google crosswalk.csv")
+
 #Add in col to identify the data source
 MW_COVID_Inputs$Run <- "Malawi"
 BK_COVID_Inputs$Run <- "Burkina"

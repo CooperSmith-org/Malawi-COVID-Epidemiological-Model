@@ -24,13 +24,13 @@ colnames(fe)[colnames(fe) == 'Additional.Pop..Guidelines'] <- 'policy2'
 colnames(fe)[colnames(fe) == 'Enforced.Pop.Restrictions'] <- 'policy3'
 
 #Add Retail & Recreation, Grocery & Pharmacy, Parks, Transit Station & Workplace Frequency by Policy to the Google Mobility Reports
-gm$rrp1 <-fe[1,2]
-gm$rrp2 <-fe[1,3]
-gm$rrp3 <= fe[1,4]
+gm$rrp1 <- fe[1,2]
+gm$rrp2 <- fe[1,3]
+gm$rrp3 <- fe[1,4]
 
-gm$gpp1 <-fe[2,2]
-gm$gpp2 <-fe[2,3]
-gm$gpp3 <-fe[2,4]
+gm$gpp1 <- fe[2,2]
+gm$gpp2 <- fe[2,3]
+gm$gpp3 <- fe[2,4]
 
 gm$pp1 <- fe[3,2]
 gm$pp2 <- fe[3,3]
