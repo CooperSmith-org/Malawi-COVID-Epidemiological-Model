@@ -1,3 +1,4 @@
+import directory_management
 from os.path import join, dirname, abspath
 import pandas as pd
 # import geopandas as gpd
@@ -9,10 +10,53 @@ BUNDLED_CITIES = ["MW210", "MW315", "MW314", "MW107"]
 DATA_FOLDER = join(dirname(abspath(dirname(__file__))), "data")
 SHAPE_FILES = ["mwi_admbnda_adm2_nso_20181016.shp", "mwi_admbnda_adm3_nso_20181016.shp"]
 CURRENT_INFECTIONS = "CurrentInfectionLocation_30April20.csv"
+INT_FOLDER = join(dirname(abspath(dirname(__file__))), "country_inputs", "MW", "intermediate_data")
+CI_FOLDER = join(dirname(abspath(dirname(__file__))), "country_inputs", "MW", "CI")
+
 
 INPUTS_FOLDER = join(join(dirname(abspath(dirname(__file__))), "inputs"), "cleaned_data")
 
 
+
+def load_adj(country, bundled=False, exclusions=False):
+	"""
+	grabs files from int folder
+	"""
+
+	int_folder = join(dirname(abspath(dirname(__file__))), "country_inputs", country, "intermediate_data")
+
+	is_bund = "_bundled" if bundled else ""
+	d_name = "excluded" if exclusions else "full"
+	filename = d_name + is_bund + ".json"
+
+	if not directory_management.check_int_files(country, filename):
+
+		if not directory_management.check_for_shp(country):
+			print("There is no shapefile for {}\nQuitting...".format(country))
+			return None 
+		else:
+			print("Creating adjancency files...")
+
+			#### in future have user specify file that describes bundling
+			#### also have the specify file that describes exclusions
+			CI_geo_col = input("Please enter the name of the geographic id in the CI file:")  ### this is needed because a df that maps regions of interest to CIs is necessary
+			geo_id = input("Please enter the name of the geographic id in the shape file:")
+			build_inputs.create_geo_ints(country, shape_filename, id_geo_col, CI_geo_col)
+
+	with open(join(int_folder, filename)) as f:
+		adj_dict = json.load(f)
+
+	ids = pd.read_json(join(int_folder, "ids_" + filename))
+
+	return adj_dict, ids
+
+
+def import_CIs(CI_filename):
+
+	CI = pd.read_csv(join(CI_FOLDER, CI_filename))
+
+	return CI
+	
 
 def load_inputs(bundled=True):
 	"""
@@ -162,12 +206,6 @@ def df_to_dict(df):
 
 	for k, v in df.itertuples(index=False, name=None):
 		d[k] = d.get(k, []) + [v]
-
-		# adm2 = adm3_homes.loc[adm3_homes["ADM3"] == k]["ADM2"].item()
-		# if adm2 in BUNDLED_CITIES:
-		# 	k = adm2
-
-		# d_bundled[k] = d_bundled.get(k, []) + [v]
 
 	return d
 

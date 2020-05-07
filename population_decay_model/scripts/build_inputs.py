@@ -3,6 +3,14 @@ import pandas as pd
 import geopandas as gpd
 from os.path import join, abspath, dirname
 
+"""
+To do
+Funciton that builds bundles for each bundle file
+Function that build exclusions for each exclusion file
+Functions that ensure integrity of column names (make sure entered names are in files)
+"""
+
+
 EXCLUSION_DICT = {
 	"MW": ['MW20115', 'MW30399', 'MW30904', 'MW30299', 'MW20511',
 		   'MW30199', 'MW31009', 'MW31305', 'MW30807', 'MW31110', 
@@ -15,9 +23,11 @@ BUNDLED_DICT = {"MW":
 				"larger_region_name": "ADM2_PCODE", 
 				"list": ["MW210", "MW315", "MW314", "MW107"]}}
 
-DATA_FOLDER = join(dirname(abspath(dirname(__file__))), "country_inputs")
-INPUTS_FOLDER = join(dirname(abspath(dirname(__file__))), "country_inputs", "MW", "inputs")
 INT_FOLDER = join(dirname(abspath(dirname(__file__))), "country_inputs", "MW", "intermediate_data")
+GEO_FOLDER= join(dirname(abspath(dirname(__file__))), "country_inputs", "MW", "geography")
+CI_FOLDER = join(dirname(abspath(dirname(__file__))), "country_inputs", "MW", "CI")
+
+
 
 ### for testing
 SHAPE_FILENAME = "mwi_admbnda_adm3_nso_20181016.shp"
@@ -25,14 +35,11 @@ CI_FILENAME = "CurrentInfectionLocation_30April20 - Copy.csv"
 
 def test_folders():
 
-	for f in [DATA_FOLDER, INPUTS_FOLDER, INT_FOLDER]:
+	for f in [DATA_FOLDER, INPUTS_FOLDER, INT_FOLDER, GEO_FOLDER]:
 		print(f)
 
-
-def main(country, shape_filename, id_geo_col, CU_geo_col):
-	"""
-	populates int_folder with necessary files
-	"""
+#comment
+def create_geo_ints(country, shape_filename, id_geo_col, CI_geo_col):
 
 	### in the future a different file will collect these things for us
 	exclusion_list = EXCLUSION_DICT.get(country, [])
@@ -40,16 +47,18 @@ def main(country, shape_filename, id_geo_col, CU_geo_col):
 	is_bundled = True
 
 	### upload full dataset
-	df = gpd.read_file(join(INPUTS_FOLDER, shape_filename))
+	df = gpd.read_file(join(GEO_FOLDER, shape_filename))
 	df.name = "full"
 
 	### split based on exclusions
 	print(exclusion_list)
 	df_cut = df[df[id_geo_col].isin(exclusion_list) == False]
-	df_cut.name = "cut"
+	df_cut.name = "excluded"
 
 	### split based on bundles
 	dfs = [df, df_cut]
+	print("len df:", df.shape)
+	print("len cut:", df_cut.shape)
 
 	if is_bundled:
 		r_small = bundled_data["smaller_region_name"]
@@ -57,26 +66,39 @@ def main(country, shape_filename, id_geo_col, CU_geo_col):
 		bundled_list = bundled_data["list"]
 
 		for d in [df, df_cut]:  ### not looping through dfs so I can append to it
-			d.loc[d[r_big].isin(bundled_list), r_small] = \
+			new_d = d.copy(deep=True)			
+			new_d.loc[d[r_big].isin(bundled_list), r_small] = \
 				d.loc[d[r_big].isin(bundled_list), r_big]
-			d.name += "_bundled"
-			dfs.append(d)
-
-	### make geo_index_identities
-
-
+			new_d.name = d.name + "_bundled"
+			dfs.append(new_d)
 
 	### get adjacency stuff
 	for d in dfs:
+		print("making files for...", d.name)
 
-		identities = d[list(set([id_geo_col, CU_geo_col]))] ### grabbing unique column names
+		### make geo_index_identities
+		identities = d[[id_geo_col, CI_geo_col]].drop_duplicates(ignore_index=True) ### grabbing unique column names
+		identities.rename({identities.columns[0]: 'region', identities.columns[1]: 'greater_region'}, inplace=True, axis=1)
+		if all(identities['region'] == identities['greater_region']):
+			identities = identities[id_geo_col]
 		identities.to_json(join(INT_FOLDER, "ids_" + d.name + ".json"))
-		# homes = df[]
-
-		output = find_adjacencies(df, id_geo_col)
+		output = find_adjacencies(d, id_geo_col)
 		# print(output.columns)
 		with open(join(INT_FOLDER, d.name + ".json"), 'w') as json_file:
 			json.dump(output, json_file)
+
+
+
+
+
+
+
+def main(country, shape_filename, id_geo_col, CU_geo_col):
+	"""
+	populates int_folder with necessary files
+	"""
+
+	create_geo_dicts(country, shape_filename, id_geo_col, CU_geo_col)
 
 	### load CIs
 	CIs = import_CIs(join(INPUTS_FOLDER, CI_FILENAME), "ADM2_PCODE", df, "ADM3_PCODE")

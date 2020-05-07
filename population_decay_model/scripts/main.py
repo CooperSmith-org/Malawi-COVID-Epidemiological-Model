@@ -1,5 +1,8 @@
 import data_loading
-import search_TAs
+import run_model
+import build_inputs
+import interface
+import directory_management
 import pandas as pd
 from os.path import join, dirname, abspath
 
@@ -9,30 +12,45 @@ from os.path import join, dirname, abspath
 #### upload to git
 
 OUTPUT_FOLDER = join(dirname(abspath(dirname(__file__))), "output")
+COUNTRY_LIST = ["MW"]
 # multiplier_dict = {1: .6, 2: .2}
 # degree = 2
 
 
-def go(bundled=True):
+def go():
 	"""
 	executes analysis
 	"""
 
-	degree, multiplier_dict, outfile = data_loading.get_params()
+	print("Population Decay Analysis Tool")
+
+	# country, bundled, excluded = interface.get_initial_params(COUNTRY_LIST)
+	country = "MW"
+	bundled = True
+	excluded = True
+
+	adj_dict, ids = data_loading.load_adj(country, bundled, excluded)
+	
+	degree, multiplier_dict, outfile = interface.get_secondary_params()
 
 	# assert len(multiplier_dict) == degree, ("multiplier_dict length must equal degree")
 
 	print("loading files...")
-	CI, TA_Districts, TA_adj_Dist, TA_adj_TA = data_loading.load_inputs(bundled)
-	TA_list = list(TA_Districts['ADM3'].unique())
+	# CI_filename = input("Please enter the name of the CI file, include '.csv': ")
+	CI_filename = "CurrentInfectionLocation_30April20 - Copy.csv"
 
+	CIs = data_loading.import_CIs(CI_filename)
+	
+	# CI, TA_Districts, TA_adj_Dist, TA_adj_TA = data_loading.load_inputs(bundled)
+
+	# return None
 	print("building connections...")
-	total_cs = search_TAs.get_connections(TA_list, TA_adj_TA, CI, degree)
-
 	print("calculating scores...")
-	scores = search_TAs.calc_scores(total_cs, CI, TA_Districts, multiplier_dict)
+	scores, total_cs = run_model.main(ids, adj_dict, degree, multiplier_dict, CIs)
+	# return scores
 
 	print("outputting to {}...".format(outfile + '.xlsx'))
+	output_folder = join(dirname(abspath(dirname(__file__))), "output", country)
 
 	writer = pd.ExcelWriter(join(OUTPUT_FOLDER, outfile + '.xlsx'), engine='xlsxwriter')
 	total_cs.to_excel(writer, sheet_name="Connections", index=False)
