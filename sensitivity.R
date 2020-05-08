@@ -95,27 +95,35 @@ for (runNum in seq(1,1000)){
 sensitivity <- makeCombinedDF("epi_csvs/Sensitivity")
 
 makeComparisonGraphSensitivity <- function(df, diseaseState, title, fileName) {
-  ggplot(data=subset(df, df$State %in% c(diseaseState)) %>% arrange(State),
-         aes(x=time, y=value)) +
-    geom_line(stat="identity", position = "identity") +
+  df %>%
+    filter(State %in% c(diseaseState)) %>%
+    ggplot(aes(x=time, y=value, group=runNum, color=runNum)) +
+    geom_line(size=.1) +
     xlab("Day (from t=0)") +
     ylab("Number of people") +
     ggtitle(title) +
     scale_y_continuous(label=comma) +
     theme_minimal() #+
-  #theme(legend.position = "none") #turn on and off for legend
   ggsave(fileName, height=4 , width =8)
 }
 
-sensitivity <- sensitivity %>%
+sensitivityNew <- sensitivity %>%
   group_by(time, runNum) %>%
   summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
 
-longDataS <- melt(sensitivity, id = c("time", "runNum"))
-longDataS$variable <- factor(longData$variable,
-                            levels = c("Susceptible", "Recovered","Exposed", "Infected", "Hospitalized", "Critical","Deaths"))
+longDataS <- melt(sensitivityNew, id = c("time", "runNum"))
 
 names(longDataS)[names(longDataS)=="variable"] <- "State"
 options(scipen=10000) #Override scientific notation default
 
-makeComparisonGraphSensitivity(longDataS, "Infected", "xxx", "images/test.png")
+makeComparisonGraphSensitivity(longDataS, "Infected", "Number of infected individuals across different model runs testing variable sensitivity", "images/Sensitivity/current_infection.png")
+makeComparisonGraphSensitivity(longDataS, "Deaths", "Number of deaths across different model runs testing variable sensitivity", "images/Sensitivity/current_deaths.png")
+
+makeSummaryCSVSensitivity <- function(df, filename) {
+  dftocsv <- df %>%
+    group_by(runNum) %>%
+    summarise(Population = max(POP), Incidence = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
+  write.csv(dftocsv, filename)
+}
+
+makeSummaryCSVSensitivity(sensitivity, "Sensitivity/current.csv")
