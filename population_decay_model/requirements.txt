@@ -1,17 +1,16 @@
-attrs (19.3.0)
-click (7.1.1)
-click-plugins (1.1.1)
-cligj (0.5.0)
-Fiona (1.8.13.post1)
-geopandas (0.7.0)
-munch (2.5.0)
-numpy (1.18.3)
-pandas (1.0.3)
-pip (9.0.1)
-pkg-resources (0.0.0)
-pyproj (2.6.0)
-python-dateutil (2.8.1)
-pytz (2019.3)
-setuptools (39.0.1)
-Shapely (1.7.0)
-six (1.14.0)
+attrs==19.3.0
+click==7.1.2
+click-plugins==1.1.1
+cligj==0.5.0
+Fiona==1.8.13.post1
+geopandas==0.7.0
+munch==2.5.0
+numpy==1.18.4
+pandas==1.0.3
+pkg-resources==0.0.0
+pyproj==2.6.1.post1
+python-dateutil==2.8.1
+pytz==2020.1
+Shapely==1.7.0
+six==1.14.0
+XlsxWriter==1.2.8
