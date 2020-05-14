@@ -1,6 +1,0 @@
-date: 2020-05-12
-num adjacent degrees: 2
-multiplier 1: .6
-CI: file.csv
-exclusions: excluuuude.csv
-bundles: bundlessss.csv
