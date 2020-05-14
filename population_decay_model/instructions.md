@@ -67,7 +67,7 @@ In order for other team members to access your output you must push it to the gi
 
 1. ```git add <name of output file including path from current terminal location>```
 2. ```git commit -m '<message describing run>'```
-3. ```git push
+3. ```git push```
 
 
 Please contact nselman@uchicago.edu with any questions.
