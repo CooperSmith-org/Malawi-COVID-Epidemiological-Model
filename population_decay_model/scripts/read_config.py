@@ -1,7 +1,7 @@
 import pandas as pd
-from os.path import join, abspath, dirname
+from os.path import join, abspath, dirname, exists
 
-COUNTRY_INPUTS = join(dirname(abspath(__file__)), 'country_inputs')
+COUNTRY_INPUTS = join(dirname(dirname(abspath(__file__))), 'country_inputs')
 
 ARGS = ['date', 'country', 'num adjacent degrees', 'current infections filename'
 		'exclusions', 'bundles']
@@ -12,14 +12,41 @@ def read_config(path):
 	inputs (str): path of config file
 	returns dict of args
 	"""
-
 	with open(path, 'r') as f:
 		lines = f.readlines()
 
 	args = parse_config(lines)
+	check_essential_args(args)
 	check_multipliers(args)
+	check_files(args)
 
 	return args
+
+
+def check_essential_args(args):
+	"""
+	verifies essential args are present
+	"""
+	if 'CI' not in args:
+		raise Exception('No CI in config file')
+	if 'shape' not in args:
+		raise Exception('No shape in config file')
+	for i in ('CI', 'CI region colname', 'country', 'shape', 'region colname'):
+		if i not in args:
+			raise Exception('Mandatory arg not found in config file.'
+							'Please ensure the following args are populated:'
+							' CI, CI region colname, country, shape, region colname')
+
+def check_files(args):
+	"""
+	verifies files exist
+	raises error if verification fails
+	"""
+
+	for k, v in args.items():
+		if k in ('CI', 'exclusions', 'bundles', 'shape'):
+			if not exists(v):
+				raise Exception("{} not found".format(v))
 
 
 def check_multipliers(args):
@@ -51,13 +78,18 @@ def parse_config(lines):
 		k = l[0]
 		v = l[1].strip()
 
-		if k in ('date', 'country'):
+		if k in ('date', 'country', 'region colname', 'CI region colname'):
 			args[k] = v
+		if k == 'outfile name':
+			if v[-4:] == '.csv':
+				args[k] = v
+			else:
+				args[k] = v + '.csv'
 		if k == 'num adjacent degrees':
 			args[k] = int(v)
 		if k[:10] == 'multiplier':
 			args[k] = float(v)
-		if k in ('CI', 'exclusions', 'bundles'):
+		if k in ('CI', 'exclusions', 'bundles', 'shape'):
 			country = args.get('country')
 			if not country:
 				raise Exception('country must be before CI, exclusions, and bundle in config file')

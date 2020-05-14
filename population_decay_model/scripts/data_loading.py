@@ -33,7 +33,7 @@ def load_adj(country, bundled=False, exclusions=False):
 
 		if not directory_management.check_for_shp(country):
 			print("There is no shapefile for {}\nQuitting...".format(country))
-			return None 
+			raise Exeption()
 		else:
 			print("Creating adjancency files...")
 
@@ -144,9 +144,6 @@ def create_relations(bundled=True):
 			adm3.loc[adm3["ADM2"].isin(BUNDLED_CITIES), "ADM2"]
 		adm3.loc[adm3["ADM2"].isin(BUNDLED_CITIES), "ADM3_EN"] = \
 			adm3.loc[adm3["ADM2"].isin(BUNDLED_CITIES), "ADM2_EN"]
-
-	# print(adm3)
-
 
 	### builds homes
 	adm3_homes = adm3[["ADM2", "ADM3", "ADM2_EN", "ADM3_EN"]]
