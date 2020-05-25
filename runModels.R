@@ -24,6 +24,9 @@ names(reductions) <-gsub(".csv","",
                       #list.files("inputs/SSA", full.names = FALSE), #For SSA
                       fixed = TRUE)
 
+#read in crosswalk match for SSA analysis
+crosswalk <- read.csv("~/GitHub/africa-covid-work/inputs/google crosswalk.csv")
+
 #Add in col to identify the data source
 MW_COVID_Inputs$Run <- "Malawi"
 BK_COVID_Inputs$Run <- "Burkina"
@@ -33,7 +36,7 @@ combined_data <- rbind(MW_COVID_Inputs, BK_COVID_Inputs, SSA_COVID_Inputs)
 #Modify based on scenario in question
 #countryList <- list("Burkina", "Malawi")
 #countryList <- list("SSA")
-countryList <- list("Malawi")
+countryList <- list("Burkina")
 
 #loop through each district, using the district-specific estimates of population size, hospitalization, ICU, and death
 for (c in countryList){
@@ -59,7 +62,7 @@ for (c in countryList){
                  kappa2 = 1 / 2.6, #rest of infectious time and time to symptomatic
                  tau = 1 / 8, #recovery rate for hospitalized cases
                  tau2 = 1 / 16, #recovery rate for ICU cases
-                 R0 = 2.2, #basic reproductive numbe
+                 R0 = ifelse(lvl2=="Burkina", 3, 2.2), #basic reproductive numbe
                  reductionList = list()) # day 1 assumed baseline reduction
       parms["population"] <- pop_range[i]
       parms["eta"] <- eta_range[i]
