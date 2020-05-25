@@ -53,6 +53,8 @@ makeCombinedScenario <-function(base_df, scenario_df, districtList) {
 #Function to make a summary graph for a district
 
 makeSummaryGraph <- function(df, districtName, title, filename) {
+  df$time <- df$time + df$start # add in staggered
+  
   names(df)[names(df)=="time"] <- "Day"
   df <- df %>%
     filter(df$lvl3==districtName) %>%
@@ -82,6 +84,7 @@ makeSummaryGraph <- function(df, districtName, title, filename) {
 #Function to make a summary DF for all districts
 
 makeSummaryGraphAll <- function(df, title, filename) {
+  df$X1 <- df$X1 + df$start # add in staggered
   names(df)[names(df)=="X1"] <- "Day"
   
   df <- df %>%
@@ -128,6 +131,7 @@ makeComparisonGraph <- function(df, diseaseState, title, fileName) {
 #Function to summarize data
 
 makeSummaryCSV <- function(df, fileName) {
+  df$X1 <- df$X1 + df$start # add in staggered
   df1 <- df %>% 
     group_by(X1) %>% 
     summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
@@ -135,6 +139,7 @@ makeSummaryCSV <- function(df, fileName) {
 }
 
 makeSummaryCSVGeo <- function(df, filename) {
+  df$X1 <- df$X1 + df$start # add in staggered
   dftocsv <- df %>%
     group_by(lvl3, ID) %>%
     summarise(Population = max(POP), Incidence = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
