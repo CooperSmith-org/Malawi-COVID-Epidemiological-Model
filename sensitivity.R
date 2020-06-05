@@ -1,7 +1,7 @@
 ######DO NOT RUN WIP ############
 
 
-set.seed(12)
+set.seed(1234)
 
 library(dplyr)
 library(reshape2)
@@ -126,4 +126,4 @@ makeSummaryCSVSensitivity <- function(df, filename) {
   write.csv(dftocsv, filename)
 }
 
-makeSummaryCSVSensitivity(sensitivity, "Sensitivity/current.csv")
+makeSummaryCSVSensitivity(sensitivity, "Sensitivity/enforcedrestrictions21day.csv")
