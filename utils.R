@@ -31,7 +31,6 @@ model <- function(times, init, parms) {
 
 
 #Function to combine CSVs outputted by different model runs
-
 makeCombinedDF <-function(location) {
   df <- list.files(path = location,full.names = TRUE) %>% 
     lapply(read_csv) %>% 
@@ -39,9 +38,8 @@ makeCombinedDF <-function(location) {
   return(df)
 }
 
-#Function to combine different scenarios by district
-
-makeCombinedScenario <-function(base_df, scenario_df, districtList) {
+#Function to combine different scenarios for lvl3
+makeCombinedScenariolvl3 <-function(base_df, scenario_df, districtList) {
   scenario_df$scenario <- "reduction"
   base_df$scenario <- "baseline"
   
@@ -50,14 +48,57 @@ makeCombinedScenario <-function(base_df, scenario_df, districtList) {
   return(bind_rows(use1,use2)) 
 }
 
+<<<<<<< HEAD
 #Function to make a summary graph for a district
 
 makeSummaryGraph <- function(df, districtName, title, filename) {
   df$time <- df$time + df$start # add in staggered
   
+=======
+#Function to make a summary graph for lvl3
+makeSummaryGraphlvl3 <- function(df, districtName, title, filename) {
+>>>>>>> 692903ef80e8d2bcca14b7099351087768fb0eba
   names(df)[names(df)=="time"] <- "Day"
   df <- df %>%
     filter(df$lvl3==districtName) %>%
+    group_by(Day) %>%
+    summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
+  
+  longData <- melt(df, id = c("Day"))
+  longData$variable <- factor(longData$variable,
+                              levels = c("Susceptible", "Recovered","Exposed", "Infected", "Hospitalized", "Critical","Deaths"))
+  
+  names(longData)[names(longData)=="variable"] <- "State"
+  options(scipen=10000)#Override scientific notation default
+  
+  ggplot(data=subset(longData, longData$State %in% c("Infected", "Hospitalized","Critical","Deaths")) %>% arrange(State),
+         aes(x=Day, y=value, fill=State, color=State)) +
+    geom_line(stat="identity", position = "identity") +
+    scale_colour_manual(values=c("lightblue4", "red", "blue", "indianred4")) +
+    scale_fill_manual(values=c("lightblue4", "red", "blue", "indianred4")) +
+    xlab("Day (from t=0)") +
+    ylab("Number of people") +
+    ggtitle(title) +
+    scale_y_continuous(label=comma) +
+    theme_minimal()
+  ggsave(filename, height=4, width=8)
+}
+
+#Function to combine different scenarios for lvl4
+makeCombinedScenariolvl4 <-function(base_df, scenario_df, districtList) {
+  scenario_df$scenario <- "reduction"
+  base_df$scenario <- "baseline"
+  
+  use1 <- subset(scenario_df, scenario_df$lvl4 %in% districtList)
+  use2 <- subset(base_df, base_df$lvl4 %in% setdiff(unique(base_df$lvl4), districtList))
+  return(bind_rows(use1,use2)) 
+}
+
+#Function to make a summary graph for lvl4
+makeSummaryGraphlvl4 <- function(df, districtName, title, filename) {
+  names(df)[names(df)=="time"] <- "Day"
+  df <- df %>%
+    filter(df$lvl4==districtName) %>%
     group_by(Day) %>%
     summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
   
