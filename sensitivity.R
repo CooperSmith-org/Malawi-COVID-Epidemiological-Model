@@ -18,10 +18,10 @@ library(radiant.data)
 MW_COVID_Inputs <- read_csv("inputs/MW COVID Inputs.csv")
 
 #Grab the reduction scenarios
-files <- list.files("inputs/currentTest", full.names = TRUE) #For within countries
+files <- list.files("inputs/sensitivityScenarios", full.names = TRUE) #For within countries
 reductions <- lapply(files, read_csv)
 names(reductions) <-gsub(".csv","",
-                         list.files("inputs/currrentTest", full.names = FALSE), #For within countries
+                         list.files("inputs/sensitivityScenarios", full.names = FALSE), #For within countries
                          fixed = TRUE)
 
 combined_data <- MW_COVID_Inputs %>% 
@@ -86,13 +86,16 @@ for (runNum in seq(1,1000)){
 
         #Use below for in-country
         if (UID[i] != "N/A"){
-        write.csv(sim, paste0("epi_csvs/Sensitivity/",runNum,".csv"))}
+        write.csv(sim, paste0("epi_csvs/Sensitivity/",names(reductions[r]),"/",runNum,".csv"))}
       }
     }
   }
 }
 
-sensitivity <- makeCombinedDF("epi_csvs/Sensitivity")
+
+##Right now it's just for thee scenario specified - above loop does all scenarios
+
+sensitivity <- makeCombinedDF("epi_csvs/Sensitivity/additionalGuidelines")
 
 makeComparisonGraphSensitivity <- function(df, diseaseState, title, fileName) {
   df %>%
