@@ -13,6 +13,7 @@ source("utils.R")
 MW_COVID_Inputs <- read_csv("inputs/MW COVID Inputs.csv")
 BK_COVID_Inputs <- read_csv("inputs/BFA COVID Inputs.csv")
 SSA_COVID_Inputs <- read_csv("inputs/SSA COVID Inputs.csv")
+MW_starts <- read_csv("inputs/MW_COVID_startDate.csv")
 
 #Grab the reduction scenarios
 files <- list.files("inputs/reductionScenarios", full.names = TRUE) #For within countries
@@ -68,14 +69,22 @@ for (c in countryList){
       parms["eta2"] <- eta2_range[i]
       parms["epsilon"] <- ep_range[i]
       parms["reductionList"] <- list(reductions[[r]]$reduc)
+      
+      ##Do some adjusting for start dates
+      t_from0 <- MW_starts$Date_from_0[as.numeric(UID[i])]+1
+      
+      print(parms[["reductionList"]][t_from0:365])
+      parms[["reductionList"]] <- parms[["reductionList"]][t_from0:365]
       init <- c(S = pop_range[i] - 1, E = 0, I = 1, H = 0, C = 0, R = 0, D = 0, inci = 0, hosp = 0, crits = 0)
-      times <- seq(1,365)
+      
+      times <- seq(1,length(parms[["reductionList"]]))
       sim <- as.data.table(lsoda(init, times, model, parms))
       sim$lvl2 <- lvl2[i]
       sim$lvl3 <- lvl3[i]
       sim$lvl4 <- lvl4[i]
       sim$ID <- UID[i]
       sim$POP <- pop_range[i]
+      sim$start <- t_from0
       
       #For SSA analysis
 
@@ -85,7 +94,7 @@ for (c in countryList){
       
       #Use below for in-country
       if (UID[i] != "N/A"){
-        write.csv(sim, paste0("epi_csvs/",c,"/",names(reductions[r]),"/",lvl4[i],".csv"))}
+        write.csv(sim, paste0("epi_csvs/",c,"/staggered_",names(reductions[r]),"/",lvl4[i],".csv"))}
     }
   }
 }
