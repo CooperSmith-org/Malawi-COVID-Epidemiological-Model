@@ -92,11 +92,55 @@ for (runNum in seq(1,1000)){
   }
 }
 
-
 ##Right now it's just for thee scenario specified - above loop does all scenarios
 
-sensitivity <- makeCombinedDF("epi_csvs/Sensitivity/additionalGuidelines")
+sensitivity1 <- makeCombinedDF("epi_csvs/Sensitivity/additionalGuidelines")
+sensitivity2 <- makeCombinedDF("epi_csvs/Sensitivity/additionalGuidelines21day")
+sensitivity3 <- makeCombinedDF("epi_csvs/Sensitivity/current")
+sensitivity4 <- makeCombinedDF("epi_csvs/Sensitivity/enforcedLockdown")
+sensitivity5 <- makeCombinedDF("epi_csvs/Sensitivity/enforcedLockdown21day")
+sensitivity6 <- makeCombinedDF("epi_csvs/Sensitivity/enforcedRestrictions")
+sensitivity7 <- makeCombinedDF("epi_csvs/Sensitivity/enforcedRestrictions21day")
+sensitivity8 <- makeCombinedDF("epi_csvs/Sensitivity/unmitigated")
 
+dfList <- list(sensitivity1, sensitivity2, sensitivity3, sensitivity4, sensitivity5, 
+               sensitivity6, sensitivity7, sensitivity8)
+summaryNameList <- list("Sensitivity/additionalGuidelines.csv","Sensitivity/additionalGuidelines21day.csv",
+"Sensitivity/current.csv","Sensitivity/enforcedLockdown.csv","Sensitivity/enforcedLockdown21day.csv",
+"Sensitivity/enforcedrestrictions21day.csv", "Sensitivity/enforcedrestrictions21day.csv", 
+"Sensitivity/unmitigated.csv")
+
+folderList <- list("epi_csvs/Sensitivity/additionalGuidelines",
+                   "epi_csvs/Sensitivity/unmitigated",
+                   "epi_csvs/Sensitivity/additionalGuidelines21day", 
+                   "epi_csvs/Sensitivity/enforcedLockdown",
+                   "epi_csvs/Sensitivity/enforcedLockdown21day",
+                   "epi_csvs/Sensitivity/enforcedRestrictions",
+                   "epi_csvs/Sensitivity/enforcedRestrictions21day")
+
+#Function to make sensitivity summary csv
+makeSummaryCSVSensitivity <- function(df, filename) {
+  dftocsv <- df %>%
+    group_by(runNum) %>%
+    summarise(Population = max(POP), Incidence = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
+  write.csv(dftocsv, filename)
+}
+
+#delete the folders since we have csvs now
+num=1
+for (folder in folderList) {
+  unlink(folderList[num], recursive = TRUE)
+  num = num +1
+}
+
+#Loop to make all the summary CSVs
+i=1
+for (df in dfList) {
+  makeSummaryCSVSensitivity(dfList[[i]], summaryNameList[[i]])
+  i = i + 1
+}
+
+#Graphs
 makeComparisonGraphSensitivity <- function(df, diseaseState, title, fileName) {
   df %>%
     filter(State %in% c(diseaseState)) %>%
@@ -122,11 +166,5 @@ options(scipen=10000) #Override scientific notation default
 makeComparisonGraphSensitivity(longDataS, "Infected", "Number of infected individuals across different model runs testing variable sensitivity", "images/Sensitivity/current_infection.png")
 makeComparisonGraphSensitivity(longDataS, "Deaths", "Number of deaths across different model runs testing variable sensitivity", "images/Sensitivity/current_deaths.png")
 
-makeSummaryCSVSensitivity <- function(df, filename) {
-  dftocsv <- df %>%
-    group_by(runNum) %>%
-    summarise(Population = max(POP), Incidence = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
-  write.csv(dftocsv, filename)
-}
 
-makeSummaryCSVSensitivity(sensitivity, "Sensitivity/enforcedrestrictions21day.csv")
+
