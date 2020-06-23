@@ -48,16 +48,14 @@ makeCombinedScenariolvl3 <-function(base_df, scenario_df, districtList) {
   return(bind_rows(use1,use2)) 
 }
 
-<<<<<<< HEAD
 #Function to make a summary graph for a district
 
 makeSummaryGraph <- function(df, districtName, title, filename) {
   df$time <- df$time + df$start # add in staggered
-  
-=======
+}
+
 #Function to make a summary graph for lvl3
 makeSummaryGraphlvl3 <- function(df, districtName, title, filename) {
->>>>>>> 692903ef80e8d2bcca14b7099351087768fb0eba
   names(df)[names(df)=="time"] <- "Day"
   df <- df %>%
     filter(df$lvl3==districtName) %>%

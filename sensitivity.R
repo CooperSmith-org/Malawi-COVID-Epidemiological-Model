@@ -44,9 +44,6 @@ for (runNum in seq(1,1000)){
     for (r in 1:length(reductions)){
       data_use <- filter(combined_data, combined_data$Run == c)
       pop_range <- data_use$Population #TA population total estimate
-      # eta_range <- list(data_use$Hospitalization) #estimated age-standardized hospitalization rate
-      # eta2_range <- list(data_use$`Crit of Hosp`) #estimated age-standardized ICU rate AMONG those hospitalized
-      # ep_range <-  list(data_use$`CFR of Crit`) #estimated age-standardized fatality rate AMONG ICU patients
       lvl2 <-   data_use$`Lvl2` # name of country
       lvl3 <-   data_use$`Lvl3` # name of region
       lvl4 <-   data_use$`Lvl4` # name of district
@@ -92,8 +89,7 @@ for (runNum in seq(1,1000)){
   }
 }
 
-##Right now it's just for thee scenario specified - above loop does all scenarios
-
+#load the scenarios
 sensitivity1 <- makeCombinedDF("epi_csvs/Sensitivity/additionalGuidelines")
 sensitivity2 <- makeCombinedDF("epi_csvs/Sensitivity/additionalGuidelines21day")
 sensitivity3 <- makeCombinedDF("epi_csvs/Sensitivity/current")
@@ -103,8 +99,10 @@ sensitivity6 <- makeCombinedDF("epi_csvs/Sensitivity/enforcedRestrictions")
 sensitivity7 <- makeCombinedDF("epi_csvs/Sensitivity/enforcedRestrictions21day")
 sensitivity8 <- makeCombinedDF("epi_csvs/Sensitivity/unmitigated")
 
+#lists for loop
 dfList <- list(sensitivity1, sensitivity2, sensitivity3, sensitivity4, sensitivity5, 
                sensitivity6, sensitivity7, sensitivity8)
+
 summaryNameList <- list("Sensitivity/additionalGuidelines.csv","Sensitivity/additionalGuidelines21day.csv",
 "Sensitivity/current.csv","Sensitivity/enforcedLockdown.csv","Sensitivity/enforcedLockdown21day.csv",
 "Sensitivity/enforcedrestrictions21day.csv", "Sensitivity/enforcedrestrictions21day.csv", 
@@ -126,13 +124,6 @@ makeSummaryCSVSensitivity <- function(df, filename) {
   write.csv(dftocsv, filename)
 }
 
-#delete the folders since we have csvs now
-num=1
-for (folder in folderList) {
-  unlink(folderList[num], recursive = TRUE)
-  num = num +1
-}
-
 #Loop to make all the summary CSVs
 i=1
 for (df in dfList) {
@@ -140,31 +131,102 @@ for (df in dfList) {
   i = i + 1
 }
 
-#Graphs
+#delete the folders since we have csvs now - now GitHub should NOT try to push these!
+num=1
+for (folder in folderList) {
+  unlink(folderList[num], recursive = TRUE)
+  num = num +1
+}
+
+#Function to make the graphs
 makeComparisonGraphSensitivity <- function(df, diseaseState, title, fileName) {
-  df %>%
-    filter(State %in% c(diseaseState)) %>%
-    ggplot(aes(x=time, y=value, group=runNum, color=runNum)) +
-    geom_line(size=.1) +
+  ggplot(data=subset(df, df$State %in% c(diseaseState) & df$label == "predicted"),
+         aes(x=time, y=value, fill=label, color=label)) +
+    geom_line(stat="identity", position = "identity") +
     xlab("Day (from t=0)") +
     ylab("Number of people") +
     ggtitle(title) +
     scale_y_continuous(label=comma) +
-    theme_minimal() #+
+    theme_minimal()+
+    geom_ribbon(aes(ymin = filter(df, df$State %in% c(diseaseState) & label %in% c("low"))$value, 
+                    ymax= filter(df, df$State %in% c(diseaseState), label %in% c("high"))$value),
+                alpha=0.1,       #transparency
+                linetype=1,      #solid, dashed or other line types
+                colour="grey70", #border line color
+                size=.1,          #border line size
+                fill="green")
   ggsave(fileName, height=4 , width =8)
 }
 
-sensitivityNew <- sensitivity %>%
-  group_by(time, runNum) %>%
-  summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
+#### GENERATE GRAPHS ######
 
-longDataS <- melt(sensitivityNew, id = c("time", "runNum"))
+####UNMITIGATED######
+sensitivitylowUNMITIGATED <- sensitivity8 %>%
+  group_by(time) %>%
+  filter(runNum != 0)  %>%
+  summarise(Susceptible = quantile(S, .15), Infected = quantile(I, .15), Deaths = quantile(D, .15))
 
-names(longDataS)[names(longDataS)=="variable"] <- "State"
+sensitivityhighUNMITIGATED <- sensitivity8 %>%
+  group_by(time) %>%
+  filter(runNum != 0)  %>%
+  summarise(Susceptible = quantile(S, .85), Infected = quantile(I, .85), Deaths = quantile(D, .85))
+
+#get additional lines
+unmitigatedGraph <- read_csv("summary_csv_day/Malawi/unmitigated.csv")
+unmitigatedGraph <- select(unmitigatedGraph, -X1_1)
+names(unmitigatedGraph)[names(unmitigatedGraph)=="X1"] <- "time"
+
+#Add labels
+sensitivitylowUNMITIGATED$label <- "low"
+sensitivityhighUNMITIGATED$label <- "high"
+unmitigatedGraph$label = "predicted"
+
+#Reshape + combine
+combinedSensitivityUNMITIGATED <- rbind(sensitivitylowUNMITIGATED, sensitivityhighUNMITIGATED)
+longDataU <- melt(combinedSensitivityUNMITIGATED, id = c("time", "label"))
+longDataPredU <- melt(unmitigatedGraph, id = c("time", "label"))
+
+finalU <- combinedSensitivityU <- rbind(longDataPredU, longDataU)
+names(finalU)[names(finalU)=="variable"] <- "State"
+
 options(scipen=10000) #Override scientific notation default
 
-makeComparisonGraphSensitivity(longDataS, "Infected", "Number of infected individuals across different model runs testing variable sensitivity", "images/Sensitivity/current_infection.png")
-makeComparisonGraphSensitivity(longDataS, "Deaths", "Number of deaths across different model runs testing variable sensitivity", "images/Sensitivity/current_deaths.png")
+makeComparisonGraphSensitivity(finalU, "Infected", "Number of infected individuals across model runs testing sensitivity for unmitigated scenario", "images/Sensitivity/unmitigated_infection.png")
+makeComparisonGraphSensitivity(finalU, "Deaths", "Number of deaths across model runs testing sensitivity for unmitigated scenario", "images/Sensitivity/unmitigated_deaths.png")
 
 
+####ADDITIONAL GUIDELINES######
+sensitivitylowGLINES <- sensitivity1 %>%
+  group_by(time) %>%
+  filter(runNum != 0)  %>%
+  summarise(Susceptible = quantile(S, .15), Infected = quantile(I, .15), Deaths = quantile(D, .15))
 
+sensitivityhighGLINES <- sensitivity1 %>%
+  group_by(time) %>%
+  filter(runNum != 0)  %>%
+  summarise(Susceptible = quantile(S, .85), Infected = quantile(I, .85), Deaths = quantile(D, .85))
+
+#get additional lines
+additionalGuidelinesGraph <- read_csv("summary_csv_day/Malawi/additionalGuideline.csv")
+additionalGuidelinesGraph <- select(additionalGuidelinesGraph, -X1_1)
+names(additionalGuidelinesGraph)[names(additionalGuidelinesGraph)=="X1"] <- "time"
+
+#Add labels
+sensitivitylowGLINES$label <- "low"
+sensitivityhighGLINES$label <- "high"
+additionalGuidelinesGraph$label = "predicted"
+
+#Reshape + combine
+combinedSensitivityGLINES <- rbind(sensitivitylowGLINES, sensitivityhighGLINES)
+longDataG <- melt(combinedSensitivityGLINES, id = c("time", "label"))
+longDataPredG <- melt(additionalGuidelinesGraph, id = c("time", "label"))
+
+finalG <- combinedSensitivityG <- rbind(longDataPredG, longDataG)
+names(finalG)[names(finalG)=="variable"] <- "State"
+
+options(scipen=10000) #Override scientific notation default
+
+makeComparisonGraphSensitivity(finalG, "Infected", "Number of infected individuals across model runs testing sensitivity for additional guidelines scenario", 
+                               "images/Sensitivity/guidelines_infection.png")
+makeComparisonGraphSensitivity(finalG, "Deaths", "Number of deaths across model runs testing sensitivity for additional guidelines scenario", 
+                               "images/Sensitivity/guidelines_deaths.png")
