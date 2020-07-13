@@ -14,7 +14,7 @@ library(data.table)
 
 model <- function(times, init, parms) {
   with(as.list(c(init, parms)), {
-    beta <- (1-reductionList[times])*R0*kappa/population
+      beta <- (1-reductionList[times])*susceptibility*contact*R0*kappa/(population)
     dS <- -beta * S * I #susceptible
     dE <- beta * S * I -  E * kappa #exposed but asymptomatic
     dI <- E * kappa - I * kappa2 #infectious, but mild severity
