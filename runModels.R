@@ -48,13 +48,13 @@ combined_data <- MW_COVID_Inputs
 countryList <- list("Malawi")
 
 #create matrix lists for contact matrix
-Pediatrics <- list(.09, .39, .52)
-Adults <- list(.13, .5, .38)
-Elderly <- list(.43, .5, .07)
+Pediatrics <- list(1/3, 1/3, 1/3)
+Adults <- list(1/3, 1/3, 1/3)
+Elderly <- list(1/3, 1/3, 1/3)
 ageBands <- list("Pediatrics" = Pediatrics, "Adults" = Adults, "Elderly" = Elderly)
 
 #Create susceptibility 
-suscep <- list("Pediatrics" = .5, "Adults" = .75, "Elderly" = 1)
+suscep <- list("Pediatrics" = 1, "Adults" = 1, "Elderly" = 1)
 
 #loop through each district, using the district-specific estimates of population size, hospitalization, ICU, and death
 for (c in countryList){
