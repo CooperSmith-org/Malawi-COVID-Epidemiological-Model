@@ -1,0 +1,245 @@
+Code,UID,District,TA
+MW210,1,Lilongwe City,Lilongwe City
+MW31220,2,Balaka,Balaka Town
+MW315,3,Blantyre City,Blantyre City
+MW314,4,Zomba City,Zomba City
+MW107,5,Mzuzu City,Mzuzu City
+MW31020,6,Chikwawa,Chikwawa Boma
+MW31002,7,Chikwawa,TA Lundu
+MW30420,8,Chiradzulu,Chiradzulu Boma
+MW10120,9,Chitipa,Chitipa Boma
+MW20820,10,Dedza,Dedza Boma
+MW20420,11,Dowa,Dowa Boma
+MW10220,12,Karonga,Karonga Town
+MW20120,13,Kasungu,Kasungu Boma
+MW20107,14,Kasungu,TA Kawamba/Kasungu National Park
+MW30111,15,Mangochi,TA Nankumba/Lake Malawi National Park
+MW31008,16,Chikwawa,STA Ndakwela/Lengwe National Park
+MW10620,17,Likoma,Likoma Boma
+MW30213,18,Machinga,TA Liwonde/Liwonde National Park
+MW30222,19,Machinga,Liwonde Town
+MW30721,20,Thyolo,Luchenza Town
+MW30220,21,Machinga,Machinga Boma
+MW31006,22,Chikwawa,TA Kasisi/Majete Game Reserve Chikwawa
+MW30120,23,Mangochi,Mangochi Town
+MW20720,24,Mchinji,Mchinji Boma
+MW30121,25,Mangochi,Monkey Bay Urban
+MW30820,26,Mulanje,Mulanje Boma
+MW30805,27,Mulanje,TA Nkanda/Mulanje Mountain Reserve
+MW31110,28,Nsanje,Mwabvi Game Reserve
+MW30620,29,Mwanza,Mwanza Boma
+MW10520,30,Mzimba,Mzimba Boma
+MW31320,31,Neno,Neno Boma
+MW10320,32,Nkhata Bay,Nkhatabay Boma
+MW20220,33,Nkhotakota,Nkhotakota Boma
+MW20207,34,Nkhotakota,Nkhotakota Game Reserve
+MW31120,35,Nsanje,Nsanje Boma
+MW20920,36,Ntcheu,Ntcheu Boma
+MW20320,37,Ntchisi,Ntchisi Boma
+MW30920,38,Phalombe,Phalombe Boma
+MW10420,39,Rumphi,Rumphi Boma
+MW20520,40,Salima,Salima Town
+MW20402,41,Dowa,TA Chakhaza
+MW30204,42,Machinga,TA Chamba
+MW20905,43,Ntcheu,TA Champiti
+MW10406,44,Rumphi,STA Chapinduka
+MW20805,45,Dedza,TA Chauma
+MW30207,46,Machinga,TA Chikweo
+MW20802,47,Dedza,TA Chilikumwendo
+MW20305,48,Ntchisi,TA Chilooko
+MW20109,49,Kasungu,TA Chilowamatambe
+MW20104,50,Kasungu,STA Chisikwa
+MW20605,51,Lilongwe,STA Chitekwele
+MW30209,52,Machinga,TA Chiwalo
+MW30106,53,Mangochi,TA Chowe
+MW20706,54,Mchinji,TA Dambe
+MW10307,55,Nkhata Bay,TA Fukamalaza
+MW20908,56,Ntcheu,TA Goodson Ganya
+MW10504,57,Mzimba,TA Jaravikuba Munthali
+MW30806,58,Mulanje,TA Juma
+MW10405,59,Rumphi,STA Kachulu
+MW20202,60,Nkhotakota,TA Kafuzila
+MW20506,61,Salima,TA Kambalame
+MW20504,62,Salima,TA Kambwiri
+MW20808,63,Dedza,TA Kamenya Gwaza
+MW10503,64,Mzimba,TA Kampingo Sibande
+MW20403,65,Dowa,TA Kayembe
+MW10508,66,Mzimba,TA Khosolo Gwaza Jere
+MW30706,67,Thyolo,TA Kwethemule
+MW30802,68,Mulanje,TA Laston Njema
+MW20106,69,Kasungu,TA Lukwa
+MW20103,70,Kasungu,STA M'nyanja
+MW31109,71,Nsanje,TA Makoko
+MW20904,72,Ntcheu,TA Makwangwala
+MW10304,73,Nkhata Bay,TA Malanda
+MW20702,74,Mchinji,TA Mavwere
+MW30703,75,Thyolo,STA Mbawela
+MW31106,76,Nsanje,TA Mbenje
+MW30305,77,Zomba,TA Mbiza
+MW30105,78,Mangochi,TA Mbwana Nyambi
+MW20704,79,Mchinji,TA Mduwa
+MW10311,80,Nkhata Bay,STA Kondowe
+MW20405,81,Dowa,TA Mkukula
+MW10308,82,Nkhata Bay,TA Mkumbira
+MW30206,83,Machinga,TA Mlomba
+MW20204,84,Nkhotakota,TA Mphonde
+MW30705,85,Thyolo,TA Mphuka
+MW20407,86,Dowa,TA Mponela
+MW30205,87,Machinga,TA Mposa
+MW20510,88,Salima,TA Msosa
+MW20609,89,Lilongwe,TA Mtema
+MW10403,90,Rumphi,TA Mwahenga
+MW10202,91,Karonga,TA Mwakaboko
+MW10404,92,Rumphi,TA Mwalweni
+MW10407,93,Rumphi,TA Mwankhunikira
+MW20206,94,Nkhotakota,TA Mwansambo
+MW20508,95,Salima,TA Mwanza
+MW10205,96,Karonga,TA Mwirang'ombe
+MW30109,97,Mangochi,TA Namabvi
+MW30208,98,Machinga,TA Ngokwe
+MW20613,99,Lilongwe,TA Njewa
+MW20108,100,Kasungu,TA Njombwa
+MW20303,101,Ntchisi,TA Nthondo
+MW10310,102,Nkhata Bay,STA Nyaluwanga
+MW20102,103,Kasungu,TA Simlemba
+MW30202,104,Machinga,TA Sitola
+MW30702,105,Thyolo,STA Thukuta
+MW20611,106,Lilongwe,TA Tsabango
+MW10305,107,Nkhata Bay,TA Zilakoma
+MW10313,108,Nkhata Bay,TA Boghoyo
+MW30710,109,Thyolo,TA Bvumbwe
+MW20601,110,Lilongwe,TA Chadza
+MW20907,111,Ntcheu,TA Chakhumbira
+MW30704,112,Thyolo,TA Changata
+MW31003,113,Chikwawa,TA Chapananga
+MW30503,114,Blantyre,TA Chigaru
+MW20302,115,Ntchisi,TA Chikho
+MW30304,116,Zomba,TA Chikowi
+MW10401,117,Rumphi,TA Chikulamayembe
+MW30803,118,Mulanje,TA Chikumbu
+MW30709,119,Thyolo,TA Chimaliro
+MW31102,120,Nsanje,TA Chimombo
+MW20607,121,Lilongwe,TA Chimutu
+MW30102,122,Mangochi,TA Chimwala
+MW10505,123,Mzimba,TA Chindi
+MW20603,124,Lilongwe,TA Chiseka
+MW30405,125,Chiradzulu,TA Chitera
+MW20608,126,Lilongwe,TA Chitukula
+MW30903,127,Phalombe,TA Chiwalo
+MW20404,128,Dowa,TA Chiwere
+MW20110,129,Kasungu,TA Chulu
+MW31301,130,Neno,TA Dambe
+MW20401,131,Dowa,TA Dzoole
+MW10302,132,Nkhata Bay,TA Fukamapiri
+MW30104,133,Mangochi,TA Jalasi
+MW20615,134,Lilongwe,TA Kabudula
+MW10301,135,Nkhata Bay,TA Kabunduli
+MW20807,136,Dedza,TA Kachindamoto
+MW30403,137,Chiradzulu,TA Kadewere
+MW31204,138,Balaka,TA Kalembo
+MW20602,139,Lilongwe,TA Kalolo
+MW20101,140,Kasungu,TA Kaluluma
+MW20612,141,Lilongwe,TA Kalumba
+MW20610,142,Lilongwe,TA Kalumbu
+MW20304,143,Ntchisi,TA Kalumo
+MW10105,144,Chitipa,TA Kameme
+MW30601,145,Mwanza,TA Kanduku
+MW20201,146,Nkhotakota,TA Kanyenda
+MW20105,147,Kasungu,TA Kaomba
+MW20113,148,Kasungu,TA Kapelula
+MW30501,149,Blantyre,TA Kapeni
+MW20803,150,Dedza,TA Kaphuka
+MW30707,151,Thyolo,TA Kapichi
+MW20502,152,Salima,TA Karonga
+MW20301,153,Ntchisi,TA Kasakula
+MW20806,154,Dedza,TA Kasumbu
+MW30107,155,Mangochi,TA Katuli
+MW10408,156,Rumphi,TA Katumbi
+MW31005,157,Chikwawa,TA Katunga
+MW30203,158,Machinga,TA Kawinga
+MW20507,159,Salima,TA Khombedza
+MW20606,160,Lilongwe,TA Khongoni
+MW10201,161,Karonga,TA Kilupula
+MW20509,162,Salima,TA Kuluunda
+MW30506,163,Blantyre,TA Kuntaja
+MW30504,164,Blantyre,TA Kunthembwe
+MW30301,165,Zomba,TA Kuntumanji
+MW20903,166,Ntcheu,TA Kwataine
+MW10203,167,Karonga,TA Kyungu
+MW30402,168,Chiradzulu,TA Likoswe
+MW30502,169,Blantyre,TA Lundu
+MW10501,170,Mzimba,TA M'Mbelwa
+MW30801,171,Mulanje,TA Mabuka
+MW10507,172,Mzimba,TA Mabulabo
+MW30507,173,Blantyre,TA Machinjiri
+MW20501,174,Salima,TA Maganga
+MW30108,175,Mangochi,TA Makanjila
+MW30505,176,Blantyre,TA Makata
+MW31007,177,Chikwawa,TA Makhwira
+MW30307,178,Zomba,TA Malemia
+MW31107,179,Nsanje,TA Malemia
+MW20203,180,Nkhotakota,TA Malenga Chanzi
+MW10303,181,Nkhata Bay,TA Malenga
+MW20614,182,Lilongwe,TA Malili
+MW10306,183,Nkhata Bay,TA Mankhambira
+MW20909,184,Ntcheu,TA Masasa
+MW31004,185,Chikwawa,TA Maseya
+MW20604,186,Lilongwe,TA Mazengera
+MW20705,187,Mchinji,TA Mkanda
+MW30901,188,Phalombe,TA Mkhumba
+MW10601,189,Likoma,Mkumpha
+MW31302,190,Neno,TA Mlauli
+MW31104,191,Nsanje,TA Mlolo
+MW20701,192,Mchinji,TA Mlonyeni
+MW30306,193,Zomba,TA Mlumbe
+MW30401,194,Chiradzulu,TA Mpama
+MW20902,195,Ntcheu,TA Mpando
+MW10509,196,Mzimba,TA Mpherembe
+MW30101,197,Mangochi,TA Mponda
+MW20406,198,Dowa,TA Msakambewa
+MW10502,199,Mzimba,TA Mtwalo
+MW10101,200,Chitipa,TA Mwabulambya
+MW20205,201,Nkhotakota,TA Mwadzama
+MW30302,202,Zomba,TA Mwambo
+MW10402,203,Rumphi,TA Mwamlowe
+MW20114,204,Kasungu,TA Mwase
+MW10102,205,Chitipa,TA Mwenemisuku
+MW10103,206,Chitipa,TA Mwenewenya
+MW10506,207,Mzimba,TA Mzikubola
+MW10510,208,Mzimba,TA Mzukuzuku
+MW30902,209,Phalombe,TA Nazombe
+MW30406,210,Chiradzulu,TA Nchema
+MW30708,211,Thyolo,TA Nchilamwela
+MW31101,212,Nsanje,TA Ndamera
+MW20505,213,Salima,TA Ndindi
+MW31001,214,Chikwawa,TA Ngabu
+MW31108,215,Nsanje,TA Ngabu
+MW31304,216,Neno,TA Chekucheku
+MW20906,217,Ntcheu,TA Njolomole
+MW30404,218,Chiradzulu,TA Nkalo
+MW30701,219,Thyolo,TA Nsabwe
+MW31201,220,Balaka,TA Msamala
+MW30602,221,Mwanza,TA Nthache
+MW10104,222,Chitipa,TA Nthalire
+MW30804,223,Mulanje,TA Nthiramanja
+MW31103,224,Nsanje,TA Nyachikadza
+MW30210,225,Machinga,TA Nyambi
+MW20503,226,Salima,TA Pemba
+MW20801,227,Dedza,TA Pemba
+MW20901,228,Ntcheu,TA Phambala
+MW20111,229,Kasungu,TA Santhe
+MW30508,230,Blantyre,TA Somba
+MW31303,231,Neno,TA Symon Likongwe
+MW20804,232,Dedza,TA Tambala
+MW31105,233,Nsanje,TA Tengani
+MW30711,234,Thyolo,TA Thomas
+MW10312,235,Nkhata Bay,TA Timbiri
+MW10204,236,Karonga,TA Wasambo
+MW20112,237,Kasungu,TA Wimbe
+MW10409,238,Rumphi,STA Zolokere/Vwaza Marsh Reserve
+MW20703,239,Mchinji,TA Zulu
+MW30720,240,Thyolo,Thyolo Boma
+MW30303,241,Zomba,TA Mkumbira
+MW30201,242,Machinga,TA Liwonde
+MW10309,243,Nkhata Bay,TA Musisya
+MW30103,244,Mangochi,TA Nankumba
