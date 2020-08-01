@@ -13,7 +13,8 @@ source("utils.R")
 MW_COVID_Inputs <- read_csv("inputs/MW COVID Inputs.csv")
 #BK_COVID_Inputs <- read_csv("inputs/BFA COVID Inputs.csv")
 #SSA_COVID_Inputs <- read_csv("inputs/SSA COVID Inputs.csv")
-MW_starts <- read_csv("inputs/MW_COVID_startDate.csv")
+MW_starts <- read_csv("inputs/MW_COVID_startDate_50days.csv") %>%
+  filter(!(UID %in% list(17, 189)))
 
 #Grab the reduction scenarios
 files <- list.files("inputs/reductionScenarios", full.names = TRUE) #For within countries
@@ -38,7 +39,8 @@ MW_COVID_Inputs$Run <- "Malawi"
 MW_COVID_Inputs <- MW_COVID_Inputs %>% 
   group_by(UID) %>% 
   mutate(tot_pop = sum(Population)) %>%
-  ungroup()
+  ungroup() %>%
+  filter(!(UID %in% list(17,189, 166, 28, 34 )))
 
 combined_data <- MW_COVID_Inputs
 
@@ -67,7 +69,7 @@ for (c in countryList){
       lvl2 <-   data_use$`Lvl2` # name of country
       lvl3 <-   data_use$`Lvl3` # name of region
       lvl4 <-   data_use$`Lvl4` # name of district
-      UID <- data_use$UID
+      UIDlist <- data_use$UID
       Age <- data_use$`Age Band`
       tot_pop <- data_use$tot_pop
       
@@ -98,7 +100,9 @@ for (c in countryList){
           parms["susceptibility"] <- suscep[[Age[i]]]
           
           ##Do some adjusting for start dates
-          t_from0 <- MW_starts$Date_from_0[as.numeric(UID[i])]+1
+          t_from0df <- MW_starts %>%
+            filter(UID == UIDlist[i])
+          t_from0 <- t_from0df$Date_from_0 + 1
 
           parms[["reductionList"]] <- parms[["reductionList"]][t_from0:365]
           init <- c(S = pop_range[i] - 1, E = 0, I = 1, H = 0, C = 0, R = 0, D = 0, inci = 0, hosp = 0, crits = 0)
@@ -110,7 +114,6 @@ for (c in countryList){
           sim$lvl4 <- lvl4[i]
           sim$ID <- UID[i]
           sim$POP <- pop_range[i]
-          #sim$start <- 1
           sim$age <- Age[i]
           sim$tot_pop <- tot_pop[i]
           sim$start <- t_from0
@@ -122,7 +125,7 @@ for (c in countryList){
           #   }
           
           #Use below for in-country
-          if (UID[i] != "N/A"){
+          if (UIDlist[i] != "N/A"){
             write.csv(sim, paste0("epi_csvs/",c,"/banded_",names(reductions[r]),"/",lvl4[i],"-", Age[i],".csv"))}
       }
     }
