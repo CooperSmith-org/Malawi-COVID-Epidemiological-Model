@@ -13,7 +13,7 @@ source("utils.R")
 MW_COVID_Inputs <- read_csv("inputs/MW COVID Inputs.csv")
 #BK_COVID_Inputs <- read_csv("inputs/BFA COVID Inputs.csv")
 #SSA_COVID_Inputs <- read_csv("inputs/SSA COVID Inputs.csv")
-MW_starts <- read_csv("inputs/MW_COVID_startDate_50days.csv") %>%
+MW_starts <- read_csv("inputs/MW_COVID_startDate_5days.csv") %>%
   filter(!(UID %in% list(17, 189)))
 
 #Grab the reduction scenarios
