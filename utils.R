@@ -14,7 +14,7 @@ library(data.table)
 
 model <- function(times, init, parms) {
   with(as.list(c(init, parms)), {
-      beta <- (1-reductionList[times])*susceptibility*contact*R0*kappa/(population)
+      beta <- (1-reductionList[times])*susceptibility*(1 - compliance + compliance*efficacy)*R0*kappa/(population*contact)
     dS <- -beta * S * I #susceptible
     dE <- beta * S * I -  E * kappa #exposed but asymptomatic
     dI <- E * kappa - I * kappa2 #infectious, but mild severity
@@ -170,9 +170,10 @@ makeComparisonGraph <- function(df, diseaseState, title, fileName) {
 #Function to summarize data
 
 makeSummaryCSV <- function(df, fileName) {
-  df$X1 <- df$X1 + df$start # add in staggered
+  df$time <- df$time + df$start # add in staggered
   df1 <- df %>% 
-    group_by(X1) %>% 
+    filter(time <= 365) %>%
+    group_by(time) %>% 
     summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
   write.csv(df1, fileName)
 }
@@ -181,6 +182,14 @@ makeSummaryCSVGeo <- function(df, filename) {
   df$X1 <- df$X1 + df$start # add in staggered
   dftocsv <- df %>%
     group_by(lvl3, ID) %>%
+    summarise(Population = max(POP), Incidence = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
+  write.csv(dftocsv, filename)
+}
+
+makeSummaryCSVAge <- function(df, filename) {
+  df$X1 <- df$X1 + df$start # add in staggered
+  dftocsv <- df %>%
+    group_by(lvl3, ID, age) %>%
     summarise(Population = max(POP), Incidence = max(R) + max(D), Recovered = max(R), Deaths = max(D), Peak_Hospital = max(H), Peak_Crit = max(C), Cumulative_Hospital = max(hosp), Cumulative_Critical = max(crits))
   write.csv(dftocsv, filename)
 }
