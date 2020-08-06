@@ -13,7 +13,7 @@ source("utils.R")
 MW_COVID_Inputs <- read_csv("inputs/MW COVID Inputs.csv")
 #BK_COVID_Inputs <- read_csv("inputs/BFA COVID Inputs.csv")
 #SSA_COVID_Inputs <- read_csv("inputs/SSA COVID Inputs.csv")
-MW_starts <- read_csv("inputs/MW_COVID_startDate_5days.csv") %>%
+MW_starts <- read_csv("inputs/MW_COVID_startDate_45days.csv") %>%
   filter(!(UID %in% list(17, 189)))
 
 #Grab the reduction scenarios
@@ -81,15 +81,15 @@ for (c in countryList){
                      eta = 0, #proportion of cases who are hospitalized
                      eta2 = 0, #ICU rate of hospitalized cases
                      epsilon = 0, #death rate of ICU cases
-                     kappa = 1 / 2.6, #time to infectiousness
-                     kappa2 = 1 / 2.6, #rest of infectious time and time to symptomatic
-                     tau = 1 / 8, #recovery rate for hospitalized cases
-                     tau2 = 1 / 16, #recovery rate for ICU cases
-                     R0 = 2.2, #basic reproductive number
+                     kappa = 1 / 2.4, #time to infectiousness
+                     kappa2 = 1 / 2.4, #rest of infectious time and time to symptomatic
+                     tau = 1 / 6, #recovery rate for hospitalized cases
+                     tau2 = 1 / 12, #recovery rate for ICU cases
+                     R0 = 2.0, #basic reproductive number
                      contact = 0, #assumed contact rate
                      susceptibility = 0, #assumed susceptibility
                      efficacy = .5, #assumed reduction of R0 via mask compliance
-                     compliance = .1, #assumed mask usage
+                     compliance = .25, #assumed mask usage
                      reductionList = list()) # day 1 assumed baseline reduction
           parms["population"] <- pop_range[i]
           parms["eta"] <- eta_range[i]
@@ -112,7 +112,7 @@ for (c in countryList){
           sim$lvl2 <- lvl2[i]
           sim$lvl3 <- lvl3[i]
           sim$lvl4 <- lvl4[i]
-          sim$ID <- UID[i]
+          sim$ID <- UIDlist[i]
           sim$POP <- pop_range[i]
           sim$age <- Age[i]
           sim$tot_pop <- tot_pop[i]
