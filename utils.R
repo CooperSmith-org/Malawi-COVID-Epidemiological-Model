@@ -174,7 +174,7 @@ makeSummaryCSV <- function(df, fileName) {
   df1 <- df %>% 
     filter(time <= 365) %>%
     group_by(time) %>% 
-    summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D))
+    summarise(Susceptible = sum(S), Exposed = sum(E), Infected = sum(I), Recovered = sum(R), Hospitalized = sum(H), Critical = sum(C), Deaths = sum(D), Incidence = sum(inci), New_Hospitalized = sum(hosp), New_Crit = sum(crits), Population = sum(tot_pop))
   write.csv(df1, fileName)
 }
 

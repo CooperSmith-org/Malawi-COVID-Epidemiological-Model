@@ -13,8 +13,9 @@ source("utils.R")
 MW_COVID_Inputs <- read_csv("inputs/MW COVID Inputs.csv")
 #BK_COVID_Inputs <- read_csv("inputs/BFA COVID Inputs.csv")
 #SSA_COVID_Inputs <- read_csv("inputs/SSA COVID Inputs.csv")
-MW_starts <- read_csv("inputs/MW_COVID_startDate_45days.csv") %>%
+MW_starts <- read_csv("inputs/MW_COVID_startDate_35days.csv") %>%
   filter(!(UID %in% list(17, 189)))
+
 
 #Grab the reduction scenarios
 files <- list.files("inputs/reductionScenarios", full.names = TRUE) #For within countries
@@ -56,7 +57,7 @@ Elderly <- list(.43, .50, .07)
 ageBands <- list("Pediatrics" = Pediatrics, "Adults" = Adults, "Elderly" = Elderly)
 
 #Create susceptibility 
-suscep <- list("Pediatrics" = .5, "Adults" = 1, "Elderly" = 1)
+suscep <- list("Pediatrics" = .5, "Adults" = .75, "Elderly" = 1.5)
 
 #loop through each district, using the district-specific estimates of population size, hospitalization, ICU, and death
 for (c in countryList){
@@ -81,15 +82,15 @@ for (c in countryList){
                      eta = 0, #proportion of cases who are hospitalized
                      eta2 = 0, #ICU rate of hospitalized cases
                      epsilon = 0, #death rate of ICU cases
-                     kappa = 1 / 2.4, #time to infectiousness
-                     kappa2 = 1 / 2.4, #rest of infectious time and time to symptomatic
-                     tau = 1 / 6, #recovery rate for hospitalized cases
-                     tau2 = 1 / 12, #recovery rate for ICU cases
-                     R0 = 2.0, #basic reproductive number
+                     kappa = 1 / 3.5, #time to infectiousness
+                     kappa2 = 1 / 3.5, #rest of infectious time and time to symptomatic
+                     tau = 1 / 4, #recovery rate for hospitalized cases
+                     tau2 = 1 / 8, #recovery rate for ICU cases
+                     R0 = 2.2, #basic reproductive number
                      contact = 0, #assumed contact rate
                      susceptibility = 0, #assumed susceptibility
                      efficacy = .5, #assumed reduction of R0 via mask compliance
-                     compliance = .25, #assumed mask usage
+                     compliance = .05, #assumed mask usage
                      reductionList = list()) # day 1 assumed baseline reduction
           parms["population"] <- pop_range[i]
           parms["eta"] <- eta_range[i]
