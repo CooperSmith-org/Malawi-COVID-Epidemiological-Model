@@ -14,7 +14,7 @@ MW_COVID_Inputs <- read_csv("inputs/MW COVID Inputs.csv")
 #BK_COVID_Inputs <- read_csv("inputs/BFA COVID Inputs.csv")
 #SSA_COVID_Inputs <- read_csv("inputs/SSA COVID Inputs.csv")
 MW_starts <- read_csv("inputs/MW_COVID_startDate_35days.csv") %>%
-  filter(!(UID %in% list(17, 189)))
+  filter(!(CODE %in% list(10106, 20511, 21071)))
 
 
 #Grab the reduction scenarios
@@ -41,7 +41,7 @@ MW_COVID_Inputs <- MW_COVID_Inputs %>%
   group_by(UID) %>% 
   mutate(tot_pop = sum(Population)) %>%
   ungroup() %>%
-  filter(!(UID %in% list(17,189, 166, 28, 34 )))
+  filter(!(CODE %in% list(10106, 20511, 21071 )))
 
 combined_data <- MW_COVID_Inputs
 
