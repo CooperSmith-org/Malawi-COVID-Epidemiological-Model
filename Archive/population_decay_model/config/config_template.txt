@@ -1,0 +1,10 @@
+country: MW
+num adjacent degrees: 2
+multiplier 1: .6
+multiplier 2: .2
+region colname: ADM3_PCODE
+CI: CurrentInfectionLocation_12May2020.csv
+CI region colname: ADM2_PCODE
+exclusions: lakes_reserves.txt
+bundles: cities.txt
+shape: mwi_admbnda_adm3_nso_20181016.shp

@@ -11,7 +11,6 @@ library(data.table)
 #This file contains functions to use in the other scripts to run analysis
 
 #Function to run model - SEIR Model of Differential Equations
-
 model <- function(times, init, parms) {
   with(as.list(c(init, parms)), {
       beta <- (1-reductionList[times])*susceptibility*(1 - compliance + compliance*efficacy)*R0*kappa/(population*contact)
@@ -28,7 +27,6 @@ model <- function(times, init, parms) {
     list(c(dS, dE, dI, dH, dC, dR, dD, inci, hosp, crits))
   })
 }
-
 
 #Function to combine CSVs outputted by different model runs
 makeCombinedDF <-function(location) {
@@ -49,7 +47,6 @@ makeCombinedScenariolvl3 <-function(base_df, scenario_df, districtList) {
 }
 
 #Function to make a summary graph for a district
-
 makeSummaryGraph <- function(df, districtName, title, filename) {
   df$time <- df$time + df$start # add in staggered
 }

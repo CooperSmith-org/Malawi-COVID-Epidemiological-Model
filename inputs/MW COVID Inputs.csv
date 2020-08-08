@@ -1,4 +1,4 @@
-﻿UID,Lvl1,Lvl2,Lvl3,Lvl4,Hospitalization,Critical Care,Crit of Hosp,IFR,FR of Crit,FR of Hosp,Population,Age Band,Code
+﻿UID,Lvl1,Lvl2,Lvl3,Lvl4,Hospitalization,Critical Care,Crit of Hosp,IFR,FR of Crit,FR of Hosp,Population,Age Band,TA_Code
 1,Sub-Saharan Africa,Malawi,Dedza,Dedza Boma,0.000176537,8.83E-06,0.05,3.98E-05,1,0.225632414,11659.81647,Pediatrics,20820
 2,Sub-Saharan Africa,Malawi,Dedza,TA Chauma,0.000176537,8.83E-06,0.05,3.98E-05,1,0.225632475,15637.66553,Pediatrics,20805
 3,Sub-Saharan Africa,Malawi,Dedza,TA Chilikumwendo,0.000176534,8.83E-06,0.05,3.98E-05,1,0.225634259,46972.96259,Pediatrics,20802
@@ -15,7 +15,7 @@
 14,Sub-Saharan Africa,Malawi,Dowa,TA Dzoole,0.000184726,9.24E-06,0.05,4.09E-05,1,0.221614705,64723.71841,Pediatrics,20401
 15,Sub-Saharan Africa,Malawi,Dowa,TA Kayembe,0.000184461,9.22E-06,0.05,4.09E-05,1,0.221739135,73819.20597,Pediatrics,20403
 16,Sub-Saharan Africa,Malawi,Dowa,TA Mkukula,0.000184494,9.22E-06,0.05,4.09E-05,1,0.221723824,66357.74413,Pediatrics,20405
-17,Sub-Saharan Africa,Malawi,Dowa,TA Mponela,0.000184765,9.23825E-06,0.05,4.09433E-05,1,0.221596506,29207.15152,Pediatrics,20407
+17,Sub-Saharan Africa,Malawi,Dowa,TA Mponela,0.000184765,9.24E-06,0.05,4.09E-05,1,0.221596506,29207.15152,Pediatrics,20407
 18,Sub-Saharan Africa,Malawi,Dowa,TA Msakambewa,0.000184759,9.24E-06,0.05,4.09E-05,1,0.221599209,53920.31174,Pediatrics,20406
 19,Sub-Saharan Africa,Malawi,Kasungu,Kasungu Boma,0.000176012,8.80E-06,0.05,3.98E-05,1,0.22590278,31677.04874,Pediatrics,20120
 20,Sub-Saharan Africa,Malawi,Kasungu,Kasungu National Park,0.000176012,8.80E-06,0.05,3.98E-05,1,0.22590278,1081.634295,Pediatrics,20128
@@ -164,7 +164,7 @@
 163,Sub-Saharan Africa,Malawi,Ntchisi,TA Malenga,0.000179459,8.97E-06,0.05,4.02E-05,1,0.224156882,29219.41889,Pediatrics,20307
 164,Sub-Saharan Africa,Malawi,Ntchisi,TA Nthondo,0.000179437,8.97E-06,0.05,4.02E-05,1,0.224167947,16637.86333,Pediatrics,20304
 165,Sub-Saharan Africa,Malawi,Ntchisi,TA Vuso Jere,0.000179631,8.98E-06,0.05,4.03E-05,1,0.224071571,8305.123832,Pediatrics,20306
-166,Sub-Saharan Africa,Malawi,Salima,Chipoka Urban,0.000172963,8.64814E-06,0.05,3.935E-05,1,0.227505396,2521.027331,Pediatrics,20521
+166,Sub-Saharan Africa,Malawi,Salima,Chipoka Urban,0.000172963,8.65E-06,0.05,3.94E-05,1,0.227505396,2521.027331,Pediatrics,20521
 167,Sub-Saharan Africa,Malawi,Salima,Lake Malawi National Park,0,0.00E+00,0,0.00E+00,0,0,0,Pediatrics,20511
 168,Sub-Saharan Africa,Malawi,Salima,Salima Town,0.000172963,8.65E-06,0.05,3.93E-05,1,0.227505396,23280.48508,Pediatrics,20520
 169,Sub-Saharan Africa,Malawi,Salima,TA Kambalame,0.00017315,8.66E-06,0.05,3.94E-05,1,0.227405292,13257.33986,Pediatrics,20506
@@ -243,195 +243,195 @@
 242,Sub-Saharan Africa,Malawi,Rumphi,Rumphi Boma,0.000183808,9.19E-06,0.05,4.08E-05,1,0.222047153,8033.486316,Pediatrics,10420
 243,Sub-Saharan Africa,Malawi,Rumphi,STA Chapinduka,0.000184049,9.20E-06,0.05,4.08E-05,1,0.221933268,1248.660441,Pediatrics,10406
 244,Sub-Saharan Africa,Malawi,Rumphi,STA Chisovya,0.000183963,9.20E-06,0.05,4.08E-05,1,0.221974026,5769.233335,Pediatrics,10410
-245,Sub-Saharan Africa,Malawi,Rumphi,STA Kachulu,0.000184033,9.20166E-06,0.05,4.08445E-05,1,0.221940813,6749.925061,Pediatrics,10405
-246,Sub-Saharan Africa,Malawi,Rumphi,STA Njikula,0.000184033,9.20166E-06,0.05,4.08445E-05,1,0.221940813,1718.280124,Pediatrics,10411
-247,Sub-Saharan Africa,Malawi,Rumphi,STA Zolokere,0.000184033,9.20166E-06,0.05,4.08445E-05,1,0.221940813,4351.395873,Pediatrics,10409
-248,Sub-Saharan Africa,Malawi,Rumphi,TA Chikulamayembe,0.000183953,9.19767E-06,0.05,4.08337E-05,1,0.221978539,42503.78381,Pediatrics,10401
-249,Sub-Saharan Africa,Malawi,Rumphi,TA Katumbi,0.000184033,9.20166E-06,0.05,4.08445E-05,1,0.221940813,10706.07615,Pediatrics,10408
-250,Sub-Saharan Africa,Malawi,Rumphi,TA Mwahenga,0.000184033,9.20166E-06,0.05,4.08445E-05,1,0.221940813,9441.191119,Pediatrics,10403
-251,Sub-Saharan Africa,Malawi,Rumphi,TA Mwalweni,0.000184033,9.20166E-06,0.05,4.08445E-05,1,0.221940813,12972.75367,Pediatrics,10404
-252,Sub-Saharan Africa,Malawi,Rumphi,TA Mwamlowe,0.000184033,9.20166E-06,0.05,4.08445E-05,1,0.221940813,2700.148284,Pediatrics,10402
-253,Sub-Saharan Africa,Malawi,Rumphi,TA Mwankhunikira,0.000184026,9.20131E-06,0.05,4.08435E-05,1,0.221944097,15768.11773,Pediatrics,10407
-254,Sub-Saharan Africa,Malawi,Rumphi,Vwaza Marsh Reserve,0.000183774,9.1887E-06,0.05,4.08095E-05,1,0.222063417,630.425414,Pediatrics,10413
-255,Sub-Saharan Africa,Malawi,Balaka,Balaka Town,0.000178339,8.91696E-06,0.05,4.00758E-05,1,0.224716681,21085.54176,Pediatrics,31220
-256,Sub-Saharan Africa,Malawi,Balaka,Liwonde Town,0.000166876,8.34379E-06,0.05,3.85282E-05,1,0.230879728,4418.450094,Pediatrics,31221
-257,Sub-Saharan Africa,Malawi,Balaka,STA Kachenga,0.000178345,8.91724E-06,0.05,4.00765E-05,1,0.224713899,26957.78755,Pediatrics,31203
-258,Sub-Saharan Africa,Malawi,Balaka,STA Matola,0.000178339,8.91696E-06,0.05,4.00758E-05,1,0.224716681,10642.4177,Pediatrics,31209
-259,Sub-Saharan Africa,Malawi,Balaka,STA Phalula,0.000178349,8.91745E-06,0.05,4.00771E-05,1,0.224711783,9580.70339,Pediatrics,31206
-260,Sub-Saharan Africa,Malawi,Balaka,STA Toleza,0.000178339,8.91696E-06,0.05,4.00758E-05,1,0.224716681,2777.003518,Pediatrics,31210
-261,Sub-Saharan Africa,Malawi,Balaka,TA Amidu,0.000178148,8.9074E-06,0.05,4.005E-05,1,0.224812979,28891.06721,Pediatrics,31204
-262,Sub-Saharan Africa,Malawi,Balaka,TA Chanthunya,0.000178339,8.91696E-06,0.05,4.00758E-05,1,0.224716681,17178.33591,Pediatrics,31207
-263,Sub-Saharan Africa,Malawi,Balaka,TA Kalembo,0.000178337,8.91683E-06,0.05,4.00754E-05,1,0.224717994,44087.75325,Pediatrics,31202
-264,Sub-Saharan Africa,Malawi,Balaka,TA Msamala,0.000178188,8.90938E-06,0.05,4.00553E-05,1,0.224792961,45793.91561,Pediatrics,31201
-265,Sub-Saharan Africa,Malawi,Balaka,TA Nkaya,0.000178075,8.90375E-06,0.05,4.00401E-05,1,0.224849824,29175.86925,Pediatrics,31205
-266,Sub-Saharan Africa,Malawi,Balaka,TA Sawali,0.000178339,8.91696E-06,0.05,4.00758E-05,1,0.224716681,9676.731171,Pediatrics,31208
-267,Sub-Saharan Africa,Malawi,Blantyre,TA Chigaru,0.000189396,9.46981E-06,0.05,4.15685E-05,1,0.219479006,29113.17642,Pediatrics,30503
-268,Sub-Saharan Africa,Malawi,Blantyre,TA Kapeni,0.000189462,9.47312E-06,0.05,4.15774E-05,1,0.219449465,57720.53215,Pediatrics,30501
-269,Sub-Saharan Africa,Malawi,Blantyre,TA Kuntaja,0.000189506,9.4753E-06,0.05,4.15833E-05,1,0.219430037,48285.54187,Pediatrics,30506
-270,Sub-Saharan Africa,Malawi,Blantyre,TA Kunthembwe,0.000189403,9.47013E-06,0.05,4.15694E-05,1,0.219476103,24991.34982,Pediatrics,30504
-271,Sub-Saharan Africa,Malawi,Blantyre,TA Lundu,0.000189473,9.47367E-06,0.05,4.15789E-05,1,0.219444588,18946.01165,Pediatrics,30502
-272,Sub-Saharan Africa,Malawi,Blantyre,TA Machinjiri,0.00018917,9.4585E-06,0.05,4.1538E-05,1,0.219579966,14121.27995,Pediatrics,30507
-273,Sub-Saharan Africa,Malawi,Blantyre,TA Makata,0.000189358,9.4679E-06,0.05,4.15633E-05,1,0.219496071,11018.19888,Pediatrics,30505
-274,Sub-Saharan Africa,Malawi,Blantyre,TA Somba,0.000189251,9.46254E-06,0.05,4.15489E-05,1,0.219543922,44832.52085,Pediatrics,30508
-275,Sub-Saharan Africa,Malawi,Blantyre City,Bangwe Mthandizi Ward,0.000189591,9.47956E-06,0.05,4.15948E-05,1,0.219392123,6065.955867,Pediatrics,31546
-276,Sub-Saharan Africa,Malawi,Blantyre City,Bangwe Ward,0.000189591,9.47956E-06,0.05,4.15948E-05,1,0.219392123,12577.1088,Pediatrics,31545
-277,Sub-Saharan Africa,Malawi,Blantyre City,Blantyre City Centre Ward,0.000189591,9.47953E-06,0.05,4.15947E-05,1,0.219392382,21349.33511,Pediatrics,31541
-278,Sub-Saharan Africa,Malawi,Blantyre City,Blantyre South Ward,0.000189591,9.47956E-06,0.05,4.15948E-05,1,0.219392123,10936.18968,Pediatrics,31548
-279,Sub-Saharan Africa,Malawi,Blantyre City,Chigumula Ward,0.000189544,9.47718E-06,0.05,4.15884E-05,1,0.21941329,18816.30877,Pediatrics,31552
-280,Sub-Saharan Africa,Malawi,Blantyre City,Chilomoni Ward,0.00018959,9.47948E-06,0.05,4.15946E-05,1,0.219392791,28562.78517,Pediatrics,31540
-281,Sub-Saharan Africa,Malawi,Blantyre City,Green Corner Ward,0.000189579,9.47893E-06,0.05,4.15931E-05,1,0.219397675,15252.94209,Pediatrics,31549
-282,Sub-Saharan Africa,Malawi,Blantyre City,Limbe Central Ward,0.000189591,9.47956E-06,0.05,4.15948E-05,1,0.219392123,4242.44334,Pediatrics,31543
-283,Sub-Saharan Africa,Malawi,Blantyre City,Mapanga Ward,0.000189545,9.47724E-06,0.05,4.15886E-05,1,0.219412722,23239.3661,Pediatrics,31533
-284,Sub-Saharan Africa,Malawi,Blantyre City,Mbayani Ward,0.000189591,9.47956E-06,0.05,4.15948E-05,1,0.219392123,19168.26611,Pediatrics,31539
-285,Sub-Saharan Africa,Malawi,Blantyre City,Michiru Ward,0.000189591,9.47955E-06,0.05,4.15948E-05,1,0.219392186,38371.13142,Pediatrics,31531
-286,Sub-Saharan Africa,Malawi,Blantyre City,Misesa Ward,0.00018959,9.47948E-06,0.05,4.15946E-05,1,0.219392822,34419.83124,Pediatrics,31553
-287,Sub-Saharan Africa,Malawi,Blantyre City,Mzedi Ward,0.000189269,9.46346E-06,0.05,4.15513E-05,1,0.219535668,18513.86075,Pediatrics,31544
-288,Sub-Saharan Africa,Malawi,Blantyre City,Namalimwe Ward,0.000189591,9.47956E-06,0.05,4.15948E-05,1,0.219392123,8625.301698,Pediatrics,31542
-289,Sub-Saharan Africa,Malawi,Blantyre City,Namiyango Ward,0.00018955,9.4775E-06,0.05,4.15892E-05,1,0.219410452,19273.77512,Pediatrics,31551
-290,Sub-Saharan Africa,Malawi,Blantyre City,Ndirande Gamulani Ward,0.000189591,9.47956E-06,0.05,4.15948E-05,1,0.219392123,14769.05785,Pediatrics,31537
-291,Sub-Saharan Africa,Malawi,Blantyre City,Ndirande Makata Ward,0.000189591,9.47956E-06,0.05,4.15948E-05,1,0.219392123,27405.36411,Pediatrics,31536
-292,Sub-Saharan Africa,Malawi,Blantyre City,Ndirande Matope Ward,0.000189591,9.47956E-06,0.05,4.15948E-05,1,0.219392123,9791.404248,Pediatrics,31535
-293,Sub-Saharan Africa,Malawi,Blantyre City,Nkolokoti Ward,0.000189591,9.47956E-06,0.05,4.15948E-05,1,0.219392123,31775.49657,Pediatrics,31534
-294,Sub-Saharan Africa,Malawi,Blantyre City,Nyambadwe Ward,0.000189591,9.47956E-06,0.05,4.15948E-05,1,0.219392123,9225.689135,Pediatrics,31538
-295,Sub-Saharan Africa,Malawi,Blantyre City,Soche East Ward,0.000189591,9.47956E-06,0.05,4.15948E-05,1,0.219392123,10968.06336,Pediatrics,31547
-296,Sub-Saharan Africa,Malawi,Blantyre City,Soche West Ward,0.000189591,9.47953E-06,0.05,4.15947E-05,1,0.219392374,21044.03774,Pediatrics,31550
-297,Sub-Saharan Africa,Malawi,Blantyre City,South Lunzu Ward,0.00018959,9.47952E-06,0.05,4.15947E-05,1,0.219392451,28973.45789,Pediatrics,31532
-298,Sub-Saharan Africa,Malawi,Chikwawa,Chikwawa Boma,0.00017711,8.85551E-06,0.05,3.99099E-05,1,0.225339197,2557.086096,Pediatrics,31020
-299,Sub-Saharan Africa,Malawi,Chikwawa,Lengwe National Park,0.00017711,8.85551E-06,0.05,3.99099E-05,1,0.225339198,1107.931293,Pediatrics,31012
-300,Sub-Saharan Africa,Malawi,Chikwawa,Majete Game Reserve - Chikwawa,0.00017711,8.85551E-06,0.05,3.99099E-05,1,0.225339197,631.895325,Pediatrics,31013
-301,Sub-Saharan Africa,Malawi,Chikwawa,Ngabu Urban,0.00017711,8.85551E-06,0.05,3.99099E-05,1,0.225339197,5139.794997,Pediatrics,31021
-302,Sub-Saharan Africa,Malawi,Chikwawa,STA Masache,0.000177165,8.85827E-06,0.05,3.99173E-05,1,0.225311054,10874.77684,Pediatrics,31010
-303,Sub-Saharan Africa,Malawi,Chikwawa,STA Ndakwela,0.00017711,8.85551E-06,0.05,3.99099E-05,1,0.225339197,15268.69728,Pediatrics,31008
-304,Sub-Saharan Africa,Malawi,Chikwawa,TA Chapananga,0.00017711,8.85551E-06,0.05,3.99099E-05,1,0.225339197,58224.03203,Pediatrics,31003
-305,Sub-Saharan Africa,Malawi,Chikwawa,TA Kasisi,0.00017716,8.85799E-06,0.05,3.99166E-05,1,0.225313908,15222.36408,Pediatrics,31006
-306,Sub-Saharan Africa,Malawi,Chikwawa,TA Katunga,0.00017711,8.85551E-06,0.05,3.99099E-05,1,0.225339197,20738.78238,Pediatrics,31005
-307,Sub-Saharan Africa,Malawi,Chikwawa,TA Lundu,0.00017711,8.85551E-06,0.05,3.99099E-05,1,0.225339197,27868.74045,Pediatrics,31002
-308,Sub-Saharan Africa,Malawi,Chikwawa,TA Makhwira,0.000177113,8.85565E-06,0.05,3.99102E-05,1,0.225337851,40288.925,Pediatrics,31007
-309,Sub-Saharan Africa,Malawi,Chikwawa,TA Maseya,0.000177112,8.85558E-06,0.05,3.99101E-05,1,0.225338567,21227.42255,Pediatrics,31004
-310,Sub-Saharan Africa,Malawi,Chikwawa,TA Mlilima,0.000177266,8.8633E-06,0.05,3.99309E-05,1,0.225259808,8163.018317,Pediatrics,31009
-311,Sub-Saharan Africa,Malawi,Chikwawa,TA Ngabu,0.00017711,8.85551E-06,0.05,3.99099E-05,1,0.225339197,91040.44738,Pediatrics,31001
-312,Sub-Saharan Africa,Malawi,Chikwawa,TA Ngowe,0.000177289,8.86446E-06,0.05,3.9934E-05,1,0.22524805,7107.303995,Pediatrics,31011
-313,Sub-Saharan Africa,Malawi,Chiradzulu,Chiradzulu Boma,0.00018184,9.092E-06,0.05,4.05484E-05,1,0.222989409,1305.097488,Pediatrics,30420
-314,Sub-Saharan Africa,Malawi,Chiradzulu,STA Mpunga,0.00018184,9.092E-06,0.05,4.05484E-05,1,0.222989409,25028.40825,Pediatrics,30407
-315,Sub-Saharan Africa,Malawi,Chiradzulu,STA Onga,0.00018184,9.092E-06,0.05,4.05484E-05,1,0.222989409,9833.15104,Pediatrics,30409
-316,Sub-Saharan Africa,Malawi,Chiradzulu,STA Sandareki,0.000181744,9.08721E-06,0.05,4.05355E-05,1,0.223035819,12619.88722,Pediatrics,30408
-317,Sub-Saharan Africa,Malawi,Chiradzulu,TA Chitera,0.000181922,9.09609E-06,0.05,4.05595E-05,1,0.222949842,13244.49047,Pediatrics,30405
-318,Sub-Saharan Africa,Malawi,Chiradzulu,TA Kadewere,0.00018182,9.09101E-06,0.05,4.05457E-05,1,0.222999041,32485.58749,Pediatrics,30403
-319,Sub-Saharan Africa,Malawi,Chiradzulu,TA Likoswe,0.000181869,9.09346E-06,0.05,4.05523E-05,1,0.222975323,40831.80065,Pediatrics,30402
-320,Sub-Saharan Africa,Malawi,Chiradzulu,TA Mpama,0.000181858,9.09289E-06,0.05,4.05508E-05,1,0.222980853,28128.23089,Pediatrics,30401
-321,Sub-Saharan Africa,Malawi,Chiradzulu,TA Nchema,0.000181819,9.09094E-06,0.05,4.05455E-05,1,0.222999731,11994.28196,Pediatrics,30406
-322,Sub-Saharan Africa,Malawi,Chiradzulu,TA Nkalo,0.000181643,9.08214E-06,0.05,4.05218E-05,1,0.223084974,30129.14431,Pediatrics,30404
-323,Sub-Saharan Africa,Malawi,Machinga,Liwonde National Park,0.000166376,8.31878E-06,0.05,3.84607E-05,1,0.231167979,7429.243264,Pediatrics,30217
-324,Sub-Saharan Africa,Malawi,Machinga,Liwonde Town,0.00016665,8.33252E-06,0.05,3.84978E-05,1,0.231009373,14815.71125,Pediatrics,30221
-325,Sub-Saharan Africa,Malawi,Machinga,Machinga Boma,0.000166226,8.3113E-06,0.05,3.84405E-05,1,0.231254539,560.9986813,Pediatrics,30220
-326,Sub-Saharan Africa,Malawi,Machinga,STA Chesale,0.000166231,8.31157E-06,0.05,3.84412E-05,1,0.231251339,7897.78841,Pediatrics,30216
-327,Sub-Saharan Africa,Malawi,Machinga,STA Nchinguza,0.000166226,8.3113E-06,0.05,3.84405E-05,1,0.231254539,16451.03005,Pediatrics,30205
-328,Sub-Saharan Africa,Malawi,Machinga,STA Nsanama,0.000166226,8.3113E-06,0.05,3.84405E-05,1,0.231254539,18337.55215,Pediatrics,30202
-329,Sub-Saharan Africa,Malawi,Machinga,TA Chamba,0.000166479,8.32395E-06,0.05,3.84747E-05,1,0.231108197,17807.89606,Pediatrics,30208
-330,Sub-Saharan Africa,Malawi,Machinga,TA Chikweo,0.000166226,8.3113E-06,0.05,3.84405E-05,1,0.231254539,48852.13719,Pediatrics,30211
-331,Sub-Saharan Africa,Malawi,Machinga,TA Chiwalo,0.000166236,8.31179E-06,0.05,3.84418E-05,1,0.23124878,10039.54468,Pediatrics,30213
-332,Sub-Saharan Africa,Malawi,Machinga,TA Kapoloma,0.000166227,8.31133E-06,0.05,3.84406E-05,1,0.231254092,9004.546253,Pediatrics,30214
-333,Sub-Saharan Africa,Malawi,Machinga,TA Kawinga,0.000166226,8.3113E-06,0.05,3.84405E-05,1,0.231254539,50347.60813,Pediatrics,30206
-334,Sub-Saharan Africa,Malawi,Machinga,TA Liwonde,0.000166228,8.31141E-06,0.05,3.84408E-05,1,0.231253276,44775.48497,Pediatrics,30201
-335,Sub-Saharan Africa,Malawi,Machinga,TA Mlomba,0.000166226,8.3113E-06,0.05,3.84405E-05,1,0.231254539,38717.91698,Pediatrics,30210
-336,Sub-Saharan Africa,Malawi,Machinga,TA Mposa,0.000166449,8.32246E-06,0.05,3.84706E-05,1,0.231125454,16910.10254,Pediatrics,30209
-337,Sub-Saharan Africa,Malawi,Machinga,TA Ngokwe,0.000166226,8.3113E-06,0.05,3.84405E-05,1,0.231254539,20066.40695,Pediatrics,30212
-338,Sub-Saharan Africa,Malawi,Machinga,TA Nkoola,0.000166226,8.3113E-06,0.05,3.84405E-05,1,0.231254539,31897.08941,Pediatrics,30207
-339,Sub-Saharan Africa,Malawi,Machinga,TA Nkula,0.000166384,8.31922E-06,0.05,3.84619E-05,1,0.231162837,15218.90659,Pediatrics,30204
-340,Sub-Saharan Africa,Malawi,Machinga,TA Nyambi,0.000166246,8.31231E-06,0.05,3.84432E-05,1,0.231242782,30533.3442,Pediatrics,30215
-341,Sub-Saharan Africa,Malawi,Machinga,TA Sitola,0.000166387,8.31936E-06,0.05,3.84623E-05,1,0.231161249,13075.04448,Pediatrics,30203
-342,Sub-Saharan Africa,Malawi,Mangochi,Lake Malawi National Park,0.000169096,8.45481E-06,0.05,3.8828E-05,1,0.229620679,3046.94321,Pediatrics,30112
-343,Sub-Saharan Africa,Malawi,Mangochi,Lake Malombe,0.00016909,8.4545E-06,0.05,3.88272E-05,1,0.229624123,5839.309126,Pediatrics,30199
-344,Sub-Saharan Africa,Malawi,Mangochi,Mangochi Town,0.000169096,8.45481E-06,0.05,3.8828E-05,1,0.229620679,31477.5004,Pediatrics,30120
-345,Sub-Saharan Africa,Malawi,Mangochi,Monkey Bay Urban,0.000169096,8.45481E-06,0.05,3.8828E-05,1,0.229620679,4572.751095,Pediatrics,30121
-346,Sub-Saharan Africa,Malawi,Mangochi,STA Chiunda,0.00016895,8.4475E-06,0.05,3.88082E-05,1,0.229702595,23971.04681,Pediatrics,30114
-347,Sub-Saharan Africa,Malawi,Mangochi,STA Lulanga,0.000169096,8.45481E-06,0.05,3.8828E-05,1,0.229620679,20987.15232,Pediatrics,30110
-348,Sub-Saharan Africa,Malawi,Mangochi,STA Ntonda,0.000169359,8.46794E-06,0.05,3.88634E-05,1,0.229473985,13148.39599,Pediatrics,30113
-349,Sub-Saharan Africa,Malawi,Mangochi,TA Chilipa,0.000169534,8.47671E-06,0.05,3.88871E-05,1,0.229376273,22808.62529,Pediatrics,30103
-350,Sub-Saharan Africa,Malawi,Mangochi,TA Chimwala,0.000169253,8.46266E-06,0.05,3.88492E-05,1,0.229532963,48632.85696,Pediatrics,30102
-351,Sub-Saharan Africa,Malawi,Mangochi,TA Chowe,0.000169095,8.45477E-06,0.05,3.88279E-05,1,0.229621153,63480.64313,Pediatrics,30107
-352,Sub-Saharan Africa,Malawi,Mangochi,TA Jalasi,0.000169096,8.45481E-06,0.05,3.8828E-05,1,0.229620679,58485.20883,Pediatrics,30105
-353,Sub-Saharan Africa,Malawi,Mangochi,TA Katuli,0.000169096,8.45481E-06,0.05,3.8828E-05,1,0.229620679,33609.01781,Pediatrics,30108
-354,Sub-Saharan Africa,Malawi,Mangochi,TA Makanjila,0.000169096,8.45481E-06,0.05,3.8828E-05,1,0.229620679,31864.96172,Pediatrics,30109
-355,Sub-Saharan Africa,Malawi,Mangochi,TA Mbwana Nyambi,0.000169046,8.45231E-06,0.05,3.88212E-05,1,0.229648669,68830.83669,Pediatrics,30106
-356,Sub-Saharan Africa,Malawi,Mangochi,TA Mponda,0.000169096,8.45481E-06,0.05,3.8828E-05,1,0.229620679,80231.17178,Pediatrics,30101
-357,Sub-Saharan Africa,Malawi,Mangochi,TA Namabvi,0.000169096,8.45481E-06,0.05,3.8828E-05,1,0.229620679,23407.51436,Pediatrics,30111
-358,Sub-Saharan Africa,Malawi,Mangochi,TA Nankumba,0.00016912,8.456E-06,0.05,3.88312E-05,1,0.229607431,78253.67118,Pediatrics,30104
-359,Sub-Saharan Africa,Malawi,Mulanje,Mulanje Boma,0.000173972,8.69858E-06,0.05,3.94862E-05,1,0.226969062,7558.957037,Pediatrics,30820
-360,Sub-Saharan Africa,Malawi,Mulanje,Mulanje Mountain Reserve,0.000171622,8.58111E-06,0.05,3.9169E-05,1,0.228228031,2899.358628,Pediatrics,30809
-361,Sub-Saharan Africa,Malawi,Mulanje,STA Sunganinzeru,0.000173972,8.69858E-06,0.05,3.94862E-05,1,0.226969062,33412.27547,Pediatrics,30807
-362,Sub-Saharan Africa,Malawi,Mulanje,STA Tombondiya,0.000174061,8.70305E-06,0.05,3.94982E-05,1,0.22692179,11136.47548,Pediatrics,30808
-363,Sub-Saharan Africa,Malawi,Mulanje,TA Chikumbu,0.000173979,8.69897E-06,0.05,3.94872E-05,1,0.226964916,48801.16672,Pediatrics,30803
-364,Sub-Saharan Africa,Malawi,Mulanje,TA Juma,0.000173922,8.6961E-06,0.05,3.94795E-05,1,0.226995239,59589.45159,Pediatrics,30806
-365,Sub-Saharan Africa,Malawi,Mulanje,TA Laston Njema,0.000173972,8.69858E-06,0.05,3.94862E-05,1,0.226969062,46815.97672,Pediatrics,30802
-366,Sub-Saharan Africa,Malawi,Mulanje,TA Mabuka,0.000173972,8.69858E-06,0.05,3.94862E-05,1,0.226969062,55200.25153,Pediatrics,30801
-367,Sub-Saharan Africa,Malawi,Mulanje,TA Nkanda,0.000173963,8.69817E-06,0.05,3.94851E-05,1,0.226973383,68597.74804,Pediatrics,30805
-368,Sub-Saharan Africa,Malawi,Mulanje,TA Nthiramanja,0.000174081,8.70403E-06,0.05,3.95009E-05,1,0.226911441,30613.27734,Pediatrics,30804
-369,Sub-Saharan Africa,Malawi,Mwanza,Majete Game Reserve - Mwanza,0.000184768,9.23842E-06,0.05,4.09437E-05,1,0.221594905,85.54344851,Pediatrics,30604
-370,Sub-Saharan Africa,Malawi,Mwanza,Mwanza Boma,0.000182469,9.12346E-06,0.05,4.06334E-05,1,0.222685986,11980.82186,Pediatrics,30620
-371,Sub-Saharan Africa,Malawi,Mwanza,STA Govati,0.000182082,9.10409E-06,0.05,4.0581E-05,1,0.222872619,11079.84514,Pediatrics,30603
-372,Sub-Saharan Africa,Malawi,Mwanza,TA Kanduku,0.000182401,9.12004E-06,0.05,4.06241E-05,1,0.222718942,34318.47559,Pediatrics,30601
-373,Sub-Saharan Africa,Malawi,Mwanza,TA Nthache,0.000182469,9.12346E-06,0.05,4.06334E-05,1,0.222685986,25995.0874,Pediatrics,30602
-374,Sub-Saharan Africa,Malawi,Neno,Neno Boma,0.000177747,8.88734E-06,0.05,3.99958E-05,1,0.225015669,1987.564039,Pediatrics,31320
-375,Sub-Saharan Africa,Malawi,Neno,TA Chekucheku,0.000177747,8.88737E-06,0.05,3.99959E-05,1,0.225015399,14579.22278,Pediatrics,31304
-376,Sub-Saharan Africa,Malawi,Neno,TA Dambe,0.000177761,8.88803E-06,0.05,3.99977E-05,1,0.225008674,19385.86403,Pediatrics,31301
-377,Sub-Saharan Africa,Malawi,Neno,TA Mlauli,0.000177872,8.89358E-06,0.05,4.00127E-05,1,0.224952558,23459.79963,Pediatrics,31302
-378,Sub-Saharan Africa,Malawi,Neno,TA Symon Likongwe,0.000178228,8.9114E-06,0.05,4.00608E-05,1,0.224772676,37831.5471,Pediatrics,31303
-379,Sub-Saharan Africa,Malawi,Nsanje,Mwabvi Game Reserve,0.00017857,8.9285E-06,0.05,4.01069E-05,1,0.224600763,5157.909151,Pediatrics,31110
-380,Sub-Saharan Africa,Malawi,Nsanje,Nsanje Boma,0.00017857,8.9285E-06,0.05,4.01069E-05,1,0.224600763,12307.27662,Pediatrics,31120
-381,Sub-Saharan Africa,Malawi,Nsanje,TA Chimombo,0.00017857,8.9285E-06,0.05,4.01069E-05,1,0.224600763,6401.147502,Pediatrics,31102
-382,Sub-Saharan Africa,Malawi,Nsanje,TA Makoko,0.00017857,8.9285E-06,0.05,4.01069E-05,1,0.224600763,6801.427336,Pediatrics,31109
-383,Sub-Saharan Africa,Malawi,Nsanje,TA Malemia,0.00017857,8.9285E-06,0.05,4.01069E-05,1,0.224600763,11660.22002,Pediatrics,31106
-384,Sub-Saharan Africa,Malawi,Nsanje,TA Mbenje,0.000178565,8.92824E-06,0.05,4.01062E-05,1,0.224603368,34747.01103,Pediatrics,31107
-385,Sub-Saharan Africa,Malawi,Nsanje,TA Mlolo,0.000178568,8.9284E-06,0.05,4.01067E-05,1,0.224601702,41014.09129,Pediatrics,31104
-386,Sub-Saharan Africa,Malawi,Nsanje,TA Ndamera,0.00017857,8.9285E-06,0.05,4.01069E-05,1,0.224600763,16637.24718,Pediatrics,31101
-387,Sub-Saharan Africa,Malawi,Nsanje,TA Ngabu,0.00017857,8.9285E-06,0.05,4.01069E-05,1,0.224600763,10002.03992,Pediatrics,31108
-388,Sub-Saharan Africa,Malawi,Nsanje,TA Nyachikadza,0.00017857,8.9285E-06,0.05,4.01069E-05,1,0.224600763,1753.760028,Pediatrics,31103
-389,Sub-Saharan Africa,Malawi,Nsanje,TA Tengani,0.00017857,8.9285E-06,0.05,4.01069E-05,1,0.224600763,27258.43566,Pediatrics,31105
-390,Sub-Saharan Africa,Malawi,Phalombe,Phalombe Boma,0.00016204,8.10198E-06,0.05,3.78753E-05,1,0.233741311,4934.64847,Pediatrics,30920
-391,Sub-Saharan Africa,Malawi,Phalombe,TA Chiwalo,0.00016204,8.10198E-06,0.05,3.78753E-05,1,0.233741311,26193.17142,Pediatrics,30903
-392,Sub-Saharan Africa,Malawi,Phalombe,TA Jenala,0.000162132,8.10659E-06,0.05,3.78878E-05,1,0.233685139,51160.2869,Pediatrics,30905
-393,Sub-Saharan Africa,Malawi,Phalombe,TA Kaduya,0.00016204,8.10198E-06,0.05,3.78753E-05,1,0.233741311,51619.91504,Pediatrics,30906
-394,Sub-Saharan Africa,Malawi,Phalombe,TA Mkhumba,0.000162185,8.10923E-06,0.05,3.78949E-05,1,0.233653074,69827.62307,Pediatrics,30901
-395,Sub-Saharan Africa,Malawi,Phalombe,TA Nazombe,0.00016204,8.10198E-06,0.05,3.78753E-05,1,0.233741311,22122.74512,Pediatrics,30902
-396,Sub-Saharan Africa,Malawi,Phalombe,TA Nkhulambe,0.000162447,8.12234E-06,0.05,3.79303E-05,1,0.23349382,13831.57005,Pediatrics,30904
-397,Sub-Saharan Africa,Malawi,Thyolo,Luchenza Town,0.000177976,8.89881E-06,0.05,4.00268E-05,1,0.224899656,5651.361054,Pediatrics,30721
-398,Sub-Saharan Africa,Malawi,Thyolo,STA Boyidi,0.000178069,8.90344E-06,0.05,4.00393E-05,1,0.224852861,15561.19815,Pediatrics,30714
-399,Sub-Saharan Africa,Malawi,Thyolo,STA Mbawela,0.000178067,8.90336E-06,0.05,4.00391E-05,1,0.224853728,33701.54641,Pediatrics,30703
-400,Sub-Saharan Africa,Malawi,Thyolo,STA Thukuta,0.000178085,8.90426E-06,0.05,4.00415E-05,1,0.224844617,12315.18176,Pediatrics,30702
-401,Sub-Saharan Africa,Malawi,Thyolo,TA Bvumbwe,0.000178074,8.90368E-06,0.05,4.00399E-05,1,0.224850482,69884.61154,Pediatrics,30710
-402,Sub-Saharan Africa,Malawi,Thyolo,TA Changata,0.000178063,8.90315E-06,0.05,4.00385E-05,1,0.224855867,29658.36091,Pediatrics,30704
-403,Sub-Saharan Africa,Malawi,Thyolo,TA Chimaliro,0.000178077,8.90384E-06,0.05,4.00404E-05,1,0.224848914,34474.87004,Pediatrics,30709
-404,Sub-Saharan Africa,Malawi,Thyolo,TA Kapichi,0.000177999,8.89997E-06,0.05,4.00299E-05,1,0.224887948,39175.51399,Pediatrics,30707
-405,Sub-Saharan Africa,Malawi,Thyolo,TA Kwethemule,0.000178064,8.90321E-06,0.05,4.00387E-05,1,0.224855241,37318.89935,Pediatrics,30706
-406,Sub-Saharan Africa,Malawi,Thyolo,TA Mphuka,0.000178069,8.90343E-06,0.05,4.00393E-05,1,0.224852996,43566.08572,Pediatrics,30705
-407,Sub-Saharan Africa,Malawi,Thyolo,TA Nanseta,0.000178064,8.90321E-06,0.05,4.00387E-05,1,0.224855264,20068.69828,Pediatrics,30712
-408,Sub-Saharan Africa,Malawi,Thyolo,TA Nchilamwela,0.000178069,8.90344E-06,0.05,4.00393E-05,1,0.224852861,36883.40043,Pediatrics,30708
-409,Sub-Saharan Africa,Malawi,Thyolo,TA Ngolongoliwa,0.000178076,8.90381E-06,0.05,4.00403E-05,1,0.224849179,21874.77836,Pediatrics,30713
-410,Sub-Saharan Africa,Malawi,Thyolo,TA Nsabwe,0.000178071,8.90355E-06,0.05,4.00396E-05,1,0.22485182,25458.5171,Pediatrics,30701
-411,Sub-Saharan Africa,Malawi,Thyolo,TA Thomas,0.000178103,8.90515E-06,0.05,4.00439E-05,1,0.224835644,25561.09978,Pediatrics,30711
-412,Sub-Saharan Africa,Malawi,Thyolo,Thyolo Boma,0.000178069,8.90344E-06,0.05,4.00393E-05,1,0.224852861,3385.360673,Pediatrics,30720
-413,Sub-Saharan Africa,Malawi,Zomba,STA Ngwelero,0.000173029,8.65145E-06,0.05,3.93589E-05,1,0.227470065,20083.89591,Pediatrics,30310
-414,Sub-Saharan Africa,Malawi,Zomba,STA Nkagula,0.000173055,8.65276E-06,0.05,3.93624E-05,1,0.227456094,27022.03857,Pediatrics,30308
-415,Sub-Saharan Africa,Malawi,Zomba,STA Nkapita,0.000173089,8.65446E-06,0.05,3.9367E-05,1,0.227437886,21184.63608,Pediatrics,30311
-416,Sub-Saharan Africa,Malawi,Zomba,STA Ntholowa,0.000173265,8.66324E-06,0.05,3.93907E-05,1,0.227344201,32488.32476,Pediatrics,30309
-417,Sub-Saharan Africa,Malawi,Zomba,TA Chikowi,0.000173055,8.65276E-06,0.05,3.93624E-05,1,0.227456094,42548.19403,Pediatrics,30304
-418,Sub-Saharan Africa,Malawi,Zomba,TA Kuntumanji,0.000173048,8.65239E-06,0.05,3.93615E-05,1,0.227460008,22850.99254,Pediatrics,30301
-419,Sub-Saharan Africa,Malawi,Zomba,TA Malemia,0.000173706,8.68528E-06,0.05,3.94503E-05,1,0.22710986,40108.42344,Pediatrics,30306
-420,Sub-Saharan Africa,Malawi,Zomba,TA Mbiza,0.000173111,8.65557E-06,0.05,3.937E-05,1,0.227426038,50497.82152,Pediatrics,30305
-421,Sub-Saharan Africa,Malawi,Zomba,TA Mkumbira,0.00017302,8.65102E-06,0.05,3.93578E-05,1,0.22747461,1560.265016,Pediatrics,30303
-422,Sub-Saharan Africa,Malawi,Zomba,TA Mlumbe,0.000173389,8.66945E-06,0.05,3.94075E-05,1,0.227278053,64677.31331,Pediatrics,30307
-423,Sub-Saharan Africa,Malawi,Zomba,TA Mwambo,0.000172953,8.64765E-06,0.05,3.93487E-05,1,0.227510696,84840.78469,Pediatrics,30302
-424,Sub-Saharan Africa,Malawi,Zomba City,Chambo Ward,0.000211422,1.05711E-05,0.05,4.4542E-05,1,0.210678006,6069.191509,Pediatrics,31439
-425,Sub-Saharan Africa,Malawi,Zomba City,Chinamwali Ward,0.0002045,1.0225E-05,0.05,4.36075E-05,1,0.213239738,13179.61868,Pediatrics,31433
-426,Sub-Saharan Africa,Malawi,Zomba City,Chirunga Ward,0.000209403,1.04702E-05,0.05,4.42694E-05,1,0.211407601,7468.859733,Pediatrics,31434
-427,Sub-Saharan Africa,Malawi,Zomba City,Likangala Ward,0.000211422,1.05711E-05,0.05,4.4542E-05,1,0.210678007,11302.54963,Pediatrics,31438
-428,Sub-Saharan Africa,Malawi,Zomba City,Masongola Ward,0.000211422,1.05711E-05,0.05,4.4542E-05,1,0.210678007,3092.758739,Pediatrics,31436
-429,Sub-Saharan Africa,Malawi,Zomba City,Mbedza Ward,0.000200883,1.00441E-05,0.05,4.31191E-05,1,0.21464852,2734.78244,Pediatrics,31432
-430,Sub-Saharan Africa,Malawi,Zomba City,Mpira Ward,0.000207341,1.03671E-05,0.05,4.39911E-05,1,0.21216739,7196.724752,Pediatrics,31431
-431,Sub-Saharan Africa,Malawi,Zomba City,Mtiya Ward,0.000209345,1.04672E-05,0.05,4.42615E-05,1,0.211428952,2871.228607,Pediatrics,31435
-432,Sub-Saharan Africa,Malawi,Zomba City,Sadzi Ward,0.00020616,1.0308E-05,0.05,4.38316E-05,1,0.212609573,5317.767876,Pediatrics,31440
-433,Sub-Saharan Africa,Malawi,Zomba City,Zomba Central Ward,0.000211422,1.05711E-05,0.05,4.4542E-05,1,0.210678006,1689.617995,Pediatrics,31437
+245,Sub-Saharan Africa,Malawi,Rumphi,STA Kachulu,0.000184033,9.20E-06,0.05,4.08E-05,1,0.221940813,6749.925061,Pediatrics,10405
+246,Sub-Saharan Africa,Malawi,Rumphi,STA Njikula,0.000184033,9.20E-06,0.05,4.08E-05,1,0.221940813,1718.280124,Pediatrics,10411
+247,Sub-Saharan Africa,Malawi,Rumphi,STA Zolokere,0.000184033,9.20E-06,0.05,4.08E-05,1,0.221940813,4351.395873,Pediatrics,10409
+248,Sub-Saharan Africa,Malawi,Rumphi,TA Chikulamayembe,0.000183953,9.20E-06,0.05,4.08E-05,1,0.221978539,42503.78381,Pediatrics,10401
+249,Sub-Saharan Africa,Malawi,Rumphi,TA Katumbi,0.000184033,9.20E-06,0.05,4.08E-05,1,0.221940813,10706.07615,Pediatrics,10408
+250,Sub-Saharan Africa,Malawi,Rumphi,TA Mwahenga,0.000184033,9.20E-06,0.05,4.08E-05,1,0.221940813,9441.191119,Pediatrics,10403
+251,Sub-Saharan Africa,Malawi,Rumphi,TA Mwalweni,0.000184033,9.20E-06,0.05,4.08E-05,1,0.221940813,12972.75367,Pediatrics,10404
+252,Sub-Saharan Africa,Malawi,Rumphi,TA Mwamlowe,0.000184033,9.20E-06,0.05,4.08E-05,1,0.221940813,2700.148284,Pediatrics,10402
+253,Sub-Saharan Africa,Malawi,Rumphi,TA Mwankhunikira,0.000184026,9.20E-06,0.05,4.08E-05,1,0.221944097,15768.11773,Pediatrics,10407
+254,Sub-Saharan Africa,Malawi,Rumphi,Vwaza Marsh Reserve,0.000183774,9.19E-06,0.05,4.08E-05,1,0.222063417,630.425414,Pediatrics,10413
+255,Sub-Saharan Africa,Malawi,Balaka,Balaka Town,0.000178339,8.92E-06,0.05,4.01E-05,1,0.224716681,21085.54176,Pediatrics,31220
+256,Sub-Saharan Africa,Malawi,Balaka,Liwonde Town,0.000166876,8.34E-06,0.05,3.85E-05,1,0.230879728,4418.450094,Pediatrics,31221
+257,Sub-Saharan Africa,Malawi,Balaka,STA Kachenga,0.000178345,8.92E-06,0.05,4.01E-05,1,0.224713899,26957.78755,Pediatrics,31203
+258,Sub-Saharan Africa,Malawi,Balaka,STA Matola,0.000178339,8.92E-06,0.05,4.01E-05,1,0.224716681,10642.4177,Pediatrics,31209
+259,Sub-Saharan Africa,Malawi,Balaka,STA Phalula,0.000178349,8.92E-06,0.05,4.01E-05,1,0.224711783,9580.70339,Pediatrics,31206
+260,Sub-Saharan Africa,Malawi,Balaka,STA Toleza,0.000178339,8.92E-06,0.05,4.01E-05,1,0.224716681,2777.003518,Pediatrics,31210
+261,Sub-Saharan Africa,Malawi,Balaka,TA Amidu,0.000178148,8.91E-06,0.05,4.01E-05,1,0.224812979,28891.06721,Pediatrics,31204
+262,Sub-Saharan Africa,Malawi,Balaka,TA Chanthunya,0.000178339,8.92E-06,0.05,4.01E-05,1,0.224716681,17178.33591,Pediatrics,31207
+263,Sub-Saharan Africa,Malawi,Balaka,TA Kalembo,0.000178337,8.92E-06,0.05,4.01E-05,1,0.224717994,44087.75325,Pediatrics,31202
+264,Sub-Saharan Africa,Malawi,Balaka,TA Msamala,0.000178188,8.91E-06,0.05,4.01E-05,1,0.224792961,45793.91561,Pediatrics,31201
+265,Sub-Saharan Africa,Malawi,Balaka,TA Nkaya,0.000178075,8.90E-06,0.05,4.00E-05,1,0.224849824,29175.86925,Pediatrics,31205
+266,Sub-Saharan Africa,Malawi,Balaka,TA Sawali,0.000178339,8.92E-06,0.05,4.01E-05,1,0.224716681,9676.731171,Pediatrics,31208
+267,Sub-Saharan Africa,Malawi,Blantyre,TA Chigaru,0.000189396,9.47E-06,0.05,4.16E-05,1,0.219479006,29113.17642,Pediatrics,30503
+268,Sub-Saharan Africa,Malawi,Blantyre,TA Kapeni,0.000189462,9.47E-06,0.05,4.16E-05,1,0.219449465,57720.53215,Pediatrics,30501
+269,Sub-Saharan Africa,Malawi,Blantyre,TA Kuntaja,0.000189506,9.48E-06,0.05,4.16E-05,1,0.219430037,48285.54187,Pediatrics,30506
+270,Sub-Saharan Africa,Malawi,Blantyre,TA Kunthembwe,0.000189403,9.47E-06,0.05,4.16E-05,1,0.219476103,24991.34982,Pediatrics,30504
+271,Sub-Saharan Africa,Malawi,Blantyre,TA Lundu,0.000189473,9.47E-06,0.05,4.16E-05,1,0.219444588,18946.01165,Pediatrics,30502
+272,Sub-Saharan Africa,Malawi,Blantyre,TA Machinjiri,0.00018917,9.46E-06,0.05,4.15E-05,1,0.219579966,14121.27995,Pediatrics,30507
+273,Sub-Saharan Africa,Malawi,Blantyre,TA Makata,0.000189358,9.47E-06,0.05,4.16E-05,1,0.219496071,11018.19888,Pediatrics,30505
+274,Sub-Saharan Africa,Malawi,Blantyre,TA Somba,0.000189251,9.46E-06,0.05,4.15E-05,1,0.219543922,44832.52085,Pediatrics,30508
+275,Sub-Saharan Africa,Malawi,Blantyre City,Bangwe Mthandizi Ward,0.000189591,9.48E-06,0.05,4.16E-05,1,0.219392123,6065.955867,Pediatrics,31546
+276,Sub-Saharan Africa,Malawi,Blantyre City,Bangwe Ward,0.000189591,9.48E-06,0.05,4.16E-05,1,0.219392123,12577.1088,Pediatrics,31545
+277,Sub-Saharan Africa,Malawi,Blantyre City,Blantyre City Centre Ward,0.000189591,9.48E-06,0.05,4.16E-05,1,0.219392382,21349.33511,Pediatrics,31541
+278,Sub-Saharan Africa,Malawi,Blantyre City,Blantyre South Ward,0.000189591,9.48E-06,0.05,4.16E-05,1,0.219392123,10936.18968,Pediatrics,31548
+279,Sub-Saharan Africa,Malawi,Blantyre City,Chigumula Ward,0.000189544,9.48E-06,0.05,4.16E-05,1,0.21941329,18816.30877,Pediatrics,31552
+280,Sub-Saharan Africa,Malawi,Blantyre City,Chilomoni Ward,0.00018959,9.48E-06,0.05,4.16E-05,1,0.219392791,28562.78517,Pediatrics,31540
+281,Sub-Saharan Africa,Malawi,Blantyre City,Green Corner Ward,0.000189579,9.48E-06,0.05,4.16E-05,1,0.219397675,15252.94209,Pediatrics,31549
+282,Sub-Saharan Africa,Malawi,Blantyre City,Limbe Central Ward,0.000189591,9.48E-06,0.05,4.16E-05,1,0.219392123,4242.44334,Pediatrics,31543
+283,Sub-Saharan Africa,Malawi,Blantyre City,Mapanga Ward,0.000189545,9.48E-06,0.05,4.16E-05,1,0.219412722,23239.3661,Pediatrics,31533
+284,Sub-Saharan Africa,Malawi,Blantyre City,Mbayani Ward,0.000189591,9.48E-06,0.05,4.16E-05,1,0.219392123,19168.26611,Pediatrics,31539
+285,Sub-Saharan Africa,Malawi,Blantyre City,Michiru Ward,0.000189591,9.48E-06,0.05,4.16E-05,1,0.219392186,38371.13142,Pediatrics,31531
+286,Sub-Saharan Africa,Malawi,Blantyre City,Misesa Ward,0.00018959,9.48E-06,0.05,4.16E-05,1,0.219392822,34419.83124,Pediatrics,31553
+287,Sub-Saharan Africa,Malawi,Blantyre City,Mzedi Ward,0.000189269,9.46E-06,0.05,4.16E-05,1,0.219535668,18513.86075,Pediatrics,31544
+288,Sub-Saharan Africa,Malawi,Blantyre City,Namalimwe Ward,0.000189591,9.48E-06,0.05,4.16E-05,1,0.219392123,8625.301698,Pediatrics,31542
+289,Sub-Saharan Africa,Malawi,Blantyre City,Namiyango Ward,0.00018955,9.48E-06,0.05,4.16E-05,1,0.219410452,19273.77512,Pediatrics,31551
+290,Sub-Saharan Africa,Malawi,Blantyre City,Ndirande Gamulani Ward,0.000189591,9.48E-06,0.05,4.16E-05,1,0.219392123,14769.05785,Pediatrics,31537
+291,Sub-Saharan Africa,Malawi,Blantyre City,Ndirande Makata Ward,0.000189591,9.48E-06,0.05,4.16E-05,1,0.219392123,27405.36411,Pediatrics,31536
+292,Sub-Saharan Africa,Malawi,Blantyre City,Ndirande Matope Ward,0.000189591,9.48E-06,0.05,4.16E-05,1,0.219392123,9791.404248,Pediatrics,31535
+293,Sub-Saharan Africa,Malawi,Blantyre City,Nkolokoti Ward,0.000189591,9.48E-06,0.05,4.16E-05,1,0.219392123,31775.49657,Pediatrics,31534
+294,Sub-Saharan Africa,Malawi,Blantyre City,Nyambadwe Ward,0.000189591,9.48E-06,0.05,4.16E-05,1,0.219392123,9225.689135,Pediatrics,31538
+295,Sub-Saharan Africa,Malawi,Blantyre City,Soche East Ward,0.000189591,9.48E-06,0.05,4.16E-05,1,0.219392123,10968.06336,Pediatrics,31547
+296,Sub-Saharan Africa,Malawi,Blantyre City,Soche West Ward,0.000189591,9.48E-06,0.05,4.16E-05,1,0.219392374,21044.03774,Pediatrics,31550
+297,Sub-Saharan Africa,Malawi,Blantyre City,South Lunzu Ward,0.00018959,9.48E-06,0.05,4.16E-05,1,0.219392451,28973.45789,Pediatrics,31532
+298,Sub-Saharan Africa,Malawi,Chikwawa,Chikwawa Boma,0.00017711,8.86E-06,0.05,3.99E-05,1,0.225339197,2557.086096,Pediatrics,31020
+299,Sub-Saharan Africa,Malawi,Chikwawa,Lengwe National Park,0.00017711,8.86E-06,0.05,3.99E-05,1,0.225339198,1107.931293,Pediatrics,31012
+300,Sub-Saharan Africa,Malawi,Chikwawa,Majete Game Reserve - Chikwawa,0.00017711,8.86E-06,0.05,3.99E-05,1,0.225339197,631.895325,Pediatrics,31013
+301,Sub-Saharan Africa,Malawi,Chikwawa,Ngabu Urban,0.00017711,8.86E-06,0.05,3.99E-05,1,0.225339197,5139.794997,Pediatrics,31021
+302,Sub-Saharan Africa,Malawi,Chikwawa,STA Masache,0.000177165,8.86E-06,0.05,3.99E-05,1,0.225311054,10874.77684,Pediatrics,31010
+303,Sub-Saharan Africa,Malawi,Chikwawa,STA Ndakwela,0.00017711,8.86E-06,0.05,3.99E-05,1,0.225339197,15268.69728,Pediatrics,31008
+304,Sub-Saharan Africa,Malawi,Chikwawa,TA Chapananga,0.00017711,8.86E-06,0.05,3.99E-05,1,0.225339197,58224.03203,Pediatrics,31003
+305,Sub-Saharan Africa,Malawi,Chikwawa,TA Kasisi,0.00017716,8.86E-06,0.05,3.99E-05,1,0.225313908,15222.36408,Pediatrics,31006
+306,Sub-Saharan Africa,Malawi,Chikwawa,TA Katunga,0.00017711,8.86E-06,0.05,3.99E-05,1,0.225339197,20738.78238,Pediatrics,31005
+307,Sub-Saharan Africa,Malawi,Chikwawa,TA Lundu,0.00017711,8.86E-06,0.05,3.99E-05,1,0.225339197,27868.74045,Pediatrics,31002
+308,Sub-Saharan Africa,Malawi,Chikwawa,TA Makhwira,0.000177113,8.86E-06,0.05,3.99E-05,1,0.225337851,40288.925,Pediatrics,31007
+309,Sub-Saharan Africa,Malawi,Chikwawa,TA Maseya,0.000177112,8.86E-06,0.05,3.99E-05,1,0.225338567,21227.42255,Pediatrics,31004
+310,Sub-Saharan Africa,Malawi,Chikwawa,TA Mlilima,0.000177266,8.86E-06,0.05,3.99E-05,1,0.225259808,8163.018317,Pediatrics,31009
+311,Sub-Saharan Africa,Malawi,Chikwawa,TA Ngabu,0.00017711,8.86E-06,0.05,3.99E-05,1,0.225339197,91040.44738,Pediatrics,31001
+312,Sub-Saharan Africa,Malawi,Chikwawa,TA Ngowe,0.000177289,8.86E-06,0.05,3.99E-05,1,0.22524805,7107.303995,Pediatrics,31011
+313,Sub-Saharan Africa,Malawi,Chiradzulu,Chiradzulu Boma,0.00018184,9.09E-06,0.05,4.05E-05,1,0.222989409,1305.097488,Pediatrics,30420
+314,Sub-Saharan Africa,Malawi,Chiradzulu,STA Mpunga,0.00018184,9.09E-06,0.05,4.05E-05,1,0.222989409,25028.40825,Pediatrics,30407
+315,Sub-Saharan Africa,Malawi,Chiradzulu,STA Onga,0.00018184,9.09E-06,0.05,4.05E-05,1,0.222989409,9833.15104,Pediatrics,30409
+316,Sub-Saharan Africa,Malawi,Chiradzulu,STA Sandareki,0.000181744,9.09E-06,0.05,4.05E-05,1,0.223035819,12619.88722,Pediatrics,30408
+317,Sub-Saharan Africa,Malawi,Chiradzulu,TA Chitera,0.000181922,9.10E-06,0.05,4.06E-05,1,0.222949842,13244.49047,Pediatrics,30405
+318,Sub-Saharan Africa,Malawi,Chiradzulu,TA Kadewere,0.00018182,9.09E-06,0.05,4.05E-05,1,0.222999041,32485.58749,Pediatrics,30403
+319,Sub-Saharan Africa,Malawi,Chiradzulu,TA Likoswe,0.000181869,9.09E-06,0.05,4.06E-05,1,0.222975323,40831.80065,Pediatrics,30402
+320,Sub-Saharan Africa,Malawi,Chiradzulu,TA Mpama,0.000181858,9.09E-06,0.05,4.06E-05,1,0.222980853,28128.23089,Pediatrics,30401
+321,Sub-Saharan Africa,Malawi,Chiradzulu,TA Nchema,0.000181819,9.09E-06,0.05,4.05E-05,1,0.222999731,11994.28196,Pediatrics,30406
+322,Sub-Saharan Africa,Malawi,Chiradzulu,TA Nkalo,0.000181643,9.08E-06,0.05,4.05E-05,1,0.223084974,30129.14431,Pediatrics,30404
+323,Sub-Saharan Africa,Malawi,Machinga,Liwonde National Park,0.000166376,8.32E-06,0.05,3.85E-05,1,0.231167979,7429.243264,Pediatrics,30217
+324,Sub-Saharan Africa,Malawi,Machinga,Liwonde Town,0.00016665,8.33E-06,0.05,3.85E-05,1,0.231009373,14815.71125,Pediatrics,30221
+325,Sub-Saharan Africa,Malawi,Machinga,Machinga Boma,0.000166226,8.31E-06,0.05,3.84E-05,1,0.231254539,560.9986813,Pediatrics,30220
+326,Sub-Saharan Africa,Malawi,Machinga,STA Chesale,0.000166231,8.31E-06,0.05,3.84E-05,1,0.231251339,7897.78841,Pediatrics,30216
+327,Sub-Saharan Africa,Malawi,Machinga,STA Nchinguza,0.000166226,8.31E-06,0.05,3.84E-05,1,0.231254539,16451.03005,Pediatrics,30205
+328,Sub-Saharan Africa,Malawi,Machinga,STA Nsanama,0.000166226,8.31E-06,0.05,3.84E-05,1,0.231254539,18337.55215,Pediatrics,30202
+329,Sub-Saharan Africa,Malawi,Machinga,TA Chamba,0.000166479,8.32E-06,0.05,3.85E-05,1,0.231108197,17807.89606,Pediatrics,30208
+330,Sub-Saharan Africa,Malawi,Machinga,TA Chikweo,0.000166226,8.31E-06,0.05,3.84E-05,1,0.231254539,48852.13719,Pediatrics,30211
+331,Sub-Saharan Africa,Malawi,Machinga,TA Chiwalo,0.000166236,8.31E-06,0.05,3.84E-05,1,0.23124878,10039.54468,Pediatrics,30213
+332,Sub-Saharan Africa,Malawi,Machinga,TA Kapoloma,0.000166227,8.31E-06,0.05,3.84E-05,1,0.231254092,9004.546253,Pediatrics,30214
+333,Sub-Saharan Africa,Malawi,Machinga,TA Kawinga,0.000166226,8.31E-06,0.05,3.84E-05,1,0.231254539,50347.60813,Pediatrics,30206
+334,Sub-Saharan Africa,Malawi,Machinga,TA Liwonde,0.000166228,8.31E-06,0.05,3.84E-05,1,0.231253276,44775.48497,Pediatrics,30201
+335,Sub-Saharan Africa,Malawi,Machinga,TA Mlomba,0.000166226,8.31E-06,0.05,3.84E-05,1,0.231254539,38717.91698,Pediatrics,30210
+336,Sub-Saharan Africa,Malawi,Machinga,TA Mposa,0.000166449,8.32E-06,0.05,3.85E-05,1,0.231125454,16910.10254,Pediatrics,30209
+337,Sub-Saharan Africa,Malawi,Machinga,TA Ngokwe,0.000166226,8.31E-06,0.05,3.84E-05,1,0.231254539,20066.40695,Pediatrics,30212
+338,Sub-Saharan Africa,Malawi,Machinga,TA Nkoola,0.000166226,8.31E-06,0.05,3.84E-05,1,0.231254539,31897.08941,Pediatrics,30207
+339,Sub-Saharan Africa,Malawi,Machinga,TA Nkula,0.000166384,8.32E-06,0.05,3.85E-05,1,0.231162837,15218.90659,Pediatrics,30204
+340,Sub-Saharan Africa,Malawi,Machinga,TA Nyambi,0.000166246,8.31E-06,0.05,3.84E-05,1,0.231242782,30533.3442,Pediatrics,30215
+341,Sub-Saharan Africa,Malawi,Machinga,TA Sitola,0.000166387,8.32E-06,0.05,3.85E-05,1,0.231161249,13075.04448,Pediatrics,30203
+342,Sub-Saharan Africa,Malawi,Mangochi,Lake Malawi National Park,0.000169096,8.45E-06,0.05,3.88E-05,1,0.229620679,3046.94321,Pediatrics,30112
+343,Sub-Saharan Africa,Malawi,Mangochi,Lake Malombe,0.00016909,8.45E-06,0.05,3.88E-05,1,0.229624123,5839.309126,Pediatrics,30199
+344,Sub-Saharan Africa,Malawi,Mangochi,Mangochi Town,0.000169096,8.45E-06,0.05,3.88E-05,1,0.229620679,31477.5004,Pediatrics,30120
+345,Sub-Saharan Africa,Malawi,Mangochi,Monkey Bay Urban,0.000169096,8.45E-06,0.05,3.88E-05,1,0.229620679,4572.751095,Pediatrics,30121
+346,Sub-Saharan Africa,Malawi,Mangochi,STA Chiunda,0.00016895,8.45E-06,0.05,3.88E-05,1,0.229702595,23971.04681,Pediatrics,30114
+347,Sub-Saharan Africa,Malawi,Mangochi,STA Lulanga,0.000169096,8.45E-06,0.05,3.88E-05,1,0.229620679,20987.15232,Pediatrics,30110
+348,Sub-Saharan Africa,Malawi,Mangochi,STA Ntonda,0.000169359,8.47E-06,0.05,3.89E-05,1,0.229473985,13148.39599,Pediatrics,30113
+349,Sub-Saharan Africa,Malawi,Mangochi,TA Chilipa,0.000169534,8.48E-06,0.05,3.89E-05,1,0.229376273,22808.62529,Pediatrics,30103
+350,Sub-Saharan Africa,Malawi,Mangochi,TA Chimwala,0.000169253,8.46E-06,0.05,3.88E-05,1,0.229532963,48632.85696,Pediatrics,30102
+351,Sub-Saharan Africa,Malawi,Mangochi,TA Chowe,0.000169095,8.45E-06,0.05,3.88E-05,1,0.229621153,63480.64313,Pediatrics,30107
+352,Sub-Saharan Africa,Malawi,Mangochi,TA Jalasi,0.000169096,8.45E-06,0.05,3.88E-05,1,0.229620679,58485.20883,Pediatrics,30105
+353,Sub-Saharan Africa,Malawi,Mangochi,TA Katuli,0.000169096,8.45E-06,0.05,3.88E-05,1,0.229620679,33609.01781,Pediatrics,30108
+354,Sub-Saharan Africa,Malawi,Mangochi,TA Makanjila,0.000169096,8.45E-06,0.05,3.88E-05,1,0.229620679,31864.96172,Pediatrics,30109
+355,Sub-Saharan Africa,Malawi,Mangochi,TA Mbwana Nyambi,0.000169046,8.45E-06,0.05,3.88E-05,1,0.229648669,68830.83669,Pediatrics,30106
+356,Sub-Saharan Africa,Malawi,Mangochi,TA Mponda,0.000169096,8.45E-06,0.05,3.88E-05,1,0.229620679,80231.17178,Pediatrics,30101
+357,Sub-Saharan Africa,Malawi,Mangochi,TA Namabvi,0.000169096,8.45E-06,0.05,3.88E-05,1,0.229620679,23407.51436,Pediatrics,30111
+358,Sub-Saharan Africa,Malawi,Mangochi,TA Nankumba,0.00016912,8.46E-06,0.05,3.88E-05,1,0.229607431,78253.67118,Pediatrics,30104
+359,Sub-Saharan Africa,Malawi,Mulanje,Mulanje Boma,0.000173972,8.70E-06,0.05,3.95E-05,1,0.226969062,7558.957037,Pediatrics,30820
+360,Sub-Saharan Africa,Malawi,Mulanje,Mulanje Mountain Reserve,0.000171622,8.58E-06,0.05,3.92E-05,1,0.228228031,2899.358628,Pediatrics,30809
+361,Sub-Saharan Africa,Malawi,Mulanje,STA Sunganinzeru,0.000173972,8.70E-06,0.05,3.95E-05,1,0.226969062,33412.27547,Pediatrics,30807
+362,Sub-Saharan Africa,Malawi,Mulanje,STA Tombondiya,0.000174061,8.70E-06,0.05,3.95E-05,1,0.22692179,11136.47548,Pediatrics,30808
+363,Sub-Saharan Africa,Malawi,Mulanje,TA Chikumbu,0.000173979,8.70E-06,0.05,3.95E-05,1,0.226964916,48801.16672,Pediatrics,30803
+364,Sub-Saharan Africa,Malawi,Mulanje,TA Juma,0.000173922,8.70E-06,0.05,3.95E-05,1,0.226995239,59589.45159,Pediatrics,30806
+365,Sub-Saharan Africa,Malawi,Mulanje,TA Laston Njema,0.000173972,8.70E-06,0.05,3.95E-05,1,0.226969062,46815.97672,Pediatrics,30802
+366,Sub-Saharan Africa,Malawi,Mulanje,TA Mabuka,0.000173972,8.70E-06,0.05,3.95E-05,1,0.226969062,55200.25153,Pediatrics,30801
+367,Sub-Saharan Africa,Malawi,Mulanje,TA Nkanda,0.000173963,8.70E-06,0.05,3.95E-05,1,0.226973383,68597.74804,Pediatrics,30805
+368,Sub-Saharan Africa,Malawi,Mulanje,TA Nthiramanja,0.000174081,8.70E-06,0.05,3.95E-05,1,0.226911441,30613.27734,Pediatrics,30804
+369,Sub-Saharan Africa,Malawi,Mwanza,Majete Game Reserve - Mwanza,0.000184768,9.24E-06,0.05,4.09E-05,1,0.221594905,85.54344851,Pediatrics,30604
+370,Sub-Saharan Africa,Malawi,Mwanza,Mwanza Boma,0.000182469,9.12E-06,0.05,4.06E-05,1,0.222685986,11980.82186,Pediatrics,30620
+371,Sub-Saharan Africa,Malawi,Mwanza,STA Govati,0.000182082,9.10E-06,0.05,4.06E-05,1,0.222872619,11079.84514,Pediatrics,30603
+372,Sub-Saharan Africa,Malawi,Mwanza,TA Kanduku,0.000182401,9.12E-06,0.05,4.06E-05,1,0.222718942,34318.47559,Pediatrics,30601
+373,Sub-Saharan Africa,Malawi,Mwanza,TA Nthache,0.000182469,9.12E-06,0.05,4.06E-05,1,0.222685986,25995.0874,Pediatrics,30602
+374,Sub-Saharan Africa,Malawi,Neno,Neno Boma,0.000177747,8.89E-06,0.05,4.00E-05,1,0.225015669,1987.564039,Pediatrics,31320
+375,Sub-Saharan Africa,Malawi,Neno,TA Chekucheku,0.000177747,8.89E-06,0.05,4.00E-05,1,0.225015399,14579.22278,Pediatrics,31304
+376,Sub-Saharan Africa,Malawi,Neno,TA Dambe,0.000177761,8.89E-06,0.05,4.00E-05,1,0.225008674,19385.86403,Pediatrics,31301
+377,Sub-Saharan Africa,Malawi,Neno,TA Mlauli,0.000177872,8.89E-06,0.05,4.00E-05,1,0.224952558,23459.79963,Pediatrics,31302
+378,Sub-Saharan Africa,Malawi,Neno,TA Symon Likongwe,0.000178228,8.91E-06,0.05,4.01E-05,1,0.224772676,37831.5471,Pediatrics,31303
+379,Sub-Saharan Africa,Malawi,Nsanje,Mwabvi Game Reserve,0.00017857,8.93E-06,0.05,4.01E-05,1,0.224600763,5157.909151,Pediatrics,31110
+380,Sub-Saharan Africa,Malawi,Nsanje,Nsanje Boma,0.00017857,8.93E-06,0.05,4.01E-05,1,0.224600763,12307.27662,Pediatrics,31120
+381,Sub-Saharan Africa,Malawi,Nsanje,TA Chimombo,0.00017857,8.93E-06,0.05,4.01E-05,1,0.224600763,6401.147502,Pediatrics,31102
+382,Sub-Saharan Africa,Malawi,Nsanje,TA Makoko,0.00017857,8.93E-06,0.05,4.01E-05,1,0.224600763,6801.427336,Pediatrics,31109
+383,Sub-Saharan Africa,Malawi,Nsanje,TA Malemia,0.00017857,8.93E-06,0.05,4.01E-05,1,0.224600763,11660.22002,Pediatrics,31106
+384,Sub-Saharan Africa,Malawi,Nsanje,TA Mbenje,0.000178565,8.93E-06,0.05,4.01E-05,1,0.224603368,34747.01103,Pediatrics,31107
+385,Sub-Saharan Africa,Malawi,Nsanje,TA Mlolo,0.000178568,8.93E-06,0.05,4.01E-05,1,0.224601702,41014.09129,Pediatrics,31104
+386,Sub-Saharan Africa,Malawi,Nsanje,TA Ndamera,0.00017857,8.93E-06,0.05,4.01E-05,1,0.224600763,16637.24718,Pediatrics,31101
+387,Sub-Saharan Africa,Malawi,Nsanje,TA Ngabu,0.00017857,8.93E-06,0.05,4.01E-05,1,0.224600763,10002.03992,Pediatrics,31108
+388,Sub-Saharan Africa,Malawi,Nsanje,TA Nyachikadza,0.00017857,8.93E-06,0.05,4.01E-05,1,0.224600763,1753.760028,Pediatrics,31103
+389,Sub-Saharan Africa,Malawi,Nsanje,TA Tengani,0.00017857,8.93E-06,0.05,4.01E-05,1,0.224600763,27258.43566,Pediatrics,31105
+390,Sub-Saharan Africa,Malawi,Phalombe,Phalombe Boma,0.00016204,8.10E-06,0.05,3.79E-05,1,0.233741311,4934.64847,Pediatrics,30920
+391,Sub-Saharan Africa,Malawi,Phalombe,TA Chiwalo,0.00016204,8.10E-06,0.05,3.79E-05,1,0.233741311,26193.17142,Pediatrics,30903
+392,Sub-Saharan Africa,Malawi,Phalombe,TA Jenala,0.000162132,8.11E-06,0.05,3.79E-05,1,0.233685139,51160.2869,Pediatrics,30905
+393,Sub-Saharan Africa,Malawi,Phalombe,TA Kaduya,0.00016204,8.10E-06,0.05,3.79E-05,1,0.233741311,51619.91504,Pediatrics,30906
+394,Sub-Saharan Africa,Malawi,Phalombe,TA Mkhumba,0.000162185,8.11E-06,0.05,3.79E-05,1,0.233653074,69827.62307,Pediatrics,30901
+395,Sub-Saharan Africa,Malawi,Phalombe,TA Nazombe,0.00016204,8.10E-06,0.05,3.79E-05,1,0.233741311,22122.74512,Pediatrics,30902
+396,Sub-Saharan Africa,Malawi,Phalombe,TA Nkhulambe,0.000162447,8.12E-06,0.05,3.79E-05,1,0.23349382,13831.57005,Pediatrics,30904
+397,Sub-Saharan Africa,Malawi,Thyolo,Luchenza Town,0.000177976,8.90E-06,0.05,4.00E-05,1,0.224899656,5651.361054,Pediatrics,30721
+398,Sub-Saharan Africa,Malawi,Thyolo,STA Boyidi,0.000178069,8.90E-06,0.05,4.00E-05,1,0.224852861,15561.19815,Pediatrics,30714
+399,Sub-Saharan Africa,Malawi,Thyolo,STA Mbawela,0.000178067,8.90E-06,0.05,4.00E-05,1,0.224853728,33701.54641,Pediatrics,30703
+400,Sub-Saharan Africa,Malawi,Thyolo,STA Thukuta,0.000178085,8.90E-06,0.05,4.00E-05,1,0.224844617,12315.18176,Pediatrics,30702
+401,Sub-Saharan Africa,Malawi,Thyolo,TA Bvumbwe,0.000178074,8.90E-06,0.05,4.00E-05,1,0.224850482,69884.61154,Pediatrics,30710
+402,Sub-Saharan Africa,Malawi,Thyolo,TA Changata,0.000178063,8.90E-06,0.05,4.00E-05,1,0.224855867,29658.36091,Pediatrics,30704
+403,Sub-Saharan Africa,Malawi,Thyolo,TA Chimaliro,0.000178077,8.90E-06,0.05,4.00E-05,1,0.224848914,34474.87004,Pediatrics,30709
+404,Sub-Saharan Africa,Malawi,Thyolo,TA Kapichi,0.000177999,8.90E-06,0.05,4.00E-05,1,0.224887948,39175.51399,Pediatrics,30707
+405,Sub-Saharan Africa,Malawi,Thyolo,TA Kwethemule,0.000178064,8.90E-06,0.05,4.00E-05,1,0.224855241,37318.89935,Pediatrics,30706
+406,Sub-Saharan Africa,Malawi,Thyolo,TA Mphuka,0.000178069,8.90E-06,0.05,4.00E-05,1,0.224852996,43566.08572,Pediatrics,30705
+407,Sub-Saharan Africa,Malawi,Thyolo,TA Nanseta,0.000178064,8.90E-06,0.05,4.00E-05,1,0.224855264,20068.69828,Pediatrics,30712
+408,Sub-Saharan Africa,Malawi,Thyolo,TA Nchilamwela,0.000178069,8.90E-06,0.05,4.00E-05,1,0.224852861,36883.40043,Pediatrics,30708
+409,Sub-Saharan Africa,Malawi,Thyolo,TA Ngolongoliwa,0.000178076,8.90E-06,0.05,4.00E-05,1,0.224849179,21874.77836,Pediatrics,30713
+410,Sub-Saharan Africa,Malawi,Thyolo,TA Nsabwe,0.000178071,8.90E-06,0.05,4.00E-05,1,0.22485182,25458.5171,Pediatrics,30701
+411,Sub-Saharan Africa,Malawi,Thyolo,TA Thomas,0.000178103,8.91E-06,0.05,4.00E-05,1,0.224835644,25561.09978,Pediatrics,30711
+412,Sub-Saharan Africa,Malawi,Thyolo,Thyolo Boma,0.000178069,8.90E-06,0.05,4.00E-05,1,0.224852861,3385.360673,Pediatrics,30720
+413,Sub-Saharan Africa,Malawi,Zomba,STA Ngwelero,0.000173029,8.65E-06,0.05,3.94E-05,1,0.227470065,20083.89591,Pediatrics,30310
+414,Sub-Saharan Africa,Malawi,Zomba,STA Nkagula,0.000173055,8.65E-06,0.05,3.94E-05,1,0.227456094,27022.03857,Pediatrics,30308
+415,Sub-Saharan Africa,Malawi,Zomba,STA Nkapita,0.000173089,8.65E-06,0.05,3.94E-05,1,0.227437886,21184.63608,Pediatrics,30311
+416,Sub-Saharan Africa,Malawi,Zomba,STA Ntholowa,0.000173265,8.66E-06,0.05,3.94E-05,1,0.227344201,32488.32476,Pediatrics,30309
+417,Sub-Saharan Africa,Malawi,Zomba,TA Chikowi,0.000173055,8.65E-06,0.05,3.94E-05,1,0.227456094,42548.19403,Pediatrics,30304
+418,Sub-Saharan Africa,Malawi,Zomba,TA Kuntumanji,0.000173048,8.65E-06,0.05,3.94E-05,1,0.227460008,22850.99254,Pediatrics,30301
+419,Sub-Saharan Africa,Malawi,Zomba,TA Malemia,0.000173706,8.69E-06,0.05,3.95E-05,1,0.22710986,40108.42344,Pediatrics,30306
+420,Sub-Saharan Africa,Malawi,Zomba,TA Mbiza,0.000173111,8.66E-06,0.05,3.94E-05,1,0.227426038,50497.82152,Pediatrics,30305
+421,Sub-Saharan Africa,Malawi,Zomba,TA Mkumbira,0.00017302,8.65E-06,0.05,3.94E-05,1,0.22747461,1560.265016,Pediatrics,30303
+422,Sub-Saharan Africa,Malawi,Zomba,TA Mlumbe,0.000173389,8.67E-06,0.05,3.94E-05,1,0.227278053,64677.31331,Pediatrics,30307
+423,Sub-Saharan Africa,Malawi,Zomba,TA Mwambo,0.000172953,8.65E-06,0.05,3.93E-05,1,0.227510696,84840.78469,Pediatrics,30302
+424,Sub-Saharan Africa,Malawi,Zomba City,Chambo Ward,0.000211422,1.06E-05,0.05,4.45E-05,1,0.210678006,6069.191509,Pediatrics,31439
+425,Sub-Saharan Africa,Malawi,Zomba City,Chinamwali Ward,0.0002045,1.02E-05,0.05,4.36E-05,1,0.213239738,13179.61868,Pediatrics,31433
+426,Sub-Saharan Africa,Malawi,Zomba City,Chirunga Ward,0.000209403,1.05E-05,0.05,4.43E-05,1,0.211407601,7468.859733,Pediatrics,31434
+427,Sub-Saharan Africa,Malawi,Zomba City,Likangala Ward,0.000211422,1.06E-05,0.05,4.45E-05,1,0.210678007,11302.54963,Pediatrics,31438
+428,Sub-Saharan Africa,Malawi,Zomba City,Masongola Ward,0.000211422,1.06E-05,0.05,4.45E-05,1,0.210678007,3092.758739,Pediatrics,31436
+429,Sub-Saharan Africa,Malawi,Zomba City,Mbedza Ward,0.000200883,1.00E-05,0.05,4.31E-05,1,0.21464852,2734.78244,Pediatrics,31432
+430,Sub-Saharan Africa,Malawi,Zomba City,Mpira Ward,0.000207341,1.04E-05,0.05,4.40E-05,1,0.21216739,7196.724752,Pediatrics,31431
+431,Sub-Saharan Africa,Malawi,Zomba City,Mtiya Ward,0.000209345,1.05E-05,0.05,4.43E-05,1,0.211428952,2871.228607,Pediatrics,31435
+432,Sub-Saharan Africa,Malawi,Zomba City,Sadzi Ward,0.00020616,1.03E-05,0.05,4.38E-05,1,0.212609573,5317.767876,Pediatrics,31440
+433,Sub-Saharan Africa,Malawi,Zomba City,Zomba Central Ward,0.000211422,1.06E-05,0.05,4.45E-05,1,0.210678006,1689.617995,Pediatrics,31437
 1,Sub-Saharan Africa,Malawi,Dedza,Dedza Boma,0.024699532,0.003557102,0.144014949,0.000726282,0.204177986,0.029404682,7604.003956,Adults,20820
 2,Sub-Saharan Africa,Malawi,Dedza,TA Chauma,0.024699517,0.003557097,0.144014844,0.000726281,0.204178069,0.029404673,10198.245,Adults,20805
 3,Sub-Saharan Africa,Malawi,Dedza,TA Chilikumwendo,0.024699078,0.003556958,0.14401177,0.000726261,0.204180513,0.029404397,30639.84754,Adults,20802

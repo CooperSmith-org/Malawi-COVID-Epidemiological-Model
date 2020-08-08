@@ -1,3 +1,5 @@
+time1 <- Sys.time()
+
 set.seed(1234)
 
 library(dplyr)
@@ -10,30 +12,24 @@ library(readr)
 source("utils.R")
 
 #Bring in inputs - add additional files in this format here!
-MW_COVID_Inputs <- read_csv("inputs/MW COVID Inputs.csv")
-#BK_COVID_Inputs <- read_csv("inputs/BFA COVID Inputs.csv")
-#SSA_COVID_Inputs <- read_csv("inputs/SSA COVID Inputs.csv")
-MW_starts <- read_csv("inputs/MW_COVID_startDate_35days.csv") %>%
-  filter(!(CODE %in% list(10106, 20511, 21071)))
+MW_COVID_Inputs <- read_csv("inputs/MW COVID Inputs_Cities_Collapsed.csv")
+MW_starts <- read_csv("inputs/first_cases/first_dates_offset_param_35.csv") %>%
+  filter(!(ADM3_PCODE %in% list(10106, 20511, 21071, 30303)))
+MW_starts$Date_from_0 <- as.numeric(difftime(MW_starts$first_case_date, as.Date("2020-04-02"), units="days"))
 
+MW_COVID_Inputs <- left_join(MW_COVID_Inputs, MW_starts, by=c("TA_Code2" = "ADM3_PCODE"))
+MW_starts <- left_join(MW_starts, MW_COVID_Inputs, by=c("ADM3_PCODE" = "TA_Code2"))
 
 #Grab the reduction scenarios
 files <- list.files("inputs/reductionScenarios", full.names = TRUE) #For within countries
-
-#files <- list.files("inputs/SSA", full.names = TRUE) #For SSA
 reductions <- lapply(files, read_csv)
 names(reductions) <-gsub(".csv","",
                       list.files("inputs/reductionScenarios", full.names = FALSE), #For within countries
-                      #list.files("inputs/SSA", full.names = FALSE), #For SSA
                       fixed = TRUE)
-
-#read in crosswalk match for SSA analysis
-#crosswalk <- read.csv("~/GitHub/africa-covid-work/inputs/google crosswalk.csv")
 
 #Add in col to identify the data source
 MW_COVID_Inputs$Run <- "Malawi"
-#BK_COVID_Inputs$Run <- "Burkina"
-#SSA_COVID_Inputs$Run <- "SSA"
+
 #combined_data <- rbind(MW_COVID_Inputs, BK_COVID_Inputs, SSA_COVID_Inputs)
 
 #add a total_pop col
@@ -41,13 +37,11 @@ MW_COVID_Inputs <- MW_COVID_Inputs %>%
   group_by(UID) %>% 
   mutate(tot_pop = sum(Population)) %>%
   ungroup() %>%
-  filter(!(CODE %in% list(10106, 20511, 21071 )))
+  filter(!(TA_Code %in% list(10106, 20511, 21071, 30303 )))
 
 combined_data <- MW_COVID_Inputs
 
 #Modify based on scenario in question
-#countryList <- list("Burkina", "Malawi")
-#countryList <- list("SSA")
 countryList <- list("Malawi")
 
 #create matrix lists for contact matrix
@@ -62,7 +56,7 @@ suscep <- list("Pediatrics" = .5, "Adults" = .75, "Elderly" = 1.5)
 #loop through each district, using the district-specific estimates of population size, hospitalization, ICU, and death
 for (c in countryList){
   for (r in 1:length(reductions)){
-      data_use <- filter(combined_data, combined_data$Run == c & combined_data$Population > 0)
+      data_use <- filter(combined_data, combined_data$Run == "Malawi" & combined_data$Population > 0)
       pop_range <- data_use$Population #district population total estimate
       eta_range <- data_use$Hospitalization #estimated age-standardized hospitalization rate
       eta2_range <- data_use$`Crit of Hosp` #estimated age-standardized ICU rate AMONG those hospitalized
@@ -90,7 +84,7 @@ for (c in countryList){
                      contact = 0, #assumed contact rate
                      susceptibility = 0, #assumed susceptibility
                      efficacy = .5, #assumed reduction of R0 via mask compliance
-                     compliance = .05, #assumed mask usage
+                     compliance = .15, #assumed mask usage
                      reductionList = list()) # day 1 assumed baseline reduction
           parms["population"] <- pop_range[i]
           parms["eta"] <- eta_range[i]
@@ -101,12 +95,12 @@ for (c in countryList){
           parms["susceptibility"] <- suscep[[Age[i]]]
           
           ##Do some adjusting for start dates
-          t_from0df <- MW_starts %>%
-            filter(UID == UIDlist[i])
+          t_from0df <- MW_COVID_Inputs %>%
+            filter(UID == UIDlist[i] & `Age Band`=="Pediatrics")
           t_from0 <- t_from0df$Date_from_0 + 1
 
           parms[["reductionList"]] <- parms[["reductionList"]][t_from0:365]
-          init <- c(S = pop_range[i] - 1, E = 0, I = 1, H = 0, C = 0, R = 0, D = 0, inci = 0, hosp = 0, crits = 0)
+          init <- c(S = pop_range[i] - 1, E = 0, I = 0.333, H = 0, C = 0, R = 0, D = 0, inci = 0, hosp = 0, crits = 0)
           
           times <- seq(1,length(parms[["reductionList"]]))
           sim <- as.data.table(lsoda(init, times, model, parms))
@@ -118,17 +112,13 @@ for (c in countryList){
           sim$age <- Age[i]
           sim$tot_pop <- tot_pop[i]
           sim$start <- t_from0
-          
-          #For SSA analysis
-    
-          # if (paste0(lvl2[i],"-",names(reductions[r])) %in% crosswalk$Match){
-          #   write.csv(sim, paste0("epi_csvs/",c,"/",names(reductions[r]),"-",lvl2[i],".csv"))
-          #   }
-          
-          #Use below for in-country
+
           if (UIDlist[i] != "N/A"){
             write.csv(sim, paste0("epi_csvs/",c,"/banded_",names(reductions[r]),"/",lvl4[i],"-", Age[i],".csv"))}
       }
     }
   }
 }
+
+time2 <- Sys.time()
+ptime <- time2 - time1
