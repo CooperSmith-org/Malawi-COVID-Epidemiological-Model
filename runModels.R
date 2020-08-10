@@ -13,7 +13,7 @@ source("utils.R")
 
 #Bring in inputs - add additional files in this format here!
 MW_COVID_Inputs <- read_csv("inputs/MW COVID Inputs_Cities_Collapsed.csv")
-MW_starts <- read_csv("inputs/first_cases/first_dates_offset_param_35.csv") %>%
+MW_starts <- read_csv("inputs/first_cases/seeds_offset_param_35.csv") %>%
   filter(!(ADM3_PCODE %in% list(10106, 20511, 21071, 30303)))
 MW_starts$Date_from_0 <- as.numeric(difftime(MW_starts$first_case_date, as.Date("2020-04-02"), units="days"))
 
