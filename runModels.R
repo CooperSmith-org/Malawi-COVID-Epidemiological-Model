@@ -12,9 +12,10 @@ library(readr)
 source("utils.R")
 
 #Bring in inputs - add additional files in this format here!
-MW_COVID_Inputs <- read_csv("inputs/MW COVID Inputs_Cities_Collapsed.csv")
-MW_starts <- read_csv("inputs/first_cases/seeds_offset_param_35.csv") %>%
+MW_COVID_Inputs <- read_csv("inputs/MW COVID Inputs.csv")
+MW_starts <- read_csv("inputs/first_cases/seeds_offset_param_35_urb21d_peri28d_rural35d.csv") %>%
   filter(!(ADM3_PCODE %in% list(10106, 20511, 21071, 30303)))
+MW_starts$first_case_date <- as.Date(MW_starts$first_case_date, format="%m/%d/%y")
 MW_starts$Date_from_0 <- as.numeric(difftime(MW_starts$first_case_date, as.Date("2020-04-02"), units="days"))
 
 MW_COVID_Inputs <- left_join(MW_COVID_Inputs, MW_starts, by=c("TA_Code2" = "ADM3_PCODE"))
@@ -29,8 +30,6 @@ names(reductions) <-gsub(".csv","",
 
 #Add in col to identify the data source
 MW_COVID_Inputs$Run <- "Malawi"
-
-#combined_data <- rbind(MW_COVID_Inputs, BK_COVID_Inputs, SSA_COVID_Inputs)
 
 #add a total_pop col
 MW_COVID_Inputs <- MW_COVID_Inputs %>% 
@@ -121,4 +120,4 @@ for (c in countryList){
 }
 
 time2 <- Sys.time()
-ptime <- time2 - time1
+time2 - time1
