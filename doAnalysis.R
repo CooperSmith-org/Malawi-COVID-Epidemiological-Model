@@ -8,9 +8,10 @@ source("utils.R")
 
 #Load individual csvs -NOTE, just comment out others when re-running a scenario
 
-#50 day offset
-current <- makeCombinedDF("epi_csvs/Malawi/banded_current_updated50")
-enforcedLockdown <- makeCombinedDF("epi_csvs/Malawi/banded_current_lockdown50")
+#day offset
+current <- makeCombinedDF("epi_csvs/Malawi/banded_current")
+currentx2 <- makeCombinedDF("epi_csvs/Malawi/banded_current x2")
+#enforcedLockdown <- makeCombinedDF("epi_csvs/Malawi/banded_current_lockdown")
 
 # #5 day offset
 # current <- makeCombinedDF("epi_csvs/Malawi/banded_current_updated5")
@@ -22,7 +23,8 @@ enforcedLockdown <- makeCombinedDF("epi_csvs/Malawi/banded_current_lockdown50")
 
 #Create the daily summary
 makeSummaryCSV(current, "summary_csv_day/Malawi/current.csv")
-makeSummaryCSV(enforcedLockdown, "summary_csv_day/Malawi/enforcedLockdown.csv")
+makeSummaryCSV(currentx2, "summary_csv_day/Malawi/currentx2.csv")
+#makeSummaryCSV(enforcedLockdown, "summary_csv_day/Malawi/enforcedLockdown.csv")
 
 #Create the district level summary
 makeSummaryCSVGeo(current, "summary_by_district/Malawi/current_50day.csv")
