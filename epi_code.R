@@ -19,12 +19,13 @@ main <- function(){
   
   ## load inputs
   inputs_path <- "inputs/MW COVID Inputs.csv"
-  exclude_list <- list(17, 189, 166, 28, 34)
-  inputs <- load_inputs(inputs_path, exclude_list)#[1:20,]
+  exclude_list <- list(17, 189, 166, 28, 34, 167)
+  inputs <- load_inputs(inputs_path, exclude_list)[1:20,]
   
   ## load seed dates
-  # date_path <- "inputs/MW_COVID_startDate_5days.csv"
-  # seed_dates <- load_seed_dates(date_path)
+  date_path <- "inputs/simulation-seeddates-ta-20200904.csv"
+  seed_dates <- load_seed_dates(date_path, 1)
+  inputs <- left_join(inputs, seed_dates, by=c("TA_Code"="adm_id"))
   
   ### Fixed parameters
   fixed_params <- c(
@@ -50,9 +51,11 @@ main <- function(){
   ) 
 
   
-  init_names <- inputs %>% select(ends_with("_e") | ends_with("_a") | ends_with("_p")) %>% colnames()
+  init_names <- inputs %>% select(ends_with("_e") | 
+                                    ends_with("_a") | 
+                                    ends_with("_p")) %>% colnames()
   
-  times <- seq(1, 365)
+  # times <- seq(1, 365)
   
   for (r in seq(1:length(reductions))){
     
@@ -60,7 +63,10 @@ main <- function(){
     cat("reduction scenario ", reduction_name, '\n')
 
     fixed_params['reductions'] <- reductions[[r]][1]
-    out <- apply(inputs, 1, run_model, fixed_params, times, init_names, reduction_name)
+    
+    ### this runs the model in parallel (hopefully)
+    out <- apply(inputs, 1, run_model, fixed_params,
+                 init_names, reduction_name)
 
   }
   time2 = Sys.time()
@@ -69,17 +75,19 @@ main <- function(){
 }
 
 
-
-load_seed_dates <- function(date_path){
-  MW_start_dates <- read_csv("inputs/MW_COVID_startDate_5days.csv") %>%
-    filter(!(UID %in% list(17, 189)))
+load_seed_dates <- function(date_path, n){
+  ### n refers to the threshold for selecting days
+  MW_start_dates <- read_csv(date_path)
+  MW_start_dates <- MW_start_dates %>%
+    select(adm_id, start_day = paste0('day_n', n),
+           start_date = paste0('date_n', n))
+    # filter(!(UID %in% list(17, 189)))
   ##Do some adjusting for start dates
   # t_from0df <- MW_start_dates %>%
   #   filter(UID == UIDlist[i])
   # t_from0 <- t_from0df$Date_from_0 + 1
   return(MW_start_dates)
 }
-
 
 
 load_reductions <- function(relative_path){
@@ -94,10 +102,11 @@ load_reductions <- function(relative_path){
   return(reductions)
 }
 
+
 load_inputs <-function(filename, exclude_list){
   ### 
-  MW_COVID_Inputs <- read_csv(filename)
-  MW_COVID_Inputs = MW_COVID_Inputs %>%
+  inputs <- read_csv(filename)
+  inputs <- inputs %>%
     filter(!(UID %in% exclude_list)) %>%
     gather(var, val, (Hospitalization:Population)) %>%
     unite(temp, Age, var) %>%
@@ -136,7 +145,7 @@ load_inputs <-function(filename, exclude_list){
   inputs$crits_p = 0
   
   
-  return(MW_COVID_Inputs)
+  return(inputs)
 }
 
 
@@ -159,19 +168,26 @@ build_params <- function(input_row, params){
 }
 
 
-run_model <- function(inputs, params, times, init_names, reduction_name){
+run_model <- function(inputs, params, init_names, reduction_name){
   cat("running model for UID", inputs['UID'],'\n')
   params <- build_params(inputs, params)
   params <- lapply(params, as.numeric)
   init <- inputs[names(inputs) %in% init_names]
   init <- sapply(init, as.numeric)
+  times <- seq(inputs['start_day']:365)
 
   sim <- as.data.frame(lsoda(y=init, times=times, func=model, parms=params))
-  sim$lvl2 <- inputs['Lvl2']
-  sim$lvl3 <- inputs['Lvl3']
-  sim$lvl4 <- inputs['Lvl4']
-  sim$TA_Code <- inputs['TA_Code']
-  sim$ID <- inputs['UID']
+  
+  for (n in names(inputs)){
+    if (!(n %in% names(sim))){
+      sim[n] <- inputs[n]
+    }
+  }
+  # sim$lvl2 <- inputs['Lvl2']
+  # sim$lvl3 <- inputs['Lvl3']
+  # sim$lvl4 <- inputs['Lvl4']
+  # sim$TA_Code <- inputs['TA_Code']
+  # sim$ID <- inputs['UID']
   filename <- paste(reduction_name, inputs['TA_Code'], Sys.Date(), sep="_")
   write_csv(sim, file.path(getwd(), outpath, paste0(filename, ".csv")))
 }  
@@ -219,18 +235,13 @@ model <- function(times, init, parms) {
     hosp_p <- eta_p * I_p * kappa2 # incident hospitalizations
     crits_p <- eta2_p * tau * H_p # incident ICUs
     return(list(c(dS_e, dE_e, dI_e, dH_e, dC_e, dR_e, dD_e, inci_e, hosp_e, crits_e,
-<<<<<<< HEAD
                   dS_a, dE_a, dI_a, dH_a, dC_a, dR_a, dD_a, inci_a, hosp_a, crits_a,
                   dS_p, dE_p, dI_p, dH_p, dC_p, dR_p, dD_p, inci_p, hosp_p, crits_p)))
-=======
-          dS_a, dE_a, dI_a, dH_a, dC_a, dR_a, dD_a, inci_a, hosp_a, crits_a,
-          dS_p, dE_p, dI_p, dH_p, dC_p, dR_p, dD_p, inci_p, hosp_p, crits_p)))
->>>>>>> e5b6be242550bf8b1d669ceabd335bc2fdd80ef9
   })
 }
 
 
-<<<<<<< HEAD
+
 stack_results <- function(path){
   
   file_list <- lapply(list.files(path), function(x) file.path(outpath, x))
@@ -238,9 +249,7 @@ stack_results <- function(path){
   combined_df <- do.call(rbind, df_list)
   write_csv(combined_df, file.path(outpath, "stacked_results.csv"))
 }
-=======
 
->>>>>>> e5b6be242550bf8b1d669ceabd335bc2fdd80ef9
 
 # out = inputs %>%
 #   gather(var, val, (Hospitalization:Population)) %>%
@@ -301,4 +310,4 @@ stack_results <- function(path){
 #   print(beta_e2p)
 # })
 # }
-# 
+main()
