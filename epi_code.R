@@ -1,7 +1,10 @@
 set.seed(1234)
 
 setwd("C:\\Users\\Noah\\Documents\\wsl\\git\\git\\africa-covid-work\\africa-covid-work")
+
 outpath <- file.path("epi_csvs", "Malawi", "beta_i_1000")
+# outpath <- file.path("epi_csvs", "Malawi", Sys.Date())
+
 dir.create(outpath)
 
 library(tidyverse)
@@ -45,6 +48,60 @@ main <- function(){
     susceptibility_a = .75,
     susceptibility_p = .5
   ) 
+
+  
+  init_names <- inputs %>% select(ends_with("_e") | ends_with("_a") | ends_with("_p")) %>% colnames()
+  
+  times <- seq(1, 365)
+  
+  for (r in seq(1:length(reductions))){
+    
+    reduction_name <- names(reductions)[[r]]
+    cat("reduction scenario ", reduction_name, '\n')
+
+    fixed_params['reductions'] <- reductions[[r]][1]
+    out <- apply(inputs, 1, run_model, fixed_params, times, init_names, reduction_name)
+
+  }
+  time2 = Sys.time()
+  delta = time2-time1
+  print(paste("Elapsed time:", delta))
+}
+
+
+
+load_seed_dates <- function(date_path){
+  MW_start_dates <- read_csv("inputs/MW_COVID_startDate_5days.csv") %>%
+    filter(!(UID %in% list(17, 189)))
+  ##Do some adjusting for start dates
+  # t_from0df <- MW_start_dates %>%
+  #   filter(UID == UIDlist[i])
+  # t_from0 <- t_from0df$Date_from_0 + 1
+  return(MW_start_dates)
+}
+
+
+
+load_reductions <- function(relative_path){
+  ### relative path describes the folder
+  files <- list.files(relative_path, full.names = TRUE)
+  reductions <- lapply(files, read_csv)
+  names(reductions) <-gsub(".csv", "",
+                           list.files(relative_path,
+                                      full.names = FALSE),
+                           fixed = TRUE)
+
+  return(reductions)
+}
+
+load_inputs <-function(filename, exclude_list){
+  ### 
+  MW_COVID_Inputs <- read_csv(filename)
+  MW_COVID_Inputs = MW_COVID_Inputs %>%
+    filter(!(UID %in% exclude_list)) %>%
+    gather(var, val, (Hospitalization:Population)) %>%
+    unite(temp, Age, var) %>%
+    spread(temp, val)
   
   inputs$UID = inputs$UID
   inputs$S_e = inputs$Elderly_Population
@@ -78,59 +135,7 @@ main <- function(){
   inputs$hosp_p = 0
   inputs$crits_p = 0
   
-  init_names <- inputs %>% select(ends_with("_e") | ends_with("_a") | ends_with("_p")) %>% colnames()
   
-  times <- seq(1, 365)
-  
-  
-  for (r in seq(1:length(reductions))){
-    
-    reduction_name <- names(reductions)[[r]]
-    cat("reduction scenario ", reduction_name, '\n')
-    
-    fixed_params['reductions'] <- reductions[[r]][1]
-    
-    out <- apply(inputs, 1, run_model, fixed_params, times, init_names, reduction_name)
-    
-  }
-  time2 = Sys.time()
-  delta = time2-time1
-  print(paste("Elapsed time:", delta))
-}
-
-
-
-load_seed_dates <- function(date_path){
-  MW_start_dates <- read_csv("inputs/MW_COVID_startDate_5days.csv") %>%
-    filter(!(UID %in% list(17, 189)))
-  ##Do some adjusting for start dates
-  # t_from0df <- MW_start_dates %>%
-  #   filter(UID == UIDlist[i])
-  # t_from0 <- t_from0df$Date_from_0 + 1
-  return(MW_start_dates)
-}
-
-
-
-load_reductions <- function(relative_path){
-  ### relative path describes the folder
-  files <- list.files(relative_path, full.names = TRUE)
-  reductions <- lapply(files, read_csv)
-  names(reductions) <-gsub(".csv", "",
-                           list.files(relative_path,
-                                      full.names = FALSE),
-                           fixed = TRUE)
-  return(reductions)
-}
-
-load_inputs <-function(filename, exclude_list){
-  ### 
-  MW_COVID_Inputs <- read_csv(filename)
-  MW_COVID_Inputs = MW_COVID_Inputs %>%
-    filter(!(UID %in% exclude_list)) %>%
-    gather(var, val, (Hospitalization:Population)) %>%
-    unite(temp, Age, var) %>%
-    spread(temp, val)
   return(MW_COVID_Inputs)
 }
 
@@ -149,7 +154,7 @@ build_params <- function(input_row, params){
   new_params['eta_p'] <- input_row['Pediatrics_Hospitalization']
   new_params['eta2_p'] <- input_row['Pediatrics_Crit_of_Hosp']
   new_params['epsilon_p'] <- input_row['Pediatrics_FR_of_Crit']
-  
+
   return(new_params)
 }
 
@@ -160,14 +165,13 @@ run_model <- function(inputs, params, times, init_names, reduction_name){
   params <- lapply(params, as.numeric)
   init <- inputs[names(inputs) %in% init_names]
   init <- sapply(init, as.numeric)
-  
+
   sim <- as.data.frame(lsoda(y=init, times=times, func=model, parms=params))
   sim$lvl2 <- inputs['Lvl2']
   sim$lvl3 <- inputs['Lvl3']
   sim$lvl4 <- inputs['Lvl4']
   sim$TA_Code <- inputs['TA_Code']
   sim$ID <- inputs['UID']
-  # sim$start <- t_from0/
   filename <- paste(reduction_name, inputs['TA_Code'], Sys.Date(), sep="_")
   write_csv(sim, file.path(getwd(), outpath, paste0(filename, ".csv")))
 }  
@@ -215,12 +219,18 @@ model <- function(times, init, parms) {
     hosp_p <- eta_p * I_p * kappa2 # incident hospitalizations
     crits_p <- eta2_p * tau * H_p # incident ICUs
     return(list(c(dS_e, dE_e, dI_e, dH_e, dC_e, dR_e, dD_e, inci_e, hosp_e, crits_e,
+<<<<<<< HEAD
                   dS_a, dE_a, dI_a, dH_a, dC_a, dR_a, dD_a, inci_a, hosp_a, crits_a,
                   dS_p, dE_p, dI_p, dH_p, dC_p, dR_p, dD_p, inci_p, hosp_p, crits_p)))
+=======
+          dS_a, dE_a, dI_a, dH_a, dC_a, dR_a, dD_a, inci_a, hosp_a, crits_a,
+          dS_p, dE_p, dI_p, dH_p, dC_p, dR_p, dD_p, inci_p, hosp_p, crits_p)))
+>>>>>>> e5b6be242550bf8b1d669ceabd335bc2fdd80ef9
   })
 }
 
 
+<<<<<<< HEAD
 stack_results <- function(path){
   
   file_list <- lapply(list.files(path), function(x) file.path(outpath, x))
@@ -228,6 +238,9 @@ stack_results <- function(path){
   combined_df <- do.call(rbind, df_list)
   write_csv(combined_df, file.path(outpath, "stacked_results.csv"))
 }
+=======
+
+>>>>>>> e5b6be242550bf8b1d669ceabd335bc2fdd80ef9
 
 # out = inputs %>%
 #   gather(var, val, (Hospitalization:Population)) %>%
