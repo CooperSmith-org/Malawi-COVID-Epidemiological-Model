@@ -1,4 +1,4 @@
-﻿UID,Lvl1,Lvl2,Lvl3,Lvl4,Hospitalization,Critical Care,Crit of Hosp,IFR,FR of Crit,FR of Hosp,Population,Age Band,TA_Code,TA_Code2
+﻿UID,Lvl1,Lvl2,Lvl3,Lvl4,Hospitalization,Critical_Care,Crit_of_Hosp,IFR,FR_of_Crit,FR_of_Hosp,Population,Age,TA_Code,TA_Code2
 1,Sub-Saharan Africa,Malawi,Dedza,Dedza Boma,0.000176537,8.83E-06,0.05,3.98E-05,1,0.225632414,11659.81647,Pediatrics,20820,MW20820
 2,Sub-Saharan Africa,Malawi,Dedza,TA Chauma,0.000176537,8.83E-06,0.05,3.98E-05,1,0.225632475,15637.66553,Pediatrics,20805,MW20805
 3,Sub-Saharan Africa,Malawi,Dedza,TA Chilikumwendo,0.000176534,8.83E-06,0.05,3.98E-05,1,0.225634259,46972.96259,Pediatrics,20802,MW20802
