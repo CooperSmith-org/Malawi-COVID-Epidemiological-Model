@@ -1,17 +1,38 @@
-set.seed(1234)
-
-setwd("C:\\Users\\Noah\\Documents\\wsl\\git\\git\\africa-covid-work\\africa-covid-work")
-
-outpath <- file.path("epi_csvs", "Malawi", "beta_i_1000")
-# outpath <- file.path("epi_csvs", "Malawi", Sys.Date())
-
-dir.create(outpath)
-
 library(tidyverse)
 library(deSolve)
 
-main <- function(){
+
+setup <- function(outpath=NULL){
+
+  set.seed(1234)
+  setwd("C:\\Users\\Noah\\Documents\\wsl\\git\\git\\africa-covid-work\\africa-covid-work")
+  
+  if (is.null(outpath)){
+    print("null outpath")
+    print(outpath)
+    outpath <- file.path("epi_csvs", "Malawi", Sys.Date())
+  }
+  else {
+    outpath <- file.path('epi_csvs', 'Malawi', outpath)
+    print(paste("outpath:", outpath, '\n', sep=' '))
+  }
+  # outpath <- file.path("epi_csvs", "Malawi", Sys.Date())
+  
+  unlink(outpath, recursive=TRUE)
+  # if (file.exists(outpath)){
+  #   stop(paste("Please close all files in", outpath, sep=" "))
+  # }
+  dir.create(file.path(outpath))
+  return(outpath)
+  
+}
+
+
+main <- function(outpath=NULL){
   time1 <- Sys.time()
+  
+  outpath <- setup(outpath)
+  print(outpath)
   
   ## load reductions
   reductions_path <- "inputs/reductionScenarios"
@@ -20,11 +41,11 @@ main <- function(){
   ## load inputs
   inputs_path <- "inputs/MW COVID Inputs.csv"
   exclude_list <- list(17, 189, 166, 28, 34, 167)
-  inputs <- load_inputs(inputs_path, exclude_list)[1:20,]
+  inputs <- load_inputs(inputs_path, exclude_list)#[1:3,]
   
   ## load seed dates
   date_path <- "inputs/simulation-seeddates-ta-20200904.csv"
-  seed_dates <- load_seed_dates(date_path, 1)
+  seed_dates <- load_seed_dates(date_path, 5)
   inputs <- left_join(inputs, seed_dates, by=c("TA_Code"="adm_id"))
   
   ### Fixed parameters
@@ -50,23 +71,28 @@ main <- function(){
     susceptibility_p = .5
   ) 
 
-  
   init_names <- inputs %>% select(ends_with("_e") | 
                                     ends_with("_a") | 
                                     ends_with("_p")) %>% colnames()
-  
-  # times <- seq(1, 365)
   
   for (r in seq(1:length(reductions))){
     
     reduction_name <- names(reductions)[[r]]
     cat("reduction scenario ", reduction_name, '\n')
+    outpath_files <- file.path(outpath, reduction_name)
+    dir.create(outpath_files)
 
     fixed_params['reductions'] <- reductions[[r]][1]
+
     
     ### this runs the model in parallel (hopefully)
-    out <- apply(inputs, 1, run_model, fixed_params,
-                 init_names, reduction_name)
+    # print(outpath_files)
+    apply(inputs, 1, run_model, fixed_params,
+            init_names, reduction_name, outpath_files)
+    results <- stack_results(outpath_files)
+    results <- summarize_output(results)
+    # cat('path', file.path(outpath, paste0(reduction_name, "_stacked", '.csv'), '\n'))
+    write_csv(results, file.path(outpath, paste0(reduction_name, "_stacked", '.csv')))
 
   }
   time2 = Sys.time()
@@ -123,8 +149,8 @@ load_inputs <-function(filename, exclude_list){
   inputs$inci_e = 0
   inputs$hosp_e = 0
   inputs$crits_e = 0
-  inputs$S_a = inputs$Adults_Population-1
-  inputs$E_a = 1
+  inputs$S_a = inputs$Adults_Population-1000
+  inputs$E_a = 1000
   inputs$I_a = 0
   inputs$H_a = 0
   inputs$C_a = 0
@@ -143,7 +169,6 @@ load_inputs <-function(filename, exclude_list){
   inputs$inci_p = 0
   inputs$hosp_p = 0
   inputs$crits_p = 0
-  
   
   return(inputs)
 }
@@ -168,13 +193,13 @@ build_params <- function(input_row, params){
 }
 
 
-run_model <- function(inputs, params, init_names, reduction_name){
+run_model <- function(inputs, params, init_names, reduction_name, outpath){
   cat("running model for UID", inputs['UID'],'\n')
   params <- build_params(inputs, params)
   params <- lapply(params, as.numeric)
   init <- inputs[names(inputs) %in% init_names]
   init <- sapply(init, as.numeric)
-  times <- seq(inputs['start_day']:365)
+  times <- seq(from=inputs['start_day'], to=365)
 
   sim <- as.data.frame(lsoda(y=init, times=times, func=model, parms=params))
   
@@ -183,13 +208,9 @@ run_model <- function(inputs, params, init_names, reduction_name){
       sim[n] <- inputs[n]
     }
   }
-  # sim$lvl2 <- inputs['Lvl2']
-  # sim$lvl3 <- inputs['Lvl3']
-  # sim$lvl4 <- inputs['Lvl4']
-  # sim$TA_Code <- inputs['TA_Code']
-  # sim$ID <- inputs['UID']
+
   filename <- paste(reduction_name, inputs['TA_Code'], Sys.Date(), sep="_")
-  write_csv(sim, file.path(getwd(), outpath, paste0(filename, ".csv")))
+  write_csv(sim, file.path(outpath, paste0(filename, ".csv")))
 }  
 
 
@@ -240,74 +261,103 @@ model <- function(times, init, parms) {
   })
 }
 
-
-
 stack_results <- function(path){
   
-  file_list <- lapply(list.files(path), function(x) file.path(outpath, x))
+  cat('the path in stacked files is', path, '\n')
+  file_list <- lapply(list.files(path), function(x) file.path(path, x))
   df_list <- lapply(file_list, read_csv)
   combined_df <- do.call(rbind, df_list)
-  write_csv(combined_df, file.path(outpath, "stacked_results.csv"))
+  return(combined_df)
+  # write_csv(combined_df, file.path(outpath, "stacked_results.csv"))
+}
+
+rename_cols <- function(df){
+  df <- df %>%
+    rename(
+      Elderly_Susceptible=S_e,
+      Elderly_Exposed=E_e,
+      Elderly_Infected=I_e,
+      Elderly_Hospitalizations=H_e,
+      Elderly_Critical=C_e,
+      Elderly_Recovered=R_e,
+      Elderly_Dead=D_e,
+      Elderly_New_Incidence=inci_e,
+      Elderly_New_Hospitalization=hosp_e,
+      Elderly_New_Critical=crits_e,
+      Adult_Susceptible=S_a,
+      Adult_Exposed=E_a,
+      Adult_Infected=I_a,
+      Adult_Hospitalizations=H_a,
+      Adult_Critical=C_a,
+      Adult_Recovered=R_a,
+      Adult_Dead=D_a,
+      Adult_New_Incidence=inci_a,
+      Adult_New_Hospitalization=hosp_a,
+      Adult_New_Critical=crits_a,
+      Pediatric_Susceptible=S_p,
+      Pediatric_Exposed=E_p,
+      Pediatric_Infected=I_p,
+      Pediatric_Hospitalizations=H_p,
+      Pediatric_Critical=C_p,
+      Pediatric_Recovered=R_p,
+      Pediatric_Dead=D_p,
+      Pediatric_New_Incidence=inci_p,
+      Pediatric_New_Hospitalization=hosp_p,
+      Pediatric_New_Critical=crits_p
+    )
+  return(df)
+  
+summarize_output <- function(df){
+  df <- results %>%
+    mutate(
+      Population = Pediatrics_Population
+      + Adults_Population
+      + Elderly_Population
+    ) %>%
+    group_by(time) %>%
+    summarise_at(
+      vars(
+        ends_with('_a'),
+        ends_with('_e'),
+        ends_with('_p'),
+        Population
+      ),
+      sum
+    ) %>%
+    rename_cols()
+  return(df)
+}  
+
+  # df %>%
+  #   rename_with(function(x) paste(get_suffix(x), "Susceptible", sep=' '), starts_with('S_')) %>%
+  #   rename_with(function(x) paste(get_suffix(x), "Exposed", sep=' '), starts_with('E_')) %>%
+  #   rename_with(function(x) paste(get_suffix(x), "Infected", sep=' '), starts_with('I_')) %>%
+  #   rename_with(function(x) paste(get_suffix(x), "Recovered", sep=' '), starts_with('R_')) %>%
+  #   rename_with(function(x) paste(get_suffix(x), "Hospitalized", sep=' '), starts_with('H_')) %>%
+  #   rename_with(function(x) paste(get_suffix(x), "Critical", sep=' '), starts_with('C_')) %>%
+  #   rename_with(function(x) paste(get_suffix(x), "Death", sep=' '), starts_with('D_')) %>%
+  #   rename_with(function(x) paste(get_suffix(x), "Incidence", sep=' '), starts_with('inci_')) %>%
+  #   rename_with(function(x) paste(get_suffix(x), "New_Hospitalized", sep=' '), starts_with('hosp_')) %>%
+  #   rename_with(function(x) paste(get_suffix(x), "New_Critical", sep=' '), starts_with('crits_'))
+  # return(df)
+}
+
+get_suffix <- function(suffix){
+
+  if (suffix == 'a'){
+    return('Adult')
+  }
+  else if (suffix == 'p'){
+    return('Pediatric')
+  }
+  else if (suffix == 'e'){
+    return('Elderly')
+  }
+  else {
+    return(NULL)
+  }
 }
 
 
-# out = inputs %>%
-#   gather(var, val, (Hospitalization:Population)) %>%
-#   unite(temp, Age, var) %>%
-#   spread(temp, val)
-#   select(UID, Hos) %>%
-#   gather(var, val, -(UID, Age))
-#   unite(values, 
-#         c(Critical_Care, Crit_of_Hosp, IFR, FR_of_Crit,
-#           FR_of_Hosp, Population),
-#         sep=',') %>%
-#   spread(Age, values)
-# 
-# row = inputs[1,]
-# fixed_params <- c(
-#   eld2ped = .43,
-#   eld2ad = .5,
-#   eld2eld = .07,
-#   ad2ped = .13,
-#   ad2ad = .5,
-#   ad2eld = .38,
-#   ped2ped = .09,
-#   ped2ad = .39,
-#   ped2eld = .52,
-#   kappa = 1 / 3.5, #time to infectiousness (kappa)
-#   kappa2 = 1 / 3.5, #rest of infectious time and time to symptomatic (kappa2)
-#   tau = 1 / 4, #recovery rate for hospitalized cases (tau)
-#   tau2 = 1 / 8, #recovery rate for ICU cases (tau2)
-#   R0 = 2.2, #basic reproductive number (R0)
-#   efficacy = .5, #assumed reduction of R0 via mask compliance (efficacy)
-#   compliance = .15, #assumed mask usage (compliance)
-#   susceptibility_e = 1.5,
-#   susceptibility_a = .75,
-#   susceptibility_p = .5,
-#   population_e <- row['Elderly_Population'][1],
-#   eta_e <- row['Elderly_Hospitalization'][[1]],
-#   eta2_e <- row['Elderly_Crit_of_Hosp'][[1]],
-#   epsilon_e <- row['Elderly_FR_of_Crit'][[1]],
-#   population_a <- row['Adults_Population'][[1]],
-#   eta_a <- row['Adults_Hospitalization'][[1]],
-#   eta2_a <- row['Adults_Crit_of_Hosp'][[1]],
-#   epsilon_a <- row['Adults_FR_of_Crit'][[1]],
-#   population_p <- row['Pediatrics_Population'][[1]],
-#   eta_p <- row['Pediatrics_Hospitalization'][[1]],
-#   eta2_p <- row['Pediatrics_Crit_of_Hosp'][[1]],
-#   epsilon_p <- row['Pediatrics_FR_of_Crit'][[1]]
-# 
-# )
-# 
-# for (r in reductions)
-# {
-#   fixed_params['reductions'] <- r[[1]]
-#   with(as.list(c(fixed_params)),{
-#   test <- 1-reductions[times]
-#   beta_e2p <- (1-reductions[times])*susceptibility_e*(1 - compliance*efficacy)*R0*kappa*eld2ped/(population_p)
-#   # print(test)
-#   # print(population_p)
-#   print(beta_e2p)
-# })
-# }
-main()
+
+
