@@ -6,7 +6,7 @@ setup <- function(outpath=NULL){
 
   set.seed(1234)
   setwd("C:\\Users\\Noah\\Documents\\wsl\\git\\git\\africa-covid-work\\africa-covid-work")
-  
+  print("running with suscept==100")
   if (is.null(outpath)){
     print("null outpath")
     print(outpath)
@@ -40,8 +40,8 @@ main <- function(outpath=NULL){
   
   ## load inputs
   inputs_path <- "inputs/MW COVID Inputs.csv"
-  exclude_list <- list(17, 189, 166, 28, 34, 167)
-  inputs <- load_inputs(inputs_path, exclude_list)#[1:3,]
+  exclude_list <- list(17, 189, 166, 28, 34, 167, 100, 421)
+  inputs <- load_inputs(inputs_path, exclude_list)#[1:5,]
   
   ## load seed dates
   date_path <- "inputs/simulation-seeddates-ta-20200904.csv"
@@ -66,9 +66,13 @@ main <- function(outpath=NULL){
     R0 = 2.2, #basic reproductive number (R0)
     efficacy = .5, #assumed reduction of R0 via mask compliance (efficacy)
     compliance = .15, #assumed mask usage (compliance)
-    susceptibility_e = 1.5, 
-    susceptibility_a = .75,
-    susceptibility_p = .5
+    susceptibility_e = 1,
+    susceptibility_a = 1,
+    susceptibility_p = 1
+    # susceptibility_e = 1.5,
+    # susceptibility_a = .75,
+    # susceptibility_p = .5
+    
   ) 
 
   init_names <- inputs %>% select(ends_with("_e") | 
@@ -90,9 +94,11 @@ main <- function(outpath=NULL){
     apply(inputs, 1, run_model, fixed_params,
             init_names, reduction_name, outpath_files)
     results <- stack_results(outpath_files)
+    # return(results)
     results <- summarize_output(results)
     # cat('path', file.path(outpath, paste0(reduction_name, "_stacked", '.csv'), '\n'))
     write_csv(results, file.path(outpath, paste0(reduction_name, "_stacked", '.csv')))
+    # return(results)
 
   }
   time2 = Sys.time()
@@ -107,11 +113,7 @@ load_seed_dates <- function(date_path, n){
   MW_start_dates <- MW_start_dates %>%
     select(adm_id, start_day = paste0('day_n', n),
            start_date = paste0('date_n', n))
-    # filter(!(UID %in% list(17, 189)))
-  ##Do some adjusting for start dates
-  # t_from0df <- MW_start_dates %>%
-  #   filter(UID == UIDlist[i])
-  # t_from0 <- t_from0df$Date_from_0 + 1
+
   return(MW_start_dates)
 }
 
@@ -150,7 +152,7 @@ load_inputs <-function(filename, exclude_list){
   inputs$hosp_e = 0
   inputs$crits_e = 0
   inputs$S_a = inputs$Adults_Population-1000
-  inputs$E_a = 1000
+  inputs$E_a = 1
   inputs$I_a = 0
   inputs$H_a = 0
   inputs$C_a = 0
@@ -201,6 +203,8 @@ run_model <- function(inputs, params, init_names, reduction_name, outpath){
   init <- sapply(init, as.numeric)
   times <- seq(from=inputs['start_day'], to=365)
 
+  # print(params)
+  
   sim <- as.data.frame(lsoda(y=init, times=times, func=model, parms=params))
   
   for (n in names(inputs)){
@@ -211,6 +215,7 @@ run_model <- function(inputs, params, init_names, reduction_name, outpath){
 
   filename <- paste(reduction_name, inputs['TA_Code'], Sys.Date(), sep="_")
   write_csv(sim, file.path(outpath, paste0(filename, ".csv")))
+  # return(inputs)
 }  
 
 
@@ -225,41 +230,91 @@ model <- function(times, init, parms) {
     beta_p2p <- (1-reductions[times])*susceptibility_p*(1 - compliance*efficacy)*R0*kappa*ped2ped/(population_p)
     beta_p2a <- (1-reductions[times])*susceptibility_p*(1 - compliance*efficacy)*R0*kappa*ped2ad/(population_a)
     beta_p2e <- (1-reductions[times])*susceptibility_p*(1 - compliance*efficacy)*R0*kappa*ped2eld/(population_e)
-    dS_e <- -(beta_e2e * I_e + beta_e2a * I_a + beta_e2p * I_p) * S_e #susceptible
-    dE_e <- (beta_e2e * I_e + beta_e2a * I_a + beta_e2p * I_p) * S_e -  E_e * kappa #exposed but asymptomatic``    dS_e <- (-beta_e2e * I_e - beta_a2e * I_a - beta_p2e * I_p) * S_e #susceptible
+    # beta_e2p <- (1-reductions[times])*susceptibility_e*(1 - compliance*efficacy)*R0*kappa*(1/3)/(population_p)
+    # beta_e2a <- (1-reductions[times])*susceptibility_e*(1 - compliance*efficacy)*R0*kappa*(1/3)/(population_a)
+    # beta_e2e <- (1-reductions[times])*susceptibility_e*(1 - compliance*efficacy)*R0*kappa*(1/3)/(population_e)
+    # beta_a2p <- (1-reductions[times])*susceptibility_a*(1 - compliance*efficacy)*R0*kappa*(1/3)/(population_p)
+    # beta_a2a <- (1-reductions[times])*susceptibility_a*(1 - compliance*efficacy)*R0*kappa*(1/3)/(population_a)
+    # beta_a2e <- (1-reductions[times])*susceptibility_a*(1 - compliance*efficacy)*R0*kappa*(1/3)/(population_e)
+    # beta_p2p <- (1-reductions[times])*susceptibility_p*(1 - compliance*efficacy)*R0*kappa*(1/3)/(population_p)
+    # beta_p2a <- (1-reductions[times])*susceptibility_p*(1 - compliance*efficacy)*R0*kappa*(1/3)/(population_a)
+    # beta_p2e <- (1-reductions[times])*susceptibility_p*(1 - compliance*efficacy)*R0*kappa*(1/3)/(population_e)
+    dS_e <- -(beta_e2e * (E_e + I_e) + beta_e2a * (I_a + E_a) + beta_e2p * (E_p + I_p)) * S_e #susceptible
+    dE_e <- (beta_e2e * (E_e + I_e) + beta_e2a * (I_a + E_a) + beta_e2p * (E_p + I_p)) * S_e -  E_e * kappa #exposed but asymptomatic
     dI_e <- E_e * kappa - I_e * kappa2 #infectious, but mild severity
     dH_e <- eta_e * I_e  * kappa2 - tau * H_e #hospitalized
     dC_e <- eta2_e* tau * H_e  - tau2 * C_e #critical care
     dR_e <- (1 - eta_e) * I_e * kappa2 + (1 - eta2_e) * tau * H_e + (1 - epsilon_e) * tau2 * C_e #recovered
     dD_e <- epsilon_e * tau2 * C_e #dead
-    inci_e <- (beta_e2e * I_e + beta_e2a * I_a + beta_e2p * I_p) * S_e #incident infections
+    inci_e <- (beta_e2e * (E_e + I_e) + beta_e2a * (I_a + E_a) + beta_e2p * (E_p + I_p)) * S_e #incident infections
     hosp_e <- eta_e * I_e  * kappa2 # incident hospitalizations
     crits_e <- eta2_e * tau * H_e # incident ICUs
-    dS_a <- -(beta_a2e * I_e + beta_a2a * I_a + beta_a2p * I_p) * S_a #susceptible
-    dE_a <- (beta_a2e * I_e + beta_a2a * I_a + beta_a2p * I_p) -  E_a * kappa #exposed but asymptomatic``
+    dS_a <- -(beta_a2e * (E_e + I_e) + beta_a2a * (I_a + E_a) + beta_a2p * (E_p + I_p)) * S_a #susceptible
+    dE_a <- (beta_a2e * (E_e + I_e) + beta_a2a * (I_a + E_a) + beta_a2p * (E_p + I_p)) * S_a -  E_a * kappa #exposed but asymptomatic``
     dI_a <- E_a * kappa - I_a * kappa2 #infectious, but mild severity
     dH_a <- eta_a * I_a  * kappa2 - tau * H_a #hospitalized
     dC_a <- eta2_a * tau * H_a  - tau2 * C_a #critical care
     dR_a <- (1 - eta_a) * I_a * kappa2 + (1 - eta2_a) * tau * H_a + (1 - epsilon_a) * tau2 * C_a #recovered
     dD_a <- epsilon_a * tau2 * C_a #dead
-    inci_a <- (beta_a2e * I_e + beta_a2a * I_a + beta_a2p * I_p) * S_a#incident infections
+    inci_a <- (beta_a2e * (E_e + I_e) + beta_a2a * (I_a + E_a) + beta_a2p * (E_p + I_p)) * S_a#incident infections
     hosp_a <- eta_a * I_a  * kappa2 # incident hospitalizations
     crits_a <- eta2_a * tau * H_a # incident ICUs
-    dS_p <- (beta_p2e * I_e + beta_p2a * I_a + beta_p2p * I_p) * S_p #susceptible
-    dE_p <- (beta_p2e * I_e + beta_p2a * I_a + beta_p2p * I_p) -  E_p * kappa #exposed but asymptomatic``
+    dS_p <- -(beta_p2e * (E_e + I_e) + beta_p2a * (I_a + E_a) + beta_p2p * (E_p + I_p)) * S_p #susceptible
+    dE_p <- (beta_p2e * (E_e + I_e) + beta_p2a * (I_a + E_a) + beta_p2p * (E_p + I_p)) * S_p -  E_p * kappa #exposed but asymptomatic``
     dI_p <- E_p * kappa - I_p * kappa2 #infectious, but mild severity
     dH_p <- eta_p * I_p  * kappa2 - tau * H_p #hospitalized
     dC_p <- eta2_p * tau * H_p - tau2 * C_p #critical care
     dR_p <- (1 - eta_p) * I_p * kappa2 + (1 - eta2_p) * tau * H_p + (1 - epsilon_p) * tau2 * C_p #recovered
     dD_p <- epsilon_p * tau2 * C_p #dead
-    inci_p <- (beta_p2e * I_e + beta_p2a * I_a + beta_p2p * I_p) * S_p #incident infections
+    inci_p <- (beta_p2e * (E_e + I_e) + beta_p2a * (I_a + E_a) + beta_p2p * (E_p + I_p)) * S_p #incident infections
     hosp_p <- eta_p * I_p * kappa2 # incident hospitalizations
     crits_p <- eta2_p * tau * H_p # incident ICUs
-    return(list(c(dS_e, dE_e, dI_e, dH_e, dC_e, dR_e, dD_e, inci_e, hosp_e, crits_e,
+    # dS_e <- -(beta_e2e * I_e + beta_e2a * I_a + beta_e2p * I_p) * S_e #susceptible
+    # dE_e <- (beta_e2e * I_e + beta_e2a * I_a + beta_e2p * I_p) * S_e -  E_e * kappa #exposed but asymptomatic``    
+    # dI_e <- E_e * kappa - I_e * kappa2 #infectious, but mild severity
+    # dH_e <- eta_e * I_e  * kappa2 - tau * H_e #hospitalized
+    # dC_e <- eta2_e* tau * H_e  - tau2 * C_e #critical care
+    # dR_e <- (1 - eta_e) * I_e * kappa2 + (1 - eta2_e) * tau * H_e + (1 - epsilon_e) * tau2 * C_e #recovered
+    # dD_e <- epsilon_e * tau2 * C_e #dead
+    # inci_e <- (beta_e2e * I_e + beta_e2a * I_a + beta_e2p * I_p) * S_e #incident infections
+    # hosp_e <- eta_e * I_e  * kappa2 # incident hospitalizations
+    # crits_e <- eta2_e * tau * H_e # incident ICUs
+    # dS_a <- -(beta_a2e * I_e + beta_a2a * I_a + beta_a2p * I_p) * S_a #susceptible
+    # dE_a <- (beta_a2e * I_e + beta_a2a * I_a + beta_a2p * I_p) -  E_a * kappa #exposed but asymptomatic``
+    # dI_a <- E_a * kappa - I_a * kappa2 #infectious, but mild severity
+    # dH_a <- eta_a * I_a  * kappa2 - tau * H_a #hospitalized
+    # dC_a <- eta2_a * tau * H_a  - tau2 * C_a #critical care
+    # dR_a <- (1 - eta_a) * I_a * kappa2 + (1 - eta2_a) * tau * H_a + (1 - epsilon_a) * tau2 * C_a #recovered
+    # dD_a <- epsilon_a * tau2 * C_a #dead
+    # inci_a <- (beta_a2e * I_e + beta_a2a * I_a + beta_a2p * I_p) * S_a#incident infections
+    # hosp_a <- eta_a * I_a  * kappa2 # incident hospitalizations
+    # crits_a <- eta2_a * tau * H_a # incident ICUs
+    # dS_p <- (beta_p2e * I_e + beta_p2a * I_a + beta_p2p * I_p) * S_p #susceptible
+    # dE_p <- (beta_p2e * I_e + beta_p2a * I_a + beta_p2p * I_p) -  E_p * kappa #exposed but asymptomatic``
+    # dI_p <- E_p * kappa - I_p * kappa2 #infectious, but mild severity
+    # dH_p <- eta_p * I_p  * kappa2 - tau * H_p #hospitalized
+    # dC_p <- eta2_p * tau * H_p - tau2 * C_p #critical care
+    # dR_p <- (1 - eta_p) * I_p * kappa2 + (1 - eta2_p) * tau * H_p + (1 - epsilon_p) * tau2 * C_p #recovered
+    # dD_p <- epsilon_p * tau2 * C_p #dead
+    # inci_p <- (beta_p2e * I_e + beta_p2a * I_a + beta_p2p * I_p) * S_p #incident infections
+    # hosp_p <- eta_p * I_p * kappa2 # incident hospitalizations
+    # crits_p <- eta2_p * tau * H_p # incident ICUs
+    return(list(c(
+                  dS_e, dE_e, dI_e, dH_e, dC_e, dR_e, dD_e, inci_e, hosp_e, crits_e,
                   dS_a, dE_a, dI_a, dH_a, dC_a, dR_a, dD_a, inci_a, hosp_a, crits_a,
                   dS_p, dE_p, dI_p, dH_p, dC_p, dR_p, dD_p, inci_p, hosp_p, crits_p)))
   })
 }
+# beta_e2p <- (1-reductions[times])*susceptibility_e*(1 - compliance*efficacy)*R0*kappa*eld2ped/(population_p)
+# beta_e2a <- (1-reductions[times])*susceptibility_e*(1 - compliance*efficacy)*R0*kappa*eld2ad/(population_a)
+# beta_e2e <- (1-reductions[times])*susceptibility_e*(1 - compliance*efficacy)*R0*kappa*eld2eld/(population_e)
+# beta_a2p <- (1-reductions[times])*susceptibility_a*(1 - compliance*efficacy)*R0*kappa*ad2ped/(population_p)
+# beta_a2a <- (1-reductions[times])*susceptibility_a*(1 - compliance*efficacy)*R0*kappa*ad2ad/(population_a)
+# beta_a2e <- (1-reductions[times])*susceptibility_a*(1 - compliance*efficacy)*R0*kappa*ad2eld/(population_e)
+# beta_p2p <- (1-reductions[times])*susceptibility_p*(1 - compliance*efficacy)*R0*kappa*ped2ped/(population_p)
+# beta_p2a <- (1-reductions[times])*susceptibility_p*(1 - compliance*efficacy)*R0*kappa*ped2ad/(population_a)
+# beta_p2e <- (1-reductions[times])*susceptibility_p*(1 - compliance*efficacy)*R0*kappa*ped2eld/(population_e)
+
 
 stack_results <- function(path){
   
@@ -306,9 +361,10 @@ rename_cols <- function(df){
       Pediatric_New_Critical=crits_p
     )
   return(df)
+}
   
 summarize_output <- function(df){
-  df <- results %>%
+  df <- df %>%
     mutate(
       Population = Pediatrics_Population
       + Adults_Population
@@ -340,7 +396,7 @@ summarize_output <- function(df){
   #   rename_with(function(x) paste(get_suffix(x), "New_Hospitalized", sep=' '), starts_with('hosp_')) %>%
   #   rename_with(function(x) paste(get_suffix(x), "New_Critical", sep=' '), starts_with('crits_'))
   # return(df)
-}
+
 
 get_suffix <- function(suffix){
 
