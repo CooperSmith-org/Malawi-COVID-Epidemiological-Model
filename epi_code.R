@@ -47,7 +47,10 @@ main <- function(outpath=NULL){
   date_path <- "inputs/simulation-seeddates-ta-20200904.csv"
   seed_dates <- load_seed_dates(date_path, 5)
   inputs <- left_join(inputs, seed_dates, by=c("TA_Code"="adm_id"))
-  
+
+  ## load params
+  # param_df <- load_params(param_path)
+    
   ### Fixed parameters
   fixed_params <- c(
     eld2ped = .43,
@@ -151,7 +154,7 @@ load_inputs <-function(filename, exclude_list){
   inputs$inci_e = 0
   inputs$hosp_e = 0
   inputs$crits_e = 0
-  inputs$S_a = inputs$Adults_Population-1000
+  inputs$S_a = inputs$Adults_Population-1
   inputs$E_a = 1
   inputs$I_a = 0
   inputs$H_a = 0
@@ -412,6 +415,13 @@ get_suffix <- function(suffix){
   else {
     return(NULL)
   }
+}
+
+load_params <- function(path){
+  
+  df <- read_csv(path)
+  results(df)
+  
 }
 
 
