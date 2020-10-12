@@ -1,2 +1,0 @@
-output_name,seed_date_threshold,eld2ped,eld2ad,eld2eld,ad2ped,ad2ad,ad2eld,ped2ped,ped2ad,ped2eld,kappa,kappa2,tau,tau2,R0,efficacy,compliance,susceptibility_e,susceptibility_a,susceptibility_p,E_e,I_e,H_e,C_e,R_e,D_e,inci_e,hosp_e,crits_e,S_a,E_a,I_a,H_a,C_a,R_a,D_a,inci_a,hosp_a,crits_a,E_p,I_p,H_p,C_p,R_p,D_p,inci_p,hosp_p,crits_p
-equal susceptibilities,1,0.43,0.5,0.07,0.13,0.5,0.38,0.09,0.39,0.52,0.285714286,0.285714286,0.25,0.125,2.2,0.5,0.15,1,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

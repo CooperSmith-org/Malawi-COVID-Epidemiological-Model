@@ -2,8 +2,7 @@ library(tidyverse)
 library(deSolve)
 
 set.seed(1234)
-setwd("C:\\Users\\Noah\\Documents\\wsl\\git\\git\\africa-covid-work\\africa-covid-work")
-
+setwd("~/GitHub/Malawi-COVID-Epidemiological-Model")
 
 
 execute <- function(params_df_path){
@@ -386,6 +385,5 @@ aggregate_age_groups <- function(df){
   return(df)
 }
 
-
-
-
+###run model based on the parameter assumptions in the input template
+execute("~/GitHub/Malawi-COVID-Epidemiological-Model/inputs/params_inits_template.csv")
