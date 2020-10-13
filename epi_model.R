@@ -4,7 +4,7 @@ library(deSolve)
 ## to run, type execute('inputs/params_inits_template.csv') Or other file path
 
 set.seed(1234)
-# setwd("~/GitHub/Malawi-COVID-Epidemiological-Model")
+setwd("~/GitHub/Malawi-COVID-Epidemiological-Model")
 
 
 execute <- function(params_df_path){
@@ -27,8 +27,8 @@ execute <- function(params_df_path){
     
     output_name <- data['output_name'][[1]]
     print(paste("output name", output_name, '\n'))
-    # date_threshold = 1 ### change later
-    date_threshold = data['seed_date_threshold'][[1]] ### change later
+    # date_threshold = 1 
+    date_threshold = data['seed_date_threshold'][[1]] 
     print(paste('data_threshold ', date_threshold, '\n'))
     outpath <- setup(output_name)
     write_csv(data, file.path(outpath, "params.csv"))
@@ -370,7 +370,7 @@ calc_deltas <- function(df, params){
               funs(lag))
   colnames(new_df) <- sapply(colnames(new_df), function(x) paste0('lag_', x))
   new_df <- cbind(df, new_df)
-  ]
+  
 for (age in c('e', 'a', 'p')){
   new_df[paste0('new_E_', age)] = new_df[paste0('lag_S_', age)] - new_df[paste0('S_', age)]
   new_df[paste0('new_I_', age)] = new_df[paste0('lag_E_', age)] - new_df[paste0('E_', age)] + new_df[paste0('new_E_', age)]   
