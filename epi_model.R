@@ -1,11 +1,11 @@
 library(tidyverse)
 library(deSolve)
 
-## to run, type execute('inputs/params_inits_template.csv') Or other file path
 
+## to run, type execute('inputs/params_inits_template.csv') Or other file path
 set.seed(1234)
 # setwd("~/GitHub/Malawi-COVID-Epidemiological-Model")
-
+setwd("C:\\Users\\Noah\\Documents\\wsl\\git\\git\\africa-covid-work\\africa-covid-work")
 
 execute <- function(params_df_path){
   ### runs model for all sets of params in params file
@@ -24,15 +24,14 @@ execute <- function(params_df_path){
                            as.numeric)
     inits <- data %>% select(E_e:crits_p)
     
-    
     output_name <- data['output_name'][[1]]
     print(paste("output name", output_name, '\n'))
-    # date_threshold = 1 ### change later
-    date_threshold = data['seed_date_threshold'][[1]] ### change later
+    date_threshold = data['seed_date_threshold'][[1]]
+    masking_compliance = data['compliance_path'][[1]]
     print(paste('data_threshold ', date_threshold, '\n'))
     outpath <- setup(output_name)
     write_csv(data, file.path(outpath, "params.csv"))
-    sim = run_model_for_params(fixed_params, inits, outpath, date_threshold)
+    sim = run_model_for_params(fixed_params, inits, outpath, date_threshold, masking_compliance)
   }
 }
 
@@ -40,7 +39,6 @@ setup <- function(outpath=NULL){
   ## creates directory for output and returns path
   
   if (is.null(outpath)){
-    
     outpath <- file.path("epi_csvs", "Malawi", Sys.Date())
     print(paste("Outpath set to", outpath))
   }
@@ -55,7 +53,7 @@ setup <- function(outpath=NULL){
 }
 
 
-run_model_for_params <- function(fixed_params, inits, outpath=NULL, date_threshold=1){
+run_model_for_params <- function(fixed_params, inits, outpath=NULL, date_threshold=1, masking_compliance){
   ## runs model for fixed params and init
   time1 <- Sys.time()
   
@@ -64,6 +62,11 @@ run_model_for_params <- function(fixed_params, inits, outpath=NULL, date_thresho
   ## load reductions
   reductions_path <- "inputs/reductionScenarios"
   reductions <- load_reductions(reductions_path)
+  
+  ## load masking
+  masking_compliance_path <- "inputs/masking_complianice.csv"
+  fixed_params['compliance'] <- read_csv(file.path('inputs/masking', masking_compliance))
+  
   
   ## load inputs
   inputs_path <- "inputs/MW COVID Inputs.csv"
@@ -88,6 +91,7 @@ run_model_for_params <- function(fixed_params, inits, outpath=NULL, date_thresho
     outpath_files <- file.path(outpath, reduction_name)
     dir.create(outpath_files)
     fixed_params['reductions'] <- reductions[[r]][1]
+    ## fixed_params['masking_compliance'] <-  
     
     ## actually run model
     sim = apply(inputs, 1, run_model, fixed_params,
@@ -126,6 +130,11 @@ load_reductions <- function(relative_path){
                                       full.names = FALSE),
                            fixed = TRUE)
   return(reductions)
+}
+
+load_masking_compliance <- function(path){
+  masking_compliance <- read_csv(path)
+  return(masking_compliance)
 }
 
 
@@ -216,15 +225,15 @@ run_model <- function(
 model <- function(times, init, parms) {
   ### model is an argument for lsoda, see lsoda documentation for details
   with(as.list(c(init, parms)), {
-    beta_e2p <- (1-reductions[times])*susceptibility_e*(1 - compliance*efficacy)*R0*(1/(1/kappa+1/kappa2))*eld2ped/(population_p)
-    beta_e2a <- (1-reductions[times])*susceptibility_e*(1 - compliance*efficacy)*R0*(1/(1/kappa+1/kappa2))*eld2ad/(population_a)
-    beta_e2e <- (1-reductions[times])*susceptibility_e*(1 - compliance*efficacy)*R0*(1/(1/kappa+1/kappa2))*eld2eld/(population_e)
-    beta_a2p <- (1-reductions[times])*susceptibility_a*(1 - compliance*efficacy)*R0*(1/(1/kappa+1/kappa2))*ad2ped/(population_p)
-    beta_a2a <- (1-reductions[times])*susceptibility_a*(1 - compliance*efficacy)*R0*(1/(1/kappa+1/kappa2))*ad2ad/(population_a)
-    beta_a2e <- (1-reductions[times])*susceptibility_a*(1 - compliance*efficacy)*R0*(1/(1/kappa+1/kappa2))*ad2eld/(population_e)
-    beta_p2p <- (1-reductions[times])*susceptibility_p*(1 - compliance*efficacy)*R0*(1/(1/kappa+1/kappa2))*ped2ped/(population_p)
-    beta_p2a <- (1-reductions[times])*susceptibility_p*(1 - compliance*efficacy)*R0*(1/(1/kappa+1/kappa2))*ped2ad/(population_a)
-    beta_p2e <- (1-reductions[times])*susceptibility_p*(1 - compliance*efficacy)*R0*(1/(1/kappa+1/kappa2))*ped2eld/(population_e)
+    beta_e2p <- (1-reductions[times])*susceptibility_e*(1 - compliance[times]*efficacy)*R0*(1/(1/kappa+1/kappa2))*eld2ped/(population_p)
+    beta_e2a <- (1-reductions[times])*susceptibility_e*(1 - compliance[times]*efficacy)*R0*(1/(1/kappa+1/kappa2))*eld2ad/(population_a)
+    beta_e2e <- (1-reductions[times])*susceptibility_e*(1 - compliance[times]*efficacy)*R0*(1/(1/kappa+1/kappa2))*eld2eld/(population_e)
+    beta_a2p <- (1-reductions[times])*susceptibility_a*(1 - compliance[times]*efficacy)*R0*(1/(1/kappa+1/kappa2))*ad2ped/(population_p)
+    beta_a2a <- (1-reductions[times])*susceptibility_a*(1 - compliance[times]*efficacy)*R0*(1/(1/kappa+1/kappa2))*ad2ad/(population_a)
+    beta_a2e <- (1-reductions[times])*susceptibility_a*(1 - compliance[times]*efficacy)*R0*(1/(1/kappa+1/kappa2))*ad2eld/(population_e)
+    beta_p2p <- (1-reductions[times])*susceptibility_p*(1 - compliance[times]*efficacy)*R0*(1/(1/kappa+1/kappa2))*ped2ped/(population_p)
+    beta_p2a <- (1-reductions[times])*susceptibility_p*(1 - compliance[times]*efficacy)*R0*(1/(1/kappa+1/kappa2))*ped2ad/(population_a)
+    beta_p2e <- (1-reductions[times])*susceptibility_p*(1 - compliance[times]*efficacy)*R0*(1/(1/kappa+1/kappa2))*ped2eld/(population_e)
     
     dS_e <- -(beta_e2e * (E_e + I_e) + beta_e2a * (I_a + E_a) + beta_e2p * (E_p + I_p)) * S_e #susceptible
     dE_e <- (beta_e2e * (E_e + I_e) + beta_e2a * (I_a + E_a) + beta_e2p * (E_p + I_p)) * S_e -  E_e * kappa #exposed but asymptomatic
@@ -370,7 +379,7 @@ calc_deltas <- function(df, params){
               funs(lag))
   colnames(new_df) <- sapply(colnames(new_df), function(x) paste0('lag_', x))
   new_df <- cbind(df, new_df)
-  ]
+  
 for (age in c('e', 'a', 'p')){
   new_df[paste0('new_E_', age)] = new_df[paste0('lag_S_', age)] - new_df[paste0('S_', age)]
   new_df[paste0('new_I_', age)] = new_df[paste0('lag_E_', age)] - new_df[paste0('E_', age)] + new_df[paste0('new_E_', age)]   
