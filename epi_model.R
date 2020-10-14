@@ -4,8 +4,10 @@ library(deSolve)
 
 ## to run, type execute('inputs/params_inits_template.csv') Or other file path
 set.seed(1234)
-# setwd("~/GitHub/Malawi-COVID-Epidemiological-Model")
+
 setwd("C:\\Users\\Noah\\Documents\\wsl\\git\\git\\africa-covid-work\\africa-covid-work")
+setwd("~/GitHub/Malawi-COVID-Epidemiological-Model")
+
 
 execute <- function(params_df_path){
   ### runs model for all sets of params in params file
@@ -28,6 +30,7 @@ execute <- function(params_df_path){
     print(paste("output name", output_name, '\n'))
     date_threshold = data['seed_date_threshold'][[1]]
     masking_compliance = data['compliance_path'][[1]]
+
     print(paste('data_threshold ', date_threshold, '\n'))
     outpath <- setup(output_name)
     write_csv(data, file.path(outpath, "params.csv"))
