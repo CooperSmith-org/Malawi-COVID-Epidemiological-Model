@@ -6,7 +6,7 @@ library(deSolve)
 set.seed(1234)
 
 setwd("C:\\Users\\Noah\\Documents\\wsl\\git\\git\\africa-covid-work\\africa-covid-work")
-setwd("~/GitHub/Malawi-COVID-Epidemiological-Model")
+# setwd("~/GitHub/Malawi-COVID-Epidemiological-Model")
 
 
 execute <- function(params_df_path){
@@ -67,7 +67,7 @@ run_model_for_params <- function(fixed_params, inits, outpath=NULL, date_thresho
   reductions <- load_reductions(reductions_path)
   
   ## load masking
-  masking_compliance_path <- "inputs/masking_complianice.csv"
+  # masking_compliance_path <- "inputs/masking_complianice.csv"
   fixed_params['compliance'] <- read_csv(file.path('inputs/masking', masking_compliance))
   
   
