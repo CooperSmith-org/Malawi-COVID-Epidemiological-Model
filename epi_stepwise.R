@@ -137,7 +137,7 @@ end_time <- Sys.time()
 
 print(end_time - start_time)
 
-l = 400
+l = 322
 
 plot(s[[AGE_ADULT]][l,], type='l', col='blue', ylim=c(0,max(s[[AGE_ADULT]][l,])))
 lines(e[[AGE_ADULT]][l,], type='l', col='purple')
