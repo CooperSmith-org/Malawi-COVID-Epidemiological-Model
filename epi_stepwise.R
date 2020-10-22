@@ -1,3 +1,4 @@
+library(ggplot2)
 library(tidyverse)
 
 start_time <- Sys.time()
@@ -60,6 +61,7 @@ dfs_ages <- list(
 )
 
 s <- list()
+n <- list()
 e <- list()
 i <- list()
 h <- list()
@@ -72,6 +74,7 @@ for (age in ages) {
   dfs_ages[[age]]$empty_state = 0
   
   s[[age]] <- matrix(dfs_ages[[age]]$Population)
+  n[[age]] <- matrix(dfs_ages[[age]]$empty_state)
   e[[age]] <- matrix(dfs_ages[[age]]$empty_state)
   i[[age]] <- matrix(dfs_ages[[age]]$empty_state)
   h[[age]] <- matrix(dfs_ages[[age]]$empty_state)
@@ -87,6 +90,7 @@ for (day in 2:n_days) {
   
   for (age in ages) {
     s_ <- s[[age]]
+    n_ <- n[[age]]
     e_ <- e[[age]]
     i_ <- i[[age]]
     h_ <- h[[age]]
@@ -101,6 +105,7 @@ for (day in 2:n_days) {
     new_infections <- rowSums(new_by_age) * behaviour_mod[[day]] * s_[,yday]
     
     s[[age]] <- cbind(s_, s_[,yday] - new_infections)
+    n[[age]] <- cbind(n_, 1 * new_infections)
     e[[age]] <- cbind(e_, e_[,yday] + new_infections - e_[,yday] / exposed_time)
     i[[age]] <- cbind(i_, i_[,yday] + e_[,yday] / exposed_time - i_[,yday] / infected_time)
     h[[age]] <- cbind(h_, h_[,yday] + i_[,yday] * dfs_ages[[age]]$Hospitalization / infected_time - h_[,yday] / hosp_time)
@@ -121,28 +126,34 @@ df_loc_info
 
 df_pandemic <- bind_rows(lapply(ages, function(age) {
   rbind(
-    cbind(df_loc_info, age=age_names[[age]], state='Susceptible', s[[age]]),
-    cbind(df_loc_info, age=age_names[[age]], state='Exposed', e[[age]]),
-    cbind(df_loc_info, age=age_names[[age]], state='Infected', i[[age]]),
-    cbind(df_loc_info, age=age_names[[age]], state='Hospitalized', h[[age]]),
-    cbind(df_loc_info, age=age_names[[age]], state='Critical', c[[age]]),
-    cbind(df_loc_info, age=age_names[[age]], state='Recovered', r[[age]]),
-    cbind(df_loc_info, age=age_names[[age]], state='Dead', d[[age]])
+    cbind(df_loc_info, Age=age_names[[age]], State='Susceptible', s[[age]]),
+    cbind(df_loc_info, Age=age_names[[age]], State='New Infections', n[[age]]),
+    cbind(df_loc_info, Age=age_names[[age]], State='Exposed', e[[age]]),
+    cbind(df_loc_info, Age=age_names[[age]], State='Infected', i[[age]]),
+    cbind(df_loc_info, Age=age_names[[age]], State='Hospitalized', h[[age]]),
+    cbind(df_loc_info, Age=age_names[[age]], State='Critical', c[[age]]),
+    cbind(df_loc_info, Age=age_names[[age]], State='Recovered', r[[age]]),
+    cbind(df_loc_info, Age=age_names[[age]], State='Dead', d[[age]])
   )
 }))
 
 # write.csv(df_pandemic, '../out/pandemic-stepwise.csv')
 
+df_ta <- df_pandemic %>% pivot_longer(
+  !matches("[A-Za-z]"), names_to='Day', values_to='People', 
+  names_transform=list(Day=as.integer))
+
+df_district <- df_ta %>% 
+  group_by(Lvl3,Day,State) %>%
+  summarise(People=sum(People))
+
+df_country <- df_district %>% 
+  group_by(Day,State) %>%
+  summarise(People=sum(People))
+
 end_time <- Sys.time()
 
 print(end_time - start_time)
 
-l = 322
-
-plot(s[[AGE_ADULT]][l,], type='l', col='blue', ylim=c(0,max(s[[AGE_ADULT]][l,])))
-lines(e[[AGE_ADULT]][l,], type='l', col='purple')
-lines(i[[AGE_ADULT]][l,], type='l', col='yellow')
-lines(h[[AGE_ADULT]][l,], type='l', col='orange')
-lines(c[[AGE_ADULT]][l,], type='l', col='red')
-lines(r[[AGE_ADULT]][l,], type='l', col='green')
-lines(d[[AGE_ADULT]][l,], type='l', col='black')
+options(scipen=999)
+ggplot(data=df_country, aes(x=Day, y=People, group=State, color=State)) + geom_line()
