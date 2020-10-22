@@ -5,8 +5,8 @@ library(deSolve)
 ## to run, type execute('inputs/params_inits_template.csv') Or other file path
 set.seed(1234)
 
-setwd("C:\\Users\\Noah\\Documents\\wsl\\git\\git\\africa-covid-work\\africa-covid-work")
-# setwd("~/GitHub/Malawi-COVID-Epidemiological-Model")
+# setwd("C:\\Users\\Noah\\Documents\\wsl\\git\\git\\africa-covid-work\\africa-covid-work")
+setwd("C:/Users/Michael/Git/Malawi-COVID-Epidemiological-Model")
 
 
 execute <- function(params_df_path){
@@ -110,6 +110,7 @@ run_model_for_params <- function(fixed_params, inits, outpath=NULL, date_thresho
   ## timing not working for unknown reason
   time2 = Sys.time()
   delta = time2-time1
+  print(delta)
   print(paste("Elapsed time:", delta))
 }
 

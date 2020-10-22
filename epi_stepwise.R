@@ -9,6 +9,7 @@ AGE_ADULT <- 2
 AGE_ELDER <- 3
 
 ages = c(AGE_CHILD, AGE_ADULT, AGE_ELDER)
+age_names = c('Pediatric', 'Adult', 'Elderly')
 
 df_distancing <- read_csv('reductionScenarios/current.csv')
 df_masking <- read_csv('masking/masking_compliance.csv')
@@ -38,24 +39,21 @@ excluded_locations <- c(20407,10106,20251,20118,20102,20511,21071,30303,21070,10
 df_locations <- df_locations %>% 
   filter(!(TA_Code %in% excluded_locations))
 
-#df_locations <- head(df_locations, 5)
-df_locations
-
 df_locations$age_code = 0
 
 df_locations$age_code[df_locations$Age == 'Pediatrics'] <- AGE_CHILD
 df_locations$age_code[df_locations$Age == 'Adults'] <- AGE_ADULT
 df_locations$age_code[df_locations$Age == 'Elderly'] <- AGE_ELDER
 
+seed_column <- paste('day_n', seed_threshold, sep='')
+df_seed_dates <- df_seed[c('adm_id', seed_column)] %>% rename(start_day=seed_column)
+df_locations <- left_join(df_locations, df_seed_dates, by=c('TA_Code'='adm_id'))
+
 behaviour_mod <- (1 - df_distancing$reduc) * (1 - df_masking$masking_compliance * mask_effectiveness)
 
 base_infection_rate <- r0 / (exposed_time + infected_time)
 
-df_child = 
-df_adult = 
-df_elder = 
-
-dfs_ages = list(
+dfs_ages <- list(
   df_locations[df_locations$age_code == AGE_CHILD,],
   df_locations[df_locations$age_code == AGE_ADULT,],
   df_locations[df_locations$age_code == AGE_ELDER,]
@@ -82,8 +80,6 @@ for (age in ages) {
   d[[age]] <- matrix(dfs_ages[[age]]$empty_state)
 }
 
-# Initial infections - 1 adult on day 1 in every location
-e[[AGE_ADULT]][,1] <- 1 
 n_days = 365
 
 for (day in 2:n_days) {
@@ -115,7 +111,27 @@ for (day in 2:n_days) {
                           c_[,yday] * (1 - dfs_ages[[age]]$FR_of_Crit) / crit_time)
     d[[age]] <- cbind(d_, d_[,yday] + c_[,yday] * dfs_ages[[age]]$FR_of_Crit / crit_time)
   }
+  
+  # Add one infected adult to all locations with this start day
+  e[[AGE_ADULT]][,day] <- e[[AGE_ADULT]][,day] + (dfs_ages[[AGE_ADULT]]$start_day == day)
 }
+
+df_loc_info <- dfs_ages[[age]][c('TA_Code','Lvl3','Lvl4')]
+df_loc_info
+
+df_pandemic <- bind_rows(lapply(ages, function(age) {
+  rbind(
+    cbind(df_loc_info, age=age_names[[age]], state='Susceptible', s[[age]]),
+    cbind(df_loc_info, age=age_names[[age]], state='Exposed', e[[age]]),
+    cbind(df_loc_info, age=age_names[[age]], state='Infected', i[[age]]),
+    cbind(df_loc_info, age=age_names[[age]], state='Hospitalized', h[[age]]),
+    cbind(df_loc_info, age=age_names[[age]], state='Critical', c[[age]]),
+    cbind(df_loc_info, age=age_names[[age]], state='Recovered', r[[age]]),
+    cbind(df_loc_info, age=age_names[[age]], state='Dead', d[[age]])
+  )
+}))
+
+# write.csv(df_pandemic, '../out/pandemic-stepwise.csv')
 
 end_time <- Sys.time()
 
@@ -130,4 +146,3 @@ lines(h[[AGE_ADULT]][l,], type='l', col='orange')
 lines(c[[AGE_ADULT]][l,], type='l', col='red')
 lines(r[[AGE_ADULT]][l,], type='l', col='green')
 lines(d[[AGE_ADULT]][l,], type='l', col='black')
-
