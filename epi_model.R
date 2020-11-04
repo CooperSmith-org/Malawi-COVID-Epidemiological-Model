@@ -6,7 +6,7 @@ library(deSolve)
 set.seed(1234)
 
 # setwd("C:\\Users\\Noah\\Documents\\wsl\\git\\git\\africa-covid-work\\africa-covid-work")
-setwd("C:/Users/Michael/Git/Malawi-COVID-Epidemiological-Model")
+# setwd("C:/Users/Michael/Git/Malawi-COVID-Epidemiological-Model")
 
 
 execute <- function(params_df_path){
@@ -34,7 +34,7 @@ execute <- function(params_df_path){
     print(paste('data_threshold ', date_threshold, '\n'))
     outpath <- setup(output_name)
     write_csv(data, file.path(outpath, "params.csv"))
-    sim = run_model_for_params(fixed_params, inits, outpath, date_threshold, masking_compliance)
+    sim = run_model_for_params(fixed_params, inits, date_threshold, masking_compliance, inputs_path, date_path)
   }
 }
 
@@ -56,28 +56,25 @@ setup <- function(outpath=NULL){
 }
 
 
-run_model_for_params <- function(fixed_params, inits, outpath=NULL, date_threshold=1, masking_compliance){
+run_model_for_params <- function(fixed_params, inits, date_threshold=1, masking_compliance, inputs_path, date_path){
   ## runs model for fixed params and init
   time1 <- Sys.time()
   
-  print(paste("Outpath", outpath))
-  
   ## load reductions
-  reductions_path <- "inputs/reductionScenarios"
+  reductions_path <- "reductionScenarios"
   reductions <- load_reductions(reductions_path)
   
   ## load masking
-  # masking_compliance_path <- "inputs/masking_complianice.csv"
-  fixed_params['compliance'] <- read_csv(file.path('inputs/masking', masking_compliance))
+  fixed_params['compliance'] <- read_csv(file.path('masking', masking_compliance))
   
   
   ## load inputs
-  inputs_path <- "inputs/MW COVID Inputs.csv"
-  exclude_list <- list(17, 189, 166, 28, 34, 167, 100, 421, 99, 180, 230) ## excluded for various reasons - most often no population in an age group
-  inputs <- load_inputs(inputs_path, exclude_list, inits)
+  # inputs_path <- "inputs/MW COVID Inputs.csv"
+  # exclude_list <- list(17, 189, 166, 28, 34, 167, 100, 421, 99, 180, 230) ## excluded for various reasons - most often no population in an age group
+  inputs <- load_inputs(inputs_path, inits)
   
   ## load seed dates
-  date_path <- "inputs/simulation-seeddates-ta-20200910.csv"
+  # date_path <- "inputs/simulation-seeddates-ta-20200910.csv"
   seed_dates <- load_seed_dates(date_path, date_threshold)
   inputs <- left_join(inputs, seed_dates, by=c("TA_Code"="adm_id"))
   
@@ -88,23 +85,13 @@ run_model_for_params <- function(fixed_params, inits, outpath=NULL, date_thresho
   ## iterate through reduction scenarios
   for (r in seq(1:length(reductions))){
     
-    ## create directory for output
-    reduction_name <- names(reductions)[[r]]
-    print(paste("reduction scenario ", reduction_name))
-    outpath_files <- file.path(outpath, reduction_name)
-    dir.create(outpath_files)
-    fixed_params['reductions'] <- reductions[[r]][1]
-    ## fixed_params['masking_compliance'] <-  
-    
+
     ## actually run model
     sim = apply(inputs, 1, run_model, fixed_params,
-                init_names, reduction_name, outpath_files)
+                init_names, reduction_name)
     
     ## aggregate results for all TAs
-    results <- stack_results(outpath_files)
-    results <- summarize_output(results)
-    write_csv(results, file.path(outpath, paste0(reduction_name, "_stacked", '.csv')))
-    
+  return(sim)
   }
   
   ## timing not working for unknown reason
@@ -142,14 +129,17 @@ load_masking_compliance <- function(path){
 }
 
 
-load_inputs <-function(filename, exclude_list, inits){
+load_inputs <-function(filename, inits){
   ### 
   inputs <- read_csv(filename)
   inputs <- inputs %>%
-    filter(!(UID %in% exclude_list)) %>%
     gather(var, val, (Hospitalization:Population)) %>%
     unite(temp, Age, var) %>%
     spread(temp, val)
+  print('inits')
+  print(inits)
+  print('params')
+  print(params)
   
   inputs$S_e = inputs$Elderly_Population-inits['E_e']
   inputs$E_e = inits['E_e']
@@ -198,7 +188,7 @@ build_params <- function(input_row, params){
 
 
 run_model <- function(
-  inputs, params, init_names, reduction_name, outpath){
+  inputs, params, init_names, reduction_name){
   ### runs model using lsoda for a TA
   print(paste("running model for UID", inputs['UID']))
   params <- build_params(inputs, params)
@@ -221,8 +211,8 @@ run_model <- function(
     }
   }
   
-  filename <- paste(reduction_name, inputs['TA_Code'], Sys.Date(), sep="_")
-  write_csv(sim, file.path(outpath, paste0(filename, ".csv")))
+  # filename <- paste(reduction_name, inputs['TA_Code'], Sys.Date(), sep="_")
+  # write_csv(sim, file.path(outpath, paste0(filename, ".csv")))
 }  
 
 
@@ -398,4 +388,4 @@ return(new_df)
 
 
 ###run model based on the parameter assumptions in the input template
-execute("inputs/params_inits_template.csv")
+# execute("inputs/params_inits_template.csv")
