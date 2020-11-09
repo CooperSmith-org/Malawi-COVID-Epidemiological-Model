@@ -34,7 +34,7 @@ execute <- function(params_df_path){
     print(paste('data_threshold ', date_threshold, '\n'))
     outpath <- setup(output_name)
     write_csv(data, file.path(outpath, "params.csv"))
-    sim = run_model_for_params(fixed_params, inits, date_threshold, masking_compliance, inputs_path, date_path)
+    sim = run_model_for_params(fixed_params, inits, date_threshold, masking_compliance, inputs_path)
   }
 }
 
@@ -56,16 +56,16 @@ setup <- function(outpath=NULL){
 }
 
 
-run_model_for_params <- function(fixed_params, inits, date_threshold=1, masking_compliance, inputs_path, date_path){
-  ## runs model for fixed params and init
-  time1 <- Sys.time()
-  
-  ## load reductions
-  reductions_path <- "reductionScenarios"
-  reductions <- load_reductions(reductions_path)
+run_model_for_params <- function(fixed_params, inits, masking_compliance, inputs_path){
+
+  # ## load reductions
+  # reductions_path <- "reductionScenarios"
+  # reductions <- load_reductions(reductions_path)
   
   ## load masking
-  fixed_params['compliance'] <- read_csv(file.path('masking', masking_compliance))
+  fixed_params['compliance'] <- read_csv('masking/masking_compliance.csv')
+  fixed_params['reductions'] <- read_csv('reductionScenarios/current.csv')
+  
   
   
   ## load inputs
@@ -73,26 +73,26 @@ run_model_for_params <- function(fixed_params, inits, date_threshold=1, masking_
   # exclude_list <- list(17, 189, 166, 28, 34, 167, 100, 421, 99, 180, 230) ## excluded for various reasons - most often no population in an age group
   inputs <- load_inputs(inputs_path, inits)
   
+  # return(inputs)
+  
   ## load seed dates
   # date_path <- "inputs/simulation-seeddates-ta-20200910.csv"
-  seed_dates <- load_seed_dates(date_path, date_threshold)
-  inputs <- left_join(inputs, seed_dates, by=c("TA_Code"="adm_id"))
+  # seed_dates <- load_seed_dates(date_path, date_threshold)
+  # inputs <- left_join(inputs, seed_dates, by=c("TA_Code"="adm_id"))
   
   init_names <- inputs %>% select(ends_with("_e") | 
                                     ends_with("_a") | 
                                     ends_with("_p")) %>% colnames()
   
-  ## iterate through reduction scenarios
-  for (r in seq(1:length(reductions))){
-    
-
-    ## actually run model
-    sim = apply(inputs, 1, run_model, fixed_params,
-                init_names, reduction_name)
-    
+  ## actually run model
+  # sim = apply(inputs, 1, run_model, fixed_params, init_names)
+  sim <- run_model(inputs, fixed_params, init_names)
     ## aggregate results for all TAs
+  
+  # write_csv(as.data.frame(sim), 'test.csv')
+  
   return(sim)
-  }
+  
   
   ## timing not working for unknown reason
   time2 = Sys.time()
@@ -110,7 +110,6 @@ load_seed_dates <- function(date_path, n){
   
   return(MW_start_dates)
 }
-
 
 load_reductions <- function(relative_path){
   ### relative path describes the folder
@@ -136,11 +135,7 @@ load_inputs <-function(filename, inits){
     gather(var, val, (Hospitalization:Population)) %>%
     unite(temp, Age, var) %>%
     spread(temp, val)
-  print('inits')
-  print(inits)
-  print('params')
-  print(params)
-  
+
   inputs$S_e = inputs$Elderly_Population-inits['E_e']
   inputs$E_e = inits['E_e']
   inputs$I_e = inits['I_e']
@@ -187,18 +182,25 @@ build_params <- function(input_row, params){
 }
 
 
-run_model <- function(
-  inputs, params, init_names, reduction_name){
+run_model <- function(inputs, params, init_names){
   ### runs model using lsoda for a TA
-  print(paste("running model for UID", inputs['UID']))
   params <- build_params(inputs, params)
   params <- lapply(params, as.numeric)
+
   init <- inputs[names(inputs) %in% init_names]
   init <- sapply(init, as.numeric)
-  times <- seq(from=inputs['start_day'], to=365)
+  times <- seq(from=1, to=365)
+  
+  # return(list(params, init, times))
   
   sim <- as.data.frame(
     lsoda(y=init, times=times, func=model, parms=params))
+  # sim2['Elderly_Population'] <- sim[[2]]['S_e']
+  # sim2['Adults_Population'] <- sim[[2]]['S_a']
+  # sim2['Pediatrics_Population'] <- sim[[2]]['S_p']
+  # sim2 <- calc_deltas(sim2, sim[[1]])
+  # sim2 <- aggregate_age_groups(sim2)
+  
   sim['Elderly_Population'] <- init['S_e']
   sim['Adults_Population'] <- init['S_a']
   sim['Pediatrics_Population'] <- init['S_p']
@@ -210,9 +212,8 @@ run_model <- function(
       sim[n] <- inputs[n]
     }
   }
+  return(sim)
   
-  # filename <- paste(reduction_name, inputs['TA_Code'], Sys.Date(), sep="_")
-  # write_csv(sim, file.path(outpath, paste0(filename, ".csv")))
 }  
 
 
@@ -385,6 +386,9 @@ new_df[1,] [is.na(new_df[1,])] <- 0 ## NAs appear in first row during lag
 new_df <- new_df %>% select(!(contains('lag')))
 return(new_df)
 }
+
+return_values <- function(x) return(x)
+
 
 
 ###run model based on the parameter assumptions in the input template
