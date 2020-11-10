@@ -3,7 +3,7 @@ library(tidyverse)
 
 start_time <- Sys.time()
 
-setwd("C:/Users/Michael/Git/Malawi-COVID-Epidemiological-Model/inputs")
+setwd("~/code/cs/covid19/inputs")
 
 AGE_CHILD <- 1
 AGE_ADULT <- 2
@@ -17,6 +17,8 @@ df_masking <- read_csv('masking/masking_compliance.csv')
 df_locations <- read_csv('MW COVID Inputs.csv')
 df_params <- read_csv('params_inits_template.csv')
 df_seed <- read_csv('simulation-seeddates-ta-20200910.csv')
+
+df_distancing$reduc = 0.2
 
 # Setup model parameters
 
@@ -111,9 +113,9 @@ for (day in 2:n_days) {
     h[[age]] <- cbind(h_, h_[,yday] + i_[,yday] * dfs_ages[[age]]$Hospitalization / infected_time - h_[,yday] / hosp_time)
     c[[age]] <- cbind(c_, c_[,yday] + h_[,yday] * dfs_ages[[age]]$Crit_of_Hosp / hosp_time - c_[,yday] / crit_time)
     r[[age]] <- cbind(r_, r_[,yday] + 
-                          i_[,yday] * (1 - dfs_ages[[age]]$Hospitalization) / infected_time +
-                          h_[,yday] * (1 - dfs_ages[[age]]$Crit_of_Hosp) / hosp_time +
-                          c_[,yday] * (1 - dfs_ages[[age]]$FR_of_Crit) / crit_time)
+                        i_[,yday] * (1 - dfs_ages[[age]]$Hospitalization) / infected_time +
+                        h_[,yday] * (1 - dfs_ages[[age]]$Crit_of_Hosp) / hosp_time +
+                        c_[,yday] * (1 - dfs_ages[[age]]$FR_of_Crit) / crit_time)
     d[[age]] <- cbind(d_, d_[,yday] + c_[,yday] * dfs_ages[[age]]$FR_of_Crit / crit_time)
   }
   
@@ -156,4 +158,7 @@ end_time <- Sys.time()
 print(end_time - start_time)
 
 options(scipen=999)
-ggplot(data=df_country, aes(x=Day, y=People, group=State, color=State)) + geom_line()
+ggplot(data=df_country %>% filter(State == 'Dead'), aes(x=Day, y=People, group=State, color=State)) + geom_line()
+
+
+                
