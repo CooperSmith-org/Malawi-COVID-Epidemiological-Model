@@ -56,7 +56,7 @@ setup <- function(outpath=NULL){
 }
 
 
-run_model_for_params <- function(fixed_params, inits, masking_compliance, inputs_path){
+run_model_for_params <- function(fixed_params, inits, masking_compliance, inputs){
 
   # ## load reductions
   # reductions_path <- "reductionScenarios"
@@ -71,7 +71,7 @@ run_model_for_params <- function(fixed_params, inits, masking_compliance, inputs
   ## load inputs
   # inputs_path <- "inputs/MW COVID Inputs.csv"
   # exclude_list <- list(17, 189, 166, 28, 34, 167, 100, 421, 99, 180, 230) ## excluded for various reasons - most often no population in an age group
-  inputs <- load_inputs(inputs_path, inits)
+  inputs <- load_inputs(inputs, inits)
   
   # return(inputs)
   
@@ -128,13 +128,20 @@ load_masking_compliance <- function(path){
 }
 
 
-load_inputs <-function(filename, inits){
+# load_inputs <-function(filename, inits){
+load_inputs <-function(inputs, inits){  
   ### 
-  inputs <- read_csv(filename)
+  # inputs <- read_csv(filename)
   inputs <- inputs %>%
     gather(var, val, (Hospitalization:Population)) %>%
     unite(temp, Age, var) %>%
     spread(temp, val)
+  # print('inputs')
+  # print(inputs$Elderly_Population)
+  # print(colnames(inputs))
+  # 
+  # print('inits')
+  # print(inits$E_e)
 
   inputs$S_e = inputs$Elderly_Population-inits['E_e']
   inputs$E_e = inits['E_e']

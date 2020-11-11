@@ -8,11 +8,11 @@ setwd("/Users/nselman/cs/git/Malawi-COVID-Epidemiological-Model/inputs")
 
   # df_seed <- read_csv('simulation-seeddates-ta-20200910.csv')
 
-execute_stepwise <- function(inputs_path, masking_path, distancing_path, param_row) {
+execute_stepwise <- function(inputs, masking_path, distancing_path, param_row) {
   
   df_distancing <- read_csv(distancing_path)
   df_masking <- read_csv(masking_path)
-  df_locations <- read_csv(inputs_path)
+  df_locations <- inputs
   df_params <- param_row
 
   AGE_CHILD <- 1
@@ -57,6 +57,9 @@ execute_stepwise <- function(inputs_path, masking_path, distancing_path, param_r
   behaviour_mod <- (1 - df_distancing$reduc) * (1 - df_masking$masking_compliance * mask_effectiveness)
   
   base_infection_rate <- r0 / (exposed_time + infected_time)
+  
+  # print(colnames(df_locations))
+  # print(df_locations)
   
   dfs_ages <- list(
     df_locations[df_locations$age_code == AGE_CHILD,],
@@ -109,8 +112,8 @@ execute_stepwise <- function(inputs_path, masking_path, distancing_path, param_r
       new_by_age <- sapply(ages, function(src_age) {
         dfs_ages[[src_age]]$pop_infection_rate * age_infection_rates[[src_age, age]] * (e[[src_age]][,yday] + i[[src_age]][,yday])
       })
-      print(paste('day', day))
-      print(new_by_age)
+      # print(paste('day', day))
+      # print(new_by_age)
       new_infections <- sum(new_by_age) * behaviour_mod[[day]] * s_[,yday]
       
       s[[age]] <- cbind(s_, s_[,yday] - new_infections)
