@@ -3,7 +3,8 @@ library(tidyverse)
 
 start_time <- Sys.time()
 
-setwd("C:/Users/Michael/Git/Malawi-COVID-Epidemiological-Model/inputs")
+# setwd("C:/Users/Michael/Git/Malawi-COVID-Epidemiological-Model/inputs")
+setwd("C:/Users/dylan/Documents/GitHub/Malawi-COVID-Epidemiological-Model/inputs")
 
 AGE_CHILD <- 1
 AGE_ADULT <- 2
@@ -83,7 +84,7 @@ for (age in ages) {
   d[[age]] <- matrix(dfs_ages[[age]]$empty_state)
 }
 
-n_days = 365
+n_days = 435
 
 for (day in 2:n_days) {
   yday <- day - 1
@@ -151,9 +152,24 @@ df_country <- df_district %>%
   group_by(Day,State) %>%
   summarise(People=sum(People))
 
+write.csv(df_country, '../out/pandemic-stepwise.csv')
+
 end_time <- Sys.time()
 
 print(end_time - start_time)
 
 options(scipen=999)
-ggplot(data=df_country, aes(x=Day, y=People, group=State, color=State)) + geom_line()
+#ggplot(data=df_country, aes(x=Day, y=People, group=State, color=State)) + geom_line()
+
+df_country_infected <- subset(df_country, State=='Infected')
+df_country_newinfected <- subset(df_country, State=='New Infections')
+df_country_hospitalized <- subset(df_country, State=='Hospitalized')
+df_country_critical <- subset(df_country, State=='Critical')
+df_country_deaths <- subset(df_country, State=='Dead')
+
+
+write.csv(df_country_infected, '../out/infected.csv')
+write.csv(df_country_newinfected, '../out/new-infections.csv')
+write.csv(df_country_hospitalized, '../out/hospitalized.csv')
+write.csv(df_country_critical, '../out/critical.csv')
+write.csv(df_country_deaths, '../out/deaths.csv')
