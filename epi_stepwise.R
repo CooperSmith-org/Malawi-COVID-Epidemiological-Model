@@ -84,7 +84,7 @@ for (age in ages) {
   d[[age]] <- matrix(dfs_ages[[age]]$empty_state)
 }
 
-n_days = 435
+n_days = 517
 
 for (day in 2:n_days) {
   yday <- day - 1
@@ -173,3 +173,4 @@ write.csv(df_country_newinfected, '../out/new-infections.csv')
 write.csv(df_country_hospitalized, '../out/hospitalized.csv')
 write.csv(df_country_critical, '../out/critical.csv')
 write.csv(df_country_deaths, '../out/deaths.csv')
+
