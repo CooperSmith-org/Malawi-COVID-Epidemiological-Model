@@ -1,0 +1,4137 @@
+"","Day","State","People"
+"1",1,"Critical",0
+"2",1,"Dead",0
+"3",1,"Exposed",0
+"4",1,"Hospitalized",0
+"5",1,"Infected",0
+"6",1,"New Infections",0
+"7",1,"Recovered",0
+"8",1,"Susceptible",18811366.2128753
+"9",2,"Critical",0
+"10",2,"Dead",0
+"11",2,"Exposed",0
+"12",2,"Hospitalized",0
+"13",2,"Infected",0
+"14",2,"New Infections",0
+"15",2,"Recovered",0
+"16",2,"Susceptible",18811366.2128753
+"17",3,"Critical",0
+"18",3,"Dead",0
+"19",3,"Exposed",0
+"20",3,"Hospitalized",0
+"21",3,"Infected",0
+"22",3,"New Infections",0
+"23",3,"Recovered",0
+"24",3,"Susceptible",18811366.2128753
+"25",4,"Critical",0
+"26",4,"Dead",0
+"27",4,"Exposed",0
+"28",4,"Hospitalized",0
+"29",4,"Infected",0
+"30",4,"New Infections",0
+"31",4,"Recovered",0
+"32",4,"Susceptible",18811366.2128753
+"33",5,"Critical",0
+"34",5,"Dead",0
+"35",5,"Exposed",0
+"36",5,"Hospitalized",0
+"37",5,"Infected",0
+"38",5,"New Infections",0
+"39",5,"Recovered",0
+"40",5,"Susceptible",18811366.2128753
+"41",6,"Critical",0
+"42",6,"Dead",0
+"43",6,"Exposed",0
+"44",6,"Hospitalized",0
+"45",6,"Infected",0
+"46",6,"New Infections",0
+"47",6,"Recovered",0
+"48",6,"Susceptible",18811366.2128753
+"49",7,"Critical",0
+"50",7,"Dead",0
+"51",7,"Exposed",0
+"52",7,"Hospitalized",0
+"53",7,"Infected",0
+"54",7,"New Infections",0
+"55",7,"Recovered",0
+"56",7,"Susceptible",18811366.2128753
+"57",8,"Critical",0
+"58",8,"Dead",0
+"59",8,"Exposed",0
+"60",8,"Hospitalized",0
+"61",8,"Infected",0
+"62",8,"New Infections",0
+"63",8,"Recovered",0
+"64",8,"Susceptible",18811366.2128753
+"65",9,"Critical",0
+"66",9,"Dead",0
+"67",9,"Exposed",0
+"68",9,"Hospitalized",0
+"69",9,"Infected",0
+"70",9,"New Infections",0
+"71",9,"Recovered",0
+"72",9,"Susceptible",18811366.2128753
+"73",10,"Critical",0
+"74",10,"Dead",0
+"75",10,"Exposed",0
+"76",10,"Hospitalized",0
+"77",10,"Infected",0
+"78",10,"New Infections",0
+"79",10,"Recovered",0
+"80",10,"Susceptible",18811366.2128753
+"81",11,"Critical",0
+"82",11,"Dead",0
+"83",11,"Exposed",0
+"84",11,"Hospitalized",0
+"85",11,"Infected",0
+"86",11,"New Infections",0
+"87",11,"Recovered",0
+"88",11,"Susceptible",18811366.2128753
+"89",12,"Critical",0
+"90",12,"Dead",0
+"91",12,"Exposed",0
+"92",12,"Hospitalized",0
+"93",12,"Infected",0
+"94",12,"New Infections",0
+"95",12,"Recovered",0
+"96",12,"Susceptible",18811366.2128753
+"97",13,"Critical",0
+"98",13,"Dead",0
+"99",13,"Exposed",0
+"100",13,"Hospitalized",0
+"101",13,"Infected",0
+"102",13,"New Infections",0
+"103",13,"Recovered",0
+"104",13,"Susceptible",18811366.2128753
+"105",14,"Critical",0
+"106",14,"Dead",0
+"107",14,"Exposed",0
+"108",14,"Hospitalized",0
+"109",14,"Infected",0
+"110",14,"New Infections",0
+"111",14,"Recovered",0
+"112",14,"Susceptible",18811366.2128753
+"113",15,"Critical",0
+"114",15,"Dead",0
+"115",15,"Exposed",0
+"116",15,"Hospitalized",0
+"117",15,"Infected",0
+"118",15,"New Infections",0
+"119",15,"Recovered",0
+"120",15,"Susceptible",18811366.2128753
+"121",16,"Critical",0
+"122",16,"Dead",0
+"123",16,"Exposed",0
+"124",16,"Hospitalized",0
+"125",16,"Infected",0
+"126",16,"New Infections",0
+"127",16,"Recovered",0
+"128",16,"Susceptible",18811366.2128753
+"129",17,"Critical",0
+"130",17,"Dead",0
+"131",17,"Exposed",0
+"132",17,"Hospitalized",0
+"133",17,"Infected",0
+"134",17,"New Infections",0
+"135",17,"Recovered",0
+"136",17,"Susceptible",18811366.2128753
+"137",18,"Critical",0
+"138",18,"Dead",0
+"139",18,"Exposed",0
+"140",18,"Hospitalized",0
+"141",18,"Infected",0
+"142",18,"New Infections",0
+"143",18,"Recovered",0
+"144",18,"Susceptible",18811366.2128753
+"145",19,"Critical",0
+"146",19,"Dead",0
+"147",19,"Exposed",0
+"148",19,"Hospitalized",0
+"149",19,"Infected",0
+"150",19,"New Infections",0
+"151",19,"Recovered",0
+"152",19,"Susceptible",18811366.2128753
+"153",20,"Critical",0
+"154",20,"Dead",0
+"155",20,"Exposed",0
+"156",20,"Hospitalized",0
+"157",20,"Infected",0
+"158",20,"New Infections",0
+"159",20,"Recovered",0
+"160",20,"Susceptible",18811366.2128753
+"161",21,"Critical",0
+"162",21,"Dead",0
+"163",21,"Exposed",0
+"164",21,"Hospitalized",0
+"165",21,"Infected",0
+"166",21,"New Infections",0
+"167",21,"Recovered",0
+"168",21,"Susceptible",18811366.2128753
+"169",22,"Critical",0
+"170",22,"Dead",0
+"171",22,"Exposed",0
+"172",22,"Hospitalized",0
+"173",22,"Infected",0
+"174",22,"New Infections",0
+"175",22,"Recovered",0
+"176",22,"Susceptible",18811366.2128753
+"177",23,"Critical",0
+"178",23,"Dead",0
+"179",23,"Exposed",0
+"180",23,"Hospitalized",0
+"181",23,"Infected",0
+"182",23,"New Infections",0
+"183",23,"Recovered",0
+"184",23,"Susceptible",18811366.2128753
+"185",24,"Critical",0
+"186",24,"Dead",0
+"187",24,"Exposed",0
+"188",24,"Hospitalized",0
+"189",24,"Infected",0
+"190",24,"New Infections",0
+"191",24,"Recovered",0
+"192",24,"Susceptible",18811366.2128753
+"193",25,"Critical",0
+"194",25,"Dead",0
+"195",25,"Exposed",0
+"196",25,"Hospitalized",0
+"197",25,"Infected",0
+"198",25,"New Infections",0
+"199",25,"Recovered",0
+"200",25,"Susceptible",18811366.2128753
+"201",26,"Critical",0
+"202",26,"Dead",0
+"203",26,"Exposed",0
+"204",26,"Hospitalized",0
+"205",26,"Infected",0
+"206",26,"New Infections",0
+"207",26,"Recovered",0
+"208",26,"Susceptible",18811366.2128753
+"209",27,"Critical",0
+"210",27,"Dead",0
+"211",27,"Exposed",0
+"212",27,"Hospitalized",0
+"213",27,"Infected",0
+"214",27,"New Infections",0
+"215",27,"Recovered",0
+"216",27,"Susceptible",18811366.2128753
+"217",28,"Critical",0
+"218",28,"Dead",0
+"219",28,"Exposed",0
+"220",28,"Hospitalized",0
+"221",28,"Infected",0
+"222",28,"New Infections",0
+"223",28,"Recovered",0
+"224",28,"Susceptible",18811366.2128753
+"225",29,"Critical",0
+"226",29,"Dead",0
+"227",29,"Exposed",0
+"228",29,"Hospitalized",0
+"229",29,"Infected",0
+"230",29,"New Infections",0
+"231",29,"Recovered",0
+"232",29,"Susceptible",18811366.2128753
+"233",30,"Critical",0
+"234",30,"Dead",0
+"235",30,"Exposed",0
+"236",30,"Hospitalized",0
+"237",30,"Infected",0
+"238",30,"New Infections",0
+"239",30,"Recovered",0
+"240",30,"Susceptible",18811366.2128753
+"241",31,"Critical",0
+"242",31,"Dead",0
+"243",31,"Exposed",0
+"244",31,"Hospitalized",0
+"245",31,"Infected",0
+"246",31,"New Infections",0
+"247",31,"Recovered",0
+"248",31,"Susceptible",18811366.2128753
+"249",32,"Critical",0
+"250",32,"Dead",0
+"251",32,"Exposed",0
+"252",32,"Hospitalized",0
+"253",32,"Infected",0
+"254",32,"New Infections",0
+"255",32,"Recovered",0
+"256",32,"Susceptible",18811366.2128753
+"257",33,"Critical",0
+"258",33,"Dead",0
+"259",33,"Exposed",0
+"260",33,"Hospitalized",0
+"261",33,"Infected",0
+"262",33,"New Infections",0
+"263",33,"Recovered",0
+"264",33,"Susceptible",18811366.2128753
+"265",34,"Critical",0
+"266",34,"Dead",0
+"267",34,"Exposed",0
+"268",34,"Hospitalized",0
+"269",34,"Infected",0
+"270",34,"New Infections",0
+"271",34,"Recovered",0
+"272",34,"Susceptible",18811366.2128753
+"273",35,"Critical",0
+"274",35,"Dead",0
+"275",35,"Exposed",0
+"276",35,"Hospitalized",0
+"277",35,"Infected",0
+"278",35,"New Infections",0
+"279",35,"Recovered",0
+"280",35,"Susceptible",18811366.2128753
+"281",36,"Critical",0
+"282",36,"Dead",0
+"283",36,"Exposed",0
+"284",36,"Hospitalized",0
+"285",36,"Infected",0
+"286",36,"New Infections",0
+"287",36,"Recovered",0
+"288",36,"Susceptible",18811366.2128753
+"289",37,"Critical",0
+"290",37,"Dead",0
+"291",37,"Exposed",0
+"292",37,"Hospitalized",0
+"293",37,"Infected",0
+"294",37,"New Infections",0
+"295",37,"Recovered",0
+"296",37,"Susceptible",18811366.2128753
+"297",38,"Critical",0
+"298",38,"Dead",0
+"299",38,"Exposed",0
+"300",38,"Hospitalized",0
+"301",38,"Infected",0
+"302",38,"New Infections",0
+"303",38,"Recovered",0
+"304",38,"Susceptible",18811366.2128753
+"305",39,"Critical",0
+"306",39,"Dead",0
+"307",39,"Exposed",0
+"308",39,"Hospitalized",0
+"309",39,"Infected",0
+"310",39,"New Infections",0
+"311",39,"Recovered",0
+"312",39,"Susceptible",18811366.2128753
+"313",40,"Critical",0
+"314",40,"Dead",0
+"315",40,"Exposed",0
+"316",40,"Hospitalized",0
+"317",40,"Infected",0
+"318",40,"New Infections",0
+"319",40,"Recovered",0
+"320",40,"Susceptible",18811366.2128753
+"321",41,"Critical",0
+"322",41,"Dead",0
+"323",41,"Exposed",0
+"324",41,"Hospitalized",0
+"325",41,"Infected",0
+"326",41,"New Infections",0
+"327",41,"Recovered",0
+"328",41,"Susceptible",18811366.2128753
+"329",42,"Critical",0
+"330",42,"Dead",0
+"331",42,"Exposed",0
+"332",42,"Hospitalized",0
+"333",42,"Infected",0
+"334",42,"New Infections",0
+"335",42,"Recovered",0
+"336",42,"Susceptible",18811366.2128753
+"337",43,"Critical",0
+"338",43,"Dead",0
+"339",43,"Exposed",0
+"340",43,"Hospitalized",0
+"341",43,"Infected",0
+"342",43,"New Infections",0
+"343",43,"Recovered",0
+"344",43,"Susceptible",18811366.2128753
+"345",44,"Critical",0
+"346",44,"Dead",0
+"347",44,"Exposed",0
+"348",44,"Hospitalized",0
+"349",44,"Infected",0
+"350",44,"New Infections",0
+"351",44,"Recovered",0
+"352",44,"Susceptible",18811366.2128753
+"353",45,"Critical",0
+"354",45,"Dead",0
+"355",45,"Exposed",0
+"356",45,"Hospitalized",0
+"357",45,"Infected",0
+"358",45,"New Infections",0
+"359",45,"Recovered",0
+"360",45,"Susceptible",18811366.2128753
+"361",46,"Critical",0
+"362",46,"Dead",0
+"363",46,"Exposed",0
+"364",46,"Hospitalized",0
+"365",46,"Infected",0
+"366",46,"New Infections",0
+"367",46,"Recovered",0
+"368",46,"Susceptible",18811366.2128753
+"369",47,"Critical",0
+"370",47,"Dead",0
+"371",47,"Exposed",0
+"372",47,"Hospitalized",0
+"373",47,"Infected",0
+"374",47,"New Infections",0
+"375",47,"Recovered",0
+"376",47,"Susceptible",18811366.2128753
+"377",48,"Critical",0
+"378",48,"Dead",0
+"379",48,"Exposed",0
+"380",48,"Hospitalized",0
+"381",48,"Infected",0
+"382",48,"New Infections",0
+"383",48,"Recovered",0
+"384",48,"Susceptible",18811366.2128753
+"385",49,"Critical",0
+"386",49,"Dead",0
+"387",49,"Exposed",0
+"388",49,"Hospitalized",0
+"389",49,"Infected",0
+"390",49,"New Infections",0
+"391",49,"Recovered",0
+"392",49,"Susceptible",18811366.2128753
+"393",50,"Critical",0
+"394",50,"Dead",0
+"395",50,"Exposed",0
+"396",50,"Hospitalized",0
+"397",50,"Infected",0
+"398",50,"New Infections",0
+"399",50,"Recovered",0
+"400",50,"Susceptible",18811366.2128753
+"401",51,"Critical",0
+"402",51,"Dead",0
+"403",51,"Exposed",0
+"404",51,"Hospitalized",0
+"405",51,"Infected",0
+"406",51,"New Infections",0
+"407",51,"Recovered",0
+"408",51,"Susceptible",18811366.2128753
+"409",52,"Critical",0
+"410",52,"Dead",0
+"411",52,"Exposed",0
+"412",52,"Hospitalized",0
+"413",52,"Infected",0
+"414",52,"New Infections",0
+"415",52,"Recovered",0
+"416",52,"Susceptible",18811366.2128753
+"417",53,"Critical",0
+"418",53,"Dead",0
+"419",53,"Exposed",0
+"420",53,"Hospitalized",0
+"421",53,"Infected",0
+"422",53,"New Infections",0
+"423",53,"Recovered",0
+"424",53,"Susceptible",18811366.2128753
+"425",54,"Critical",0
+"426",54,"Dead",0
+"427",54,"Exposed",0
+"428",54,"Hospitalized",0
+"429",54,"Infected",0
+"430",54,"New Infections",0
+"431",54,"Recovered",0
+"432",54,"Susceptible",18811366.2128753
+"433",55,"Critical",0
+"434",55,"Dead",0
+"435",55,"Exposed",0
+"436",55,"Hospitalized",0
+"437",55,"Infected",0
+"438",55,"New Infections",0
+"439",55,"Recovered",0
+"440",55,"Susceptible",18811366.2128753
+"441",56,"Critical",0
+"442",56,"Dead",0
+"443",56,"Exposed",0
+"444",56,"Hospitalized",0
+"445",56,"Infected",0
+"446",56,"New Infections",0
+"447",56,"Recovered",0
+"448",56,"Susceptible",18811366.2128753
+"449",57,"Critical",0
+"450",57,"Dead",0
+"451",57,"Exposed",0
+"452",57,"Hospitalized",0
+"453",57,"Infected",0
+"454",57,"New Infections",0
+"455",57,"Recovered",0
+"456",57,"Susceptible",18811366.2128753
+"457",58,"Critical",0
+"458",58,"Dead",0
+"459",58,"Exposed",0
+"460",58,"Hospitalized",0
+"461",58,"Infected",0
+"462",58,"New Infections",0
+"463",58,"Recovered",0
+"464",58,"Susceptible",18811366.2128753
+"465",59,"Critical",0
+"466",59,"Dead",0
+"467",59,"Exposed",0
+"468",59,"Hospitalized",0
+"469",59,"Infected",0
+"470",59,"New Infections",0
+"471",59,"Recovered",0
+"472",59,"Susceptible",18811366.2128753
+"473",60,"Critical",0
+"474",60,"Dead",0
+"475",60,"Exposed",0
+"476",60,"Hospitalized",0
+"477",60,"Infected",0
+"478",60,"New Infections",0
+"479",60,"Recovered",0
+"480",60,"Susceptible",18811366.2128753
+"481",61,"Critical",0
+"482",61,"Dead",0
+"483",61,"Exposed",0
+"484",61,"Hospitalized",0
+"485",61,"Infected",0
+"486",61,"New Infections",0
+"487",61,"Recovered",0
+"488",61,"Susceptible",18811366.2128753
+"489",62,"Critical",0
+"490",62,"Dead",0
+"491",62,"Exposed",0
+"492",62,"Hospitalized",0
+"493",62,"Infected",0
+"494",62,"New Infections",0
+"495",62,"Recovered",0
+"496",62,"Susceptible",18811366.2128753
+"497",63,"Critical",0
+"498",63,"Dead",0
+"499",63,"Exposed",0
+"500",63,"Hospitalized",0
+"501",63,"Infected",0
+"502",63,"New Infections",0
+"503",63,"Recovered",0
+"504",63,"Susceptible",18811366.2128753
+"505",64,"Critical",0
+"506",64,"Dead",0
+"507",64,"Exposed",0
+"508",64,"Hospitalized",0
+"509",64,"Infected",0
+"510",64,"New Infections",0
+"511",64,"Recovered",0
+"512",64,"Susceptible",18811366.2128753
+"513",65,"Critical",0
+"514",65,"Dead",0
+"515",65,"Exposed",0
+"516",65,"Hospitalized",0
+"517",65,"Infected",0
+"518",65,"New Infections",0
+"519",65,"Recovered",0
+"520",65,"Susceptible",18811366.2128753
+"521",66,"Critical",0
+"522",66,"Dead",0
+"523",66,"Exposed",0
+"524",66,"Hospitalized",0
+"525",66,"Infected",0
+"526",66,"New Infections",0
+"527",66,"Recovered",0
+"528",66,"Susceptible",18811366.2128753
+"529",67,"Critical",0
+"530",67,"Dead",0
+"531",67,"Exposed",0
+"532",67,"Hospitalized",0
+"533",67,"Infected",0
+"534",67,"New Infections",0
+"535",67,"Recovered",0
+"536",67,"Susceptible",18811366.2128753
+"537",68,"Critical",0
+"538",68,"Dead",0
+"539",68,"Exposed",0
+"540",68,"Hospitalized",0
+"541",68,"Infected",0
+"542",68,"New Infections",0
+"543",68,"Recovered",0
+"544",68,"Susceptible",18811366.2128753
+"545",69,"Critical",0
+"546",69,"Dead",0
+"547",69,"Exposed",0
+"548",69,"Hospitalized",0
+"549",69,"Infected",0
+"550",69,"New Infections",0
+"551",69,"Recovered",0
+"552",69,"Susceptible",18811366.2128753
+"553",70,"Critical",0
+"554",70,"Dead",0
+"555",70,"Exposed",0
+"556",70,"Hospitalized",0
+"557",70,"Infected",0
+"558",70,"New Infections",0
+"559",70,"Recovered",0
+"560",70,"Susceptible",18811366.2128753
+"561",71,"Critical",0
+"562",71,"Dead",0
+"563",71,"Exposed",0
+"564",71,"Hospitalized",0
+"565",71,"Infected",0
+"566",71,"New Infections",0
+"567",71,"Recovered",0
+"568",71,"Susceptible",18811366.2128753
+"569",72,"Critical",0
+"570",72,"Dead",0
+"571",72,"Exposed",0
+"572",72,"Hospitalized",0
+"573",72,"Infected",0
+"574",72,"New Infections",0
+"575",72,"Recovered",0
+"576",72,"Susceptible",18811366.2128753
+"577",73,"Critical",0
+"578",73,"Dead",0
+"579",73,"Exposed",0
+"580",73,"Hospitalized",0
+"581",73,"Infected",0
+"582",73,"New Infections",0
+"583",73,"Recovered",0
+"584",73,"Susceptible",18811366.2128753
+"585",74,"Critical",0
+"586",74,"Dead",0
+"587",74,"Exposed",0
+"588",74,"Hospitalized",0
+"589",74,"Infected",0
+"590",74,"New Infections",0
+"591",74,"Recovered",0
+"592",74,"Susceptible",18811366.2128753
+"593",75,"Critical",0
+"594",75,"Dead",0
+"595",75,"Exposed",0
+"596",75,"Hospitalized",0
+"597",75,"Infected",0
+"598",75,"New Infections",0
+"599",75,"Recovered",0
+"600",75,"Susceptible",18811366.2128753
+"601",76,"Critical",0
+"602",76,"Dead",0
+"603",76,"Exposed",0
+"604",76,"Hospitalized",0
+"605",76,"Infected",0
+"606",76,"New Infections",0
+"607",76,"Recovered",0
+"608",76,"Susceptible",18811366.2128753
+"609",77,"Critical",0
+"610",77,"Dead",0
+"611",77,"Exposed",0
+"612",77,"Hospitalized",0
+"613",77,"Infected",0
+"614",77,"New Infections",0
+"615",77,"Recovered",0
+"616",77,"Susceptible",18811366.2128753
+"617",78,"Critical",0
+"618",78,"Dead",0
+"619",78,"Exposed",0
+"620",78,"Hospitalized",0
+"621",78,"Infected",0
+"622",78,"New Infections",0
+"623",78,"Recovered",0
+"624",78,"Susceptible",18811366.2128753
+"625",79,"Critical",0
+"626",79,"Dead",0
+"627",79,"Exposed",0
+"628",79,"Hospitalized",0
+"629",79,"Infected",0
+"630",79,"New Infections",0
+"631",79,"Recovered",0
+"632",79,"Susceptible",18811366.2128753
+"633",80,"Critical",0
+"634",80,"Dead",0
+"635",80,"Exposed",0
+"636",80,"Hospitalized",0
+"637",80,"Infected",0
+"638",80,"New Infections",0
+"639",80,"Recovered",0
+"640",80,"Susceptible",18811366.2128753
+"641",81,"Critical",0
+"642",81,"Dead",0
+"643",81,"Exposed",0
+"644",81,"Hospitalized",0
+"645",81,"Infected",0
+"646",81,"New Infections",0
+"647",81,"Recovered",0
+"648",81,"Susceptible",18811366.2128753
+"649",82,"Critical",0
+"650",82,"Dead",0
+"651",82,"Exposed",0
+"652",82,"Hospitalized",0
+"653",82,"Infected",0
+"654",82,"New Infections",0
+"655",82,"Recovered",0
+"656",82,"Susceptible",18811366.2128753
+"657",83,"Critical",0
+"658",83,"Dead",0
+"659",83,"Exposed",0
+"660",83,"Hospitalized",0
+"661",83,"Infected",0
+"662",83,"New Infections",0
+"663",83,"Recovered",0
+"664",83,"Susceptible",18811366.2128753
+"665",84,"Critical",0
+"666",84,"Dead",0
+"667",84,"Exposed",0
+"668",84,"Hospitalized",0
+"669",84,"Infected",0
+"670",84,"New Infections",0
+"671",84,"Recovered",0
+"672",84,"Susceptible",18811366.2128753
+"673",85,"Critical",0
+"674",85,"Dead",0
+"675",85,"Exposed",0
+"676",85,"Hospitalized",0
+"677",85,"Infected",0
+"678",85,"New Infections",0
+"679",85,"Recovered",0
+"680",85,"Susceptible",18811366.2128753
+"681",86,"Critical",0
+"682",86,"Dead",0
+"683",86,"Exposed",0
+"684",86,"Hospitalized",0
+"685",86,"Infected",0
+"686",86,"New Infections",0
+"687",86,"Recovered",0
+"688",86,"Susceptible",18811366.2128753
+"689",87,"Critical",0
+"690",87,"Dead",0
+"691",87,"Exposed",0
+"692",87,"Hospitalized",0
+"693",87,"Infected",0
+"694",87,"New Infections",0
+"695",87,"Recovered",0
+"696",87,"Susceptible",18811366.2128753
+"697",88,"Critical",0
+"698",88,"Dead",0
+"699",88,"Exposed",0
+"700",88,"Hospitalized",0
+"701",88,"Infected",0
+"702",88,"New Infections",0
+"703",88,"Recovered",0
+"704",88,"Susceptible",18811366.2128753
+"705",89,"Critical",0
+"706",89,"Dead",0
+"707",89,"Exposed",0
+"708",89,"Hospitalized",0
+"709",89,"Infected",0
+"710",89,"New Infections",0
+"711",89,"Recovered",0
+"712",89,"Susceptible",18811366.2128753
+"713",90,"Critical",0
+"714",90,"Dead",0
+"715",90,"Exposed",0
+"716",90,"Hospitalized",0
+"717",90,"Infected",0
+"718",90,"New Infections",0
+"719",90,"Recovered",0
+"720",90,"Susceptible",18811366.2128753
+"721",91,"Critical",0
+"722",91,"Dead",0
+"723",91,"Exposed",0
+"724",91,"Hospitalized",0
+"725",91,"Infected",0
+"726",91,"New Infections",0
+"727",91,"Recovered",0
+"728",91,"Susceptible",18811366.2128753
+"729",92,"Critical",0
+"730",92,"Dead",0
+"731",92,"Exposed",0
+"732",92,"Hospitalized",0
+"733",92,"Infected",0
+"734",92,"New Infections",0
+"735",92,"Recovered",0
+"736",92,"Susceptible",18811366.2128753
+"737",93,"Critical",0
+"738",93,"Dead",0
+"739",93,"Exposed",0
+"740",93,"Hospitalized",0
+"741",93,"Infected",0
+"742",93,"New Infections",0
+"743",93,"Recovered",0
+"744",93,"Susceptible",18811366.2128753
+"745",94,"Critical",0
+"746",94,"Dead",0
+"747",94,"Exposed",0
+"748",94,"Hospitalized",0
+"749",94,"Infected",0
+"750",94,"New Infections",0
+"751",94,"Recovered",0
+"752",94,"Susceptible",18811366.2128753
+"753",95,"Critical",0
+"754",95,"Dead",0
+"755",95,"Exposed",0
+"756",95,"Hospitalized",0
+"757",95,"Infected",0
+"758",95,"New Infections",0
+"759",95,"Recovered",0
+"760",95,"Susceptible",18811366.2128753
+"761",96,"Critical",0
+"762",96,"Dead",0
+"763",96,"Exposed",0
+"764",96,"Hospitalized",0
+"765",96,"Infected",0
+"766",96,"New Infections",0
+"767",96,"Recovered",0
+"768",96,"Susceptible",18811366.2128753
+"769",97,"Critical",0
+"770",97,"Dead",0
+"771",97,"Exposed",0
+"772",97,"Hospitalized",0
+"773",97,"Infected",0
+"774",97,"New Infections",0
+"775",97,"Recovered",0
+"776",97,"Susceptible",18811366.2128753
+"777",98,"Critical",0
+"778",98,"Dead",0
+"779",98,"Exposed",0
+"780",98,"Hospitalized",0
+"781",98,"Infected",0
+"782",98,"New Infections",0
+"783",98,"Recovered",0
+"784",98,"Susceptible",18811366.2128753
+"785",99,"Critical",0
+"786",99,"Dead",0
+"787",99,"Exposed",0
+"788",99,"Hospitalized",0
+"789",99,"Infected",0
+"790",99,"New Infections",0
+"791",99,"Recovered",0
+"792",99,"Susceptible",18811366.2128753
+"793",100,"Critical",0
+"794",100,"Dead",0
+"795",100,"Exposed",0
+"796",100,"Hospitalized",0
+"797",100,"Infected",0
+"798",100,"New Infections",0
+"799",100,"Recovered",0
+"800",100,"Susceptible",18811366.2128753
+"801",101,"Critical",0
+"802",101,"Dead",0
+"803",101,"Exposed",0
+"804",101,"Hospitalized",0
+"805",101,"Infected",0
+"806",101,"New Infections",0
+"807",101,"Recovered",0
+"808",101,"Susceptible",18811366.2128753
+"809",102,"Critical",0
+"810",102,"Dead",0
+"811",102,"Exposed",0
+"812",102,"Hospitalized",0
+"813",102,"Infected",0
+"814",102,"New Infections",0
+"815",102,"Recovered",0
+"816",102,"Susceptible",18811366.2128753
+"817",103,"Critical",0
+"818",103,"Dead",0
+"819",103,"Exposed",0
+"820",103,"Hospitalized",0
+"821",103,"Infected",0
+"822",103,"New Infections",0
+"823",103,"Recovered",0
+"824",103,"Susceptible",18811366.2128753
+"825",104,"Critical",0
+"826",104,"Dead",0
+"827",104,"Exposed",0
+"828",104,"Hospitalized",0
+"829",104,"Infected",0
+"830",104,"New Infections",0
+"831",104,"Recovered",0
+"832",104,"Susceptible",18811366.2128753
+"833",105,"Critical",0
+"834",105,"Dead",0
+"835",105,"Exposed",0
+"836",105,"Hospitalized",0
+"837",105,"Infected",0
+"838",105,"New Infections",0
+"839",105,"Recovered",0
+"840",105,"Susceptible",18811366.2128753
+"841",106,"Critical",0
+"842",106,"Dead",0
+"843",106,"Exposed",0
+"844",106,"Hospitalized",0
+"845",106,"Infected",0
+"846",106,"New Infections",0
+"847",106,"Recovered",0
+"848",106,"Susceptible",18811366.2128753
+"849",107,"Critical",0
+"850",107,"Dead",0
+"851",107,"Exposed",0
+"852",107,"Hospitalized",0
+"853",107,"Infected",0
+"854",107,"New Infections",0
+"855",107,"Recovered",0
+"856",107,"Susceptible",18811366.2128753
+"857",108,"Critical",0
+"858",108,"Dead",0
+"859",108,"Exposed",0
+"860",108,"Hospitalized",0
+"861",108,"Infected",0
+"862",108,"New Infections",0
+"863",108,"Recovered",0
+"864",108,"Susceptible",18811366.2128753
+"865",109,"Critical",0
+"866",109,"Dead",0
+"867",109,"Exposed",0
+"868",109,"Hospitalized",0
+"869",109,"Infected",0
+"870",109,"New Infections",0
+"871",109,"Recovered",0
+"872",109,"Susceptible",18811366.2128753
+"873",110,"Critical",0
+"874",110,"Dead",0
+"875",110,"Exposed",0
+"876",110,"Hospitalized",0
+"877",110,"Infected",0
+"878",110,"New Infections",0
+"879",110,"Recovered",0
+"880",110,"Susceptible",18811366.2128753
+"881",111,"Critical",0
+"882",111,"Dead",0
+"883",111,"Exposed",0
+"884",111,"Hospitalized",0
+"885",111,"Infected",0
+"886",111,"New Infections",0
+"887",111,"Recovered",0
+"888",111,"Susceptible",18811366.2128753
+"889",112,"Critical",0
+"890",112,"Dead",0
+"891",112,"Exposed",0
+"892",112,"Hospitalized",0
+"893",112,"Infected",0
+"894",112,"New Infections",0
+"895",112,"Recovered",0
+"896",112,"Susceptible",18811366.2128753
+"897",113,"Critical",0
+"898",113,"Dead",0
+"899",113,"Exposed",0
+"900",113,"Hospitalized",0
+"901",113,"Infected",0
+"902",113,"New Infections",0
+"903",113,"Recovered",0
+"904",113,"Susceptible",18811366.2128753
+"905",114,"Critical",0
+"906",114,"Dead",0
+"907",114,"Exposed",0
+"908",114,"Hospitalized",0
+"909",114,"Infected",0
+"910",114,"New Infections",0
+"911",114,"Recovered",0
+"912",114,"Susceptible",18811366.2128753
+"913",115,"Critical",0
+"914",115,"Dead",0
+"915",115,"Exposed",0
+"916",115,"Hospitalized",0
+"917",115,"Infected",0
+"918",115,"New Infections",0
+"919",115,"Recovered",0
+"920",115,"Susceptible",18811366.2128753
+"921",116,"Critical",0
+"922",116,"Dead",0
+"923",116,"Exposed",0
+"924",116,"Hospitalized",0
+"925",116,"Infected",0
+"926",116,"New Infections",0
+"927",116,"Recovered",0
+"928",116,"Susceptible",18811366.2128753
+"929",117,"Critical",0
+"930",117,"Dead",0
+"931",117,"Exposed",0
+"932",117,"Hospitalized",0
+"933",117,"Infected",0
+"934",117,"New Infections",0
+"935",117,"Recovered",0
+"936",117,"Susceptible",18811366.2128753
+"937",118,"Critical",0
+"938",118,"Dead",0
+"939",118,"Exposed",0
+"940",118,"Hospitalized",0
+"941",118,"Infected",0
+"942",118,"New Infections",0
+"943",118,"Recovered",0
+"944",118,"Susceptible",18811366.2128753
+"945",119,"Critical",0
+"946",119,"Dead",0
+"947",119,"Exposed",0
+"948",119,"Hospitalized",0
+"949",119,"Infected",0
+"950",119,"New Infections",0
+"951",119,"Recovered",0
+"952",119,"Susceptible",18811366.2128753
+"953",120,"Critical",0
+"954",120,"Dead",0
+"955",120,"Exposed",130
+"956",120,"Hospitalized",0
+"957",120,"Infected",0
+"958",120,"New Infections",0
+"959",120,"Recovered",0
+"960",120,"Susceptible",18811366.2128753
+"961",121,"Critical",0
+"962",121,"Dead",0
+"963",121,"Exposed",116.838020372787
+"964",121,"Hospitalized",0
+"965",121,"Infected",37.14285718
+"966",121,"New Infections",23.9808775527873
+"967",121,"Recovered",0
+"968",121,"Susceptible",18811342.2319977
+"969",122,"Critical",0
+"970",122,"Dead",0
+"971",122,"Exposed",114.383845409174
+"972",122,"Hospitalized",0.122410914775434
+"973",122,"Infected",59.9129038292807
+"974",122,"New Infections",30.9281166048512
+"975",122,"Recovered",10.4898340044082
+"976",122,"Susceptible",18811311.3038811
+"977",123,"Critical",0.00424294457860151
+"978",123,"Dead",0
+"979",123,"Exposed",119.149770094527
+"980",123,"Hospitalized",0.290093407830021
+"981",123,"Infected",75.4760300105277
+"982",123,"New Infections",37.4470234063693
+"983",123,"Recovered",27.4358811065447
+"984",123,"Susceptible",18811273.8568577
+"985",124,"Critical",0.0139959128473377
+"986",124,"Dead",0.000110389758385035
+"987",124,"Exposed",128.997615634933
+"988",124,"Hospitalized",0.467018192665194
+"989",124,"Infected",87.9542414755771
+"990",124,"New Infections",43.8906370300285
+"991",124,"Recovered",48.8136729882548
+"992",124,"Susceptible",18811229.9662207
+"993",125,"Critical",0.0291988639595351
+"994",125,"Dead",0.000497799625736422
+"995",125,"Exposed",142.633108291283
+"996",125,"Hospitalized",0.638647043449109
+"997",125,"Infected",99.6809198185484
+"998",125,"New Infections",50.4919543031873
+"999",125,"Recovered",73.7562370803575
+"1000",125,"Susceptible",18811179.4742664
+"1001",126,"Critical",0.0492896848956683
+"1002",126,"Dead",0.00135585461350622
+"1003",126,"Exposed",159.309722648343
+"1004",126,"Hospitalized",0.80130448145755
+"1005",126,"Infected",111.952973680173
+"1006",126,"New Infections",57.4289310524647
+"1007",126,"Recovered",102.052893600205
+"1008",126,"Susceptible",18811122.0453353
+"1009",127,"Critical",0.0736040643056292
+"1010",127,"Dead",0.00288799834923955
+"1011",127,"Exposed",178.647177896276
+"1012",127,"Hospitalized",0.956503772536686
+"1013",127,"Infected",125.483473398895
+"1014",127,"New Infections",64.8545189072624
+"1015",127,"Recovered",133.858411726588
+"1016",127,"Susceptible",18811057.1908164
+"1017",128,"Critical",0.101558286918001
+"1018",128,"Dead",0.00529721399192334
+"1019",128,"Exposed",200.515707216863
+"1020",128,"Hospitalized",1.1079877323212
+"1021",128,"Infected",140.673103270479
+"1022",128,"New Infections",72.910580199136
+"1023",128,"Recovered",169.528985335513
+"1024",128,"Susceptible",18810984.2802362
+"1025",129,"Critical",0.132722880525997
+"1026",129,"Dead",0.00878044223242804
+"1027",129,"Exposed",224.960320995574
+"1028",129,"Hospitalized",1.26024486017095
+"1029",129,"Infected",157.770990129401
+"1030",129,"New Infections",81.7348158979627
+"1031",129,"Recovered",209.534395646144
+"1032",129,"Susceptible",18810902.5454203
+"1033",130,"Critical",0.166842798721741
+"1034",130,"Dead",0.0135265217037005
+"1035",130,"Exposed",252.150862262212
+"1036",130,"Hospitalized",1.41781723715586
+"1037",130,"Infected",176.967941824648
+"1038",130,"New Infections",91.4649187582187
+"1039",130,"Recovered",254.415383067827
+"1040",130,"Susceptible",18810811.0805015
+"1041",131,"Critical",0.203832757187248
+"1042",131,"Dead",0.0197167928782953
+"1043",131,"Exposed",282.349516386062
+"1044",131,"Hospitalized",1.58502515534379
+"1045",131,"Infected",198.448776256861
+"1046",131,"New Infections",102.241757699383
+"1047",131,"Recovered",304.767264063318
+"1048",131,"Susceptible",18810708.8387438
+"1049",132,"Critical",0.243762380770113
+"1050",132,"Dead",0.027527624160885
+"1051",132,"Exposed",315.890510654396
+"1052",132,"Hospitalized",1.76590430750783
+"1053",132,"Infected",222.420416317747
+"1054",132,"New Infections",114.212284745023
+"1055",132,"Recovered",361.238294872091
+"1056",132,"Susceptible",18810594.6264591
+"1057",133,"Critical",0.286838616607342
+"1058",133,"Dead",0.0371342173513682
+"1059",133,"Exposed",353.16845993372
+"1060",133,"Hospitalized",1.96424571260773
+"1061",133,"Infected",249.126157583496
+"1062",133,"New Infections",127.53238098512
+"1063",133,"Recovered",424.535961078012
+"1064",133,"Susceptible",18810467.0940781
+"1065",134,"Critical",0.333389131659024
+"1066",134,"Dead",0.0487151695573488
+"1067",134,"Exposed",394.63286964379
+"1068",134,"Hospitalized",2.18368044004364
+"1069",134,"Infected",278.852529713286
+"1070",134,"New Infections",142.369684077752
+"1071",134,"Recovered",495.43729712121
+"1072",134,"Susceptible",18810324.724394
+"1073",135,"Critical",0.38384845260694
+"1074",135,"Dead",0.0624574024338869
+"1075",135,"Exposed",440.787017136432
+"1076",135,"Hospitalized",2.42777956755265
+"1077",135,"Infected",311.932626869367
+"1078",135,"New Infections",158.906396075049
+"1079",135,"Recovered",574.801147866202
+"1080",135,"Susceptible",18810165.817998
+"1081",136,"Critical",0.438747565166505
+"1082",136,"Dead",0.0785612000013122
+"1083",136,"Exposed",492.18994417633
+"1084",136,"Hospitalized",2.70015518438148
+"1085",136,"Infected",348.748166982487
+"1086",136,"New Infections",177.342074919104
+"1087",136,"Recovered",663.581377105332
+"1088",136,"Susceptible",18809988.475923
+"1089",137,"Critical",0.498707135478415
+"1090",137,"Dead",0.0972452098357504
+"1091",137,"Exposed",549.460675098076
+"1092",137,"Hospitalized",3.00455646702878
+"1093",137,"Infected",389.731531935997
+"1094",137,"New Infections",197.896429398465
+"1095",137,"Recovered",762.840665765748
+"1096",137,"Susceptible",18809790.5794936
+"1097",138,"Critical",0.56443422823137
+"1098",138,"Dead",0.118751352568393
+"1099",138,"Exposed",613.284062263498
+"1100",138,"Hospitalized",3.34495913977885
+"1101",138,"Infected",435.368430027942
+"1102",138,"New Infections",220.812151636147
+"1103",138,"Recovered",873.764896236292
+"1104",138,"Susceptible",18809569.767342
+"1105",139,"Critical",0.636722259859492
+"1106",139,"Dead",0.143349650487272
+"1107",139,"Exposed",684.41787380642
+"1108",139,"Hospitalized",3.72564877286743
+"1109",139,"Infected",486.201467860362
+"1110",139,"New Infections",246.357829507717
+"1111",139,"Recovered",997.678300406031
+"1112",139,"Susceptible",18809323.4095125
+"1113",140,"Critical",0.716453878044538
+"1114",140,"Dead",0.171343030291986
+"1115",140,"Exposed",763.700893810315
+"1116",140,"Hospitalized",4.1512993542516
+"1117",140,"Infected",542.834726758726
+"1118",140,"New Infections",274.830984144134
+"1119",140,"Recovered",1136.05963006853
+"1120",140,"Susceptible",18809048.5785284
+"1121",141,"Critical",0.804606464531082
+"1122",141,"Dead",0.203072182048489
+"1123",141,"Exposed",852.061914732288
+"1124",141,"Hospitalized",4.62704894102472
+"1125",141,"Infected",605.939345979428
+"1126",141,"New Infections",306.561276514549
+"1127",141,"Recovered",1290.55963511539
+"1128",141,"Susceptible",18808742.0172518
+"1129",142,"Critical",0.902259994449611
+"1130",142,"Dead",0.238920570795551
+"1131",142,"Exposed",950.529576831329
+"1132",142,"Hospitalized",5.15857425316617
+"1133",142,"Infected",676.260079979137
+"1134",142,"New Infections",341.913923694569
+"1135",142,"Recovered",1463.0201354804
+"1136",142,"Susceptible",18808400.1033281
+"1137",143,"Critical",1.01060703736556
+"1138",143,"Dead",0.279319703289192
+"1139",143,"Exposed",1060.2430585488
+"1140",143,"Hospitalized",5.75216597956392
+"1141",143,"Infected",754.62279344384
+"1142",143,"New Infections",381.293361083718
+"1143",143,"Recovered",1655.49496348014
+"1144",143,"Susceptible",18808018.8099671
+"1145",144,"Critical",1.13096474355262
+"1146",144,"Dead",0.324754753464571
+"1147",144,"Exposed",1182.46365243411
+"1148",144,"Hospitalized",6.41480641277432
+"1149",144,"Infected",841.942869275435
+"1150",144,"New Infections",425.147182345037
+"1151",144,"Recovered",1870.2730429187
+"1152",144,"Susceptible",18807593.6627847
+"1153",145,"Critical",1.26478871736221
+"1154",145,"Dead",0.375770648906833
+"1155",145,"Exposed",1318.58727885749
+"1156",145,"Hospitalized",7.15425086146677
+"1157",145,"Infected",939.234521703777
+"1158",145,"New Infections",473.970384599544
+"1159",145,"Recovered",2109.90386434858
+"1160",145,"Susceptible",18807119.6924001
+"1161",146,"Critical",1.41368873429619
+"1162",146,"Dead",0.432978718723299
+"1163",146,"Exposed",1470.1579984727
+"1164",146,"Hospitalized",7.97911413113476
+"1165",146,"Infected",1047.62102385608
+"1166",146,"New Infections",528.309942522664
+"1167",146,"Recovered",2377.2256137473
+"1168",146,"Susceptible",18806591.3824576
+"1169",147,"Critical",1.57944630748676
+"1170",147,"Dead",0.497064001825246
+"1171",147,"Exposed",1638.88258699508
+"1172",147,"Hospitalized",8.89896322448137
+"1173",147,"Infected",1168.34587386727
+"1174",147,"New Infections",588.769731363193
+"1175",147,"Recovered",2675.39621462729
+"1176",147,"Susceptible",18806002.6127262
+"1177",148,"Critical",1.7640341519409
+"1178",148,"Dead",0.568793314398972
+"1179",148,"Exposed",1826.64623412846
+"1180",148,"Hospitalized",9.9244172956136
+"1181",148,"Infected",1302.78493489537
+"1182",148,"New Infections",656.01581531451
+"1183",148,"Recovered",3007.92755055217
+"1184",148,"Susceptible",18805346.5969109
+"1185",149,"Critical",1.96963763108142
+"1186",149,"Dead",0.649024176573789
+"1187",149,"Exposed",2035.52942337876
+"1188",149,"Hospitalized",11.067255795453
+"1189",149,"Infected",1452.45959196878
+"1190",149,"New Infections",730.782113808901
+"1191",149,"Recovered",3378.7231451962
+"1192",149,"Susceptible",18804615.8147971
+"1193",150,"Critical",2.19867830022417
+"1194",150,"Dead",0.738714701057796
+"1195",150,"Exposed",2267.82604137133
+"1196",150,"Hospitalized",12.3405356660147
+"1197",150,"Infected",1619.05097253822
+"1198",150,"New Infections",813.876453825225
+"1199",150,"Recovered",3792.11958939522
+"1200",150,"Susceptible",18803801.9383433
+"1201",151,"Critical",2.45383968628438
+"1202",151,"Dead",0.838934550755622
+"1203",151,"Exposed",2526.06275400328
+"1204",151,"Hospitalized",13.7587183736257
+"1205",151,"Infected",1804.41527810448
+"1206",151,"New Infections",906.187010814566
+"1207",151,"Recovered",4252.93201806822
+"1208",151,"Susceptible",18802895.7513325
+"1209",152,"Critical",2.73809546284796
+"1210",152,"Dead",0.950877077978708
+"1211",152,"Exposed",2813.01967181708
+"1212",152,"Hospitalized",15.3378075102323
+"1213",152,"Infected",2010.6002714246
+"1214",152,"New Infections",1008.68913396504
+"1215",152,"Recovered",4766.50395345894
+"1216",152,"Susceptible",18801887.0621985
+"1217",153,"Critical",3.05474019532757
+"1218",153,"Dead",1.07587276464779
+"1219",153,"Exposed",3131.75230764388
+"1220",153,"Hospitalized",17.0954976316702
+"1221",153,"Infected",2239.86295748029
+"1222",153,"New Infections",1122.45254286397
+"1223",153,"Recovered",5338.76184389984
+"1224",153,"Susceptible",18800764.6096556
+"1225",154,"Critical",3.40742284263364
+"1226",154,"Dead",1.21540409069794
+"1227",154,"Exposed",3485.61480496423
+"1228",154,"Hospitalized",19.0513349356777
+"1229",154,"Infected",2494.68848635328
+"1230",154,"New Infections",1248.64887182767
+"1231",154,"Recovered",5976.2746382568
+"1232",154,"Susceptible",18799515.9607838
+"1233",155,"Critical",3.80018320979342
+"1234",155,"Dead",1.37112196655675
+"1235",155,"Exposed",3878.28438466035
+"1236",155,"Hospitalized",21.2268903036224
+"1237",155,"Infected",2777.81029195382
+"1238",155,"New Infections",1388.55952496751
+"1239",155,"Recovered",6686.31874431669
+"1240",155,"Susceptible",18798127.4012588
+"1241",156,"Critical",4.23749155016551
+"1242",156,"Dead",1.54486387490398
+"1243",156,"Exposed",4313.78692001757
+"1244",156,"Hospitalized",23.6459451310061
+"1245",156,"Infected",3092.23146161296
+"1246",156,"New Infections",1543.58378922541
+"1247",156,"Recovered",7476.94872344962
+"1248",156,"Susceptible",18796583.8174696
+"1249",157,"Critical",4.72429151598264
+"1250",157,"Dead",1.73867387675931
+"1251",157,"Exposed",4796.52350417844
+"1252",157,"Hospitalized",26.3346902450646
+"1253",157,"Infected",3441.24730722044
+"1254",157,"New Infections",1715.24713396983
+"1255",157,"Recovered",8357.07407256937
+"1256",157,"Susceptible",18794868.5703357
+"1257",158,"Critical",5.26604665130219
+"1258",158,"Dead",1.95482464709587
+"1259",158,"Exposed",5331.29782002489
+"1260",158,"Hospitalized",29.3219380450848
+"1261",158,"Infected",3828.46907816709
+"1262",158,"New Infections",1905.20960412501
+"1263",158,"Recovered",9336.54243619561
+"1264",158,"Susceptible",18792963.3607315
+"1265",159,"Critical",5.86879061118786
+"1266",159,"Dead",2.19584171542628
+"1267",159,"Exposed",5923.34405887481
+"1268",159,"Hospitalized",32.6393477942178
+"1269",159,"Infected",4257.84871912727
+"1270",159,"New Infections",2115.27418895169
+"1271",159,"Recovered",10426.2295745598
+"1272",159,"Susceptible",18790848.0865426
+"1273",160,"Critical",6.53918127397312
+"1274",160,"Dead",2.46453009691164
+"1275",160,"Exposed",6578.35506042247
+"1276",160,"Hospitalized",36.3216637322657
+"1277",160,"Infected",4733.70453095957
+"1278",160,"New Infections",2347.39502006142
+"1279",160,"Recovered",11638.136386259
+"1280",160,"Susceptible",18788500.6915225
+"1281",161,"Critical",7.28455888843179
+"1282",161,"Dead",2.76400350920635
+"1283",161,"Exposed",7302.51026060143
+"1284",161,"Hospitalized",40.4069653588651
+"1285",161,"Infected",5260.74753990458
+"1286",161,"New Infections",2603.68521932205
+"1287",161,"Recovered",12985.4932438037
+"1288",161,"Susceptible",18785897.0063032
+"1289",162,"Critical",8.11300836305369
+"1290",162,"Dead",3.09771637912536
+"1291",162,"Exposed",8102.50293453254
+"1292",162,"Hospitalized",44.9369288470556
+"1293",162,"Infected",5844.1083178299
+"1294",162,"New Infections",2886.42417904652
+"1295",162,"Recovered",14482.8718451611
+"1296",162,"Susceptible",18783010.5821241
+"1297",163,"Critical",9.03342575864612
+"1298",163,"Dead",3.46949885088502
+"1299",163,"Exposed",8985.56610601141
+"1300",163,"Hospitalized",49.9570980790589
+"1301",163,"Infected",6489.36392324734
+"1302",163,"New Infections",3198.06401223174
+"1303",163,"Recovered",16146.3047113972
+"1304",163,"Susceptible",18779812.5181119
+"1305",164,"Critical",10.055588986189
+"1306",164,"Dead",3.8835950136271
+"1307",164,"Exposed",9959.49636063493
+"1308",164,"Hospitalized",55.5171632383904
+"1309",164,"Infected",7202.56454760742
+"1310",164,"New Infections",3541.23485890837
+"1311",164,"Recovered",17993.4123667723
+"1312",164,"Susceptible",18776271.283253
+"1313",165,"Critical",11.1902326370481
+"1314",165,"Dead",4.34470456959806
+"1315",165,"Exposed",11032.6746450489
+"1316",165,"Hospitalized",61.6712442323131
+"1317",165,"Infected",7990.25935211726
+"1318",165,"New Infections",3918.74867601234
+"1319",165,"Recovered",20043.5381196601
+"1320",165,"Susceptible",18772352.534577
+"1321",166,"Critical",12.4491267797728
+"1322",166,"Dead",4.8580281650287
+"1323",166,"Exposed",12214.0829603822
+"1324",166,"Hospitalized",68.4781754410762
+"1325",166,"Infected",8859.52086525269
+"1326",166,"New Infections",4333.60107421378
+"1327",166,"Recovered",22317.8902164582
+"1328",166,"Susceptible",18768018.9335028
+"1329",167,"Critical",13.8451594438801
+"1330",167,"Dead",5.42931660263001
+"1331",167,"Exposed",13513.3156676741
+"1332",167,"Hospitalized",76.0017873790109
+"1333",167,"Infected",9817.96717910529
+"1334",167,"New Infections",4788.97069946226
+"1335",167,"Recovered",24839.6909617363
+"1336",167,"Susceptible",18763229.9628033
+"1337",168,"Critical",15.3924223729899
+"1338",168,"Dead",6.06492414673743
+"1339",168,"Exposed",14886.0662390524
+"1340",168,"Hospitalized",84.3111797922606
+"1341",168,"Infected",10873.7810340379
+"1342",168,"New Infections",5233.69790886041
+"1343",168,"Recovered",27634.3321813994
+"1344",168,"Susceptible",18757996.2648945
+"1345",169,"Critical",17.1062994638394
+"1346",169,"Dead",6.77186611838981
+"1347",169,"Exposed",16335.5732513232
+"1348",169,"Hospitalized",93.4809794989942
+"1349",169,"Infected",12020.148236617
+"1350",169,"New Infections",5702.66879911034
+"1351",169,"Recovered",30729.5361468906
+"1352",169,"Susceptible",18752293.5960953
+"1353",170,"Critical",19.0035571104274
+"1354",170,"Dead",7.55788095673724
+"1355",170,"Exposed",17861.794570125
+"1356",170,"Hospitalized",103.548239002638
+"1357",170,"Infected",13253.1268134803
+"1358",170,"New Infections",6193.52796670437
+"1359",170,"Recovered",34151.1136859412
+"1360",170,"Susceptible",18746100.0681286
+"1361",171,"Critical",21.1005574303662
+"1362",171,"Dead",8.43149689366576
+"1363",171,"Exposed",19462.3090863152
+"1364",171,"Hospitalized",114.529823136265
+"1365",171,"Infected",14569.8890309813
+"1366",171,"New Infections",6703.88439847212
+"1367",171,"Recovered",37923.7691503317
+"1368",171,"Susceptible",18739396.1837302
+"1369",172,"Critical",23.4124458210983
+"1370",172,"Dead",9.4020164453205
+"1371",172,"Exposed",21132.788625836
+"1372",172,"Hospitalized",126.43055821037
+"1373",172,"Infected",15967.7233339031
+"1374",172,"New Infections",7231.13928402867
+"1375",172,"Recovered",42071.4114489013
+"1376",172,"Susceptible",18732165.0444461
+"1377",173,"Critical",25.9527916948522
+"1378",173,"Dead",10.4794636033485
+"1379",173,"Exposed",22867.2481292881
+"1380",173,"Hospitalized",139.24656746977
+"1381",173,"Infected",17443.4562759311
+"1382",173,"New Infections",7772.3991168717
+"1383",173,"Recovered",46617.1843180017
+"1384",173,"Susceptible",18724392.6453293
+"1385",174,"Critical",28.7334174469483
+"1386",174,"Dead",11.6745145735786
+"1387",174,"Exposed",24658.1883970727
+"1388",174,"Hospitalized",152.966164675716
+"1389",174,"Infected",18993.1110927256
+"1390",174,"New Infections",8324.43973982902
+"1391",174,"Recovered",51583.3336993233
+"1392",174,"Susceptible",18716068.2055894
+"1393",175,"Critical",31.7642862556352
+"1394",175,"Dead",12.9984206824536
+"1395",175,"Exposed",26596.5114138243
+"1396",175,"Hospitalized",167.569574522535
+"1397",175,"Infected",20611.7046098719
+"1398",175,"New Infections",8983.51970867468
+"1399",175,"Recovered",56990.9786893357
+"1400",175,"Susceptible",18707084.6858808
+"1401",176,"Critical",35.0533902666013
+"1402",176,"Dead",14.4629260912794
+"1403",176,"Exposed",28678.5524793246
+"1404",176,"Hospitalized",183.0281579589
+"1405",176,"Infected",22321.6494127111
+"1406",176,"New Infections",9681.04433419198
+"1407",176,"Recovered",62859.824962332
+"1408",176,"Susceptible",18697403.6415466
+"1409",177,"Critical",38.6066172956836
+"1410",177,"Dead",16.0801802488025
+"1411",177,"Exposed",30904.7641823453
+"1412",177,"Hospitalized",199.382878087947
+"1413",177,"Infected",24137.9074335598
+"1414",177,"New Infections",10420.0838481644
+"1415",177,"Recovered",69215.9138853115
+"1416",177,"Susceptible",18686983.5576984
+"1417",178,"Critical",42.4310532876439
+"1418",178,"Dead",17.8626439899038
+"1419",178,"Exposed",33277.7540593043
+"1420",178,"Hospitalized",216.706170428545
+"1421",178,"Infected",26071.2950780033
+"1422",178,"New Infections",11202.9225093162
+"1423",178,"Recovered",76089.5286811514
+"1424",178,"Susceptible",18675780.6351891
+"1425",179,"Critical",46.5362182401091
+"1426",179,"Dead",19.8231493665928
+"1427",179,"Exposed",35801.1676288619
+"1428",179,"Hospitalized",235.082541940591
+"1429",179,"Infected",28130.283360434
+"1430",179,"New Infections",12031.3433102954
+"1431",179,"Recovered",83514.0280976173
+"1432",179,"Susceptible",18663749.2918788
+"1433",180,"Critical",50.9343068244872
+"1434",180,"Dead",21.9750174015646
+"1435",180,"Exposed",37588.4674591945
+"1436",180,"Hospitalized",254.599026937256
+"1437",180,"Infected",30321.9645821765
+"1438",180,"New Infections",12016.2048773792
+"1439",180,"Recovered",91525.1854813054
+"1440",180,"Susceptible",18651733.0870014
+"1441",181,"Critical",55.6399859024603
+"1442",181,"Dead",24.3321876195829
+"1443",181,"Exposed",39530.7016683369
+"1444",181,"Hospitalized",275.340715850129
+"1445",181,"Infected",32398.1082634007
+"1446",181,"New Infections",12681.7963510803
+"1447",181,"Recovered",100160.79940381
+"1448",181,"Susceptible",18639051.2906503
+"1449",182,"Critical",60.6700244145974
+"1450",182,"Dead",26.9093388112561
+"1451",182,"Exposed",41580.6971595587
+"1452",182,"Hospitalized",296.68041411767
+"1453",182,"Infected",34435.9920954203
+"1454",182,"New Infections",13344.4816934697
+"1455",182,"Recovered",109388.454886067
+"1456",182,"Susceptible",18625706.8089569
+"1457",183,"Critical",66.0118297053678
+"1458",183,"Dead",29.7219932508163
+"1459",183,"Exposed",43710.2631945442
+"1460",183,"Hospitalized",318.362963368737
+"1461",183,"Infected",36477.3364015012
+"1462",183,"New Infections",14009.7652353111
+"1463",183,"Recovered",119197.47277133
+"1464",183,"Susceptible",18611697.0437216
+"1465",184,"Critical",71.6433755631031
+"1466",184,"Dead",32.7851448490942
+"1467",184,"Exposed",45901.5370887268
+"1468",184,"Hospitalized",340.313242350981
+"1469",184,"Infected",38543.8869158657
+"1470",184,"New Infections",14679.9205336838
+"1471",184,"Recovered",129588.923920029
+"1472",184,"Susceptible",18597017.1231879
+"1473",185,"Critical",77.5422499459442
+"1474",185,"Dead",36.1128188589054
+"1475",185,"Exposed",47228.1763167582
+"1476",185,"Hospitalized",362.53556153187
+"1477",185,"Infected",40646.0726816425
+"1478",185,"New Infections",14441.3641236395
+"1479",185,"Recovered",140570.014182287
+"1480",185,"Susceptible",18582575.7590642
+"1481",186,"Critical",83.689175223766
+"1482",186,"Dead",39.7180545361367
+"1483",186,"Exposed",48664.5694355359
+"1484",186,"Hospitalized",385.062308527406
+"1485",186,"Infected",42526.6737221276
+"1486",186,"New Infections",14930.1577942023
+"1487",186,"Recovered",152150.898909276
+"1488",186,"Susceptible",18567645.60127
+"1489",187,"Critical",90.0688434390497
+"1490",187,"Dead",43.6130523308738
+"1491",187,"Exposed",50153.410978631
+"1492",187,"Hospitalized",407.201487517872
+"1493",187,"Infected",44280.3582134265
+"1494",187,"New Infections",15393.0042528667
+"1495",187,"Recovered",164268.963282748
+"1496",187,"Susceptible",18552252.5970172
+"1497",188,"Critical",96.6374678787083
+"1498",188,"Dead",47.8093600383248
+"1499",188,"Exposed",51660.6408850144
+"1500",188,"Hospitalized",428.697894757947
+"1501",188,"Infected",45958.3732908772
+"1502",188,"New Infections",15836.7759146075
+"1503",188,"Recovered",176888.232874134
+"1504",188,"Susceptible",18536415.8211026
+"1505",189,"Critical",103.34552650359
+"1506",189,"Dead",52.3165246232012
+"1507",189,"Exposed",53165.189638061
+"1508",189,"Hospitalized",449.502982144693
+"1509",189,"Infected",47587.5926051171
+"1510",189,"New Infections",16264.7318778109
+"1511",189,"Recovered",189987.176374062
+"1512",189,"Susceptible",18520151.0892247
+"1513",190,"Critical",110.147552342205
+"1514",190,"Dead",57.141814913562
+"1515",190,"Exposed",54696.1304429998
+"1516",190,"Hospitalized",469.655312720211
+"1517",190,"Infected",49181.1917589804
+"1518",190,"New Infections",16720.995002432
+"1519",190,"Recovered",203551.851770987
+"1520",190,"Susceptible",18503430.0942223
+"1521",191,"Critical",117.005448039218
+"1522",191,"Dead",62.2904055899103
+"1523",191,"Exposed",56240.6461871658
+"1524",191,"Hospitalized",489.220626326992
+"1525",191,"Infected",50756.8885274188
+"1526",191,"New Infections",17171.9816006505
+"1527",191,"Recovered",217572.049059053
+"1528",191,"Susceptible",18486258.1126217
+"1529",192,"Critical",123.888752571145
+"1530",192,"Dead",67.7657176548632
+"1531",192,"Exposed",57790.3794901123
+"1532",192,"Hospitalized",508.297700514536
+"1533",192,"Infected",52323.6764317704
+"1534",192,"New Infections",17618.4893724912
+"1535",192,"Recovered",232042.581533462
+"1536",192,"Susceptible",18468639.6232492
+"1537",193,"Critical",130.775146859621
+"1538",193,"Dead",73.5697718757753
+"1539",193,"Exposed",59339.4216019048
+"1540",193,"Hospitalized",526.985766055028
+"1541",193,"Infected",53885.5915928586
+"1542",193,"New Infections",18060.5791254789
+"1543",193,"Recovered",246960.824872011
+"1544",193,"Susceptible",18450579.0441237
+"1545",194,"Critical",137.649460511377
+"1546",194,"Dead",79.7035672459477
+"1547",194,"Exposed",59946.5821378884
+"1548",194,"Hospitalized",545.370554719357
+"1549",194,"Infected",55443.8287398586
+"1550",194,"New Infections",17561.2810106249
+"1551",194,"Recovered",262325.315301965
+"1552",194,"Susceptible",18433017.7631131
+"1553",195,"Critical",144.50218715841
+"1554",195,"Dead",86.1674135502697
+"1555",195,"Exposed",60649.9532817633
+"1556",195,"Hospitalized",563.519724680136
+"1557",195,"Infected",56730.3297120108
+"1558",195,"New Infections",17830.966057542
+"1559",195,"Recovered",278134.943500568
+"1560",195,"Susceptible",18415186.7970555
+"1561",196,"Critical",151.327982629823
+"1562",196,"Dead",92.9611946658608
+"1563",196,"Exposed",61393.1843971881
+"1564",196,"Hospitalized",580.736514903542
+"1565",196,"Infected",57850.2221616314
+"1566",196,"New Infections",18071.7892132572
+"1567",196,"Recovered",294312.77278197
+"1568",196,"Susceptible",18397115.0078423
+"1569",197,"Critical",158.091051785917
+"1570",197,"Dead",100.08456162098
+"1571",197,"Exposed",62143.9203635489
+"1572",197,"Hospitalized",596.791424247634
+"1573",197,"Infected",58862.4970870884
+"1574",197,"New Infections",18291.6458116697
+"1575",197,"Recovered",310811.466356366
+"1576",197,"Susceptible",18378823.3620306
+"1577",198,"Critical",164.749724726005
+"1578",198,"Dead",107.535467977571
+"1579",198,"Exposed",62883.3560553812
+"1580",198,"Hospitalized",611.676743117217
+"1581",198,"Infected",59800.0465955861
+"1582",198,"New Infections",18494.8415277446
+"1583",198,"Recovered",327600.327785615
+"1584",198,"Susceptible",18360328.5205029
+"1585",199,"Critical",171.267054745956
+"1586",199,"Dead",115.309879492562
+"1587",199,"Exposed",63600.345371702
+"1588",199,"Hospitalized",625.478338454256
+"1589",199,"Infected",60680.9921564085
+"1590",199,"New Infections",18683.6624929678
+"1591",199,"Recovered",344657.962064567
+"1592",199,"Susceptible",18341644.8580099
+"1593",200,"Critical",177.614394588316
+"1594",200,"Dead",123.401991089749
+"1595",200,"Exposed",64288.0786489599
+"1596",200,"Hospitalized",638.311074342738
+"1597",200,"Infected",61515.0930758979
+"1598",200,"New Infections",18859.2605444872
+"1599",200,"Recovered",361968.116224979
+"1600",200,"Susceptible",18322785.5974654
+"1601",201,"Critical",183.771655765787
+"1602",201,"Dead",131.804615976309
+"1603",201,"Exposed",64942.2090281247
+"1604",201,"Hospitalized",650.288238022985
+"1605",201,"Infected",62307.3746689936
+"1606",201,"New Infections",19022.1528686642
+"1607",201,"Recovered",379517.320071638
+"1608",201,"Susceptible",18303763.4445967
+"1609",202,"Critical",189.726176216762
+"1610",202,"Dead",140.50958846276
+"1611",202,"Exposed",65559.7966393773
+"1612",202,"Hospitalized",661.508719571566
+"1613",202,"Infected",63060.184486641
+"1614",202,"New Infections",19172.504494986
+"1615",202,"Recovered",397293.547163238
+"1616",202,"Susceptible",18284590.9401018
+"1617",203,"Critical",195.471158892404
+"1618",203,"Dead",149.508113895331
+"1619",203,"Exposed",66138.7146164981
+"1620",203,"Hospitalized",672.053126780154
+"1621",203,"Infected",63774.359388137
+"1622",203,"New Infections",19310.2884642458
+"1623",203,"Recovered",415285.45483355
+"1624",203,"Susceptible",18265280.6516375
+"1625",204,"Critical",201.004131815485
+"1626",204,"Dead",158.79104504317
+"1627",204,"Exposed",66677.3160448284
+"1628",204,"Hospitalized",681.984124763518
+"1629",204,"Infected",64449.8894540585
+"1630",204,"New Infections",19435.3770519408
+"1631",204,"Recovered",433481.953489185
+"1632",204,"Susceptible",18245845.2745856
+"1633",205,"Critical",206.325614612795
+"1634",205,"Dead",168.349085791904
+"1635",205,"Exposed",67174.2483995904
+"1636",205,"Hospitalized",691.348542921758
+"1637",205,"Infected",65086.2970520578
+"1638",205,"New Infections",19547.5941009066
+"1639",205,"Recovered",451871.963695626
+"1640",205,"Susceptible",18226297.6804847
+"1641",206,"Critical",211.438044269665
+"1642",206,"Dead",178.172931838641
+"1643",206,"Exposed",67628.3513658138
+"1644",206,"Hospitalized",700.180014219016
+"1645",206,"Infected",65682.8545805208
+"1646",206,"New Infections",19646.745385299
+"1647",206,"Recovered",470444.280839238
+"1648",206,"Susceptible",18206650.9350994
+"1649",207,"Critical",216.344951427552
+"1650",207,"Dead",188.253360618945
+"1651",207,"Exposed",68038.6017760617
+"1652",207,"Hospitalized",708.501564379377
+"1653",207,"Infected",66238.7108054461
+"1654",207,"New Infections",19732.6365340884
+"1655",207,"Recovered",489187.501852055
+"1656",207,"Susceptible",18186918.2985653
+"1657",208,"Critical",221.050353779418
+"1658",208,"Dead",198.581282301676
+"1659",208,"Exposed",68404.0851275525
+"1660",208,"Hospitalized",716.327908778632
+"1661",208,"Infected",66752.9653689934
+"1662",208,"New Infections",19805.0838783767
+"1663",208,"Recovered",508089.988146959
+"1664",208,"Susceptible",18167113.2146869
+"1665",209,"Critical",225.558326550098
+"1666",209,"Dead",209.147762110849
+"1667",209,"Exposed",67399.7206114951
+"1668",209,"Hospitalized",723.667385497989
+"1669",209,"Infected",67224.7138719106
+"1670",209,"New Infections",18539.6598256445
+"1671",209,"Recovered",527139.850056445
+"1672",209,"Susceptible",18148573.5548613
+"1673",210,"Critical",229.872711877402
+"1674",210,"Dead",219.944022342556
+"1675",210,"Exposed",66548.8554490453
+"1676",210,"Hospitalized",730.523533231273
+"1677",210,"Infected",67274.7157975562
+"1678",210,"New Infections",18406.197888663
+"1679",210,"Recovered",546324.94438862
+"1680",210,"Susceptible",18130167.3569726
+"1681",211,"Critical",233.996934068402
+"1682",211,"Dead",230.961430639559
+"1683",211,"Exposed",65772.3951017733
+"1684",211,"Hospitalized",735.838385299696
+"1685",211,"Infected",67067.3271263457
+"1686",211,"New Infections",18237.4983714692
+"1687",211,"Recovered",565525.835296015
+"1688",211,"Susceptible",18111929.8586011
+"1689",212,"Critical",237.885774748313
+"1690",212,"Dead",242.191479525059
+"1691",212,"Exposed",65025.9428670867
+"1692",212,"Hospitalized",739.277774660403
+"1693",212,"Infected",66697.3465475264
+"1694",212,"New Infections",18045.6606703264
+"1695",212,"Recovered",584669.370500921
+"1696",212,"Susceptible",18093884.1979308
+"1697",213,"Critical",241.484259695786
+"1698",213,"Dead",253.623403513185
+"1699",213,"Exposed",64284.8885398774
+"1700",213,"Hospitalized",740.855954291523
+"1701",213,"Infected",66219.8026383518
+"1702",213,"New Infections",17837.7865105372
+"1703",213,"Recovered",603709.146659276
+"1704",213,"Susceptible",18076046.4114203
+"1705",214,"Critical",244.74468294969
+"1706",214,"Dead",265.243695039591
+"1707",214,"Exposed",63535.9074051801
+"1708",214,"Hospitalized",740.737356942387
+"1709",214,"Infected",65666.9700382349
+"1710",214,"New Infections",17618.1298950634
+"1711",214,"Recovered",622614.328171722
+"1712",214,"Susceptible",18058428.2815252
+"1713",215,"Critical",247.632524020368
+"1714",215,"Dead",277.03645286395
+"1715",215,"Exposed",62772.1109635358
+"1716",215,"Hospitalized",739.135474659826
+"1717",215,"Infected",65058.0949996103
+"1718",215,"New Infections",17389.3199779888
+"1719",215,"Recovered",641363.240913367
+"1720",215,"Susceptible",18041038.9615472
+"1721",216,"Critical",250.127044905117
+"1722",216,"Dead",288.98402106166
+"1723",216,"Exposed",61990.2788301745
+"1724",216,"Hospitalized",736.264190522643
+"1725",216,"Infected",64404.9567029359
+"1726",216,"New Infections",17153.0567312982
+"1727",216,"Recovered",659939.697269756
+"1728",216,"Susceptible",18023885.9048159
+"1729",217,"Critical",252.219607119702
+"1730",217,"Dead",301.067658898947
+"1731",217,"Exposed",59981.3839789218
+"1732",217,"Hospitalized",732.316810972926
+"1733",217,"Infected",63715.0487385999
+"1734",217,"New Infections",15702.6134036515
+"1735",217,"Recovered",678330.884668494
+"1736",217,"Susceptible",18008183.2914123
+"1737",218,"Critical",253.911247974854
+"1738",218,"Dead",313.268130142569
+"1739",218,"Exposed",58170.6043225486
+"1740",218,"Hospitalized",727.459225425664
+"1741",218,"Infected",62648.2873776251
+"1742",218,"New Infections",15326.7586404563
+"1743",218,"Recovered",696526.149799747
+"1744",218,"Susceptible",17992856.5327718
+"1745",219,"Critical",255.210248307316
+"1746",219,"Dead",325.566175425004
+"1747",219,"Exposed",56482.279441236
+"1748",219,"Hospitalized",720.863403341342
+"1749",219,"Infected",61368.9493606096
+"1750",219,"New Infections",14931.8477988929
+"1751",219,"Recovered",714418.659273437
+"1752",219,"Susceptible",17977924.6849729
+"1753",220,"Critical",256.085622968329
+"1754",220,"Dead",337.942867008112
+"1755",220,"Exposed",54873.4761240365
+"1756",220,"Hospitalized",712.368161292694
+"1757",220,"Infected",59972.7579536781
+"1758",220,"New Infections",14528.9908250057
+"1759",220,"Recovered",731947.887998378
+"1760",220,"Susceptible",17963395.6941479
+"1761",221,"Critical",256.502588271894
+"1762",221,"Dead",350.377663734492
+"1763",221,"Exposed",53320.0224921179
+"1764",221,"Hospitalized",702.120536707636
+"1765",221,"Infected",58515.8202866093
+"1766",221,"New Infections",14124.6824191985
+"1767",221,"Recovered",749080.357579119
+"1768",221,"Susceptible",17949271.0117287
+"1769",222,"Critical",256.437187571562
+"1770",222,"Dead",362.848218485117
+"1771",222,"Exposed",51808.4812507561
+"1772",222,"Hospitalized",690.387849758549
+"1773",222,"Infected",57031.3066295558
+"1774",222,"New Infections",13722.7509144777
+"1775",222,"Recovered",765798.490924911
+"1776",222,"Susceptible",17935548.2608142
+"1777",223,"Critical",255.880487517026
+"1778",223,"Dead",375.330910071533
+"1779",223,"Exposed",49306.4990348342
+"1780",223,"Hospitalized",677.463437451176
+"1781",223,"Infected",55539.0708055494
+"1782",223,"New Infections",12300.4410133822
+"1783",223,"Recovered",782094.148398997
+"1784",223,"Susceptible",17923247.8198008
+"1785",224,"Critical",254.837933098013
+"1786",224,"Dead",387.801584795189
+"1787",224,"Exposed",47045.2049588095
+"1788",224,"Hospitalized",663.622875506627
+"1789",224,"Infected",53758.3360121357
+"1790",224,"New Infections",11826.2770908726
+"1791",224,"Recovered",797964.866800948
+"1792",224,"Susceptible",17911421.54271
+"1793",225,"Critical",253.326775884709
+"1794",225,"Dead",400.236268423901
+"1795",225,"Exposed",44953.3669447218
+"1796",225,"Hospitalized",648.285443332686
+"1797",225,"Infected",51840.2985664102
+"1798",225,"New Infections",11349.6491304423
+"1799",225,"Recovered",813328.805296962
+"1800",225,"Susceptible",17900071.8935795
+"1801",226,"Critical",251.335079652429
+"1802",226,"Dead",412.611753065435
+"1803",226,"Exposed",42989.0235775031
+"1804",226,"Hospitalized",631.439325943302
+"1805",226,"Infected",49872.6038153887
+"1806",226,"New Infections",10879.4757726884
+"1807",226,"Recovered",828146.781516871
+"1808",226,"Susceptible",17889192.4178068
+"1809",227,"Critical",248.851637657685
+"1810",227,"Dead",424.904144250446
+"1811",227,"Exposed",41127.153316288
+"1812",227,"Hospitalized",613.32127315946
+"1813",227,"Infected",47905.8666025975
+"1814",227,"New Infections",10420.7079160684
+"1815",227,"Recovered",842404.406010539
+"1816",227,"Susceptible",17878771.7098908
+"1817",228,"Critical",245.877390886209
+"1818",228,"Dead",437.088897528944
+"1819",228,"Exposed",38521.1994442807
+"1820",228,"Hospitalized",594.250689319126
+"1821",228,"Infected",45969.0913760009
+"1822",228,"New Infections",9144.66137296846
+"1823",228,"Recovered",856101.656559445
+"1824",228,"Susceptible",17869627.0485178
+"1825",229,"Critical",242.427770760674
+"1826",229,"Dead",449.141425258376
+"1827",229,"Exposed",36182.4298255149
+"1828",229,"Hospitalized",574.548414584891
+"1829",229,"Infected",43841.1222505243
+"1830",229,"New Infections",8667.28737632039
+"1831",229,"Recovered",869246.782047138
+"1832",229,"Susceptible",17860959.7611415
+"1833",230,"Critical",238.531000756183
+"1834",230,"Dead",461.037822169815
+"1835",230,"Exposed",34044.3260177682
+"1836",230,"Hospitalized",553.834018721834
+"1837",230,"Infected",41652.9244126191
+"1838",230,"New Infections",8199.73329559543
+"1839",230,"Recovered",881785.531757341
+"1840",230,"Susceptible",17852760.0278459
+"1841",231,"Critical",234.193996827514
+"1842",231,"Dead",472.755508340732
+"1843",231,"Exposed",32065.8098785131
+"1844",231,"Hospitalized",532.189636156823
+"1845",231,"Infected",39479.0391547735
+"1846",231,"New Infections",7748.43416126278
+"1847",231,"Recovered",893700.631016027
+"1848",231,"Susceptible",17845011.5936846
+"1849",232,"Critical",229.426506744173
+"1850",232,"Dead",484.272167637667
+"1851",232,"Exposed",30220.7533682786
+"1852",232,"Hospitalized",509.886018546149
+"1853",232,"Infected",37360.9736451525
+"1854",232,"New Infections",7316.60346421658
+"1855",232,"Recovered",904995.910948497
+"1856",232,"Susceptible",17837694.9902204
+"1857",233,"Critical",224.249543990861
+"1858",233,"Dead",495.565894125819
+"1859",233,"Exposed",27864.0666207482
+"1860",233,"Hospitalized",487.242711390224
+"1861",233,"Infected",35320.9107068627
+"1862",233,"New Infections",6277.81422346947
+"1863",233,"Recovered",915687.001401207
+"1864",233,"Susceptible",17831417.1759969
+"1865",234,"Critical",218.696286437963
+"1866",234,"Dead",506.615761782143
+"1867",234,"Exposed",25768.6757603027
+"1868",234,"Hospitalized",464.561649526603
+"1869",234,"Infected",33190.3838229852
+"1870",234,"New Infections",5865.77103915797
+"1871",234,"Recovered",925795.874636449
+"1872",234,"Susceptible",17825551.4049578
+"1873",235,"Critical",212.80977986751
+"1874",235,"Dead",517.402440652326
+"1875",235,"Exposed",23876.7866597848
+"1876",235,"Hospitalized",441.5954813315
+"1877",235,"Infected",31069.8958029554
+"1878",235,"New Infections",5470.58969550247
+"1879",235,"Recovered",935296.907448394
+"1880",235,"Susceptible",17820080.8152623
+"1881",236,"Critical",206.616152865392
+"1882",236,"Dead",527.908699296286
+"1883",236,"Exposed",22150.9436728211
+"1884",236,"Hospitalized",418.441129013224
+"1885",236,"Infected",29014.7217599944
+"1886",236,"New Infections",5096.09606551101
+"1887",236,"Recovered",944192.862264506
+"1888",236,"Susceptible",17814984.7191968
+"1889",237,"Critical",200.142785643894
+"1890",237,"Dead",538.118562818487
+"1891",237,"Exposed",20565.8985406328
+"1892",237,"Hospitalized",395.326664001203
+"1893",237,"Infected",27053.6423045552
+"1894",237,"New Infections",4743.79592351807
+"1895",237,"Recovered",952502.160744363
+"1896",237,"Susceptible",17810240.9232732
+"1897",238,"Critical",193.424291359835
+"1898",238,"Dead",548.017383410477
+"1899",238,"Exposed",19103.8054627769
+"1900",238,"Hospitalized",372.504099450568
+"1901",238,"Infected",25200.0012272952
+"1902",238,"New Infections",4413.87793962945
+"1903",238,"Recovered",960251.415077351
+"1904",238,"Susceptible",17805827.0453336
+"1905",239,"Critical",186.502756996364
+"1906",239,"Dead",557.592211810354
+"1907",239,"Exposed",17751.3767574775
+"1908",239,"Hospitalized",350.20004711926
+"1909",239,"Infected",23458.2310071196
+"1910",239,"New Infections",4105.80143238075
+"1911",239,"Recovered",967471.066193502
+"1912",239,"Susceptible",17801721.2439012
+"1913",240,"Critical",179.425651853628
+"1914",240,"Dead",566.832181325295
+"1915",240,"Exposed",16498.1946374092
+"1916",240,"Hospitalized",328.597038015987
+"1917",240,"Infected",21827.701219877
+"1918",240,"New Infections",3818.63981571138
+"1919",240,"Recovered",974192.858061255
+"1920",240,"Susceptible",17797902.6040855
+"1921",241,"Critical",172.243121613519
+"1922",241,"Dead",575.728787002693
+"1923",241,"Exposed",15335.7050483438
+"1924",241,"Hospitalized",307.830320690651
+"1925",241,"Infected",20304.9850519349
+"1926",241,"New Infections",3551.280312051
+"1927",241,"Recovered",980448.396772202
+"1928",241,"Susceptible",17794351.3237735
+"1929",242,"Critical",165.005465422171
+"1930",242,"Dead",584.276028765208
+"1931",242,"Exposed",14256.6141509302
+"1932",242,"Hospitalized",287.9918249404
+"1933",242,"Infected",18885.1907637748
+"1934",242,"New Infections",3302.53912078051
+"1935",242,"Recovered",986268.349988735
+"1936",242,"Susceptible",17791048.7846527
+"1937",243,"Critical",157.761107374324
+"1938",243,"Dead",592.470427406487
+"1939",243,"Exposed",13254.5227067253
+"1940",243,"Hospitalized",269.136873771961
+"1941",243,"Infected",17562.7403016396
+"1942",243,"New Infections",3071.2268887056
+"1943",243,"Recovered",991682.023694356
+"1944",243,"Susceptible",17787977.557764
+"1945",244,"Critical",150.555129457297
+"1946",244,"Dead",600.310938048416
+"1947",244,"Exposed",12323.7012205315
+"1948",244,"Hospitalized",251.291404110742
+"1949",244,"Infected",16331.820987576
+"1950",244,"New Infections",2856.18500522907
+"1951",244,"Recovered",996717.160436778
+"1952",244,"Susceptible",17785121.3727588
+"1953",245,"Critical",143.428320406791
+"1954",245,"Dead",607.798789101841
+"1955",245,"Exposed",11458.9485382148
+"1956",245,"Hospitalized",234.458651022316
+"1957",245,"Infected",15186.6439101324
+"1958",245,"New Infections",2656.30481278477
+"1959",245,"Recovered",1001399.86672041
+"1960",245,"Susceptible",17782465.067946
+"1961",246,"Critical",136.416651892292
+"1962",246,"Dead",614.937272553063
+"1963",246,"Exposed",10655.5000953763
+"1964",246,"Hospitalized",218.624886692355
+"1965",246,"Infected",14121.5880885195
+"1966",246,"New Infections",2470.53685706829
+"1967",246,"Recovered",1005754.61479132
+"1968",246,"Susceptible",17779994.5310889
+"1969",247,"Critical",129.551085378896
+"1970",247,"Dead",621.731507006458
+"1971",247,"Exposed",9908.96586913621
+"1972",247,"Hospitalized",203.764129614216
+"1973",247,"Infected",13131.2772323454
+"1974",247,"New Infections",2297.89437548327
+"1975",247,"Recovered",1009804.28633836
+"1976",247,"Susceptible",17777696.6367134
+"1977",248,"Critical",122.857621029269
+"1978",248,"Dead",628.188190103659
+"1979",248,"Exposed",9215.28625804304
+"1980",248,"Hospitalized",189.841892048807
+"1981",248,"Infected",12210.6168419364
+"1982",248,"New Infections",2137.45349720545
+"1983",248,"Recovered",1013570.23885588
+"1984",248,"Susceptible",17775559.1832162
+"1985",249,"Critical",116.357514132725
+"1986",249,"Dead",634.315352520462
+"1987",249,"Exposed",8570.69893533674
+"1988",249,"Hospitalized",176.818094730938
+"1989",249,"Infected",11354.8081028253
+"1990",249,"New Infections",1988.35161079608
+"1991",249,"Recovered",1017072.38327029
+"1992",249,"Susceptible",17773570.8316054
+"1993",250,"Critical",110.067599754255
+"1994",250,"Dead",640.122122022096
+"1995",250,"Exposed",7971.71256334681
+"1996",250,"Hospitalized",164.649291780568
+"1997",250,"Infected",10559.3483398903
+"1998",250,"New Infections",1849.78475484076
+"1999",250,"Recovered",1020329.26610789
+"2000",250,"Susceptible",17771721.0468506
+"2001",251,"Critical",104.000680268323
+"2002",251,"Dead",645.61850309203
+"2003",251,"Exposed",7415.08493265845
+"2004",251,"Hospitalized",153.290340487126
+"2005",251,"Infected",9820.02383156711
+"2006",251,"New Infections",1721.0045325455
+"2007",251,"Recovered",1023358.15226915
+"2008",251,"Susceptible",17770000.042318
+"2009",252,"Critical",98.1659422981578
+"2010",252,"Dead",650.815175378964
+"2011",252,"Exposed",6897.80407727163
+"2012",252,"Hospitalized",142.695633281308
+"2013",252,"Infected",9132.89843119179
+"2014",252,"New Infections",1601.31484177705
+"2015",252,"Recovered",1026175.10613958
+"2016",252,"Susceptible",17768398.7274763
+"2017",253,"Critical",92.5693791626544
+"2018",253,"Dead",655.723312526458
+"2019",253,"Exposed",6417.07149862661
+"2020",253,"Hospitalized",132.819989580642
+"2021",253,"Infected",8494.30004371886
+"2022",253,"New Infections",1490.06858826053
+"2023",253,"Recovered",1028795.06976365
+"2024",253,"Susceptible",17766908.658888
+"2025",254,"Critical",87.2142024164106
+"2026",254,"Dead",660.354421747008
+"2027",254,"Exposed",5970.28697367974
+"2028",254,"Hospitalized",123.619286540998
+"2029",254,"Infected",7900.80617309901
+"2030",254,"New Infections",1386.66447649419
+"2031",254,"Recovered",1031231.93740628
+"2032",254,"Susceptible",17765521.9944115
+"2033",255,"Critical",82.1012317595884
+"2034",255,"Dead",664.7202036731
+"2035",255,"Exposed",5555.03462350567
+"2036",255,"Hospitalized",115.050891411548
+"2037",255,"Infected",7349.22925842764
+"2038",255,"New Infections",1290.54392972594
+"2039",255,"Recovered",1033498.62618471
+"2040",255,"Susceptible",17764231.4504818
+"2041",256,"Critical",77.2292568230902
+"2042",256,"Dead",668.83243147277
+"2043",256,"Exposed",5169.07003719013
+"2044",256,"Hospitalized",107.073944539124
+"2045",256,"Infected",6836.60221936588
+"2046",256,"New Infections",1201.18816484466
+"2047",256,"Recovered",1035607.14266894
+"2048",256,"Susceptible",17763030.2623169
+"2049",257,"Critical",72.5953674069818
+"2050",257,"Dead",672.7028478837
+"2051",257,"Exposed",4810.3083152849
+"2052",257,"Hospitalized",99.6495309898453
+"2053",257,"Infected",6360.16445255351
+"2054",257,"New Infections",1118.11543305454
+"2055",257,"Recovered",1037568.64547726
+"2056",257,"Susceptible",17761912.1468839
+"2057",258,"Critical",68.1952509289038
+"2058",258,"Dead",676.343078640452
+"2059",258,"Exposed",4476.81293799681
+"2060",258,"Hospitalized",92.7407699424246
+"2061",258,"Infected",5917.34841289109
+"2062",258,"New Infections",1040.8784284534
+"2063",258,"Recovered",1039393.50396944
+"2064",258,"Susceptible",17760871.2684554
+"2065",259,"Critical",64.0234573402149
+"2066",259,"Dead",679.764560699374
+"2067",259,"Exposed",4166.78538745987
+"2068",259,"Hospitalized",86.3128440925912
+"2069",259,"Infected",5505.766848224
+"2070",259,"New Infections",969.061861598378
+"2071",259,"Recovered",1041091.35318362
+"2072",259,"Susceptible",17759902.2065938
+"2073",260,"Critical",60.073632762804
+"2074",260,"Dead",682.978483671486
+"2075",260,"Exposed",3878.55546788097
+"2076",260,"Hospitalized",80.332985936899
+"2077",260,"Infected",5123.20071619454
+"2078",260,"New Infections",902.280192314435
+"2079",260,"Recovered",1042671.1451873
+"2080",260,"Susceptible",17758999.9264015
+"2081",261,"Critical",56.3387237231087
+"2082",261,"Dead",685.995742929779
+"2083",261,"Exposed",3610.57227615716
+"2084",261,"Hospitalized",74.7704336633343
+"2085",261,"Infected",4767.58778774934
+"2086",261,"New Infections",840.175514493197
+"2087",261,"Recovered",1044141.19702402
+"2088",261,"Susceptible",17758159.750887
+"2089",262,"Critical",52.8111542148967
+"2090",262,"Dead",688.826902945438
+"2091",262,"Exposed",3361.39578113261
+"2092",262,"Hospitalized",69.5963662018939
+"2093",262,"Infected",4437.01192696386
+"2094",262,"New Infections",782.415584909087
+"2095",262,"Recovered",1045509.23544169
+"2096",262,"Susceptible",17757377.3353021
+"2097",263,"Critical",49.482977986811
+"2098",263,"Dead",691.482169514039
+"2099",263,"Exposed",3129.68897339369
+"2100",263,"Hospitalized",64.7838245659232
+"2101",263,"Infected",4129.69302784761
+"2102",263,"New Infections",728.691987830792
+"2103",263,"Recovered",1046782.43858767
+"2104",263,"Susceptible",17756648.6433143
+"2105",264,"Critical",46.3460084829454
+"2106",264,"Dead",693.971369648158
+"2107",264,"Exposed",2914.21055019561
+"2108",264,"Hospitalized",60.3076247731143
+"2109",264,"Infected",3843.9775834322
+"2110",264,"New Infections",678.718427237174
+"2111",264,"Recovered",1047967.47485169
+"2112",264,"Susceptible",17755969.924887
+"2113",265,"Critical",43.3919288080035
+"2114",265,"Dead",696.303938030497
+"2115",265,"Exposed",2713.80810223606
+"2116",265,"Hospitalized",56.144266238918
+"2117",265,"Infected",3578.32985938467
+"2118",265,"New Infections",632.229138643253
+"2119",265,"Recovered",1049070.53903216
+"2120",265,"Susceptible",17755337.6957484
+"2121",266,"Critical",40.6123839745228
+"2122",266,"Dead",698.488909037022
+"2123",266,"Exposed",2527.41177079852
+"2124",266,"Hospitalized",52.2718384798467
+"2125",266,"Infected",3331.32364280949
+"2126",266,"New Infections",588.977412833857
+"2127",266,"Recovered",1050097.3859946
+"2128",266,"Susceptible",17754748.7183356
+"2129",267,"Critical",37.9990575410601
+"2130",267,"Dead",700.534913449776
+"2131",267,"Exposed",2354.02834542389
+"2132",267,"Hospitalized",48.6699281687378
+"2133",267,"Infected",3101.63453629095
+"2134",267,"New Infections",548.734224147065
+"2135",267,"Recovered",1051053.36198297
+"2136",267,"Susceptible",17754199.9841114
+"2137",268,"Critical",35.5437345834027
+"2138",268,"Dead",702.450179082291
+"2139",268,"Exposed",2192.73577380763
+"2140",268,"Hospitalized",45.3195279862667
+"2141",268,"Infected",2888.03276725819
+"2142",268,"New Infections",511.286956320285
+"2143",268,"Recovered",1051943.43373745
+"2144",268,"Susceptible",17753688.6971551
+"2145",269,"Critical",33.2383527671628
+"2146",269,"Dead",704.242534635765
+"2147",269,"Exposed",2042.67805709973
+"2148",269,"Hospitalized",42.2029482652433
+"2149",269,"Infected",2689.37648321652
+"2150",269,"New Infections",476.438219292201
+"2151",269,"Recovered",1052772.21556347
+"2152",269,"Susceptible",17753212.2589358
+"2153",270,"Critical",31.0750431173037
+"2154",270,"Dead",705.91941619115
+"2155",270,"Exposed",1903.06050522115
+"2156",270,"Hospitalized",39.3037320901702
+"2157",270,"Infected",2504.60550414123
+"2158",270,"New Infections",444.004750733542
+"2159",270,"Recovered",1053543.99448943
+"2160",270,"Susceptible",17752768.2541851
+"2161",271,"Critical",29.0461619133601
+"2162",271,"Dead",707.487875820891
+"2163",271,"Exposed",1773.1453282093
+"2164",271,"Hospitalized",36.6065742665392
+"2165",271,"Infected",2332.73550427791
+"2166",271,"New Infections",413.816396452204
+"2167",271,"Recovered",1054262.75364215
+"2168",271,"Susceptible",17752354.4377886
+"2169",272,"Critical",27.1443149815657
+"2170",272,"Dead",708.954591874573
+"2171",272,"Exposed",1652.24754096523
+"2172",272,"Hospitalized",34.0972443913962
+"2173",272,"Infected",2172.85259666985
+"2174",272,"New Infections",385.715164179491
+"2175",272,"Recovered",1054932.19396194
+"2176",272,"Susceptible",17751968.7226244
+"2177",273,"Critical",25.3623755086422
+"2178",273,"Dead",710.32588055563
+"2179",273,"Exposed",1539.73116009488
+"2180",273,"Hospitalized",31.7625141228557
+"2181",273,"Infected",2024.10829489122
+"2182",273,"New Infections",359.554345591789
+"2183",273,"Recovered",1055555.75437124
+"2184",273,"Susceptible",17751609.1682788
+"2185",274,"Critical",23.6934963675197
+"2186",274,"Dead",711.607708461961
+"2187",274,"Exposed",1435.00567281058
+"2188",274,"Hospitalized",29.5900886494177
+"2189",274,"Infected",1885.71482766816
+"2190",274,"New Infections",335.197701754158
+"2191",274,"Recovered",1056136.63050421
+"2192",274,"Susceptible",17751273.9705771
+"2193",275,"Critical",22.131117822969
+"2194",275,"Dead",712.805705812502
+"2195",275,"Exposed",1337.52275908601
+"2196",275,"Hospitalized",27.5685422909443
+"2197",275,"Infected",1756.94078329436
+"2198",275,"New Infections",312.518707488452
+"2199",275,"Recovered",1056677.79209735
+"2200",275,"Susceptible",17750961.4518696
+"2201",276,"Critical",20.6689713747962
+"2202",276,"Dead",713.925180124927
+"2203",276,"Exposed",1246.77324943328
+"2204",276,"Hospitalized",25.6872581150699
+"2205",276,"Infected",1637.10706197214
+"2206",276,"New Infections",291.399850468277
+"2207",276,"Recovered",1057181.9991351
+"2208",276,"Susceptible",17750670.0520191
+"2209",277,"Critical",19.3010803973652
+"2210",277,"Dead",714.971130147436
+"2211",277,"Exposed",1162.28430179392
+"2212",277,"Hospitalized",23.9363714203682
+"2213",277,"Infected",1525.58311542094
+"2214",277,"New Infections",271.731981126371
+"2215",277,"Recovered",1057651.81683807
+"2216",277,"Susceptible",17750398.320038
+"2217",278,"Critical",18.0217581460741
+"2218",278,"Dead",715.948259880479
+"2219",278,"Exposed",1083.61678210489
+"2220",278,"Hospitalized",22.3067169168083
+"2221",278,"Infected",1421.78345428085
+"2222",278,"New Infections",253.41370972703
+"2223",278,"Recovered",1058089.62957565
+"2224",278,"Susceptible",17750144.9063283
+"2225",279,"Critical",16.8256036232115
+"2226",279,"Dead",716.860992552808
+"2227",279,"Exposed",1010.36283411568
+"2228",279,"Hospitalized",20.7897794218868
+"2229",279,"Infected",1325.1644049911
+"2230",279,"New Infections",236.350847207503
+"2231",279,"Recovered",1058497.65377948
+"2232",279,"Susceptible",17749908.5554811
+"2233",280,"Critical",15.7074957265449
+"2234",280,"Dead",717.713484440955
+"2235",280,"Exposed",942.143624993544
+"2236",280,"Hospitalized",19.3776478850403
+"2237",280,"Infected",1235.22109893675
+"2238",280,"New Infections",220.455886628164
+"2239",280,"Recovered",1058877.94992883
+"2240",280,"Susceptible",17749688.0995944
+"2241",281,"Critical",14.6625860431843
+"2242",281,"Dead",718.509638442516
+"2243",281,"Exposed",878.607254161586
+"2244",281,"Hospitalized",18.0629725517996
+"2245",281,"Infected",1151.48467772638
+"2246",281,"New Infections",205.647522292524
+"2247",281,"Recovered",1059232.43367418
+"2248",281,"Susceptible",17749482.4520722
+"2249",282,"Critical",13.6862905979285
+"2250",282,"Dead",719.253117331869
+"2251",282,"Exposed",819.426813669588
+"2252",282,"Hospitalized",16.8389250813481
+"2253",282,"Infected",1073.51969948705
+"2254",282,"New Infections",191.8502038052
+"2255",282,"Recovered",1059562.88616074
+"2256",282,"Susceptible",17749290.6018684
+"2257",283,"Critical",12.7742808186546
+"2258",283,"Dead",719.947356642621
+"2259",283,"Exposed",764.298589202329
+"2260",283,"Hospitalized",15.6991614357031
+"2261",283,"Infected",1000.92173203803
+"2262",283,"New Infections",178.993722529603
+"2263",283,"Recovered",1059870.9636093
+"2264",283,"Susceptible",17749111.6081458
+"2265",284,"Critical",11.9224739406429
+"2266",284,"Dead",720.595577134332
+"2267",284,"Exposed",712.940391585567
+"2268",284,"Hospitalized",14.6377873649193
+"2269",284,"Infected",933.315119731654
+"2270",284,"New Infections",167.012828087988
+"2271",284,"Recovered",1060158.20620777
+"2272",284,"Susceptible",17748944.5953177
+"2273",285,"Critical",11.1270230363662
+"2274",285,"Dead",721.200796812395
+"2275",285,"Exposed",665.090009358367
+"2276",285,"Hospitalized",13.6493263199624
+"2277",285,"Infected",870.35091162695
+"2278",285,"New Infections",155.846872715231
+"2279",285,"Recovered",1060426.04636309
+"2280",285,"Susceptible",17748788.748445
+"2281",286,"Critical",10.3843068266096
+"2282",286,"Dead",721.765842479424
+"2283",286,"Exposed",620.503773643841
+"2284",286,"Hospitalized",12.7286896328044
+"2285",286,"Infected",811.704939491566
+"2286",286,"New Infections",145.439481435034
+"2287",286,"Recovered",1060675.8163596
+"2288",286,"Susceptible",17748643.3089636
+"2289",287,"Critical",9.69091940227678
+"2290",287,"Dead",722.293360804517
+"2291",287,"Exposed",578.955227170695
+"2292",287,"Hospitalized",11.8711488115455
+"2293",287,"Infected",757.076034909016
+"2294",287,"New Infections",135.738246173809
+"2295",287,"Recovered",1060908.75546676
+"2296",287,"Susceptible",17748507.5707174
+"2297",288,"Critical",9.04365996337831
+"2298",288,"Dead",722.785828903403
+"2299",288,"Exposed",540.233889877545
+"2300",288,"Hospitalized",11.0723098067467
+"2301",288,"Infected",706.184375504318
+"2302",288,"New Infections",126.694442063892
+"2303",288,"Recovered",1061126.01653586
+"2304",288,"Susceptible",17748380.8762753
+"2305",289,"Critical",8.43952266203908
+"2306",289,"Dead",723.245564427989
+"2307",289,"Exposed",504.144114072811
+"2308",289,"Hospitalized",10.3280891134868
+"2309",289,"Infected",658.769950992111
+"2310",289,"New Infections",118.262764314631
+"2311",289,"Recovered",1061328.67212296
+"2312",289,"Susceptible",17748262.613511
+"2313",290,"Critical",7.87568661951897
+"2314",290,"Dead",723.674735168341
+"2315",290,"Exposed",470.504022627284
+"2316",290,"Hospitalized",9.63469158184087
+"2317",290,"Infected",614.591140399561
+"2318",290,"New Infections",110.401084147889
+"2319",290,"Recovered",1061517.72017198
+"2320",290,"Susceptible",17748152.2124269
+"2321",291,"Critical",7.3495061728421
+"2322",291,"Dead",724.075368173818
+"2323",291,"Exposed",439.14452414631
+"2324",291,"Hospitalized",8.98858981640367
+"2325",291,"Infected",573.423392423457
+"2326",291,"New Infections",103.070222404108
+"2327",291,"Recovered",1061694.08929005
+"2328",291,"Susceptible",17748049.1422045
+"2329",292,"Critical",6.85850139437522
+"2330",292,"Dead",724.449358402988
+"2331",292,"Exposed",409.908399505962
+"2332",292,"Hospitalized",8.38650505312248
+"2333",292,"Infected",535.058001448764
+"2334",292,"New Infections",96.2337395269247
+"2335",292,"Recovered",1061858.64364451
+"2336",292,"Susceptible",17747952.9084649
+"2337",293,"Critical",6.40034891729892
+"2338",293,"Dead",724.798476914313
+"2339",293,"Exposed",382.649454544559
+"2340",293,"Hospitalized",7.82538940899967
+"2341",293,"Infected",499.300972286492
+"2342",293,"New Infections",89.8577407288457
+"2343",293,"Recovered",1062012.18750897
+"2344",293,"Susceptible",17747863.0507242
+"2345",294,"Critical",5.97287309113395
+"2346",294,"Dead",725.12437861134
+"2347",294,"Exposed",357.231734079327
+"2348",294,"Hospitalized",7.30240940717154
+"2349",294,"Infected",465.971967184039
+"2350",294,"New Infections",83.9106952282557
+"2351",294,"Recovered",1062155.46948389
+"2352",294,"Susceptible",17747779.140029
+"2353",295,"Critical",5.57403748410313
+"2354",295,"Dead",725.428609557512
+"2355",295,"Exposed",333.528792769713
+"2356",295,"Hospitalized",6.81493068644629
+"2357",295,"Infected",434.903329123053
+"2358",295,"New Infections",78.3632685294028
+"2359",295,"Recovered",1062289.18641518
+"2360",295,"Susceptible",17747700.7767605
+"2361",296,"Critical",5.20193674293629
+"2362",296,"Dead",725.712613876664
+"2363",296,"Exposed",311.423018675602
+"2364",296,"Hospitalized",6.36050381059364
+"2365",296,"Infected",405.939175850277
+"2366",296,"New Infections",73.1881667925295
+"2367",296,"Recovered",1062413.98703263
+"2368",296,"Susceptible",17747627.5885937
+"2369",297,"Critical",4.85478881559662
+"2370",297,"Dead",725.977740255897
+"2371",297,"Exposed",290.805005662054
+"2372",297,"Hospitalized",5.93685109852355
+"2373",297,"Infected",378.934559487651
+"2374",297,"New Infections",68.3599924113162
+"2375",297,"Recovered",1062530.47532868
+"2376",297,"Susceptible",17747559.2286013
+"2377",298,"Critical",4.530927538175
+"2378",298,"Dead",726.225248067947
+"2379",298,"Exposed",271.572971083802
+"2380",298,"Hospitalized",5.54185440198103
+"2381",298,"Infected",353.754686940872
+"2382",298,"New Infections",63.8551099797074
+"2383",298,"Recovered",1062639.21369595
+"2384",298,"Susceptible",17747495.3734913
+"2385",299,"Critical",4.22879558373792
+"2386",299,"Dead",726.45631313029
+"2387",299,"Exposed",253.632215444041
+"2388",299,"Hospitalized",5.17354376252981
+"2389",299,"Infected",330.274196672514
+"2390",299,"New Infections",59.6515218903462
+"2391",299,"Recovered",1062740.72584128
+"2392",299,"Susceptible",17747435.7219694
+"2393",300,"Critical",3.94693776811346
+"2394",300,"Dead",726.672033118212
+"2395",300,"Exposed",529.894620964435
+"2396",300,"Hospitalized",4.83008688441246
+"2397",300,"Infected",308.376487728196
+"2398",300,"New Infections",55.7287528625871
+"2399",300,"Recovered",1062835.49949227
+"2400",300,"Susceptible",17747379.9932165
+"2401",301,"Critical",3.68399470536194
+"2402",301,"Dead",726.873432648932
+"2403",301,"Exposed",539.080029389841
+"2404",301,"Hospitalized",4.50977936437461
+"2405",301,"Infected",371.667383001841
+"2406",301,"New Infections",160.5838717095
+"2407",301,"Recovered",1062923.98891133
+"2408",301,"Susceptible",17747219.4093448
+"2409",302,"Critical",3.43869680391913
+"2410",302,"Dead",727.061468053552
+"2411",302,"Exposed",565.247183605769
+"2412",302,"Hospitalized",4.503239516733
+"2413",302,"Infected",419.499567731959
+"2414",302,"New Infections",180.190019909905
+"2415",302,"Recovered",1063030.24339464
+"2416",302,"Susceptible",17747039.2193249
+"2417",303,"Critical",3.22039251491725
+"2418",303,"Dead",727.237031853229
+"2419",303,"Exposed",603.896181522097
+"2420",303,"Hospitalized",4.6783927334766
+"2421",303,"Infected",461.141743737547
+"2422",303,"New Infections",200.148193393761
+"2423",303,"Recovered",1063149.96800139
+"2424",303,"Susceptible",17746839.0711315
+"2425",304,"Critical",3.03417117392158
+"2426",304,"Dead",727.401225430671
+"2427",304,"Exposed",652.130961047835
+"2428",304,"Hospitalized",4.96415249971011
+"2429",304,"Infected",501.928726002491
+"2430",304,"New Infections",220.77654584745
+"2431",304,"Recovered",1063281.45905344
+"2432",304,"Susceptible",17746618.2945857
+"2433",305,"Critical",2.88247176962091
+"2434",305,"Dead",727.555417423837
+"2435",305,"Exposed",708.147439501353
+"2436",305,"Hospitalized",5.3225990120176
+"2437",305,"Infected",544.843650344075
+"2438",305,"New Infections",242.339610367794
+"2439",305,"Recovered",1063424.50632191
+"2440",305,"Susceptible",17746375.9549753
+"2441",306,"Critical",2.76599925913629
+"2442",306,"Dead",727.701212363342
+"2443",306,"Exposed",770.921255938287
+"2444",306,"Hospitalized",5.73423335481758
+"2445",306,"Infected",591.501875864242
+"2446",306,"New Infections",265.101656496791
+"2447",306,"Recovered",1063579.73497968
+"2448",306,"Susceptible",17746110.8533188
+"2449",307,"Critical",2.68433368419116
+"2450",307,"Dead",727.840378619956
+"2451",307,"Exposed",839.998073420059
+"2452",307,"Hospitalized",6.19006761894876
+"2453",307,"Infected",642.76455593666
+"2454",307,"New Infections",289.340033684403
+"2455",307,"Recovered",1063748.22218086
+"2456",307,"Susceptible",17745821.5132851
+"2457",308,"Critical",2.63638096141464
+"2458",308,"Dead",727.974768936584
+"2459",308,"Exposed",915.343491888694
+"2460",308,"Hospitalized",6.68729518016759
+"2461",308,"Infected",699.116989559698
+"2462",308,"New Infections",315.344868257223
+"2463",308,"Recovered",1063931.28553187
+"2464",308,"Susceptible",17745506.1684169
+"2465",309,"Critical",2.6207187918644
+"2466",309,"Dead",728.106252101356
+"2467",309,"Exposed",997.233081287943
+"2468",309,"Hospitalized",7.22685655528284
+"2469",309,"Infected",760.895990286905
+"2470",309,"New Infections",343.416301628973
+"2471",309,"Recovered",1064130.37786101
+"2472",309,"Susceptible",17745162.7521152
+"2473",310,"Critical",2.63585803526692
+"2474",310,"Dead",728.236663555161
+"2475",310,"Exposed",1086.17258437555
+"2476",310,"Hospitalized",7.81203293676314
+"2477",310,"Infected",828.420873497583
+"2478",310,"New Infections",373.863240883377
+"2479",310,"Recovered",1064347.04598851
+"2480",310,"Susceptible",17744788.8888743
+"2481",311,"Critical",2.68043154566841
+"2482",311,"Dead",728.367776012198
+"2483",311,"Exposed",1182.84199316282
+"2484",311,"Hospitalized",8.44761841486573
+"2485",311,"Infected",902.064219536361
+"2486",311,"New Infections",407.004433204898
+"2487",311,"Recovered",1064582.92639545
+"2488",311,"Susceptible",17744381.8844411
+"2489",312,"Critical",2.75332206683739
+"2490",312,"Dead",728.501287630746
+"2491",312,"Exposed",1288.05863203449
+"2492",312,"Hospitalized",9.13943435671946
+"2493",312,"Infected",982.286440652713
+"2494",312,"New Infections",443.171494399001
+"2495",312,"Recovered",1064839.76081178
+"2496",312,"Susceptible",17743938.7129467
+"2497",313,"Critical",2.85374162919456
+"2498",313,"Dead",728.638823874674
+"2499",313,"Exposed",1402.75511921497
+"2500",313,"Hospitalized",9.89405662371751
+"2501",313,"Infected",1069.64992399201
+"2502",313,"New Infections",482.713239558351
+"2503",313,"Recovered",1065119.42150274
+"2504",313,"Susceptible",17743455.9997072
+"2505",314,"Critical",2.98127486648798
+"2506",314,"Dead",728.781949086366
+"2507",314,"Exposed",1527.96868262884
+"2508",314,"Hospitalized",10.718680870127
+"2509",314,"Infected",1164.82283700803
+"2510",314,"New Infections",526.00074073322
+"2511",314,"Recovered",1065423.94048435
+"2512",314,"Susceptible",17742929.9989665
+"2513",315,"Critical",3.13589755253657
+"2514",315,"Dead",728.932184322221
+"2515",315,"Exposed",1664.83891894976
+"2516",315,"Hospitalized",11.6210798315531
+"2517",315,"Infected",1268.57879300344
+"2518",315,"New Infections",573.43271750858
+"2519",315,"Recovered",1065755.53975266
+"2520",315,"Susceptible",17742356.5662489
+"2521",316,"Critical",3.31797983003189
+"2522",316,"Dead",729.091028778131
+"2523",316,"Exposed",1814.61169921589
+"2524",316,"Hospitalized",12.609622545656
+"2525",316,"Infected",1381.79597195847
+"2526",316,"New Infections",625.441043298877
+"2527",316,"Recovered",1066116.66136729
+"2528",316,"Susceptible",17741731.1252056
+"2529",317,"Critical",3.52828152129572
+"2530",317,"Dead",729.259982920959
+"2531",317,"Exposed",1978.64749931681
+"2532",317,"Hospitalized",13.6933352374411
+"2533",317,"Infected",1505.45760844139
+"2534",317,"New Infections",682.496286109633
+"2535",317,"Recovered",1066509.99724829
+"2536",317,"Susceptible",17741048.6289195
+"2537",318,"Critical",3.76794491749287
+"2538",318,"Dead",729.440572127433
+"2539",318,"Exposed",2158.43293468876
+"2540",318,"Hospitalized",14.8819901373964
+"2541",318,"Infected",1640.65472025528
+"2542",318,"New Infections",745.113292884938
+"2543",318,"Recovered",1066938.51908648
+"2544",318,"Susceptible",17740303.5156267
+"2545",319,"Critical",4.03848873459097
+"2546",319,"Dead",729.634370172267
+"2547",319,"Exposed",2355.59468901247
+"2548",319,"Hospitalized",16.1862131574505
+"2549",319,"Infected",1788.5913530985
+"2550",319,"New Infections",813.856879137197
+"2551",319,"Recovered",1067405.50901357
+"2552",319,"Susceptible",17739489.6587475
+"2553",320,"Critical",4.34180557847202
+"2554",320,"Dead",729.843022302473
+"2555",320,"Exposed",2571.91534540199
+"2556",320,"Hospitalized",17.6176047708757
+"2557",320,"Infected",1950.59230637878
+"2558",320,"New Infections",889.347711066108
+"2559",320,"Recovered",1067914.59175438
+"2560",320,"Susceptible",17738600.3110364
+"2561",321,"Critical",4.6801642760349
+"2562",321,"Dead",730.06826790495
+"2563",321,"Exposed",2809.35086434795
+"2564",321,"Hospitalized",19.1888709592449
+"2565",321,"Infected",2128.11317484864
+"2566",321,"New Infections",972.268475509929
+"2567",321,"Recovered",1068469.76897199
+"2568",321,"Susceptible",17737628.0425609
+"2569",322,"Critical",5.05621775852819
+"2570",322,"Dead",730.311962946334
+"2571",322,"Exposed",3070.04961922337
+"2572",322,"Hospitalized",20.9139629073288
+"2573",322,"Infected",2322.75251490023
+"2574",322,"New Infections",1063.37043120608
+"2575",322,"Recovered",1069075.45646779
+"2576",322,"Susceptible",17736564.6721297
+"2577",323,"Critical",5.4730167649203
+"2578",323,"Dead",730.576102464689
+"2579",323,"Exposed",3356.37301225441
+"2580",323,"Hospitalized",22.8082253987174
+"2581",323,"Infected",2536.26597349178
+"2582",323,"New Infections",1163.48042797202
+"2583",323,"Recovered",1069736.52484313
+"2584",323,"Susceptible",17735401.1917018
+"2585",324,"Critical",5.93402940284588
+"2586",324,"Dead",730.86284344484
+"2587",324,"Exposed",3670.91776511769
+"2588",324,"Hospitalized",24.8885547184001
+"2589",324,"Infected",2770.58227051542
+"2590",324,"New Infections",1273.50847160922
+"2591",324,"Recovered",1070458.34418191
+"2592",324,"Susceptible",17734127.6832302
+"2593",325,"Critical",6.44316650601042
+"2594",325,"Dead",731.174528431071
+"2595",325,"Exposed",4016.54002012896
+"2596",325,"Hospitalized",27.17356741146
+"2597",325,"Infected",3027.82098351617
+"2598",325,"New Infections",1394.45590323659
+"2599",325,"Recovered",1071246.83328235
+"2600",325,"Susceptible",17732733.2273269
+"2601",326,"Critical",7.00481271427539
+"2602",326,"Dead",731.513710235832
+"2603",326,"Exposed",4396.38140920208
+"2604",326,"Hospitalized",29.683781568409
+"2605",326,"Infected",3310.3121371166
+"2606",326,"New Infections",1527.42425311469
+"2607",326,"Recovered",1072108.51395062
+"2608",326,"Susceptible",17731205.8030738
+"2609",327,"Critical",7.62386324166174
+"2610",327,"Dead",731.883178100194
+"2611",327,"Exposed",4813.89725492685
+"2612",327,"Hospitalized",32.4418124776366
+"2613",327,"Infected",3620.61764373704
+"2614",327,"New Infections",1673.62482103861
+"2615",327,"Recovered",1073050.57087002
+"2616",327,"Susceptible",17729532.1782528
+"2617",328,"Critical",8.30576636387892
+"2618",328,"Dead",732.285985656975
+"2619",328,"Exposed",5272.88706586366
+"2620",328,"Hospitalized",35.4725845563165
+"2621",328,"Infected",3961.55467584649
+"2622",328,"New Infections",1834.38902800559
+"2623",328,"Recovered",1074080.91757222
+"2624",328,"Susceptible",17727697.7892248
+"2625",329,"Critical",9.05657173444842
+"2626",329,"Dead",732.725481044341
+"2627",329,"Exposed",5777.52747964167
+"2628",329,"Hospitalized",38.8035614797262
+"2629",329,"Infected",4336.22107336892
+"2630",329,"New Infections",2011.17957695988
+"2631",329,"Recovered",1075208.2690602
+"2632",329,"Susceptible",17725686.6096478
+"2633",330,"Critical",9.88298471681642
+"2634",330,"Dead",733.205339518103
+"2635",330,"Exposed",6332.40779477204
+"2636",330,"Hospitalized",42.4649963994374
+"2637",330,"Infected",4748.02290414436
+"2638",330,"New Infections",2205.60245382157
+"2639",330,"Recovered",1076442.22166174
+"2640",330,"Susceptible",17723481.007194
+"2641",331,"Critical",10.7924269930661
+"2642",331,"Dead",733.729598915785
+"2643",331,"Exposed",6942.56821657796
+"2644",331,"Hospitalized",46.4902040877358
+"2645",331,"Infected",5200.70430191924
+"2646",331,"New Infections",2419.41979355005
+"2647",331,"Recovered",1077793.34072634
+"2648",331,"Susceptible",17721061.5874004
+"2649",332,"Critical",11.7931037747839
+"2650",332,"Dead",734.302698334873
+"2651",332,"Exposed",7613.54092503545
+"2652",332,"Hospitalized",50.9158567766341
+"2653",332,"Infected",5698.37970660512
+"2654",332,"New Infections",2654.56362946336
+"2655",332,"Recovered",1079273.25681377
+"2656",332,"Susceptible",17718407.023771
+"2657",333,"Critical",12.8940779968937
+"2658",333,"Dead",734.929520401262
+"2659",333,"Exposed",8351.39405281104
+"2660",333,"Hospitalized",55.7823053781667
+"2661",333,"Infected",6245.56862670383
+"2662",333,"New Infections",2913.15053710387
+"2663",333,"Recovered",1080894.77105811
+"2664",333,"Susceptible",17715493.8732339
+"2665",334,"Critical",14.1053519204332
+"2666",334,"Dead",735.615437521325
+"2667",334,"Exposed",9162.77864000537
+"2668",334,"Hospitalized",61.1339276787639
+"2669",334,"Infected",6847.2330347647
+"2670",334,"New Infections",3197.49717609788
+"2671",334,"Recovered",1082671.97042561
+"2672",334,"Susceptible",17712296.3760578
+"2673",335,"Critical",15.4379566054018
+"2674",335,"Dead",736.366362531593
+"2675",335,"Exposed",10054.9786070519
+"2676",335,"Hospitalized",67.0195049931478
+"2677",335,"Infected",7508.81749406647
+"2678",335,"New Infections",3510.13672395168
+"2679",335,"Recovered",1084620.35361621
+"2680",335,"Susceptible",17708786.2393338
+"2681",336,"Critical",16.9040497402431
+"2682",336,"Dead",737.188804183274
+"2683",336,"Exposed",11035.9637571398
+"2684",336,"Hospitalized",73.4926286397817
+"2685",336,"Infected",8236.29209850406
+"2686",336,"New Infections",3853.83618354704
+"2687",336,"Recovered",1086756.96838679
+"2688",336,"Susceptible",17704932.4031503
+"2689",337,"Critical",18.5170223305202
+"2690",337,"Dead",738.089927924046
+"2691",337,"Exposed",12114.4457819286
+"2692",337,"Hospitalized",80.6121374563248
+"2693",337,"Infected",9036.19828748561
+"2694",337,"New Infections",4231.61452998188
+"2695",337,"Recovered",1089100.56109786
+"2696",337,"Susceptible",17700700.7886203
+"2697",338,"Critical",20.2916147560169
+"2698",338,"Dead",739.077622466199
+"2699",338,"Exposed",13299.937195944
+"2700",338,"Hospitalized",88.4425874035378
+"2701",338,"Infected",9915.69757249168
+"2702",338,"New Infections",4646.76164088483
+"2703",338,"Recovered",1091671.73930281
+"2704",338,"Susceptible",17696054.0269794
+"2705",339,"Critical",22.2440427027007
+"2706",339,"Dead",740.160572657733
+"2707",339,"Exposed",14602.8130619759
+"2708",339,"Hospitalized",97.0547541003227
+"2709",339,"Infected",10882.6231801593
+"2710",339,"New Infections",5102.85792581591
+"2711",339,"Recovered",1094493.14821009
+"2712",339,"Susceptible",17690951.1690536
+"2713",340,"Critical",24.3921334631361
+"2714",340,"Dead",741.348339200799
+"2715",340,"Exposed",16034.3752875842
+"2716",340,"Hospitalized",106.526168877773
+"2717",340,"Infected",11945.5345760269
+"2718",340,"New Infections",5603.79453320221
+"2719",340,"Recovered",1097589.66184973
+"2720",340,"Susceptible",17685347.3745204
+"2721",341,"Critical",26.7554730748736
+"2722",341,"Dead",742.651445789391
+"2723",341,"Exposed",17606.9191666562
+"2724",341,"Hospitalized",116.941688618137
+"2725",341,"Infected",13113.7747804973
+"2726",341,"New Infections",6153.79396582014
+"2727",341,"Recovered",1100988.58976607
+"2728",341,"Susceptible",17679193.5805546
+"2729",342,"Critical",29.3555647291641
+"2730",342,"Dead",744.081474264781
+"2731",342,"Exposed",19333.801704896
+"2732",342,"Hospitalized",128.394099231977
+"2733",342,"Infected",14397.5303206836
+"2734",342,"New Infections",6757.43087660073
+"2735",342,"Recovered",1104719.9000335
+"2736",342,"Susceptible",17672436.149678
+"2737",343,"Critical",32.2159988292007
+"2738",343,"Dead",745.651168412088
+"2739",343,"Exposed",21229.5110992677
+"2740",343,"Hospitalized",140.98475209458
+"2741",343,"Infected",15807.8935747261
+"2742",343,"New Infections",7419.65274415161
+"2743",343,"Recovered",1108816.45934813
+"2744",343,"Susceptible",17665016.4969338
+"2745",344,"Critical",35.3626350040333
+"2746",344,"Dead",747.374547043804
+"2747",344,"Exposed",23309.7365341776
+"2748",344,"Hospitalized",154.824232076415
+"2749",344,"Infected",17356.9271547156
+"2750",344,"New Infections",8145.80004076626
+"2751",344,"Recovered",1113314.29087921
+"2752",344,"Susceptible",17656870.696893
+"2753",345,"Critical",38.8237962861354
+"2754",345,"Dead",749.267027034888
+"2755",345,"Exposed",25591.4372075539
+"2756",345,"Hospitalized",170.033054923363
+"2757",345,"Infected",19057.7298362627
+"2758",345,"New Infections",8941.62540408697
+"2759",345,"Recovered",1118252.85046425
+"2760",345,"Susceptible",17647929.0714889
+"2761",346,"Critical",42.6304755308046
+"2762",346,"Dead",751.345556987965
+"2763",346,"Exposed",28092.9092047989
+"2764",346,"Hospitalized",186.742390627755
+"2765",346,"Infected",20924.5033727841
+"2766",346,"New Infections",9813.31120671512
+"2767",346,"Recovered",1123675.3215923
+"2768",346,"Susceptible",17638115.7602822
+"2769",347,"Critical",46.8165539862325
+"2770",347,"Dead",753.628762214493
+"2771",347,"Exposed",30833.8484958813
+"2772",347,"Hospitalized",205.094808036389
+"2773",347,"Infected",22972.6193268364
+"2774",347,"New Infections",10767.4847861943
+"2775",347,"Recovered",1129628.92943227
+"2776",347,"Susceptible",17627348.275496
+"2777",348,"Critical",51.4190317049626
+"2778",348,"Dead",756.137101716436
+"2779",348,"Exposed",33835.407940099
+"2780",348,"Hospitalized",225.245034221428
+"2781",348,"Infected",25218.6848059525
+"2782",348,"New Infections",11811.2304518506
+"2783",348,"Recovered",1136165.27391738
+"2784",348,"Susceptible",17615537.0450442
+"2785",349,"Critical",56.4782692101158
+"2786",349,"Dead",758.893037840472
+"2787",349,"Exposed",37120.2457455866
+"2788",349,"Hospitalized",247.360720051141
+"2789",349,"Infected",27680.6057038848
+"2790",349,"New Infections",12952.0972266117
+"2791",349,"Recovered",1143340.68158111
+"2792",349,"Susceptible",17602584.9478176
+"2793",350,"Critical",62.0382394817767
+"2794",350,"Dead",761.921219249882
+"2795",350,"Exposed",40712.5623498201
+"2796",350,"Hospitalized",271.623200900728
+"2797",350,"Infected",30377.6457184967
+"2798",350,"New Infections",14198.1011135783
+"2799",350,"Recovered",1151216.57544331
+"2800",350,"Susceptible",17588386.846704
+"2801",351,"Critical",68.146788898212
+"2802",351,"Dead",765.248677814333
+"2803",351,"Exposed",44638.1221688694
+"2804",351,"Hospitalized",298.228238507058
+"2805",351,"Infected",33330.4790446848
+"2806",351,"New Infections",15557.7205020586
+"2807",351,"Recovered",1159859.86175455
+"2808",351,"Susceptible",17572829.1262019
+"2809",352,"Critical",74.8559052407829
+"2810",352,"Dead",768.905039950404
+"2811",352,"Exposed",48924.2561152163
+"2812",352,"Hospitalized",327.386726572637
+"2813",352,"Infected",36561.234226254
+"2814",352,"New Infections",17039.8831502062
+"2815",352,"Recovered",1169343.33181029
+"2816",352,"Susceptible",17555789.2430517
+"2817",353,"Critical",82.2219902384668
+"2818",353,"Dead",772.922752850764
+"2819",353,"Exposed",53599.8402177526
+"2820",353,"Hospitalized",359.325338854333
+"2821",353,"Infected",40093.5261980612
+"2822",353,"New Infections",18653.9430065765
+"2823",353,"Recovered",1179746.07633235
+"2824",353,"Susceptible",17537135.3000452
+"2825",354,"Critical",90.3061333766007
+"2826",354,"Dead",777.337325911743
+"2827",354,"Exposed",58695.2451076013
+"2828",354,"Hospitalized",394.287094137603
+"2829",354,"Infected",43952.4730646891
+"2830",354,"New Infections",20409.6449673779
+"2831",354,"Recovered",1191153.90907177
+"2832",354,"Susceptible",17516725.6550778
+"2833",355,"Critical",99.1743828151726
+"2834",355,"Dead",782.187587501213
+"2835",355,"Exposed",64242.250578117
+"2836",355,"Hospitalized",432.531807722472
+"2837",355,"Infected",48164.6936525905
+"2838",355,"New Infections",22317.075518029
+"2839",355,"Recovered",1203659.79530676
+"2840",355,"Susceptible",17494408.5795598
+"2841",356,"Critical",108.898008247372
+"2842",356,"Dead",787.515956994301
+"2843",356,"Exposed",70273.9189099583
+"2844",356,"Hospitalized",474.336393880937
+"2845",356,"Infected",52758.2813501917
+"2846",356,"New Infections",24386.597086801
+"2847",356,"Recovered",1217364.27978304
+"2848",356,"Susceptible",17470021.9824729
+"2849",357,"Critical",119.553749374959
+"2850",357,"Dead",793.368731736098
+"2851",357,"Exposed",76824.4202011602
+"2852",357,"Hospitalized",519.99497826029
+"2853",357,"Infected",57762.7492294152
+"2854",357,"New Infections",26628.7638569825
+"2855",357,"Recovered",1232375.90736935
+"2856",357,"Susceptible",17443393.218616
+"2857",358,"Critical",131.22404238315
+"2858",358,"Dead",799.796388260553
+"2859",358,"Exposed",83928.8025926983
+"2860",358,"Hospitalized",569.818773507437
+"2861",358,"Infected",63208.9409410742
+"2862",358,"New Infections",29054.2167566766
+"2863",358,"Recovered",1248811.62827805
+"2864",358,"Susceptible",17414339.0018593
+"2865",359,"Critical",143.997215369086
+"2866",359,"Dead",806.853896695356
+"2867",359,"Exposed",91622.7000741411
+"2868",359,"Hospitalized",624.135665616019
+"2869",359,"Infected",69128.9014188868
+"2870",359,"New Infections",31673.5553890506
+"2871",359,"Recovered",1266797.17813431
+"2872",359,"Susceptible",17382665.4464702
+"2873",360,"Critical",157.967642125641
+"2874",360,"Dead",814.601046806292
+"2875",360,"Exposed",99941.9705409911
+"2876",360,"Hospitalized",683.289452833895
+"2877",360,"Infected",75555.7010411005
+"2878",360,"New Infections",34497.1847999254
+"2879",360,"Recovered",1286467.42148109
+"2880",360,"Susceptible",17348168.2616703
+"2881",361,"Critical",173.235842025194
+"2882",361,"Dead",823.102783574137
+"2883",361,"Exposed",108922.257011725
+"2884",361,"Hospitalized",747.638673645746
+"2885",361,"Infected",82523.2066194653
+"2886",361,"New Infections",37535.1352252858
+"2887",361,"Recovered",1307966.6454998
+"2888",361,"Susceptible",17310633.126445
+"2889",362,"Critical",189.90851201388
+"2890",362,"Dead",832.429549546544
+"2891",362,"Exposed",118598.46546128
+"2892",362,"Hospitalized",817.554955652734
+"2893",362,"Infected",90065.7924533677
+"2894",362,"New Infections",40796.8533411685
+"2895",362,"Recovered",1331448.78883954
+"2896",362,"Susceptible",17269836.2731039
+"2897",363,"Critical",208.098474954624
+"2898",363,"Dead",842.657630461652
+"2899",363,"Exposed",129004.15365659
+"2900",363,"Hospitalized",893.420813459576
+"2901",363,"Infected",98217.9847494948
+"2902",363,"New Infections",44290.9640752754
+"2903",363,"Recovered",1357077.58852172
+"2904",363,"Susceptible",17225545.3090286
+"2905",364,"Critical",227.9245267985
+"2906",364,"Dead",853.86949979653
+"2907",364,"Exposed",140170.826758881
+"2908",364,"Hospitalized",975.626821366576
+"2909",364,"Infected",107014.033017461
+"2910",364,"New Infections",48025.0027553182
+"2911",364,"Recovered",1385026.62597769
+"2912",364,"Susceptible",17177520.3062733
+"2913",365,"Critical",249.511163384855
+"2914",365,"Dead",866.154156951702
+"2915",365,"Exposed",152127.137355737
+"2916",365,"Hospitalized",1064.56808623577
+"2917",365,"Infected",116487.40266734
+"2918",365,"New Infections",52005.1182822994
+"2919",365,"Recovered",1415479.25145464
+"2920",365,"Susceptible",17125515.187991
+"2921",366,"Critical",272.98816615372
+"2922",366,"Dead",879.607452746166
+"2923",366,"Exposed",164897.990065856
+"2924",366,"Hospitalized",1160.63994790567
+"2925",366,"Infected",126670.184017065
+"2926",366,"New Infections",56235.7491409371
+"2927",366,"Recovered",1448628.3643755
+"2928",366,"Susceptible",17069279.43885
+"2929",367,"Critical",298.490024799584
+"2930",367,"Dead",894.332394772816
+"2931",367,"Exposed",178503.553970178
+"2932",367,"Hospitalized",1264.23283957289
+"2933",367,"Infected",137592.414327642
+"2934",367,"New Infections",60719.2753988234
+"2935",367,"Recovered",1484676.02586709
+"2936",367,"Susceptible",17008560.1634512
+"2937",368,"Critical",326.155174022298
+"2938",368,"Dead",910.439423964811
+"2939",368,"Exposed",192958.189891792
+"2940",368,"Hospitalized",1375.72624928233
+"2941",368,"Infected",149281.311380055
+"2942",368,"New Infections",65455.6513926654
+"2943",368,"Recovered",1523832.8786976
+"2944",368,"Susceptible",16943104.5120585
+"2945",369,"Critical",356.125021175665
+"2946",369,"Dead",928.046652468053
+"2947",369,"Exposed",208269.303968334
+"2948",369,"Hospitalized",1495.48173672362
+"2949",369,"Infected",161760.419538745
+"2950",369,"New Infections",70442.0255293285
+"2951",369,"Recovered",1566317.3494286
+"2952",369,"Susceptible",16872662.4865292
+"2953",370,"Critical",388.542741930785
+"2954",370,"Dead",947.280051629856
+"2955",370,"Exposed",224436.143985136
+"2956",370,"Hospitalized",1623.83497754308
+"2957",370,"Infected",175048.672246202
+"2958",370,"New Infections",75672.3554958317
+"2959",370,"Recovered",1612354.60783944
+"2960",370,"Susceptible",16796990.1310334
+"2961",371,"Critical",423.551822226457
+"2962",371,"Dead",968.273577633478
+"2963",371,"Exposed",241448.560460534
+"2964",371,"Hospitalized",1761.08683089225
+"2965",371,"Infected",189159.378471437
+"2966",371,"New Infections",81137.0291067041
+"2967",371,"Recovered",1662175.25978586
+"2968",371,"Susceptible",16715853.1019267
+"2969",372,"Critical",461.294326948023
+"2970",372,"Dead",991.169221075918
+"2971",372,"Exposed",259285.760328458
+"2972",372,"Hospitalized",1907.49345534484
+"2973",372,"Infected",204099.144768976
+"2974",372,"New Infections",86822.5029256329
+"2975",372,"Recovered",1716013.75177341
+"2976",372,"Susceptible",16629030.599001
+"2977",373,"Critical",501.908879133942
+"2978",373,"Dead",1016.11696565529
+"2979",373,"Exposed",277915.087012059
+"2980",373,"Hospitalized",2063.25553380105
+"2981",373,"Infected",219866.74923031
+"2982",373,"New Infections",92710.9725658139
+"2983",373,"Recovered",1774106.46881907
+"2984",373,"Susceptible",16536319.6264352
+"2985",374,"Critical",545.528338220529
+"2986",374,"Dead",1043.27464016659
+"2987",374,"Exposed",297290.86642712
+"2988",374,"Hospitalized",2228.50670943322
+"2989",374,"Infected",236451.988613109
+"2990",374,"New Infections",98780.0900693392
+"2991",374,"Recovered",1836689.51178132
+"2992",374,"Susceptible",16437539.5363659
+"2993",375,"Critical",592.277172039805
+"2994",375,"Dead",1072.80764727298
+"2995",375,"Exposed",317353.36364629
+"2996",375,"Hospitalized",2403.30138159445
+"2997",375,"Infected",253834.52514878
+"2998",375,"New Infections",105002.744854716
+"2999",375,"Recovered",1903996.14636811
+"3000",375,"Susceptible",16332536.7915112
+"3001",376,"Critical",642.26852508322
+"3002",376,"Dead",1104.88855210295
+"3003",376,"Exposed",338027.899217169
+"3004",376,"Hospitalized",2587.60206194041
+"3005",376,"Infected",271982.764737646
+"3006",376,"New Infections",111346.925274777
+"3007",376,"Recovered",1976253.92354492
+"3008",376,"Susceptible",16221189.8662364
+"3009",377,"Critical",695.600994977663
+"3010",377,"Dead",1139.69651370915
+"3011",377,"Exposed",359224.177079695
+"3012",377,"Hospitalized",2781.26654533271
+"3013",377,"Infected",290852.803179237
+"3014",377,"New Infections",117775.677735439
+"3015",377,"Recovered",2053681.48006135
+"3016",377,"Susceptible",16103414.188501
+"3017",378,"Critical",752.355140156976
+"3018",378,"Dead",1177.41654290015
+"3019",378,"Exposed",380835.877318387
+"3020",378,"Hospitalized",2984.03520543124
+"3021",378,"Infected",310387.481456045
+"3022",378,"New Infections",124247.179506954
+"3023",378,"Recovered",2136485.03821834
+"3024",378,"Susceptible",15979167.008994
+"3025",379,"Critical",812.589754229026
+"3026",379,"Dead",1218.23857101183
+"3027",379,"Exposed",402740.566308253
+"3028",379,"Hospitalized",3195.51877881522
+"3029",379,"Infected",330515.594579699
+"3030",379,"New Infections",130714.939761073
+"3031",379,"Recovered",2224854.63565032
+"3032",379,"Susceptible",15848452.0692329
+"3033",380,"Critical",876.337956309181
+"3034",380,"Dead",1262.35631590402
+"3035",380,"Exposed",424799.973924822
+"3036",380,"Hospitalized",3415.1870512092
+"3037",380,"Infected",351151.300808493
+"3038",380,"New Infections",137128.140962567
+"3039",380,"Recovered",2318960.12854816
+"3040",380,"Susceptible",15711323.9282704
+"3041",381,"Critical",943.603161280957
+"3042",381,"Dead",1309.96593392291
+"3043",381,"Exposed",446860.682202086
+"3044",381,"Hospitalized",3642.35890190529
+"3045",381,"Infected",372193.778862772
+"3046",381,"New Infections",143432.129520013
+"3047",381,"Recovered",2418947.02506294
+"3048",381,"Susceptible",15567891.7987504
+"3049",382,"Critical",1014.35500910984
+"3050",382,"Dead",1361.26444981866
+"3051",382,"Exposed",468755.261998242
+"3052",382,"Hospitalized",3876.19419464383
+"3053",382,"Infected",393527.179838195
+"3054",382,"New Infections",149569.060552998
+"3055",382,"Recovered",2524932.2191879
+"3056",382,"Susceptible",15418322.7381974
+"3057",383,"Critical",1088.52534743086
+"3058",383,"Dead",1416.44796068498
+"3059",383,"Exposed",490303.883765694
+"3060",383,"Hospitalized",4115.6880219589
+"3061",383,"Infected",415020.917619702
+"3062",383,"New Infections",155478.696758022
+"3063",383,"Recovered",2636999.70872046
+"3064",383,"Susceptible",15262844.0414393
+"3065",384,"Critical",1166.00437601849
+"3066",384,"Dead",1475.70961490024
+"3067",384,"Exposed",511316.415354987
+"3068",384,"Hospitalized",4359.66781236818
+"3069",384,"Infected",436530.336540066
+"3070",384,"New Infections",161099.355662436
+"3071",384,"Recovered",2755196.39340003
+"3072",384,"Susceptible",15101744.6857769
+"3073",385,"Critical",1246.63707471879
+"3074",385,"Dead",1539.23737277232
+"3075",385,"Exposed",531595.003910981
+"3076",385,"Hospitalized",4606.79379305566
+"3077",385,"Infected",457897.787651411
+"3078",385,"New Infections",166368.993089223
+"3079",385,"Recovered",2879528.06038465
+"3080",385,"Susceptible",14935375.6926877
+"3081",386,"Critical",1330.22004721085
+"3082",386,"Dead",1607.21156205954
+"3083",386,"Exposed",550937.120459289
+"3084",386,"Hospitalized",4855.56326238256
+"3085",386,"Infected",478954.135175202
+"3086",386,"New Infections",171226.403531901
+"3087",386,"Recovered",3009955.67321335
+"3088",386,"Susceptible",14764149.2891558
+"3089",387,"Critical",1416.49892076008
+"3090",387,"Dead",1679.8022486522
+"3091",387,"Exposed",569139.02504192
+"3092",387,"Hospitalized",5104.31906451491
+"3093",387,"Infected",499520.702419793
+"3094",387,"New Infections",175612.510585553
+"3095",387,"Recovered",3146392.0866094
+"3096",387,"Susceptible",14588536.7785702
+"3097",388,"Critical",1505.1664461034
+"3098",388,"Dead",1757.16645030711
+"3099",388,"Exposed",585999.587834197
+"3100",388,"Hospitalized",5351.26257097126
+"3101",388,"Infected",519411.651760292
+"3102",388,"New Infections",179471.712966865
+"3103",388,"Recovered",3288699.31221004
+"3104",388,"Susceptible",14409065.0656034
+"3105",389,"Critical",1595.86144093875
+"3106",389,"Dead",1839.44522923723
+"3107",389,"Exposed",601324.378502525
+"3108",389,"Hospitalized",5594.4713599537
+"3109",389,"Infected",538436.776371861
+"3110",389,"New Infections",182753.24450267
+"3111",389,"Recovered",3436686.45887006
+"3112",389,"Susceptible",14226311.8211007
+"3113",390,"Critical",1688.16871438938
+"3114",390,"Dead",1926.76070733058
+"3115",390,"Exposed",614929.913463837
+"3116",390,"Hospitalized",5831.92164395597
+"3117",390,"Infected",556404.662712876
+"3118",390,"New Infections",185412.500419555
+"3119",390,"Recovered",3590108.46495174
+"3120",390,"Susceptible",14040899.3206811
+"3121",391,"Critical",1781.62009756665
+"3122",391,"Dead",2019.21305552312
+"3123",391,"Exposed",626647.930340349
+"3124",391,"Hospitalized",6061.51533087795
+"3125",391,"Infected",573126.162944158
+"3126",391,"New Infections",187412.278041874
+"3127",391,"Recovered",3748665.72846753
+"3128",391,"Susceptible",13853487.0426393
+"3129",392,"Critical",1875.69668639773
+"3130",392,"Dead",2116.8775160529
+"3131",392,"Exposed",636329.54264881
+"3132",392,"Hospitalized",6281.1114172548
+"3133",392,"Infected",588418.096501219
+"3134",392,"New Infections",188723.878299032
+"3135",392,"Recovered",3912004.7237653
+"3136",392,"Susceptible",13664763.1643402
+"3137",393,"Critical",1969.83237687992
+"3138",393,"Dead",2219.80152261713
+"3139",393,"Exposed",643849.117542377
+"3140",393,"Hospitalized",6488.56121020267
+"3141",393,"Infected",602107.081128505
+"3142",393,"New Infections",189328.015832178
+"3143",393,"Recovered",4079719.67058663
+"3144",393,"Susceptible",13475435.148508
+"3145",394,"Critical",2063.41873985288
+"3146",394,"Dead",2328.00198845518
+"3147",394,"Exposed",649107.716964259
+"3148",394,"Hospitalized",6681.74666591897
+"3149",394,"Infected",614033.377258681
+"3150",394,"New Infections",189215.490332233
+"3151",394,"Recovered",4251355.29308228
+"3152",394,"Susceptible",13286219.6581758
+"3153",395,"Critical",2155.8112426457
+"3154",395,"Dead",2441.4628356975
+"3155",395,"Exposed",652035.949167254
+"3156",395,"Hospitalized",6858.62092824717
+"3157",395,"Infected",624054.617184581
+"3158",395,"New Infections",188387.580092528
+"3159",395,"Recovered",4426410.67343355
+"3160",395,"Susceptible",13097832.0780833
+"3161",396,"Critical",2246.33677945851
+"3162",396,"Dead",2560.13284057534
+"3163",396,"Exposed",652596.093837443
+"3164",396,"Hospitalized",7017.24996420341
+"3165",396,"Infected",632049.28347334
+"3166",396,"New Infections",186856.130332844
+"3167",396,"Recovered",4604344.1682298
+"3168",396,"Susceptible",12910975.9477504
+"3169",397,"Critical",2334.30242252977
+"3170",397,"Dead",2683.9238679414
+"3171",397,"Exposed",650783.389854385
+"3172",397,"Hospitalized",7155.85403893122
+"3173",397,"Infected",637919.800726097
+"3174",397,"New Infections",184643.323014096
+"3175",397,"Recovered",4784579.31722903
+"3176",397,"Susceptible",12726332.6247363
+"3177",398,"Critical",2419.00525402872
+"3178",398,"Dead",2812.70956474047
+"3179",398,"Exposed",646626.408961271
+"3180",398,"Hospitalized",7272.84766472514
+"3181",398,"Infected",641595.111909283
+"3182",398,"New Infections",181781.130679791
+"3183",398,"Recovered",4966511.63546466
+"3184",398,"Susceptible",12544551.4940566
+"3185",399,"Critical",2499.74308669939
+"3186",399,"Dead",2946.32457542394
+"3187",399,"Exposed",640186.479395942
+"3188",399,"Hospitalized",7366.87661045399
+"3189",399,"Infected",643032.625354146
+"3190",399,"New Infections",178310.473179785
+"3191",399,"Recovered",5149516.14297583
+"3192",399,"Susceptible",12366241.0208768
+"3193",400,"Critical",2575.82583244712
+"3194",400,"Dead",3084.5643327859
+"3195",400,"Exposed",631556.16822754
+"3196",400,"Hospitalized",7436.85057881768
+"3197",400,"Infected",642219.440793846
+"3198",400,"New Infections",174280.111699063
+"3199",400,"Recovered",5332955.45393212
+"3200",400,"Susceptible",12191960.9091777
+"3201",401,"Critical",2646.58723536734
+"3202",401,"Dead",3227.18546542257
+"3203",401,"Exposed",620856.876653493
+"3204",401,"Hospitalized",7481.97025491582
+"3205",401,"Infected",639172.79148614
+"3206",401,"New Infections",169745.32809998
+"3207",401,"Recovered",5516188.2207022
+"3208",401,"Susceptible",12022215.5810777
+"3209",402,"Critical",2711.39665219752
+"3210",402,"Dead",3373.90684826114
+"3211",402,"Exposed",608235.64554805
+"3212",402,"Hospitalized",7501.74760074228
+"3213",402,"Infected",633939.672957294
+"3214",402,"New Infections",164766.4481158
+"3215",402,"Recovered",5698577.71030679
+"3216",402,"Susceptible",11857449.1329619
+"3217",403,"Critical",2769.67054155465
+"3218",403,"Dead",3524.41130581156
+"3219",403,"Exposed",593861.305958092
+"3220",403,"Hospitalized",7496.01851070993
+"3221",403,"Infected",626595.665118737
+"3222",403,"New Infections",159407.273597552
+"3223",403,"Recovered",5879500.28207598
+"3224",403,"Susceptible",11698041.8593644
+"3225",404,"Critical",2820.88331577636
+"3226",404,"Dead",3678.34795956649
+"3227",404,"Exposed",577920.138298984
+"3228",404,"Hospitalized",7464.94724160355
+"3229",404,"Infected",617242.991063486
+"3230",404,"New Infections",153733.491355736
+"3231",404,"Recovered",6058353.53698721
+"3232",404,"Susceptible",11544308.3680086
+"3233",405,"Critical",2864.57721710333
+"3234",405,"Dead",3835.33519203869
+"3235",405,"Exposed",560611.222707349
+"3236",405,"Hospitalized",7409.02236979052
+"3237",405,"Infected",606007.890262393
+"3238",405,"New Infections",147811.124087481
+"3239",405,"Recovered",6234563.92120543
+"3240",405,"Susceptible",11396497.2439212
+"3241",406,"Critical",2900.37090375793
+"3242",406,"Dead",3994.96418110239
+"3243",406,"Exposed",542141.670254945
+"3244",406,"Hospitalized",7329.04438855298
+"3245",406,"Infected",593037.413805124
+"3246",406,"New Infections",141705.082767013
+"3247",406,"Recovered",6407593.58818763
+"3248",406,"Susceptible",11254792.1611541
+"3249",407,"Critical",2927.9664705742
+"3250",407,"Dead",4156.80294045749
+"3251",407,"Exposed",522721.920409904
+"3252",407,"Hospitalized",7226.10541633536
+"3253",407,"Infected",578495.772776246
+"3254",407,"New Infections",135477.870382698
+"3255",407,"Recovered",6576946.3540903
+"3256",407,"Susceptible",11119314.2907714
+"3257",408,"Critical",2947.15468154619
+"3258",408,"Dead",4320.400786012
+"3259",408,"Exposed",502561.27511918
+"3260",408,"Hospitalized",7101.56181960197
+"3261",408,"Infected",562560.386369927
+"3262",408,"New Infections",129188.474975741
+"3263",408,"Recovered",6742172.61830329
+"3264",408,"Susceptible",10990125.8157957
+"3265",409,"Critical",2957.81825535714
+"3266",409,"Dead",4485.29313455748
+"3267",409,"Exposed",481863.815906852
+"3268",409,"Hospitalized",6957.00084074024
+"3269",409,"Infected",545417.783138285
+"3270",409,"New Infections",122891.476679598
+"3271",409,"Recovered",6902873.16248336
+"3272",409,"Susceptible",10867234.3391161
+"3273",410,"Critical",2959.93311622168
+"3274",410,"Dead",4651.0065309496
+"3275",410,"Exposed",460824.819808036
+"3276",410,"Hospitalized",6794.20254454099
+"3277",410,"Infected",527259.506768289
+"3278",410,"New Infections",116636.380012246
+"3279",410,"Recovered",7058701.78500336
+"3280",410,"Susceptible",10750597.9591039
+"3281",411,"Critical",2953.56759728576
+"3282",411,"Dead",4817.06379358533
+"3283",411,"Exposed",439627.755526672
+"3284",411,"Hospitalized",6615.09854387647
+"3285",411,"Infected",508278.167617807
+"3286",411,"New Infections",110467.170081168
+"3287",411,"Recovered",7209366.77077334
+"3288",411,"Susceptible",10640130.7890227
+"3289",412,"Critical",2938.87965823444
+"3290",412,"Dead",4982.98916557124
+"3291",412,"Exposed",418441.905725538
+"3292",412,"Hospitalized",6421.72902999447
+"3293",412,"Infected",488663.764143583
+"3294",412,"New Infections",104422.080474951
+"3295",412,"Recovered",7354631.2366046
+"3296",412,"Susceptible",10535708.7085477
+"3297",413,"Critical",2916.11224860604
+"3298",413,"Dead",5148.31336066424
+"3299",413,"Exposed",397420.627422388
+"3300",413,"Hospitalized",6216.19961546351
+"3301",413,"Infected",468600.376004078
+"3302",413,"New Infections",98533.552023701
+"3303",413,"Recovered",7494312.42770002
+"3304",413,"Susceptible",10437175.156524
+"3305",414,"Critical",2885.58700996622
+"3306",414,"Dead",5312.57839867522
+"3307",414,"Exposed",376700.232226378
+"3308",414,"Hospitalized",6000.63940441927
+"3309",414,"Infected",448263.304960401
+"3310",414,"New Infections",92828.3556096503
+"3311",414,"Recovered",7628280.06996103
+"3312",414,"Susceptible",10344346.8009144
+"3313",415,"Critical",2847.69656058839
+"3314",415,"Dead",5475.34213418844
+"3315",415,"Exposed",356399.443155716
+"3316",415,"Hospitalized",5777.16154670785
+"3317",415,"Infected",427816.712730233
+"3318",415,"New Infections",87327.8488159314
+"3319",415,"Recovered",7756453.90464937
+"3320",415,"Susceptible",10257018.9520985
+"3321",416,"Critical",2802.89564351725
+"3322",416,"Dead",5636.18239462384
+"3323",416,"Exposed",336619.36592133
+"3324",416,"Hospitalized",5547.82732491653
+"3325",416,"Infected",407411.778545681
+"3326",416,"New Infections",82048.3351976471
+"3327",416,"Recovered",7878800.54614438
+"3328",416,"Susceptible",10174970.6169008
+"3329",417,"Critical",2751.69144172461
+"3330",417,"Dead",5794.70065817943
+"3331",417,"Exposed",317443.900092516
+"3332",417,"Hospitalized",5314.61458340625
+"3333",417,"Infected",387185.374918497
+"3334",417,"New Infections",77001.4959591719
+"3335",417,"Recovered",7995329.8102393
+"3336",417,"Susceptible",10097969.1209416
+"3337",418,"Critical",2694.6333723548
+"3338",418,"Dead",5950.5252182794
+"3339",418,"Exposed",298940.509177686
+"3340",418,"Hospitalized",5079.39105407013
+"3341",418,"Infected",367259.239234005
+"3342",418,"New Infections",72194.8663451587
+"3343",418,"Recovered",8106090.66022238
+"3344",418,"Susceptible",10025774.2545965
+"3345",419,"Critical",2632.30266656164
+"3346",419,"Dead",6103.31379803441
+"3347",419,"Exposed",281161.26763735
+"3348",419,"Hospitalized",4843.89288133312
+"3349",419,"Infected",347739.602055537
+"3350",419,"New Infections",67632.3325958428
+"3351",419,"Recovered",8211166.91183581
+"3352",419,"Susceptible",9958141.92200064
+"3353",420,"Critical",2565.30202369527
+"3354",420,"Dead",6252.75559512808
+"3355",420,"Exposed",264144.106211226
+"3356",420,"Hospitalized",4609.70841327256
+"3357",420,"Infected",328717.220774176
+"3358",420,"New Infections",63314.6294077361
+"3359",420,"Recovered",8310672.82726486
+"3360",420,"Susceptible",9894827.2925929
+"3361",421,"Critical",2494.24560071504
+"3362",421,"Dead",6398.57275377845
+"3363",421,"Exposed",247914.18358097
+"3364",421,"Hospitalized",4378.26711792139
+"3365",421,"Infected",310267.759452026
+"3366",421,"New Infections",59239.8220769928
+"3367",421,"Recovered",8404748.71385394
+"3368",421,"Susceptible",9835587.47051591
+"3369",422,"Critical",2419.74956215654
+"3370",422,"Dead",6540.52127538666
+"3371",422,"Exposed",232485.321203477
+"3372",422,"Hospitalized",4150.8333114887
+"3373",422,"Infected",292452.452042481
+"3374",422,"New Infections",55403.7615736168
+"3375",422,"Recovered",8493556.62653798
+"3376",422,"Susceptible",9780183.70894229
+"3377",423,"Critical",2342.42337538116
+"3378",423,"Dead",6678.39139270388
+"3379",423,"Exposed",217861.448134767
+"3380",423,"Hospitalized",3928.50425248498
+"3381",423,"Infected",275318.986071346
+"3382",423,"New Infections",51800.504484422
+"3383",423,"Recovered",8577276.25519071
+"3384",423,"Susceptible",9728383.20445787
+"3385",424,"Critical",2262.86199274576
+"3386",424,"Dead",6812.00744348566
+"3387",424,"Exposed",204038.012977318
+"3388",424,"Hospitalized",3712.21206338281
+"3389",424,"Infected",258902.546644478
+"3390",424,"New Infections",48422.6929433017
+"3391",424,"Recovered",8656101.06023928
+"3392",424,"Susceptible",9679960.51151457
+"3393",425,"Critical",2181.6390190891
+"3394",425,"Dead",6941.22728846314
+"3395",425,"Exposed",191003.330067101
+"3396",425,"Hospitalized",3502.72888755825
+"3397",425,"Infected",243226.965581043
+"3398",425,"New Infections",45261.8922844563
+"3399",425,"Recovered",8730234.70280189
+"3400",425,"Susceptible",9634698.61923011
+"3401",426,"Critical",2099.30092154514
+"3402",426,"Dead",7065.9413249778
+"3403",426,"Exposed",178739.836202703
+"3404",426,"Hospitalized",3300.67466986356
+"3405",426,"Infected",228305.926847853
+"3406",426,"New Infections",42308.8862093465
+"3407",426,"Recovered",8799887.79988755
+"3408",426,"Susceptible",9592389.73302077
+"3409",427,"Critical",2016.36230075321
+"3410",427,"Dead",7186.07115184959
+"3411",427,"Exposed",167225.242313716
+"3412",427,"Hospitalized",3106.52695894694
+"3413",427,"Infected",214144.186649362
+"3414",427,"New Infections",39553.9307914251
+"3415",427,"Recovered",8865275.02127129
+"3416",427,"Susceptible",9552835.80222934
+"3417",428,"Critical",1933.30220919468
+"3418",428,"Dead",7301.56794312376
+"3419",428,"Exposed",156433.571322247
+"3420",428,"Hospitalized",2920.63216234017
+"3421",428,"Infected",200738.77396863
+"3422",428,"New Infections",36986.9697173709
+"3423",428,"Recovered",8926612.53275776
+"3424",428,"Susceptible",9515848.83251197
+"3425",429,"Critical",1850.56147436371
+"3426",429,"Dead",7412.41058848645
+"3427",429,"Exposed",146336.079039001
+"3428",429,"Hospitalized",2743.21773524185
+"3429",429,"Infected",188080.144628433
+"3430",429,"New Infections",34597.8138535201
+"3431",429,"Recovered",8984115.78075128
+"3432",429,"Susceptible",9481251.01865845
+"3433",430,"Critical",1768.54096210231
+"3434",430,"Dead",7518.60365662218
+"3435",430,"Exposed",136902.059307215
+"3436",430,"Hospitalized",2574.40484502003
+"3437",430,"Infected",176153.268733811
+"3438",430,"New Infections",32376.2886068815
+"3439",430,"Recovered",9037997.60531892
+"3440",430,"Susceptible",9448874.73005157
+"3441",431,"Critical",1687.60069868173
+"3442",431,"Dead",7620.17523490112
+"3443",431,"Exposed",128099.537872708
+"3444",431,"Hospitalized",2414.22112056789
+"3445",431,"Infected",164938.637457855
+"3446",431,"New Infections",30312.352692384
+"3447",431,"Recovered",9088466.66313136
+"3448",431,"Susceptible",9418562.37735919
+"3449",432,"Critical",1608.05975881041
+"3450",432,"Dead",7717.17469483532
+"3451",432,"Exposed",119895.861757053
+"3452",432,"Hospitalized",2262.61316441661
+"3453",432,"Infected",154413.180423002
+"3454",432,"New Infections",28396.1918845759
+"3455",432,"Recovered",9135726.13760253
+"3456",432,"Susceptible",9390166.18547461
+"3457",433,"Critical",1530.19682020748
+"3458",433,"Dead",7809.67042802504
+"3459",433,"Exposed",112258.192396617
+"3460",433,"Hospitalized",2119.45857248925
+"3461",433,"Infected",144551.089365726
+"3462",433,"New Infections",26618.2911758345
+"3463",433,"Recovered",9179972.71099342
+"3464",433,"Susceptible",9363547.89429877
+"3465",434,"Critical",1454.25128308543
+"3466",434,"Dead",7897.74759210397
+"3467",434,"Exposed",105153.911635623
+"3468",434,"Hospitalized",1984.57726900799
+"3469",434,"Infected",135324.547365325
+"3470",434,"New Infections",24969.4885272567
+"3471",434,"Recovered",9221395.7719586
+"3472",434,"Susceptible",9338578.40577152
+"3473",435,"Critical",1380.42485414762
+"3474",435,"Dead",7981.5059007315
+"3475",435,"Exposed",98550.949968898
+"3476",435,"Hospitalized",1857.74202061166
+"3477",435,"Infected",126704.365719647
+"3478",435,"New Infections",23441.0131163539
+"3479",435,"Recovered",9260176.83175606
+"3480",435,"Susceptible",9315137.39265516
+"3481",436,"Critical",1308.88349882053
+"3482",436,"Dead",8061.05748618104
+"3483",436,"Exposed",92418.0463466994
+"3484",436,"Hospitalized",1738.68804318392
+"3485",436,"Infected",118660.532639961
+"3486",436,"New Infections",22024.5106827868
+"3487",436,"Recovered",9296489.12288804
+"3488",436,"Susceptible",9293112.88197238
+"3489",437,"Critical",1239.75967171938
+"3490",437,"Dead",8136.52485771086
+"3491",437,"Exposed",86724.9484891841
+"3492",437,"Hospitalized",1627.12165681239
+"3493",437,"Infected",111162.679405817
+"3494",437,"New Infections",20712.0582679468
+"3495",437,"Recovered",9330497.35508959
+"3496",437,"Susceptible",9272400.82370443
+"3497",438,"Critical",1173.1547431543
+"3498",438,"Dead",8208.03897381324
+"3499",438,"Exposed",81442.5621020617
+"3500",438,"Hospitalized",1522.72797873476
+"3501",438,"Infected",104180.470565511
+"3502",438,"New Infections",19496.1703488516
+"3503",438,"Recovered",9362357.60515641
+"3504",438,"Susceptible",9252904.65335558
+"3505",439,"Critical",1109.14154825617
+"3506",439,"Dead",8275.73744172145
+"3507",439,"Exposed",76543.0567108079
+"3508",439,"Hospitalized",1425.17767145885
+"3509",439,"Infected",97683.9252837432
+"3510",439,"New Infections",18369.7980897474
+"3511",439,"Recovered",9392217.31895344
+"3512",439,"Susceptible",9234534.85526583
+"3513",440,"Critical",1047.76699455071
+"3514",440,"Dead",8339.76285328036
+"3515",440,"Exposed",71999.9350952069
+"3516",440,"Hospitalized",1334.13278407791
+"3517",440,"Infected",91643.6771140072
+"3518",440,"New Infections",17326.323180785
+"3519",440,"Recovered",9420215.40594909
+"3520",440,"Susceptible",9217208.53208505
+"3521",441,"Critical",989.054673137423
+"3522",441,"Dead",8400.26126249674
+"3523",441,"Exposed",67788.072551886
+"3524",441,"Hospitalized",1249.25173988668
+"3525",441,"Infected",86031.1793887375
+"3526",441,"New Infections",16359.5475044525
+"3527",441,"Recovered",9446482.40867852
+"3528",441,"Susceptible",9200848.98458059
+"3529",442,"Critical",933.007427717893
+"3530",442,"Dead",8457.38080679619
+"3531",442,"Exposed",63883.7314710315
+"3532",442,"Hospitalized",1170.19353354478
+"3533",442,"Infected",80818.8631444247
+"3534",442,"New Infections",15463.6796676238
+"3535",442,"Recovered",9471140.73157877
+"3536",442,"Susceptible",9185385.30491297
+"3537",443,"Critical",879.609844326885
+"3538",443,"Dead",8511.27047122276
+"3539",443,"Exposed",60264.5560062108
+"3540",443,"Hospitalized",1096.62120704479
+"3541",443,"Infected",75980.2540900452
+"3542",443,"New Infections",14633.3192594408
+"3543",443,"Recovered",9494304.91560288
+"3544",443,"Susceptible",9170751.98565353
+"3545",444,"Critical",828.830632581016
+"3546",444,"Dead",8562.0789925067
+"3547",444,"Exposed",56909.5509571196
+"3548",444,"Hospitalized",1028.20467640138
+"3549",444,"Infected",71490.0546330309
+"3550",444,"New Infections",13863.4395413303
+"3551",444,"Recovered",9516081.94687142
+"3552",444,"Susceptible",9156888.5461122
+"3553",445,"Critical",780.624876462947
+"3554",445,"Dead",8609.95389806663
+"3555",445,"Exposed",53799.0483821916
+"3556",445,"Hospitalized",964.622980997563
+"3557",445,"Infected",67324.1964357475
+"3558",445,"New Infections",13149.3691433661
+"3559",445,"Recovered",9536571.58933296
+"3560",445,"Susceptible",9143739.17696883
+"3561",446,"Critical",734.936139047271
+"3562",446,"Dead",8655.04067356784
+"3563",446,"Exposed",50914.6649149878
+"3564",446,"Hospitalized",905.566025542108
+"3565",446,"Infected",63459.8684165815
+"3566",446,"New Infections",12486.7732287935
+"3567",446,"Recovered",9555866.7329655
+"3568",446,"Susceptible",9131252.40374004
+"3569",447,"Critical",691.698411129306
+"3570",447,"Dead",8697.48205158662
+"3571",447,"Exposed",48239.2522755361
+"3572",447,"Hospitalized",850.735881156326
+"3573",447,"Infected",59875.524555399
+"3574",447,"New Infections",11871.6344936633
+"3575",447,"Recovered",9574053.75045408
+"3576",447,"Susceptible",9119380.76924638
+"3577",448,"Critical",650.837898454664
+"3578",448,"Dead",8737.41741318783
+"3579",448,"Exposed",45756.8430434968
+"3580",448,"Hospitalized",799.847707682403
+"3581",448,"Infected",56550.8753292564
+"3582",448,"New Infections",11300.2342890394
+"3583",448,"Recovered",9591212.85652585
+"3584",448,"Susceptible",9108080.53495734
+"3585",449,"Critical",612.27464620378
+"3586",449,"Dead",8774.98229376474
+"3587",449,"Exposed",43452.5933908517
+"3588",449,"Hospitalized",752.630354268415
+"3589",449,"Infected",53466.8661016696
+"3590",449,"New Infections",10769.1340871416
+"3591",449,"Recovered",9607418.46521831
+"3592",449,"Susceptible",9097311.40087019
+"3593",450,"Critical",575.924002616218
+"3594",450,"Dead",8810.30798427395
+"3595",450,"Exposed",41312.7241535474
+"3596",450,"Hospitalized",708.826689940566
+"3597",450,"Infected",50605.645324289
+"3598",450,"New Infections",10275.1574582112
+"3599",450,"Recovered",9622739.54130861
+"3600",450,"Susceptible",9087036.24341198
+"3601",451,"Critical",541.697926209693
+"3602",451,"Dead",8843.52121898213
+"3603",451,"Exposed",39324.4613494579
+"3604",451,"Hospitalized",668.193710456573
+"3605",451,"Infected",47950.5249871363
+"3606",451,"New Infections",9815.37268015626
+"3607",451,"Recovered",9637239.94295119
+"3608",451,"Susceptible",9077220.87073183
+"3609",452,"Critical",509.506143029199
+"3610",452,"Dead",8874.74394098912
+"3611",452,"Exposed",37475.977019339
+"3612",452,"Hospitalized",630.502462422357
+"3613",452,"Infected",45485.9353739064
+"3614",452,"New Infections",9387.07606667605
+"3615",452,"Recovered",9650978.75327042
+"3616",452,"Susceptible",9067833.79466515
+"3617",453,"Critical",479.257161825125
+"3618",453,"Dead",8904.093137068
+"3619",453,"Exposed",35756.3310733455
+"3620",453,"Hospitalized",595.537820574434
+"3621",453,"Infected",43197.3758417415
+"3622",453,"New Infections",8987.7760702394
+"3623",453,"Recovered",9664010.59924579
+"3624",453,"Susceptible",9058846.01859491
+"3625",454,"Critical",450.859156077206
+"3626",454,"Dead",8931.6807337376
+"3627",454,"Exposed",34155.4146636283
+"3628",454,"Hospitalized",563.098149369253
+"3629",454,"Infected",41071.3630486452
+"3630",454,"New Infections",8615.17819288328
+"3631",454,"Recovered",9676385.95672178
+"3632",454,"Susceptible",9050230.84040203
+"3633",455,"Critical",424.220722421953
+"3634",455,"Dead",8957.61354692976
+"3635",455,"Exposed",32663.8954692738
+"3636",455,"Hospitalized",532.994875631684
+"3637",455,"Infected",39095.3777938072
+"3638",455,"New Infections",8267.17071929804
+"3639",455,"Recovered",9688151.44078447
+"3640",455,"Susceptible",9041963.66968273
+"3641",456,"Critical",399.251525368308
+"3642",456,"Dead",8981.99327810953
+"3643",456,"Exposed",31273.1651695307
+"3644",456,"Hospitalized",505.051995025644
+"3645",456,"Infected",37257.8114135315
+"3646",456,"New Infections",7941.81127223907
+"3647",456,"Recovered",9699350.0810832
+"3648",456,"Susceptible",9034021.85841049
+"3649",457,"Critical",375.862838257617
+"3650",457,"Dead",9004.9165502322
+"3651",457,"Exposed",29975.2892913833
+"3652",457,"Hospitalized",479.105531528687
+"3653",457,"Infected",35547.9124849643
+"3654",457,"New Infections",7637.31417922516
+"3655",457,"Recovered",9710021.58194763
+"3656",457,"Susceptible",9026384.54423127
+"3657",458,"Critical",353.967990291409
+"3658",458,"Dead",9026.47497746097
+"3659",458,"Exposed",28762.9595449956
+"3660",458,"Hospitalized",455.002965912429
+"3661",458,"Infected",33955.7344280632
+"3662",458,"New Infections",7352.03863114333
+"3663",458,"Recovered",9720202.56736841
+"3664",458,"Susceptible",9019032.50560012
+"3665",459,"Critical",333.482729159436
+"3666",459,"Dead",9046.75526310946
+"3667",459,"Exposed",27629.4487026135
+"3668",459,"Hospitalized",432.602646435269
+"3669",459,"Infected",32472.0844599888
+"3670",459,"New Infections",7084.4776072632
+"3671",459,"Recovered",9729926.81108109
+"3672",459,"Susceptible",9011948.02799286
+"3673",460,"Critical",314.325508390515
+"3674",460,"Dead",9065.83932080457
+"3675",460,"Exposed",26568.5680308146
+"3676",460,"Hospitalized",411.773192518966
+"3677",460,"Infected",31088.4742422123
+"3678",460,"New Infections",6833.24753684188
+"3679",460,"Recovered",9739225.4521245
+"3680",460,"Susceptible",9005114.78045602
+"3681",461,"Critical",296.41770805344
+"3682",461,"Dead",9083.80441437909
+"3683",461,"Exposed",25574.6272504619
+"3684",461,"Hospitalized",392.392900078158
+"3685",461,"Infected",29797.0724662358
+"3686",461,"New Infections",6597.07866461396
+"3687",461,"Recovered",9748127.19634465
+"3688",461,"Susceptible",8998517.7017914
+"3689",462,"Critical",279.683796882862
+"3690",462,"Dead",9100.72331249383
+"3691",462,"Exposed",24642.3969715937
+"3692",462,"Hospitalized",374.349155371618
+"3693",462,"Infected",28590.6595462369
+"3694",462,"New Infections",6374.80608571363
+"3695",462,"Recovered",9756658.50438699
+"3696",462,"Susceptible",8992142.89570569
+"3697",463,"Critical",264.05144331899
+"3698",463,"Dead",9116.66445445233
+"3699",463,"Exposed",23767.0735302484
+"3700",463,"Hospitalized",357.53786271504
+"3701",463,"Infected",27462.5845237822
+"3702",463,"New Infections",6165.36141472218
+"3703",463,"Recovered",9764843.76676978
+"3704",463,"Susceptible",8985977.53429097
+"3705",464,"Critical",249.451582348936
+"3706",464,"Dead",9131.69212410329
+"3707",464,"Exposed",22944.2461396168
+"3708",464,"Hospitalized",341.862890107063
+"3709",464,"Infected",26406.7242388595
+"3710",464,"New Infections",5967.76505337285
+"3711",464,"Recovered",9772705.46666263
+"3712",464,"Susceptible",8980009.76923759
+"3713",465,"Critical",235.818444436853
+"3714",465,"Dead",9145.8666291272
+"3715",465,"Exposed",22169.8662578409
+"3716",465,"Hospitalized",327.235535744194
+"3717",465,"Infected",25417.4447809437
+"3718",465,"New Infections",5781.11902181295
+"3719",465,"Recovered",9780264.33101138
+"3720",465,"Susceptible",8974228.65021578
+"3721",466,"Critical",223.089552241123
+"3722",466,"Dead",9159.24448337132
+"3723",466,"Exposed",21440.2190683527
+"3724",466,"Hospitalized",313.574017509024
+"3725",466,"Infected",24489.5652019865
+"3726",466,"New Infections",5604.60031908631
+"3727",466,"Recovered",9787539.4706551
+"3728",466,"Susceptible",8968624.0498967
+"3729",467,"Critical",211.205690248843
+"3730",467,"Dead",9171.87859023301
+"3731",467,"Exposed",20751.8969651055
+"3732",467,"Hospitalized",300.802986784802
+"3733",467,"Infected",23618.3234486484
+"3734",467,"New Infections",5437.45477955078
+"3735",467,"Recovered",9794548.51007709
+"3736",467,"Susceptible",8963186.59511714
+"3737",468,"Critical",200.110851916904
+"3738",468,"Dead",9183.81842539552
+"3739",468,"Exposed",20101.774933775
+"3740",468,"Hospitalized",288.853067355307
+"3741",468,"Infected",22799.3444525315
+"3742",468,"New Infections",5278.99139320016
+"3743",468,"Recovered",9801307.70742034
+"3744",468,"Susceptible",8957907.60372395
+"3745",469,"Critical",189.75216839971
+"3746",469,"Dead",9195.11021749378
+"3747",469,"Exposed",19486.9877204871
+"3748",469,"Hospitalized",277.660419671816
+"3749",469,"Infected",22028.6103035446
+"3750",469,"New Infections",5128.57705924832
+"3751",469,"Recovered",9807832.06538097
+"3752",469,"Susceptible",8952779.0266647
+"3753",470,"Critical",180.079822468633
+"3754",470,"Dead",9205.79712553222
+"3755",470,"Exposed",18904.9086814407
+"3756",470,"Hospitalized",267.166330390773
+"3757",470,"Infected",21302.4324219448
+"3758",470,"New Infections",4985.6317438034
+"3759",470,"Recovered",9814135.43357259
+"3760",470,"Susceptible",8947793.39492089
+"3761",471,"Critical",171.046950789157
+"3762",471,"Dead",9215.91941209398
+"3763",471,"Exposed",18353.1302095965
+"3764",471,"Hospitalized",257.316826790715
+"3765",471,"Infected",20617.4256382587
+"3766",471,"New Infections",4849.62401396878
+"3767",471,"Recovered",9820230.60293081
+"3768",471,"Susceptible",8942943.77090693
+"3769",472,"Critical",162.609537318735
+"3770",472,"Dead",9225.5146115726
+"3771",472,"Exposed",17829.4456381207
+"3772",472,"Hospitalized",248.062315451297
+"3773",472,"Infected",19970.4840865654
+"3774",472,"New Infections",4720.06692222415
+"3775",472,"Recovered",9826129.39270153
+"3776",472,"Susceptible",8938223.7039847
+"3777",473,"Critical",154.726300221196
+"3778",473,"Dead",9234.61769282569
+"3779",473,"Exposed",17331.8325242892
+"3780",473,"Hospitalized",239.357244409019
+"3781",473,"Infected",19358.7588149695
+"3782",473,"New Infections",4596.51421643992
+"3783",473,"Recovered",9831842.73053028
+"3784",473,"Susceptible",8933627.18976826
+"3785",474,"Critical",147.358574361048
+"3786",474,"Dead",9243.26121579685
+"3787",474,"Exposed",16858.437221884
+"3788",474,"Hospitalized",231.159787883172
+"3789",474,"Infected",18779.6370170531
+"3790",474,"New Infections",4478.55685234369
+"3791",474,"Recovered",9837380.72614237
+"3792",474,"Susceptible",8929148.63291592
+"3793",475,"Critical",140.470191141764
+"3794",475,"Dead",9251.47548177929
+"3795",475,"Exposed",16407.5606546342
+"3796",475,"Hospitalized",223.431552582958
+"3797",475,"Infected",18230.722789313
+"3798",475,"New Infections",4365.81978667656
+"3799",475,"Recovered",9842752.73907657
+"3800",475,"Susceptible",8924782.81312924
+"3801",476,"Critical",134.027357184274
+"3802",476,"Dead",9259.28867710415
+"3803",476,"Exposed",15977.6452078337
+"3804",476,"Hospitalized",216.137304555179
+"3805",476,"Infected",17709.819321741
+"3806",476,"New Infections",4257.95903064008
+"3807",476,"Recovered",9847967.44090824
+"3808",476,"Susceptible",8920524.8540986
+"3809",477,"Critical",127.998533103408
+"3810",477,"Dead",9266.72701012973
+"3811",477,"Exposed",15567.2626598535
+"3812",477,"Hospitalized",209.244715505232
+"3813",477,"Infected",17214.9124315583
+"3814",477,"New Infections",4154.65894453729
+"3815",477,"Recovered",9853032.87237105
+"3816",477,"Susceptible",8916370.19515406
+"3817",478,"Critical",122.3543134288
+"3818",478,"Dead",9273.81484148718
+"3819",478,"Exposed",15175.1030797686
+"3820",478,"Hospitalized",202.724127517065
+"3821",478,"Infected",16744.1553534576
+"3822",478,"New Infections",4055.62975574964
+"3823",478,"Recovered",9857956.49576129
+"3824",478,"Susceptible",8912314.56539831
+"3825",479,"Critical",117.06730853069
+"3826",479,"Dead",9280.57480760473
+"3827",479,"Exposed",14799.9646217213
+"3828",479,"Hospitalized",196.548335106005
+"3829",479,"Infected",16295.8547033839
+"3830",479,"New Infections",3960.60528336514
+"3831",479,"Recovered",9862745.24298397
+"3832",479,"Susceptible",8908353.96011495
+"3833",480,"Critical",112.112029247833
+"3834",480,"Dead",9287.02793758723
+"3835",480,"Exposed",14440.7441508825
+"3836",480,"Hospitalized",190.692383558271
+"3837",480,"Infected",15868.4575367672
+"3838",480,"New Infections",3869.34085388161
+"3839",480,"Recovered",9867405.55957615
+"3840",480,"Susceptible",8904484.61926107
+"3841",481,"Critical",107.46477477245
+"3842",481,"Dead",9293.19376357363
+"3843",481,"Exposed",14096.4286399585
+"3844",481,"Hospitalized",185.133382539719
+"3845",481,"Infected",15460.5394261065
+"3846",481,"New Infections",3781.61139345405
+"3847",481,"Recovered",9871943.4450207
+"3848",481,"Susceptible",8900703.00786761
+"3849",482,"Critical",103.103524223633
+"3850",482,"Dead",9299.09042473092
+"3851",482,"Exposed",13766.0872790816
+"3852",482,"Hospitalized",179.850333991436
+"3853",482,"Infected",15070.7934868173
+"3854",482,"New Infections",3697.20968313879
+"3855",482,"Recovered",9876364.48964194
+"3856",482,"Susceptible",8897005.79818447
+"3857",483,"Critical",99.0078322340542
+"3858",483,"Dead",9304.73476507241
+"3859",483,"Exposed",13448.8642456362
+"3860",483,"Hospitalized",174.823973369334
+"3861",483,"Infected",14698.0202842343
+"3862",483,"New Infections",3615.94476451105
+"3863",483,"Recovered",9880673.90835475
+"3864",483,"Susceptible",8893389.85341996
+"3865",484,"Critical",95.1587287834084
+"3866",484,"Dead",9310.14242531036
+"3867",484,"Exposed",13143.9720840845
+"3868",484,"Hospitalized",170.036623327294
+"3869",484,"Infected",14341.1185585637
+"3870",484,"New Infections",3537.64048390116
+"3871",484,"Recovered",9884876.57151913
+"3872",484,"Susceptible",8889852.21293606
+"3873",485,"Critical",91.5386234340428
+"3874",485,"Dead",9315.3279289697
+"3875",485,"Exposed",12850.685649185
+"3876",485,"Hospitalized",165.472058987511
+"3877",485,"Infected",13999.0767083704
+"3878",485,"New Infections",3462.13416430861
+"3879",485,"Recovered",9888977.03313456
+"3880",485,"Susceptible",8886390.07877175
+"3881",486,"Critical",88.1312140582006
+"3882",486,"Dead",9320.30476300129
+"3883",486,"Exposed",12568.3365691352
+"3884",486,"Hospitalized",161.115383986443
+"3885",486,"Infected",13670.9649768465
+"3886",486,"New Infections",3389.27539481759
+"3887",486,"Recovered",9892979.5565913
+"3888",486,"Susceptible",8883000.80337694
+"3889",487,"Critical",84.9214000908186
+"3890",487,"Dead",9325.08545314096
+"3891",487,"Exposed",12296.3081881307
+"3892",487,"Hospitalized",156.952916529525
+"3893",487,"Infected",13355.9282886139
+"3894",487,"New Infections",3318.92492805366
+"3895",487,"Recovered",9896888.13817987
+"3896",487,"Susceptible",8879681.87844888
+"3897",488,"Critical",81.895200295574
+"3898",488,"Dead",9329.68163426454
+"3899",488,"Exposed",12034.030950616
+"3900",488,"Hospitalized",152.972084731897
+"3901",488,"Infected",13053.1796881731
+"3902",488,"New Infections",3250.95367689303
+"3903",488,"Recovered",9900706.52854519
+"3904",488,"Susceptible",8876430.92477199
+"3905",489,"Critical",79.0396749937308
+"3906",489,"Dead",9334.10411599032
+"3907",489,"Exposed",11780.9781921239
+"3908",489,"Hospitalized",149.161330565486
+"3909",489,"Infected",12761.9943342942
+"3910",489,"New Infections",3185.24180226503
+"3911",489,"Recovered",9904438.25225757
+"3912",489,"Susceptible",8873245.68296972
+"3913",490,"Critical",76.3428526742522
+"3914",490,"Dead",9338.36294377926
+"3915",490,"Exposed",11536.6623040583
+"3916",490,"Hospitalized",145.510021774515
+"3917",490,"Infected",12481.7040076795
+"3918",490,"New Infections",3121.67788447863
+"3919",490,"Recovered",9908086.62566005
+"3920",490,"Susceptible",8870124.00508524
+"3921",491,"Critical",73.7936608786772
+"3922",491,"Dead",9342.46745577974
+"3923",491,"Exposed",11300.6312420871
+"3924",491,"Hospitalized",142.008371161665
+"3925",491,"Infected",12211.6920920892
+"3926",491,"New Infections",3060.15817105596
+"3927",491,"Recovered",9911654.77313907
+"3928",491,"Susceptible",8867063.84691419
+"3929",492,"Critical",71.3818612345851
+"3930",492,"Dead",9346.42633565889
+"3931",492,"Exposed",11072.465349979
+"3932",492,"Hospitalized",138.647362685633
+"3933",492,"Infected",11951.3889918283
+"3934",492,"New Infections",3000.58589457414
+"3935",492,"Recovered",9915145.64195426
+"3936",492,"Susceptible",8864063.26101962
+"3937",493,"Critical",69.0979884963466
+"3938",493,"Dead",9350.24766165634
+"3939",493,"Exposed",10851.7744727509
+"3940",493,"Hospitalized",135.418683847472
+"3941",493,"Infected",11700.2679510488
+"3942",493,"New Infections",2942.87065450088
+"3943",493,"Recovered",9918562.01575235
+"3944",493,"Susceptible",8861120.39036511
+"3945",494,"Critical",66.9332934406262
+"3946",494,"Dead",9353.93895208877
+"3947",494,"Exposed",10638.1953348997
+"3948",494,"Hospitalized",132.314663878035
+"3949",494,"Infected",11457.8412427213
+"3950",494,"New Infections",2886.9278574638
+"3951",494,"Recovered",9921906.52688058
+"3952",494,"Susceptible",8858233.46250765
+"3953",495,"Critical",64.8796894561847
+"3954",495,"Dead",9357.50720752582
+"3955",495,"Exposed",10431.3891612779
+"3956",495,"Hospitalized",129.328217271846
+"3957",495,"Infected",11223.6566973952
+"3958",495,"New Infections",2832.67821081761
+"3959",495,"Recovered",9925181.6676055
+"3960",495,"Susceptible",8855400.78429683
+"3961",496,"Critical",62.9297026624241
+"3962",496,"Dead",9360.95894984914
+"3963",496,"Exposed",10231.0395198459
+"3964",496,"Hospitalized",126.45279224403
+"3965",496,"Infected",10997.2945439925
+"3966",496,"New Infections",2780.04726477064
+"3967",496,"Recovered",9928389.8003346
+"3968",496,"Susceptible",8852620.73703206
+"3969",497,"Critical",61.0764253883692
+"3970",497,"Dead",9364.3002583975
+"3971",497,"Exposed",10036.8503670989
+"3972",497,"Hospitalized",123.682323716397
+"3973",497,"Infected",10778.3645368745
+"3974",497,"New Infections",2728.96499870356
+"3975",497,"Recovered",9931533.16693043
+"3976",497,"Susceptible",8849891.77203336
+"3977",498,"Critical",59.3134728430091
+"3978",498,"Dead",9367.53680339138
+"3979",498,"Exposed",9848.54427843355
+"3980",498,"Hospitalized",121.011190466578
+"3981",498,"Infected",10566.5033452982
+"3982",498,"New Infections",2679.36544765916
+"3983",498,"Recovered",9934613.89719913
+"3984",498,"Susceptible",8847212.4065857
+"3985",499,"Critical",57.6349428087844
+"3986",499,"Dead",9370.67387682131
+"3987",499,"Exposed",9665.86084708771
+"3988",499,"Hospitalized",118.434176100261
+"3989",499,"Infected",10361.3721831317
+"3990",499,"New Infections",2631.18636530619
+"3991",499,"Recovered",9937634.01662892
+"3992",499,"Susceptible",8844581.22022039
+"3993",500,"Critical",56.0353781922106
+"3994",500,"Dead",9373.71642097476
+"3995",500,"Exposed",9488.55523656777
+"3996",500,"Hospitalized",115.946433531121
+"3997",500,"Infected",10162.654658349
+"3998",500,"New Infections",2584.36891998108
+"3999",500,"Recovered",9940595.45344723
+"4000",500,"Susceptible",8841996.85130041
+"4001",501,"Critical",54.5097322689197
+"4002",501,"Dead",9376.66905476681
+"4003",501,"Exposed",9316.39687267259
+"4004",501,"Hospitalized",113.543452676122
+"4005",501,"Infected",9970.05482336177
+"4006",501,"New Infections",2538.85742069234
+"4007",501,"Recovered",9943500.04505979
+"4008",501,"Susceptible",8839457.99387972
+"4009",502,"Critical",53.0533364645627
+"4010",502,"Dead",9379.53609803109
+"4011",502,"Exposed",9149.16826233765
+"4012",502,"Hospitalized",111.221031095461
+"4013",502,"Infected",9783.29540869239
+"4014",502,"New Infections",2494.59907023334
+"4015",502,"Recovered",9946349.54392915
+"4016",502,"Susceptible",8836963.39480949
+"4017",503,"Critical",51.6618705178567
+"4018",503,"Dead",9382.32159391799
+"4019",503,"Exposed",8986.66392756185
+"4020",503,"Hospitalized",108.975247326682
+"4021",503,"Infected",9602.11622383843
+"4022",503,"New Infections",2451.54374279187
+"4023",503,"Recovered",9949145.6229454
+"4024",503,"Susceptible",8834511.85106669
+"4025",504,"Critical",50.3313348774189
+"4026",504,"Dead",9385.02932953879
+"4027",504,"Exposed",8828.68944364604
+"4028",504,"Hospitalized",106.80243668146
+"4029",504,"Infected",9426.27271044071
+"4030",504,"New Infections",2409.64378366947
+"4031",504,"Recovered",9951889.88033705
+"4032",504,"Susceptible",8832102.20728302
+"4033",505,"Critical",49.0580251897762
+"4034",505,"Dead",9387.66285498557
+"4035",505,"Exposed",8675.06057187129
+"4036",505,"Hospitalized",104.699169291229
+"4037",505,"Infected",9255.53463404292
+"4038",505,"New Infections",2368.85382893231
+"4039",505,"Recovered",9954583.84416579
+"4040",505,"Susceptible",8829733.35345409
+"4041",506,"Critical",47.8385087419423
+"4042",506,"Dead",9390.22550084886
+"4043",506,"Exposed",8525.60247758026
+"4044",506,"Hospitalized",102.662230204451
+"4045",506,"Infected",9089.68490182803
+"4046",506,"New Infections",2329.13064300793
+"4047",506,"Recovered",9957228.97644497
+"4048",506,"Susceptible",8827404.22281108
+"4049",507,"Critical",46.6696027281361
+"4050",507,"Dead",9392.72039434686
+"4051",507,"Exposed",8380.14902539902
+"4052",507,"Hospitalized",100.688601353713
+"4053",507,"Infected",8928.51849473893
+"4054",507,"New Infections",2290.43297242043
+"4055",507,"Recovered",9959826.67691803
+"4056",507,"Susceptible",8825113.78983866
+"4057",508,"Critical",45.5483542164705
+"4058",508,"Dead",9395.15047417291
+"4059",508,"Exposed",8238.54214405458
+"4060",508,"Hospitalized",98.7754452252875
+"4061",508,"Infected",8771.84150334228
+"4062",508,"New Infections",2252.72141402104
+"4063",508,"Recovered",9962378.2865296
+"4064",508,"Susceptible",8822861.06842464
+"4065",509,"Critical",44.472021697724
+"4066",509,"Dead",9397.51850416033
+"4067",509,"Exposed",8100.63125390726
+"4068",509,"Hospitalized",96.9200900772283
+"4069",509,"Infected",8619.47025767914
+"4070",509,"New Infections",2215.95829622214
+"4071",509,"Recovered",9964885.09061932
+"4072",509,"Susceptible",8820645.11012842
+"4073",510,"Critical",43.4380581045368
+"4074",510,"Dead",9399.82708585734
+"4075",510,"Exposed",7966.27275093016
+"4076",510,"Hospitalized",95.1200165645322
+"4077",510,"Infected",8471.2305421675
+"4078",510,"New Infections",2180.1075718823
+"4079",510,"Recovered",9967348.3218651
+"4080",510,"Susceptible",8818465.00255654
+"4081",511,"Critical",42.4440951955291
+"4082",511,"Dead",9402.07867009794
+"4083",511,"Exposed",7835.32954143438
+"4084",511,"Hospitalized",93.372845641566
+"4085",511,"Infected",8326.95688738399
+"4086",511,"New Infections",2145.13472161749
+"4087",511,"Recovered",9969769.16300059
+"4088",511,"Susceptible",8816319.86783492
+"4089",512,"Critical",41.4879292048531
+"4090",512,"Dead",9404.27556764891
+"4091",512,"Exposed",7707.67062235976
+"4092",512,"Hospitalized",91.6763276227225
+"4093",512,"Infected",8186.49193125792
+"4094",512,"New Infections",2111.00666643101
+"4095",512,"Recovered",9972148.74932867
+"4096",512,"Susceptible",8814208.86116849
+"4097",513,"Critical",40.5675076635658
+"4098",513,"Dead",9406.41995900687
+"4099",513,"Exposed",7583.17070243098
+"4100",513,"Hospitalized",90.0283322923033
+"4101",513,"Infected",8049.6858428645
+"4102",513,"New Infections",2077.69168866192
+"4103",513,"Recovered",9974488.17105117
+"4104",513,"Susceptible",8812131.16947983
+"4105",514,"Critical",39.6809173048865
+"4106",514,"Dead",9408.51390341438
+"4107",514,"Exposed",7461.70985991958
+"4108",514,"Hospitalized",88.4268399639035
+"4109",514,"Infected",7916.39580260735
+"4110",514,"New Infections",2045.15936034978
+"4111",514,"Recovered",9976788.47543257
+"4112",514,"Susceptible",8810086.01011948
+"4113",515,"Critical",38.8263729708971
+"4114",515,"Dead",9410.55934715861
+"4115",515,"Exposed",7343.17323315699
+"4116",515,"Hospitalized",86.8699333981751
+"4117",515,"Infected",7786.48553313807
+"4118",515,"New Infections",2013.3804782035
+"4119",515,"Recovered",9979050.66881416
+"4120",515,"Susceptible",8808072.62964127
+"4121",516,"Critical",38.0022074435156
+"4122",516,"Dead",9412.5581312114
+"4123",516,"Exposed",7227.45074031433
+"4124",516,"Hospitalized",85.3557904957907
+"4125",516,"Infected",7659.82487587396
+"4126",516,"New Infections",1982.3270044431
+"4127",516,"Recovered",9981275.71849309
+"4128",516,"Susceptible",8806090.30263683
+"4129",517,"Critical",37.206862127627
+"4130",517,"Dead",9414.51199826521
+"4131",517,"Exposed",7114.43682530354
+"4132",517,"Hospitalized",83.8826776897734
+"4133",517,"Infected",7536.28940844767
+"4134",517,"New Infections",1951.97201285829
+"4135",517,"Recovered",9983464.55447945
+"4136",517,"Susceptible",8804138.33062397
