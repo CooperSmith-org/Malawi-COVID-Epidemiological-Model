@@ -15,7 +15,9 @@ df_locations <- read_csv('MW COVID Inputs.csv')
 df_params <- read_csv('params_inits_template.csv')
 df_seed <- read_csv('simulation-seeddates-ta-20200910.csv')
 
-model_results <- run_stepwise(df_params, df_locations, df_masking, df_distancing, df_seed)
+n_days <- dim(df_distancing[1])
+
+model_results <- run_stepwise(df_params, df_locations, df_masking, df_distancing, df_seed, n_days)
 
 df_country <- model_results$country
 
@@ -29,8 +31,6 @@ df_country_hospitalized <- subset(df_country, State=='Hospitalized')
 df_country_critical <- subset(df_country, State=='Critical')
 df_country_deaths <- subset(df_country, State=='Dead')
 
-write.csv(df_country_infected, '../out/infected.csv')
-write.csv(df_country_newinfected, '../out/new-infections.csv')
-write.csv(df_country_hospitalized, '../out/hospitalized.csv')
-write.csv(df_country_critical, '../out/critical.csv')
-write.csv(df_country_deaths, '../out/deaths.csv')
+df_summary <- round(df_country %>% pivot_wider(names_from='State', values_from='People'))
+df_summary$Date = as.Date("2020-04-01") + (df_summary$Day - 1)
+write.csv(df_summary, '../out/pandemic-seir.csv')
