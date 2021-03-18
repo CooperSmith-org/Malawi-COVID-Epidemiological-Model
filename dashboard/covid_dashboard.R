@@ -23,7 +23,8 @@ source('../epi_stepwise.R')
 
 ##--Loading data frames for baseline simulations 
 
-n_days <- max(365, difftime((today() + days(90)), as.Date("2020-04-01"), units = "days"))
+start_date = as.Date("2020-01-01")
+n_days <- max(365, difftime((today() + days(90)), start_date, units = "days"))
 
 df_params <- read_csv('../inputs/params_inits_template.csv', col_types=cols())
 df_distancing <- read_csv('../inputs/reductionScenarios/current.csv', col_types=cols())
@@ -37,11 +38,11 @@ crit_time <- 1 / df_params$tau2
 # Add date to existing masking and distancing files and write
 
 masking = tibble::rowid_to_column(df_masking, 'time')
-masking$date = as.Date("2020-04-01") + (masking$time - 1)
+masking$date = start_date + (masking$time - 1)
 write.csv(masking, 'out/masking_with_date.csv')
 
 current = tibble::rowid_to_column(df_distancing, 'time')
-current$date = as.Date("2020-04-01") + (current$time - 1)
+current$date = start_date + (current$time - 1)
 write.csv(current, 'out/distancing_with_date.csv')
 
 #masking <- read_csv("masking-mar2021.csv", col_types=cols()) #read_csv("masking_with_date.csv")
@@ -63,18 +64,18 @@ runModel <- function(df_distancing, df_masking, df_locations, df_params, df_seed
   ##--Adding dates
   ##--Country
   df_country_spread <- spread(df_country, key = State, value = People) 
-  df_country_spread$date <- seq(from = as.Date("2020-04-01"),
+  df_country_spread$date <- seq(from = start_date,
                                 by = "day", length.out = n_days)
   
   ##--District
   df_district_spread <- spread(df_district, key = State, value = People) 
   districts <- df_district_spread$Lvl3 %>% unique()
-  df_district_spread$date <- rep(seq(from = as.Date("2020-04-01"),
+  df_district_spread$date <- rep(seq(from = start_date,
                                      by = "day", length.out = n_days), length(districts))
   
   ##--TA
   df_ta2 <- df_ta 
-  df_ta2$date <- rep(seq(from = as.Date("2020-04-01"), 
+  df_ta2$date <- rep(seq(from = start_date, 
                          by = "day", length.out = n_days), dim(df_ta)[1]/n_days)  
   
   ##--Organizing the outputs in a list
@@ -227,7 +228,7 @@ body <- dashboardBody(
                                      ##--Set x axis for plot
                                      sliderInput('begin_plot', 'Start of Model (days before today)',
                                                  min = 15, 
-                                                 max = as.numeric(difftime(today(), as.Date("2020-04-01"), units = "days")), 
+                                                 max = as.numeric(difftime(today(), start_date, units = "days")), 
                                                  value = 15, 
                                                  step = 1)    
                               ),
@@ -2858,7 +2859,7 @@ saveInitialDashboardState <- function() {
   df_country_deaths <- subset(df_country, State=='Dead')
   
   df_for_dash = data.frame('time'=df_country_infected$Day, 'Cases_sq'=df_country_infected$People)
-  df_for_dash$date = as.Date("2020-04-01") + (df_for_dash$time - 1)
+  df_for_dash$date = start_date + (df_for_dash$time - 1)
   df_for_dash$Cases_sq = round(cumsum(df_country_infected$People))
   df_for_dash$Hospitalizations_sq = round(cumsum(df_country_hospitalized$People))
   df_for_dash$ICU_sq = round(cumsum(df_country_critical$People))

@@ -9,13 +9,14 @@ source('../epi_stepwise.R')
 # setwd("C:/Users/Michael/Git/Malawi-COVID-Epidemiological-Model/inputs")
 #setwd("C:/Users/dylan/Documents/GitHub/Malawi-COVID-Epidemiological-Model/inputs")
 
-df_distancing <- read_csv('reductionScenarios/current.csv')
-df_masking <- read_csv('masking/masking_compliance.csv')
-df_locations <- read_csv('MW COVID Inputs.csv')
-df_params <- read_csv('params_inits_template.csv')
-df_seed <- read_csv('simulation-seeddates-ta-20200910.csv')
+df_params <- read_csv('../inputs/params_inits_template.csv', col_types=cols())
+df_distancing <- read_csv('../inputs/reductionScenarios/current.csv', col_types=cols())
+df_masking <- read_csv('../inputs/masking/masking_compliance.csv', col_types=cols())
+df_locations <- read_csv('../inputs/MW COVID Inputs.csv', col_types=cols())
+df_seed <- read_csv('../inputs/simulation-seeddates-ta-20200910.csv', col_types=cols())
 
-n_days <- dim(df_distancing[1])
+start_date = as.Date("2020-01-01")
+n_days <- dim(df_distancing)[1] + 30
 
 model_results <- run_stepwise(df_params, df_locations, df_masking, df_distancing, df_seed, n_days)
 
@@ -32,5 +33,5 @@ df_country_critical <- subset(df_country, State=='Critical')
 df_country_deaths <- subset(df_country, State=='Dead')
 
 df_summary <- round(df_country %>% pivot_wider(names_from='State', values_from='People'))
-df_summary$Date = as.Date("2020-04-01") + (df_summary$Day - 1)
+add_column(df_summary, Date=start_date + (df_summary$Day - 1), .after='Day')
 write.csv(df_summary, '../out/pandemic-seir.csv')

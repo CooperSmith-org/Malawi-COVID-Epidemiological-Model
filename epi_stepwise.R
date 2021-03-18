@@ -1,6 +1,19 @@
 library(ggplot2)
 library(tidyverse)
 
+# Repeats last row to pad vector to desired length
+pad_dataframe <- function(df_in, length) {
+  padding_length <- length - dim(df_in)[1]
+  if (padding_length > 0) {
+    to_append <- df_in[rep(nrow(df_in), padding_length),]
+    return(rbind(df_in, to_append))
+  }
+  else {
+    return(df_in)
+  }
+}
+
+# Stepwise implementation of SEIR model
 run_stepwise <- function(df_params, df_locations, df_masking, df_distancing, df_seed, n_days) {
   start_time <- Sys.time()
   
@@ -42,6 +55,9 @@ run_stepwise <- function(df_params, df_locations, df_masking, df_distancing, df_
   seed_column <- paste('day_n', seed_threshold, sep='')
   df_seed_dates <- df_seed[c('adm_id', seed_column)] %>% rename(start_day=seed_column)
   df_locations <- left_join(df_locations, df_seed_dates, by=c('TA_Code'='adm_id'))
+  
+  df_distancing <- pad_dataframe(df_distancing, n_days)
+  df_masking <- pad_dataframe(df_masking, n_days)
   
   behaviour_mod <- (1 - df_distancing$reduc) * (1 - df_masking$masking_compliance * mask_effectiveness)
   
@@ -150,50 +166,4 @@ run_stepwise <- function(df_params, df_locations, df_masking, df_distancing, df_
   print(end_time - start_time)
 
   return(list(country=df_country, district=df_district, ta=df_ta, pandemic=df_pandemic))
-}
-
-function () {
-  options(scipen=999)
-  ggplot(data=df_country %>% filter(State == 'Infected'), aes(x=Day, y=People, group=State, color=State)) + geom_line()
-  #ggplot(data=df_country, aes(x=Day, y=People, group=State, color=State)) + geom_line()
-  
-  df_country_infected <- subset(df_country, State=='Infected')
-  df_country_newinfected <- subset(df_country, State=='New Infections')
-  df_country_hospitalized <- subset(df_country, State=='Hospitalized')
-  df_country_critical <- subset(df_country, State=='Critical')
-  df_country_deaths <- subset(df_country, State=='Dead')
-  
-  write.csv(df_country_infected, '../out/infected.csv')
-  write.csv(df_country_newinfected, '../out/new-infections.csv')
-  write.csv(df_country_hospitalized, '../out/hospitalized.csv')
-  write.csv(df_country_critical, '../out/critical.csv')
-  write.csv(df_country_deaths, '../out/deaths.csv')
-  
-  df_country_infected
-  
-  df_for_dash = data.frame('time'=df_country_infected$Day, 'Cases_sq'=df_country_infected$People)
-  df_for_dash$date = as.Date("2020-04-01") + (df_for_dash$time - 1)
-  df_for_dash$Cases_sq = round(cumsum(df_country_infected$People))
-  df_for_dash$Hospitalizations_sq = round(cumsum(df_country_hospitalized$People))
-  df_for_dash$ICU_sq = round(cumsum(df_country_critical$People))
-  df_for_dash$Death_sq = round(cumsum(df_country_deaths$People))
-  df_for_dash$Severe_sq = df_for_dash$Hospitalizations_sq + df_for_dash$ICU_sq + df_for_dash$Death_sq
-  
-  df_for_dash$Cases_sim = round(cumsum(df_country_infected$People))
-  df_for_dash$Hospitalizations_sim = round(cumsum(df_country_hospitalized$People))
-  df_for_dash$ICU_sim = round(cumsum(df_country_critical$People))
-  df_for_dash$Death_sim = round(cumsum(df_country_deaths$People))
-  df_for_dash$Severe_sim = df_for_dash$Hospitalizations_sim + df_for_dash$ICU_sim + df_for_dash$Death_sim
-  
-  write.csv(df_for_dash, '../../lika/initial-mar2021.csv')
-  
-  df_masking_for_dash = tibble::rowid_to_column(df_masking, 'time')
-  df_masking_for_dash$date = as.Date("2020-04-01") + (df_masking_for_dash$time - 1)
-  
-  write.csv(df_masking_for_dash, '../../lika/masking-mar2021.csv')
-  
-  df_distancing_for_dash = tibble::rowid_to_column(df_distancing, 'time')
-  df_distancing_for_dash$date = as.Date("2020-04-01") + (df_distancing_for_dash$time - 1)
-  
-  write.csv(df_distancing_for_dash, '../../lika/distancing-mar2021.csv')
 }
